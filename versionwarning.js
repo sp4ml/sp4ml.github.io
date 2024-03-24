@@ -12,7 +12,7 @@
             ].join('; ') +
             '">' + msg + '</p>')
     };
-    if (location.hostname == 'spkit.github.io') {
+    if (location.hostname == 'sp4ml.github.io') {
         if (location.pathname == '/dev/versions.html') {
             // this page is specially generated and linked from all versions
             return;
@@ -20,17 +20,17 @@
         var versionPath = location.pathname.split('/')[1];
         if (!goodPaths.includes(versionPath)) {
             showWarning('This is documentation for an old release of ' +
-                        'SpKit (version ' + versionPath + '). Try the ' +
-                        '<a href="https://SpKit.github.io">latest stable ' +
+                        'sp4ml (version ' + versionPath + '). Try the ' +
+                        '<a href="https://sp4ml.github.io">latest stable ' +
                         'release</a> (version ' + latestStable + ') or ' +
-                        '<a href="https://SpKit.github.io/dev">development</a> ' +
+                        '<a href="https://sp4ml.github.io/dev">development</a> ' +
                         '(unstable) versions.')
         } else if (versionPath == 'dev') {
             showWarning('This is documentation for the unstable ' +
-                        'development version of SpKit. (To use it, ' +
-                        '<a href="https://SpKit.github.io.org/stable/developers/advanced_installation.html#installing-nightly-builds">install the nightly build</a>.) ' + 
+                        'development version of sp4ml. (To use it, ' +
+                        '<a href="https://sp4ml.github.io.org/stable/developers/advanced_installation.html#installing-nightly-builds">install the nightly build</a>.) ' + 
                         'The latest stable ' +
-                        'release is <a href="https://SpKit.github.io">version ' +
+                        'release is <a href="https://sp4ml.github.io">version ' +
                         latestStable + '</a>.')
         }
     }
