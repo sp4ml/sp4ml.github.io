@@ -1,0 +1,102 @@
+
+:parenttoc: True
+
+.. include:: includes/big_toc_css.rst
+
+.. _filtering_smoothing:
+
+==================
+Smoothing
+==================
+
+
+Spectral Filters
+================
+
+
+Savitzky-Golay filter
+=====================
+
+Smoothing filter using Savitzky-Golay filter
+    
+
+::
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import spkit as sp
+    x,fs = sp.data.ppg_sample(sample=1)
+    x = x[:int(fs*5)]
+    x = x - x.mean()
+    t = np.arange(len(x))/fs
+    xf1 = sp.filter_smooth_sGolay(x.copy(),window_length=31, polyorder=2)
+    xf2 = sp.filter_smooth_sGolay(x.copy(),window_length=31, polyorder=5)
+    xf3 = sp.filter_smooth_sGolay(x.copy(),window_length=51, polyorder=3)
+
+
+
+
+Gaussian Filter
+================
+
+Smoothing filter using Gaussian Kernel and 1d-ConvFB
+    
+    **Smoothing filter using Gaussian Kernel and 1d-ConvFB**
+    
+    sigma : sigma for gaussian kernel, if None, sigma=window_length/6
+
+
+::
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import spkit as sp
+    x,fs = sp.data.ppg_sample(sample=1)
+    x = x[:int(fs*5)]
+    x = x - x.mean()
+    t = np.arange(len(x))/fs
+    xf1 = sp.filter_smooth_gauss(x.copy(),window_length=31, sigma_scale=2.7)
+    xf2 = sp.filter_smooth_gauss(x.copy(),window_length=31, sigma_scale=5.4)
+    xf3 = sp.filter_smooth_gauss(x.copy(),window_length=51, sigma_scale=2.7)
+
+
+
+Mollifier
+================
+
+Smoothing filter using Mollifier kernel and 1d-ConvFB
+
+    **Smoothing filter using Mollifier kernel and 1d-ConvFB**
+    
+    **Mollifier: Kurt Otto Friedrichs**
+
+    Generalized function
+
+    .. math:: f(x) =  exp(-s/(1-|x|**p))    for |x|<1,   x \in [-r, r]
+
+    Convolving with a mollifier, signals's sharp features are smoothed, while still remaining close
+    to the original nonsmooth (generalized) signals.
+
+    Intuitively, given a function which is rather irregular, by convolving it with a mollifier the function gets "mollified".
+
+    This function is infinitely differentiable, non analytic with vanishing derivative for |x| = 1,
+    can be therefore used as mollifier as described in [1]. This is a positive and symmetric mollifier.[2]
+
+
+
+Wavelet Filtering
+=================
+
+Wavelet Filtering is covered in seperate section in more detail
+
+:ref:`wavelet_filtering`
+
+
+
+
+
+
+.. topic:: References
+
+  * [1] https://en.wikipedia.org/wiki/Mollifier
+  * [2] https://en.wikipedia.org/wiki/Kurt_Otto_Friedrichs

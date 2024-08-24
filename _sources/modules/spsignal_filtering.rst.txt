@@ -1,0 +1,22 @@
+.. Places parent toc into the sidebar
+
+:parenttoc: True
+
+.. include:: includes/big_toc_css.rst
+
+.. _signal_processing:
+
+Signal Filtering
+-------------------
+
+.. toctree::
+    :maxdepth: 2
+
+    sp_filtering_drift
+    sp_filtering_smooth
+    sp_filtering_spectral
+    sp_filtering_kernel
+    sp_filtering_pipe
+    sp_filtering_spatial
+    sp_filtering_graph
+    

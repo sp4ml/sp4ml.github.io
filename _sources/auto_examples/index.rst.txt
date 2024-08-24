@@ -1,0 +1,766 @@
+:orphan:
+
+.. _general_examples:
+
+Examples
+========
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    </div>
+
+
+Electroencephalography (EEG)
+----------------------------
+
+Examples for EEG Signal Processing.
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip=" ATAR: Automatic and Tunable Artifact Removal Algorithm -  Tuning">
+
+.. only:: html
+
+  .. image:: /auto_examples/electroencephalogram/images/thumb/sphx_glr_plot_sp_ATAR_algorithm_tuning_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_electroencephalogram_plot_sp_ATAR_algorithm_tuning.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">ATAR: Automatic and Tunable Artifact Removal Algorithm</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="ATAR: Automatic and Tunable Artifact Removal Algorithm">
+
+.. only:: html
+
+  .. image:: /auto_examples/electroencephalogram/images/thumb/sphx_glr_plot_sp_eeg_artifact_removal_ATAR_algorithm_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_electroencephalogram_plot_sp_eeg_artifact_removal_ATAR_algorithm.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EEG Artifact removal using ATAR</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="     ICA Filtering algorithm uses following three criteria for removing artifacts for EEG.">
+
+.. only:: html
+
+  .. image:: /auto_examples/electroencephalogram/images/thumb/sphx_glr_plot_sp_eeg_artifact_removal_ICA_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_electroencephalogram_plot_sp_eeg_artifact_removal_ICA.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EEG Artifact removal using ICA</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example we compare ICA with ATAR">
+
+.. only:: html
+
+  .. image:: /auto_examples/electroencephalogram/images/thumb/sphx_glr_plot_sp_eeg_artifact_removal_ICA_ATAR_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_electroencephalogram_plot_sp_eeg_artifact_removal_ICA_ATAR.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EEG Artifact: ATAR and ICA</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example, we are using PhyAAt Dataset to show the how to compute rhythmic features and c...">
+
+.. only:: html
+
+  .. image:: /auto_examples/electroencephalogram/images/thumb/sphx_glr_plot_sp_eeg_rhythmic_features_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_electroencephalogram_plot_sp_eeg_rhythmic_features.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EEG Computing Rhythmic Features - PhyAAt - Semanticity</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="EEG Topographic Map">
+
+.. only:: html
+
+  .. image:: /auto_examples/electroencephalogram/images/thumb/sphx_glr_plot_sp_eeg_topomaps_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_electroencephalogram_plot_sp_eeg_topomaps.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EEG Topographic Map</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Using InfoMax, Extended InfoMax, FastICA, &amp; Picard">
+
+.. only:: html
+
+  .. image:: /auto_examples/electroencephalogram/images/thumb/sphx_glr_plot_sp_ICA_eeg_example_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_electroencephalogram_plot_sp_ICA_eeg_example.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Independed Principle Component analysis</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+Multi-Electrode-Array (MEA)
+----------------------------
+
+Examples for MEA.
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example code, we demonstrate analysis of MEA Recording, with minimal settings, using si...">
+
+.. only:: html
+
+  .. image:: /auto_examples/multielectrode-array/images/thumb/sphx_glr_plot_mea_minimal_setting_example_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_multielectrode-array_plot_mea_minimal_setting_example.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">MEA: Minimal Setting: Example</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example code, we demonstrate analysis of MEA Recording, with each step. There are 13 st...">
+
+.. only:: html
+
+  .. image:: /auto_examples/multielectrode-array/images/thumb/sphx_glr_plot_mea_stepwise_example_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_multielectrode-array_plot_mea_stepwise_example.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">MEA: Step-wise Analysis: Example</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+Release Highlights
+------------------
+
+These examples illustrate the main features of the releases of spkit
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="We are pleased to announce the release of spkit 0.0.9.7, which comes with many bug fixes, more ...">
+
+.. only:: html
+
+  .. image:: /auto_examples/release_highlights/images/thumb/sphx_glr_plot_release_highlights_0_0_9_7_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_release_highlights_plot_release_highlights_0_0_9_7.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Release Highlights for spkit 0.0.9.7</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+Information Theory
+-----------------------
+
+General examples about Information Theory .
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Dispersion Entropy is computed by first discretising the signal and then extracting all the dis...">
+
+.. only:: html
+
+  .. image:: /auto_examples/information_theory/images/thumb/sphx_glr_plot_it_dispersion_entropy_eeg_emb2_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_information_theory_plot_it_dispersion_entropy_eeg_emb2.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Dispersion Entropy with Embedding dim</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Dispersion Entropy is computed by first discretising the signal and then extracting all the dis...">
+
+.. only:: html
+
+  .. image:: /auto_examples/information_theory/images/thumb/sphx_glr_plot_it_dispersion_entropy_top_patterns_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_information_theory_plot_it_dispersion_entropy_top_patterns.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Dispersion Entropy with top patterns</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip=" An example of computation of entropy for a discreet source.">
+
+.. only:: html
+
+  .. image:: /auto_examples/information_theory/images/thumb/sphx_glr_plot_it_entropy_discreet_example_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_information_theory_plot_it_entropy_discreet_example.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Entropy  -  Discreet Source</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip=" An example of Entropy computation (Mutual Information, Joint Information, Cross-entropy and KL...">
+
+.. only:: html
+
+  .. image:: /auto_examples/information_theory/images/thumb/sphx_glr_plot_it_entropy_eeg_multi_channel_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_information_theory_plot_it_entropy_eeg_multi_channel.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Entropy  -  EEG Signal - Multi-Channel</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip=" Entropy of real-values source is computed by estimating the probability distribution of the so...">
+
+.. only:: html
+
+  .. image:: /auto_examples/information_theory/images/thumb/sphx_glr_plot_it_entropy_real_valued_example_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_information_theory_plot_it_entropy_real_valued_example.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Entropy  -  Real-Valued Source</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example, we compare Approximate Emtropy with Sample Entropy">
+
+.. only:: html
+
+  .. image:: /auto_examples/information_theory/images/thumb/sphx_glr_plot_it_sample_approx_entropy_comp_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_information_theory_plot_it_sample_approx_entropy_comp.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Sample and Approximate Entropy: Comparison</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+Machine Learning
+-----------------------
+
+General examples about Machine Learning.
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Classification Trees: Depth &amp; Decision boundaries">
+
+.. only:: html
+
+  .. image:: /auto_examples/machine_learning/images/thumb/sphx_glr_plot_ml_decision_tree_classification_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_machine_learning_plot_ml_decision_tree_classification.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Classification Trees: Depth & Decision boundaries</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip=" Decision Trees with shrinking capability from SpKit (Classification example)">
+
+.. only:: html
+
+  .. image:: /auto_examples/machine_learning/images/thumb/sphx_glr_plot_ml_decision_tree_shrinking_capability_cls_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_machine_learning_plot_ml_decision_tree_shrinking_capability_cls.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Decision Trees with shrinking capability - Classification example</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Decision Trees with shrinking capability from SpKit (Regression example)">
+
+.. only:: html
+
+  .. image:: /auto_examples/machine_learning/images/thumb/sphx_glr_plot_ml_decision_tree_shrinking_capability_reg_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_machine_learning_plot_ml_decision_tree_shrinking_capability_reg.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Decision Trees with shrinking capability - Regression example</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Decision Trees with visualisation while building trees.">
+
+.. only:: html
+
+  .. image:: /auto_examples/machine_learning/images/thumb/sphx_glr_plot_ml_decision_tree_visualisation_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_machine_learning_plot_ml_decision_tree_visualisation.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Decision Trees with visualisations while buiding tree</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip=" Decision Trees without converting Catogorical Features using SpKit">
+
+.. only:: html
+
+  .. image:: /auto_examples/machine_learning/images/thumb/sphx_glr_plot_ml_decision_tree_catogorical_features_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_machine_learning_plot_ml_decision_tree_catogorical_features.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Decision Trees without converting Catogorical Features</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip=" An example of a Logistic Regression with visualasation">
+
+.. only:: html
+
+  .. image:: /auto_examples/machine_learning/images/thumb/sphx_glr_plot_ml_logistic_regression_examples_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_machine_learning_plot_ml_logistic_regression_examples.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Logistic Regression -  Visualisation</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Naive Bayes classifier">
+
+.. only:: html
+
+  .. image:: /auto_examples/machine_learning/images/thumb/sphx_glr_plot_ml_naive_bayes_examples_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_machine_learning_plot_ml_naive_bayes_examples.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Naive Bayes classifier -  Visualisation</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+Signal Processing
+-----------------------
+
+General examples about Signal Processing algorithms.
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Analysis and Synthesis Models">
+
+.. only:: html
+
+  .. image:: /auto_examples/signal_processing/images/thumb/sphx_glr_plot_sp_analysis_sythesis_models_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_analysis_sythesis_models.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Analysis and Synthesis Models</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Analysis and Synthesis Models">
+
+.. only:: html
+
+  .. image:: /auto_examples/signal_processing/images/thumb/sphx_glr_plot_sp_fractional_fourier_transform_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_fractional_fourier_transform.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Fractional Fourier Transform: FRFT</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Ramanujan Dictionary  - with sparse penalty">
+
+.. only:: html
+
+  .. image:: /auto_examples/signal_processing/images/thumb/sphx_glr_plot_sp_RFB_for_period_estimation_with_sparse_penalty_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_RFB_for_period_estimation_with_sparse_penalty.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Ramanujan Dictionary  - with sparse penalty</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip=" # Ramanujan Filter Banks">
+
+.. only:: html
+
+  .. image:: /auto_examples/signal_processing/images/thumb/sphx_glr_plot_sp_RFB_for_period_estimation_demo_examples_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_RFB_for_period_estimation_demo_examples.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Ramanujan Filter Banks -  Demos</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Ramanujan Filter Banks Example">
+
+.. only:: html
+
+  .. image:: /auto_examples/signal_processing/images/thumb/sphx_glr_plot_sp_RFB_for_period_estimation_from_signal_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_RFB_for_period_estimation_from_signal.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Ramanujan Filter Banks Example</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="# &lt;h1&gt;Table of Contents&lt;span class=&quot;tocSkip&quot;&gt;&lt;/span&gt;&lt;/h1&gt; # &lt;div class=&quot;toc&quot;&gt;&lt;ul class=&quot;toc-ite...">
+
+.. only:: html
+
+  .. image:: /auto_examples/signal_processing/images/thumb/sphx_glr_plot_sp_sinusodal_model_analysis_synthesis_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_sinusodal_model_analysis_synthesis.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Sinasodal Model:  Analysis and Synthesis</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Analysis and Synthesis Models">
+
+.. only:: html
+
+  .. image:: /auto_examples/signal_processing/images/thumb/sphx_glr_plot_sp_sinusodal_model_example_sound_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_sinusodal_model_example_sound.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Sinusodal Model : Synthesis : Audio</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+Statistics
+----------
+
+General examples about statistics.
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Auditory Attention: Plot Group Data">
+
+.. only:: html
+
+  .. image:: /auto_examples/statistics/images/thumb/sphx_glr_plot_stats_group_boxplotes_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_statistics_plot_stats_group_boxplotes.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Auditory Attention: Plot Group Data</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Testing two groups">
+
+.. only:: html
+
+  .. image:: /auto_examples/statistics/images/thumb/sphx_glr_plot_stats_testing_2groups_demo_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_statistics_plot_stats_testing_2groups_demo.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Testing two groups</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+Wavelet Analysis
+-----------------
+
+General examples about Wavelet Analysis.
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Scalogram CWT">
+
+.. only:: html
+
+  .. image:: /auto_examples/wavelet_analysis/images/thumb/sphx_glr_plot_sp_scalogram_cwt_example_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_wavelet_analysis_plot_sp_scalogram_cwt_example.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Scalogram CWT</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Background">
+
+.. only:: html
+
+  .. image:: /auto_examples/wavelet_analysis/images/thumb/sphx_glr_plot_sp_wavelet_filtering_example_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_wavelet_analysis_plot_sp_wavelet_filtering_example.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Wavelet Filtering</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+   :includehidden:
+
+
+   /auto_examples/electroencephalogram/index.rst
+   /auto_examples/multielectrode-array/index.rst
+   /auto_examples/release_highlights/index.rst
+   /auto_examples/information_theory/index.rst
+   /auto_examples/machine_learning/index.rst
+   /auto_examples/signal_processing/index.rst
+   /auto_examples/statistics/index.rst
+   /auto_examples/wavelet_analysis/index.rst
+
+
+.. only:: html
+
+  .. container:: sphx-glr-footer sphx-glr-footer-gallery
+
+    .. container:: sphx-glr-download sphx-glr-download-python
+
+      :download:`Download all examples in Python source code: auto_examples_python.zip </auto_examples/auto_examples_python.zip>`
+
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
+
+      :download:`Download all examples in Jupyter notebooks: auto_examples_jupyter.zip </auto_examples/auto_examples_jupyter.zip>`
+
+
+.. only:: html
+
+ .. rst-class:: sphx-glr-signature
+
+    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_

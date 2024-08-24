@@ -1,45 +1,551 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<meta http-equiv="refresh" content="0; url=http://sp4ml.github.io/stable" />
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+<!DOCTYPE html>
+<!-- data-theme below is forced to be "light" but should be changed if we use pydata-theme-sphinx in the future -->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" data-content_root="./" data-theme="light"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" data-content_root="./" data-theme="light">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
   
-    <title>sp4ml: machine learning in Python &mdash; sp4ml 0.0.9.6 documentation</title>
-  <!-- htmltitle is before nature.css - we use this hack to load bootstrap first -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="_static/css/bootstrap.min.css" media="screen" />
-  <link rel="stylesheet" href="_static/css/bootstrap-responsive.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
-    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.0.9.6',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/js/copybutton.js"></script>
-    <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="author" title="About these documents" href="about.html" />
-    <link rel="top" title="sp4ml 0.0.9.6 documentation" href="#" />
-    <link rel="next" title="sp4ml Tutorials" href="tutorial/index.html" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="_static/js/bootstrap.min.js" type="text/javascript"></script>
-  <link rel="canonical" href="https://sp4ml.github.io/stable/index.html" />
-  </head>
+  <title>SpKit: Signal Processing Toolkit in Python &mdash; spkit 0.0.9.7 documentation</title>
+  
+  <link rel="canonical" href="http://spkit.github.io/stable/index.html" />
+
+  
+  <link rel="shortcut icon" href="_static/favicon.ico" />
+  
+
+  <link rel="stylesheet" href="_static/css/vendor/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/plot_directive.css" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Vibur" type="text/css" />
+  <link rel="stylesheet" href="_static/jupyterlite_sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="_static/sg_gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="_static/sg_gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="_static/sg_gallery-rendered-html.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <script id="documentation_options" data-url_root="./"
+    src="_static/documentation_options.js"></script>
+  <script src="_static/js/vendor/jquery-3.6.3.slim.min.js"></script>
+  <script src="_static/js/details-permalink.js"></script>
+
+  <link rel="stylesheet" href="_static/css/vendor/nature_spkit.css" type="text/css" /> 
+
+
+</head>
+
+<body>
+  
+
+
+
+
+
+<!-- ('About us', pathto('about'), ''), -->
+
+
+<div id="logo-banner">
+  <div class="logo">
+    <!-- <a href="%23.html"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a> -->
+  <!-- <a href="#"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a> -->
+  <a href="#"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a>
+  </div>
+  <div class="tags">
+  <ul>
+    <li>&#9672; Easy to use toolkit for signal processing and analysis</li>
+    <li>&#9672; More of biomedical signal analysis with visualization</li>
+    <li>&#9672; Includes basic machine learning models with visualization</li>
+    <!-- <li>&#9672; Open source</li> -->
+  </ul>
+  </div>
+  <div class="banner">
+  <h2>Signal Processing Toolkit</h2>
+  <h4><i>Simple and easy to use for signal analysis and predictive analysis</i></h4>
+  </div>
+</div>
+<nav id="navbar" class="spk-landing-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid spk-landing-container px-0">
+      <a class="navbar-brand py-0" href="#">
+        <img
+          class="spk-brand-img"
+          src="_static/spkit_small_icon_v.png"
+          alt="logo"/>
+      </a>
+    <button
+      id="spk-navbar-toggler"
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="spk-navbar-collapse collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="#">Home</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="install.html">Install</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="user_guide.html">User Guide</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="modules/classes.html">API</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="auto_examples/index.html">Examples</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="tutorials/index.html">Tutorials</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" target="_blank" rel="noopener noreferrer" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=">Discussion Forum</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="about.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="getting_started.html" >Getting Started</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="whats_new/v0.0.9.7.html" >What's new</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://github.com/nikeshbajaj/spkit" >GitHub</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://spkit.github.io/dev/index.html" target="_blank" rel="noopener noreferrer">Development</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" >Get Involved</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://spkit.github.io/dev/versions.html" >Other Versions and Download</a>
+        </li>
+        <li class="nav-item dropdown nav-more-item-dropdown">
+          <a class="spk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="spk-nav-dropdown-item dropdown-item" href="getting_started.html" >Getting Started</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="whats_new/v0.0.9.7.html" >What's new</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://github.com/nikeshbajaj/spkit" >GitHub</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://spkit.github.io/dev/index.html" target="_blank" rel="noopener noreferrer">Development</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" >Get Involved</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://spkit.github.io/dev/versions.html" >Other Versions and Download</a>
+          </div>
+        </li>
+      </ul>
+      <div id="searchbox" role="search">
+          <div class="searchformwrapper">
+          <form class="search" action="search.html" method="get">
+            <input class="spk-search-text-input" type="text" name="q" aria-labelledby="searchlabel" />
+            <input class="spk-search-text-btn" type="submit" value="Go" />
+          </form>
+          </div>
+      </div>
+      <a class ="nav-more-item-dropdown">
+      <font size="4em" style="margin: 5px 5px 0px 5px;color:rgb(0, 0, 0)">V</font>
+      </a>
+      <div class="nav-item dropdown nav-more-item-dropdown-vs">
+        <a class="sp-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <font color="black">0.0.9.7 (latest)</font>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sp-nav-dropdown-item dropdown-item" href="#" >0.0.9.7 (latest)</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="V/0.0.9.6/index.html" >0.0.9.6</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="V/0.0.9.5/index.html" >0.0.9.5</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="V/0.0.9.4/index.html" >0.0.9.4</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="V/0.0.9.3/index.html" >0.0.9.3</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="V/0.0.9.2/index.html" >0.0.9.2</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="V/0.0.9.1/index.html" >0.0.9.1</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="https://github.com/Nikeshbajaj/spkit/releases" >More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Sidebar -->
+
+<!-- <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+  <div class="sphinxsidebarwrapper">
+  <a class="reference external" href="https://pypi.org/project/spkit" target="_blank"><img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/Nikeshbajaj/spkit?label=latest%20version&style=plastic"></a>
+  <a class="reference external" href="https://pepy.tech/project/spkit" target="_blank"><img src="https://static.pepy.tech/personalized-badge/spkit?period=total&amp;units=international_system&amp;left_color=black&amp;right_color=orange&amp;left_text=downloads" alt="PyPI - Downloads" /></a>
+  <a class="reference external" href="https://pypi.python.org/pypi/spkit" target="_blank"><img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/spkit?style=plastic"></a>
+  <ul class="simple">
+  <li><div id="getting-started"><a href="getting_started.html" class="btn sp-sidebar-btn">Getting Started</a></div></li>
+  <li><div id="examples"><a href="auto_examples" class="btn sp-sidebar-btn">Examples</a></div></li>
+  <li><div id="github"><a href="https://github.com/Nikeshbajaj/spkit/fork" target="_blank" class="btn sp-sidebar-btn">Fork-on-Github</a></div></li>
+  <li><div id="discussion-forum"><a href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" target="_blank" class="btn sp-sidebar-btn">Discussion Forum</a></div></li>
+  </ul>
+
+  <h4>Updates:</h4>
+  <ul class="simple">
+  <li>&bull; Released: 0.0.9.7</li>
+  <li>&bull; Discussion Forum</li>
+  <li>&bull; Ramanujam methods for period estimation</li>
+  <li>&bull; Fractional Fourier Trasform.</li>
+  <li>&bull; Sinasodal Model for analysis and sythesis.</li>
+  <li>&bull; EEG Artifact removal algorithms (<strong>ATAR</strong> and <strong>ICA</strong> based) are added.</li>
+  <li>&bull; More entropy functions are added.</li>
+  <li>&bull; CWT functions are added for Scalogram.</li>
+  </ul>
+
+  <h4> Giving credit & Citing</h4>
+  <ul class="simple">
+  <li><p>All material: Free Software: <strong>The 3-Clause BSD License</strong>.</p></li><li><p><a href="about.html">About</a></p></li>
+  <li><p>Please consider <a href="about.html#citing"><strong>citing</strong></a>.</p></li>
+  </ul>
+
+  <h4> Visitors </h4>
+  <ul class="simple">
+  <li>
+  <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=eQr8xSBiKVuSq6m0psK-Ey9TZ7rLzjRX-MpatyfFGQI"></script>
+  </li></ul>
+
+  </div>
+</div> -->
+
+<!--- Sidebar  start-->
+<div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+  <div class="sphinxsidebarwrapper">
+  <a class="reference external" href="https://pypi.org/project/spkit" target="_blank"><img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/Nikeshbajaj/spkit?label=latest%20version&style=plastic"></a>
+  <a class="reference external" href="https://pepy.tech/project/spkit" target="_blank"><img src="https://static.pepy.tech/personalized-badge/spkit?period=total&amp;units=international_system&amp;left_color=black&amp;right_color=orange&amp;left_text=downloads" alt="PyPI - Downloads" /></a>
+  <a class="reference external" href="https://pypi.python.org/pypi/spkit" target="_blank"><img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/spkit?style=plastic"></a>
+  <ul class="simple">
+  <li><div id="getting-started"><a href="getting_started.html" class="btn sp-sidebar-btn">Getting Started</a></div></li>
+  <!-- <li><div id="docs"><a href="https://spkit.github.io/docs" target="_blank" class="btn btn-primary">Documentation v2</a></div></li> -->
+  <!-- <li><div id="docs"><a href="https://spkit.readthedocs.io/" target="_blank" class="btn btn-primary">Documentation</a></div></li> -->
+  <li><div id="examples"><a href="auto_examples" class="btn sp-sidebar-btn">Examples</a></div></li>
+  <li><div id="github"><a href="https://github.com/Nikeshbajaj/spkit/fork" target="_blank" class="btn sp-sidebar-btn">Fork-on-Github</a></div></li>
+  <li><div id="discussion-forum"><a href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" target="_blank" class="btn sp-sidebar-btn">Discussion Forum</a></div></li>
+  </ul>
+
+  <h4>Updates:</h4>
+  <ul class="simple">
+  <li>&bull; Released: 0.0.9.7</li>
+  <li>&bull; Discussion Forum</li>
+  <li>&bull; Ramanujam methods</li>
+  <li>&bull; Fractional Fourier Trasform</li>
+  <li>&bull; Sinasodal Model</li>
+  <li>&bull; EEG Artifact removal algorithms: ATAR and ICA</li>
+  </ul>
+
+  <h4> Giving credit & Citing</h4>
+  <ul class="simple">
+  <li><p>All material: Free Software: <strong>The 3-Clause BSD License</strong>.</p></li><li><p><a href="about.html">About</a></p></li>
+  <li><p>Please consider <a href="about.html#citing"><strong>citing</strong></a>.</p></li>
+  </ul>
+
+  <h4> Visitors </h4>
+  <ul class="simple">
+  <li>
+  <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=eQr8xSBiKVuSq6m0psK-Ey9TZ7rLzjRX-MpatyfFGQI"></script>
+  <!--<script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=eQr8xSBiKVuSq6m0psK-Ey9TZ7rLzjRX-MpatyfFGQI"></script>
+  -->
+  </li></ul>
+
+  </div>
+</div>
+
+<!--- Sidebar  ends-->
+
+<!-- Front cards - landing page -->
+
+<div class="container sp-landing-container pt-3 body" role="main">
+  <div class="row no-gutters">
+
+  <div class="column-box">
+    <div class="gallary-card-nb" style="width: 22rem;height: 29rem;padding:auto">
+      <a href="modules/information_theory.html" onclick="trackOutboundLink(this);"><span class="link-spanner-header"></span></a>
+      <div class="card-header">
+        <center>
+          <h4><a href="modules/information_theory.html">Information Theory</a></h4>
+          </center>
+        </div>
+      <div class="card-body">
+        <p class="card-text">Entropy functions for real valued signal, such as EEG, ECG, Speech.</p>
+            <p class="card-text"><strong>Applications:</strong>Signal Complexity Analysis, Noise-level detection</br>
+            <strong>Methods:</strong>
+            <a href="modules/it_entropy.html#sample-entropy-approximate-entropy">Sample & Aproximate Entropy</a>,
+            <a href="modules/it_disperssion_differential.html#dispersion-entropy-h-de-x">Dispersion Entropy</a>,
+            <a href="auto_examples/information_theory/plot_it_entropy_eeg_multi_channel.html">Mutual Information, Cross-entropy</a>,
+            <a href="modules/generated/spkit.entropy_differential.html#spkit-entropy-differential">Differential Entropy</a>,
+            and <a href="modules/information_theory.html">more...</a></p>
+        <center>
+        <a href="auto_examples/index.html#information-theory" target="_blank"><img src="_static/cover_it_signal.jpg" alt="Information Theory" style="width:100%" /></a>
+        </center>
+      </div>
+    </div>
+    </div>
+
+  <div class="column-box">
+    <div class="gallary-card-nb" style="width: 22rem;height: 29rem;padding:auto">
+      <a href="modules/spwavelet_analysis.html#wavelet-analysis" onclick="trackOutboundLink(this);"><span class="link-spanner-header"></span></a>
+      <div class="card-header">
+        <center>
+          <h4><a href="modules/spwavelet_analysis.html#wavelet-analysis">Wavelet Analysis</a></h4>
+          </center>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Time-Frequency Analysis usign Continues and Discrete Wavelet transforms</p>
+        <p class="card-text"><strong>Applications:</strong> Arfticat Removal Algorithms, De-noising Signals.</br>
+        <strong>Methods/Algorithms:</strong>
+        <a href="modules/sp_dwt.html#wavelet-filtering-shrinkage">Wavelet Filtering</a>,
+        <a href="modules/sp_cwt.html#continues-wavelet-transform">CWT</a>,
+        <a href="modules/generated/spkit.wavelet_decomposed_signals.html">Decomposed Signals</a>,
+        <a href="auto_examples/electroencephalogram/plot_sp_ATAR_algorithm_tuning.html">ATAR- Artifact Removal for EEG</a>,
+        and <a href="modules/spwavelet_analysis.html#wavelet-analysis">more...</a></p>
+        <center>
+        <a href="auto_examples/index.html#wavelet-analysis" target="_blank"><img src="_static/cover_wavelet_cwt.jpg" alt="Wavelet Analysis" style="width:100%" /></a>
+        </center>
+      </div>
+    </div>
+    </div>
+
+  
+  <div class="column-box">
+    <div class="gallary-card-nb" style="width: 22rem;height: 29rem;padding:auto">
+      <a href="modules/biomedical_signals.html" onclick="trackOutboundLink(this);"><span class="link-spanner-header"></span></a>
+      <div class="card-header">
+        <center>
+          <h4><a href="modules/biomedical_signals.html">Biomedical Signals</a></h4>
+          </center>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Signal Processing techniques specifically for biomedical signals such as EEG, GSR, ECG, EGM, MEA.</p>
+        <p class="card-text"><strong>Applications:</strong>  Artifact removal techniques, Multi-Electrode Array</br>
+        <strong>Methods:</strong>
+        <a href="auto_examples/index.html#electroencephalography-eeg">EEG Signal Processing</a>,
+        <a href="modules/bsp_mea.html">MEA: Multielectrode-Array Processing</a>,
+        <a href="auto_examples/electroencephalogram/plot_sp_ATAR_algorithm_tuning.html">ATAR-Algorithm</a>,
+        <a href="modules/data_samples.html#real-world-samples">Biomedical Samples</a>,
+        and <a href="modules/biomedical_signals.html">more...</a></p>
+        <center>
+        <a href="modules/biomedical_signals.html" target="_blank"><img src="_static/cover_bio_eeg.gif" alt="Biomedical Signals" style="width:100%" /></a>
+        </center>
+      </div>
+    </div>
+    </div>
+
+  <div class="column-box">
+    <div class="gallary-card-nb" style="width: 22rem;height: 29rem;padding:auto">
+      <a href="modules/spsignal_analysis.html#signal-analysis" onclick="trackOutboundLink(this);"><span class="link-spanner-header"></span></a>
+      <div class="card-header">
+        <center>
+          <h4><a href="modules/spsignal_analysis.html#signal-analysis">Transform Techniques</a></h4>
+          </center>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Analysis and Sythesis Models: Transforming signals to different space: Sinusoidal Model,  DCT, PCA, ICA, Signal decomposition models</p>
+        <!-- Techniques not widely available such as Fractional Fourier Transform, Sinusoidal Model,  DCT, PCA, ICA, Signal decomposition models.</p> -->
+        <p class="card-text"><strong>Applications:</strong> Simplifying signals, Complexity analysis, Feature extractions</br>
+        <strong>Methods/Algorithms:</strong>
+        <a href="auto_examples/signal_processing/plot_sp_sinusodal_model_example_sound.html#sinusodal-model-synthesis-audio">Sinusoidal Model</a>,
+        <a href="auto_examples/signal_processing/plot_sp_fractional_fourier_transform.html">Fractional Fourier Transform</a>,
+        <a href="auto_examples/signal_processing/plot_sp_analysis_sythesis_models.html#analysis-and-synthesis-models">DFT/STFT</a>,
+        and <a href="modules/spsignal_analysis.html#signal-analysis">more...</a></p>
+        <center>
+        <a href="auto_examples/index.html#signal-processing" target="_blank"><img src="_static/cover_transform.jpg" alt="Analysis and Sythesis Models" style="width:90%" /></a>
+        </center>
+      </div>
+    </div>
+    </div>
+
+  <div class="column-box">
+    <div class="gallary-card-nb" style="width: 22rem;height: 29rem;padding:auto">
+      <a href="modules/spsignal_filtering.html" onclick="trackOutboundLink(this);"><span class="link-spanner-header"></span></a>
+      <div class="card-header">
+        <center>
+          <h4><a href="modules/spsignal_filtering.html">Signal Analysis</a></h4>
+          </center>
+      </div>
+      <div class="card-body">
+        <p class="card-text">More Signal Analysis Methods: Feature extraction, Non-linear mapping, normalisation.</p>
+        <p class="card-text"><strong>Applications:</strong>  Transforming and analysing signals for Statistics and machine learning.</br>
+        <strong>Algorithms:</strong>
+        <a href="auto_examples/signal_processing/plot_sp_RFB_for_period_estimation_with_sparse_penalty.html">Period Estimation with Ramanujan Methods</a>,
+        <a href="modules/generated/spkit.quantize_signal.html">Quantize Signal</a>,
+        <a href="modules/generated/spkit.phase_map.html">Phase Mapping</a>,
+        <a href="modules/generated/spkit.dominent_freq.html">Dominent Frequency Analysis</a>,
+        and <a href="modules/classes.html#new-methods">more...</a></p>
+        <center>
+        <a href="modules/spsignal_filtering.html" target="_blank"><img src="_static/cover_sa.png" alt="PyLFSR" style="width:100%" /></a>
+        </center>
+      </div>
+    </div>
+    </div>
+
+  <div class="column-box">
+    <div class="gallary-card-nb" style="width: 22rem;height: 29rem;padding:auto">
+      <a href="auto_examples/index.html#machine-learning" onclick="trackOutboundLink(this);"><span class="link-spanner-header"></span></a>
+      <div class="card-header">
+        <center>
+          <h4><a href="auto_examples/index.html#machine-learning">Machine Learning</a></h4>
+          </center>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Machine Learing models with detailed visualisations</p>
+        <p class="card-text"><strong>Applications:</strong> Visualization, Increased insight</br>
+        <strong>Methods:</strong>
+        <a href="auto_examples/machine_learning/plot_ml_logistic_regression_examples.html">Logistic Regression</a>,
+        <a href="auto_examples/machine_learning/plot_ml_naive_bayes_examples.html">Naive Bayes</a>,
+        <a href="auto_examples/machine_learning/plot_ml_decision_tree_shrinking_capability_cls.html">Shrinking Capability of Decision Trees</a>,
+        <a href="modules/classes.html#for-machine-learning">Toy Data Simulation</a>,
+        and <a href="auto_examples/index.html#machine-learning">more...</a></p>
+        <center>
+        <a href="auto_examples/index.html#machine-learning" target="_blank"><img src="_static/cover_ml_trees.png" alt="Machine Learning" style="width:85%" /></a>
+        </center>
+      </div>
+    </div>
+    </div>
+
+
+
+  </div>
+  </div>
+
+<br>
+<br>
+<hr>
+<br>
+
+<!-- FOOTER -->
+<div class="container-fluid spk-landing-bg-more-info py-3">
+  <div class="container spk-landing-container">
+    <div class="row">
+      <div class="col-md-4">
+        <h4 class="spk-landing-call-header">Updates</h4>
+        <ul class="spk-landing-call-list list-unstyled">
+        <li><strong>Check new updares: </strong>
+        <a href="whats_new/index.html"><strong>What's new</strong> (Changelog)</a>
+        </li>
+        <li><strong>Discussion Forum</strong> is launch on github now: <a href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q="> Discussion Forum </a>.
+        </li>
+	      <li><strong>Version 0.0.9.7</strong> + more organised <a href="user_guide.html">User-guide</a> and <a href="modules/classes.html">API</a>.
+        </li>
+        <li><strong>Version 0.0.9.6</strong> + MEA, EEG, Signal differentiation.
+        </li>
+        <li><strong>Version 0.0.9.5</strong> + Ramanujam methods for period estimation.
+        </li>
+        <li><strong>Version 0.0.9.4</strong> + Fractional Fourier Trasform and Sinasodal Model for analysis and sythesis..
+        </li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <h4 class="spk-landing-call-header">Links & Resources</h4>
+        <ul class="spk-landing-call-list list-unstyled">
+        <li><strong>About us:</strong> See <a href="about.html#people">authors</a> and <a href="https://spkit.github.io/dev/contributing.html" target="_blank" rel="noopener noreferrer">contributing</a></li>
+        <li><strong>Questions?/Issues?</strong>  Report here: <a href="https://github.com/Nikeshbajaj/spkit/issues?">Github Issues</a></li>
+        <li><strong>On going projects:</strong> Find here: <a href="about.html#related-projects">on-going projects</a></li>
+        <li><strong>Suggestions?/Feedback?</strong> Share here: <a href="https://github.com/Nikeshbajaj/spkit/discussions/categories/ideas">Suggest Ideas</a></li>
+        <li><strong>Share your interesting work/project</strong> If you have used spkit for your project, share here:  <a href="https://github.com/Nikeshbajaj/spkit/discussions/categories/show-and-tell">Share your work</a></li>
+        <!-- <li><strong>Book: <a href="https://PMLBook.github.io">Principles of Machine Learning: Deployment-First prospective</a></strong> </li> -->
+        </ul>
+
+        <a class="btn btn-warning btn-big spk-donate-btn mb-1" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=">Discussion Forum, <strong>get involved!</strong></a>
+        <a class="btn btn-warning btn-big mb-1" href="about.html#citing-spkit"><strong>Cite us!</strong></a>
+      </div>
+
+      <div class="col-md-4">
+        <h4 class="spk-landing-call-header">Visitors/Users</h4>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+          <a class="reference external" href="https://pepy.tech/project/spkit" target="_blank"><img src="https://static.pepy.tech/personalized-badge/spkit?period=total&amp;units=international_system&amp;left_color=black&amp;right_color=orange&amp;left_text=downloads" alt="PyPI - Downloads" /></a>
+  <a class="reference external" href="https://pypi.python.org/pypi/spkit" target="_blank"><img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/spkit?style=plastic"></a>
+        <div class="carousel-inner">
+          <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=eQr8xSBiKVuSq6m0psK-Ey9TZ7rLzjRX-MpatyfFGQI"></script>
+          </div>
+        </div>
+        <!-- <p class="text-right">
+            <a href="testimonials/testimonials.html">More testimonials</a>
+        </p> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid py-3">
+  <div class="container spk-landing-container">
+        <a class="spk-footer-funding-link" href="about.html#funding">
+        <div class="text-center">
+                <p class="mt-2">
+                  SpKit developed in collabration with other projects:
+                </p>
+                <img class="spk-footer-funding-logo" src="_static/phyaat_logo.png" title="PhyAAt">
+                <img class="spk-footer-funding-logo" src="_static/pylfsr_logo.png" title="PyLFSR" >
+                <img class="spk-footer-funding-logo" src="_static/mlend_logo.png" title="MLEnd-Datasets" >
+        </div>
+        </a>
+  </div>
+</div>
+
+  <script src="_static/js/vendor/bootstrap.min.js"></script>
+  
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-59299155-3', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<!-- 
+<script defer data-domain="scikit-learn.org" src="https://views.scientific-python.org/js/script.js">
+</script>
+ -->
+
+<script src="_static/clipboard.min.js"></script>
+<script src="_static/copybutton.js"></script>
+
+<script>
+$(document).ready(function() {
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		        '.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	});
+});
+
+</script>
+</body>
 
 </html>

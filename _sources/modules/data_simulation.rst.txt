@@ -1,0 +1,52 @@
+.. Places parent toc into the sidebar
+
+:parenttoc: True
+
+.. include:: includes/big_toc_css.rst
+
+.. _data_simulation:
+
+==========
+Simulation
+==========
+
+
+1D- Arbitary signal
+==================
+
+
+::
+
+    import spkit as sp
+    seed=11
+    x1 = sp.create_signal_1d(n=100,sg_winlen=5,seed=seed)
+
+
+2D-Image Patch
+===============
+
+
+::
+
+    import spkit as sp
+    seed=11
+    I1 = sp.create_signal_2d(n=100,sg_winlen=5,seed=seed)
+
+
+
+
+2D-Data for ML
+==============
+
+
+::
+
+    import spkit as sp
+    np.random.seed(3)
+    X, y =  sp.data.linear(N =[100, 100],s=0.1)
+    X, y =  sp.data.gaussian(N =[100, 100],ndist=3, means='random', sigmas='random')
+    X, y =  sp.data.moons(N =[100, 100],s=0.2,d='random', angle='random')
+    X, y =  sp.data.sinusoidal(N =[100, 100],s=0.1)
+    X, y =  sp.data.spiral(N =[100, 100],s=0.1,wrappings=2,m=3)
+    X, y =  sp.data.create_dataset(N=200, Dtype=dtype,use_preset=True)
+    X, y =  sp.data.mclass_gauss(N=100,nClasses=3,var=0.3)

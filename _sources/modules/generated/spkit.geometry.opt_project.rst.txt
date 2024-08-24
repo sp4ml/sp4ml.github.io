@@ -1,0 +1,17 @@
+﻿..
+    The empty line below should not be removed. It is added such that the `rst_prolog`
+    is added before the :mod: directive. Otherwise, the rendering will show as a
+    paragraph instead of a header.
+
+:mod:`spkit.geometry`.opt_project
+==============================================
+
+.. currentmodule:: spkit.geometry
+
+.. autofunction:: opt_project
+
+.. include:: spkit.geometry.opt_project.examples
+
+.. raw:: html
+
+    <div class="clearer"></div>

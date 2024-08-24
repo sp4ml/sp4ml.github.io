@@ -1,0 +1,28 @@
+.. _entropy:
+
+=============
+Applications
+=============
+
+
+
+
+
+Transfer Entropy  :math:`TE_{X \rightarrow Y}`
+==============================================
+
+
+
+Partial Transfer Entropy  :math:`TE_{X \rightarrow Y | Z}`
+============================================================
+
+
+
+
+Granger Causality  :math:`GC_{X \rightarrow Y}`
+================================================
+
+
+
+Connectivity Analysis  :math:`{X \rightarrow Y}`
+================================================

@@ -1,0 +1,811 @@
+
+
+<!DOCTYPE html>
+<!-- data-theme below is forced to be "light" but should be changed if we use pydata-theme-sphinx in the future -->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" data-content_root="./" data-theme="light"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" data-content_root="./" data-theme="light">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="User guide: contents" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://spkit.github.io/user_guide.html" />
+<meta property="og:site_name" content="spkit" />
+<meta property="og:description" content="User Guide: Information Theory- Entropy- Entropy with discreet source, Rényi entropy of order\alpha, Entropy for real-valued source, Shannon Entropy H(X), Mutual Information I(X;Y), Joint-Entropy H..." />
+<meta property="og:image" content="https://github.com/spkit/spkit.github.io/blob/master/assets/logo/logo.png" />
+<meta property="og:image:alt" content="spkit" />
+<meta name="description" content="User Guide: Information Theory- Entropy- Entropy with discreet source, Rényi entropy of order\alpha, Entropy for real-valued source, Shannon Entropy H(X), Mutual Information I(X;Y), Joint-Entropy H..." />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>User guide: contents &mdash; spkit 0.0.9.7 documentation</title>
+  
+  <link rel="canonical" href="http://spkit.github.io/stable/user_guide.html" />
+
+  
+  <link rel="shortcut icon" href="_static/favicon.ico" />
+  
+
+  <link rel="stylesheet" href="_static/css/vendor/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/plot_directive.css" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Vibur" type="text/css" />
+  <link rel="stylesheet" href="_static/jupyterlite_sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="_static/sg_gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="_static/sg_gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="_static/sg_gallery-rendered-html.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <script id="documentation_options" data-url_root="./"
+    src="_static/documentation_options.js"></script>
+  <script src="_static/js/vendor/jquery-3.6.3.slim.min.js"></script>
+  <script src="_static/js/details-permalink.js"></script>
+
+  <link rel="stylesheet" href="_static/css/vendor/nature_spkit.css" type="text/css" /> 
+
+
+</head>
+
+<body>
+  
+
+
+
+
+
+<!-- ('About us', pathto('about'), ''), -->
+
+
+<div id="logo-banner">
+  <div class="logo">
+    <!-- <a href="%23.html"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a> -->
+  <!-- <a href="#"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a> -->
+  <a href="index.html"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a>
+  </div>
+  <div class="tags">
+  <ul>
+    <li>&#9672; Easy to use toolkit for signal processing and analysis</li>
+    <li>&#9672; More of biomedical signal analysis with visualization</li>
+    <li>&#9672; Includes basic machine learning models with visualization</li>
+    <!-- <li>&#9672; Open source</li> -->
+  </ul>
+  </div>
+  <div class="banner">
+  <h2>Signal Processing Toolkit</h2>
+  <h4><i>Simple and easy to use for signal analysis and predictive analysis</i></h4>
+  </div>
+</div>
+<nav id="navbar" class="spk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid spk-docs-container px-0">
+      <a class="navbar-brand py-0" href="index.html">
+        <img
+          class="spk-brand-img"
+          src="_static/spkit_small_icon_v.png"
+          alt="logo"/>
+      </a>
+    <button
+      id="spk-navbar-toggler"
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="spk-navbar-collapse collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="index.html">Home</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="install.html">Install</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="#">User Guide</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="modules/classes.html">API</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="auto_examples/index.html">Examples</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="tutorials/index.html">Tutorials</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" target="_blank" rel="noopener noreferrer" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=">Discussion Forum</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="about.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="getting_started.html" >Getting Started</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="whats_new/v0.0.9.7.html" >What's new</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://github.com/nikeshbajaj/spkit" >GitHub</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://spkit.github.io/dev/index.html" target="_blank" rel="noopener noreferrer">Development</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" >Get Involved</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://spkit.github.io/dev/versions.html" >Other Versions and Download</a>
+        </li>
+        <li class="nav-item dropdown nav-more-item-dropdown">
+          <a class="spk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="spk-nav-dropdown-item dropdown-item" href="getting_started.html" >Getting Started</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="whats_new/v0.0.9.7.html" >What's new</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://github.com/nikeshbajaj/spkit" >GitHub</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://spkit.github.io/dev/index.html" target="_blank" rel="noopener noreferrer">Development</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" >Get Involved</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://spkit.github.io/dev/versions.html" >Other Versions and Download</a>
+          </div>
+        </li>
+      </ul>
+      <div id="searchbox" role="search">
+          <div class="searchformwrapper">
+          <form class="search" action="search.html" method="get">
+            <input class="spk-search-text-input" type="text" name="q" aria-labelledby="searchlabel" />
+            <input class="spk-search-text-btn" type="submit" value="Go" />
+          </form>
+          </div>
+      </div>
+      <a class ="nav-more-item-dropdown">
+      <font size="4em" style="margin: 5px 5px 0px 5px;color:rgb(0, 0, 0)">V</font>
+      </a>
+      <div class="nav-item dropdown nav-more-item-dropdown-vs">
+        <a class="sp-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <font color="black">0.0.9.7 (latest)</font>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sp-nav-dropdown-item dropdown-item" href="index.html" >0.0.9.7 (latest)</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="V/0.0.9.6/index.html" >0.0.9.6</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="V/0.0.9.5/index.html" >0.0.9.5</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="V/0.0.9.4/index.html" >0.0.9.4</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="V/0.0.9.3/index.html" >0.0.9.3</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="V/0.0.9.2/index.html" >0.0.9.2</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="V/0.0.9.1/index.html" >0.0.9.1</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="https://github.com/Nikeshbajaj/spkit/releases" >More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+  <div class="d-flex" id="spk-doc-wrapper" class="border-right">
+    <input type="checkbox" name="spk-toggle-checkbox" id="spk-toggle-checkbox">
+    <label id="spk-sidemenu-toggle" class="spk-btn-toggle-toc btn spk-btn-primary" for="spk-toggle-checkbox">Toggle
+      Menu</label>
+      <div id="spk-sidebar-top-logoimg">
+        <a href="index.html">
+          <img class="spk-brand-img-side" src="_static/spkit_logo.png" alt="spkit logo"  border="0" />
+        </a>
+      </div>
+    <div id="spk-sidebar-wrapper" class="border-right">
+      <div class="spk-sidebar-top-content">
+        <hr style="margin: 0 0 10px 0" />
+        <div class="alert alert-danger p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            <strong>SpKit 0.0.9.7</strong><br />
+            <!-- <a class="reference external" href="https://pypi.org/project/spkit" target="_blank"><img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/Nikeshbajaj/spkit?label=latest%20version&style=plastic"></a> -->
+            <a class="reference external" href="https://pepy.tech/project/spkit" target="_blank"><img
+                src="https://static.pepy.tech/personalized-badge/spkit?period=total&amp;units=international_system&amp;left_color=black&amp;right_color=orange&amp;left_text=downloads"
+                alt="PyPI - Downloads" /></a>
+            <a class="reference external" href="https://pypi.python.org/pypi/spkit" target="_blank"><img
+                alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/spkit?style=plastic"></a>
+            <!-- <a href="http://spkit.github.io/dev/versions.html">Other versions</a> -->
+          </p>
+        </div>
+        <div class="alert alert-warning p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            Please <a class="font-weight-bold" href="about.html#citing-spkit">
+              <string>cite us</string>
+            </a> if you use the software.
+          </p>
+        </div>
+        <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+          <a href="main_root.html" role="button" class="btn spk-btn-rellink py-1"
+            spk-rellink-tooltip="Table Of Contents">Prev</a>
+          <a href="#" role="button" class="btn spk-btn-rellink disabled py-1">Up</a>
+          <a href="modules/information_theory.html" role="button" class="btn spk-btn-rellink py-1"
+            spk-rellink-tooltip="1. Information Theory">Next</a>
+        </div>
+        <hr>
+      </div>
+      <div class=" spk-sidebar-toc-wrapper">
+          <!-- <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+            <a href="main_root.html" role="button" class="btn spk-btn-rellink py-1"
+              spk-rellink-tooltip="Table Of Contents">Prev</a>
+            <a href="#" role="button" class="btn spk-btn-rellink disabled py-1">Up</a>
+            <a href="modules/information_theory.html" role="button" class="btn spk-btn-rellink py-1"
+              spk-rellink-tooltip="1. Information Theory">Next</a>
+          </div>
+          <hr> -->
+          <div class="spk-sidebar-toc">
+            
+            <ul>
+              
+              
+              <li>
+                <a href="" class="spk-toc-active">User Guide</a>
+              </li>
+              <ul>
+                
+                <li>
+                  <a href="modules/information_theory.html" class="">1. Information Theory</a>
+                  
+                </li>
+                
+                <li>
+                  <a href="modules/spsignal_filtering.html" class="">2. Signal Filtering</a>
+                  
+                </li>
+                
+                <li>
+                  <a href="modules/spwavelet_analysis.html" class="">3. Wavelet Analysis</a>
+                  
+                </li>
+                
+                <li>
+                  <a href="modules/spsignal_analysis.html" class="">4. Signal Analysis</a>
+                  
+                </li>
+                
+                <li>
+                  <a href="modules/biomedical_signals.html" class="">5. Biomedical Signal Processing</a>
+                  
+                </li>
+                
+                <li>
+                  <a href="modules/machine_learning.html" class="">6. Machine Learning</a>
+                  
+                </li>
+                
+                <li>
+                  <a href="modules/statisticsutils.html" class="">7. Statistics/Utilities</a>
+                  
+                </li>
+                
+                <li>
+                  <a href="modules/data.html" class="">8. Data Samples</a>
+                  
+                </li>
+                
+              </ul>
+              
+              
+              
+              
+            </ul>
+          </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+    <div id="spk-page-content-wrapper">
+      <div class="spk-page-content container-fluid body px-md-3" role="main">
+        
+  <section id="user-guide">
+<span id="id1"></span><h1>User Guide<a class="headerlink" href="#user-guide" title="Link to this heading">¶</a></h1>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>User Guide - API</p>
+<p><strong>User Guide is in continues development. It is not complete yet, we are keep updating the contents.</strong>
+Please check API: <a class="reference internal" href="modules/classes.html#api-ref"><span class="std std-ref">API Reference</span></a>, which is the most complete documentation of spkit.</p>
+</div>
+<style type="text/css">
+  div.body div.toctree-wrapper ul {
+      padding-left: 0;
+  }
+
+  div.body li.toctree-l1 {
+      padding: 0 0 0.5em 0;
+      list-style-type: none;
+      font-size: 150%;
+      font-weight: bold;
+  }
+
+  div.body li.toctree-l2 {
+      font-size: 70%;
+      list-style-type: square;
+      font-weight: normal;
+      margin-left: 40px;
+  }
+
+  div.body li.toctree-l3 {
+      font-size: 85%;
+      list-style-type: circle;
+      font-weight: normal;
+      margin-left: 40px;
+  }
+
+  div.body li.toctree-l4 {
+      margin-left: 40px;
+  }
+
+</style> <script>
+ window.addEventListener('DOMContentLoaded', function() {
+      (function($) {
+ //Function to make the index toctree collapsible
+ $(function () {
+     $('div.body .toctree-l2')
+         .click(function(event){
+             if (event.target.tagName.toLowerCase() != "a") {
+                 if ($(this).children('ul').length > 0) {
+                      $(this).attr('data-content',
+                          (!$(this).children('ul').is(':hidden')) ? '\u25ba' : '\u25bc');
+                     $(this).children('ul').toggle();
+                 }
+                 return true; //Makes links clickable
+             }
+         })
+         .mousedown(function(event){ return false; }) //Firefox highlighting fix
+         .children('ul').hide();
+     // Initialize the values
+     $('div.body li.toctree-l2:not(:has(ul))').attr('data-content', '-');
+     $('div.body li.toctree-l2:has(ul)').attr('data-content', '\u25ba');
+     $('div.body li.toctree-l2:has(ul)').css('cursor', 'pointer');
+
+     $('div.body .toctree-l2').hover(
+         function () {
+             if ($(this).children('ul').length > 0) {
+                 $(this).css('background-color', '#e5e5e5').children('ul').css('background-color', '#F0F0F0');
+                 $(this).attr('data-content',
+                     (!$(this).children('ul').is(':hidden')) ? '\u25bc' : '\u25ba');
+             }
+             else {
+                 $(this).css('background-color', '#F9F9F9');
+             }
+         },
+         function () {
+             $(this).css('background-color', 'white').children('ul').css('background-color', 'white');
+             if ($(this).children('ul').length > 0) {
+                 $(this).attr('data-content',
+                     (!$(this).children('ul').is(':hidden')) ? '\u25bc' : '\u25ba');
+             }
+         }
+     );
+ });
+      })(jQuery);
+  });
+ </script>
+
+<style type="text/css">
+  div.body li, div.body ul {
+      transition-duration: 0.2s;
+  }
+
+  div.body li.toctree-l1 {
+      padding: 5px 0 0;
+      list-style-type: none;
+      font-size: 150%;
+      background-color: #f2f2f2;
+      font-weight: normal;
+      color: #20435c;
+      margin-left: 0;
+      margin-bottom: 1.2em;
+      font-weight: bold;
+      }
+
+  div.body li.toctree-l1 a {
+      color: #314F64;
+  }
+
+  div.body li.toctree-l1 > a {
+      margin-left: 0.75rem;
+  }
+
+  div.body li.toctree-l2 {
+      padding: 0.25em 0 0.25em 0 ;
+      list-style-type: none;
+      background-color: #FFFFFF;
+      font-size: 85% ;
+      font-weight: normal;
+      margin-left: 0;
+  }
+
+  div.body li.toctree-l2 ul {
+      padding-left: 40px ;
+  }
+
+  div.body li.toctree-l2:before {
+      content: attr(data-content);
+      font-size: 1rem;
+      color: #777;
+      display: inline-block;
+      width: 1.5rem;
+  }
+
+  div.body li.toctree-l3 {
+      font-size: 88% ;
+      list-style-type: square;
+      font-weight: normal;
+      margin-left: 0;
+  }
+
+  div.body li.toctree-l4 {
+      font-size: 93% ;
+      list-style-type: circle;
+      font-weight: normal;
+      margin-left: 0;
+  }
+
+  div.body div.topic li.toctree-l1 {
+      font-size: 100% ;
+      font-weight: bold;
+      background-color: transparent;
+      margin-bottom: 0;
+      margin-left: 1.5em;
+      display:inline;
+  }
+
+  div.body div.topic p {
+      font-size: 90% ;
+      margin: 0.4ex;
+  }
+
+  div.body div.topic p.topic-title {
+      display:inline;
+      font-size: 100% ;
+      margin-bottom: 0;
+  }
+</style><div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules/information_theory.html">1. Information Theory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/it_entropy.html">1.1. Entropy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_entropy.html#entropy-with-discreet-source">1.1.1. Entropy with discreet source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_entropy.html#renyi-entropy-of-order-alpha">1.1.2. Rényi entropy of order <span class="math notranslate nohighlight">\(\alpha\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_entropy.html#entropy-for-real-valued-source">1.1.3. Entropy for real-valued source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_entropy.html#shannon-entropy-h-x">1.1.4. Shannon Entropy <span class="math notranslate nohighlight">\(H(X)\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_entropy.html#mutual-information-i-x-y">1.1.5. Mutual Information <span class="math notranslate nohighlight">\(I(X;Y)\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_entropy.html#joint-entropy-h-x-y">1.1.6. Joint-Entropy <span class="math notranslate nohighlight">\(H(X;Y)\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_entropy.html#conditional-entropy-h-x-y">1.1.7. Conditional Entropy <span class="math notranslate nohighlight">\(H(X|Y)\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_entropy.html#cross-entropy-h-xy-x-y">1.1.8. Cross Entropy <span class="math notranslate nohighlight">\(H_{xy}(X,Y)\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_entropy.html#cross-entropy-kl-divergence-h-kl-x-y">1.1.9. Cross Entropy: KL-Divergence <span class="math notranslate nohighlight">\(H_{kl}(X,Y)\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_entropy.html#approximate-entropy-h-ae-x">1.1.10. Approximate Entropy <span class="math notranslate nohighlight">\(H_{ae}(X)\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_entropy.html#sample-entropy-h-se-x">1.1.11. Sample Entropy <span class="math notranslate nohighlight">\(H_{se}(X)\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_entropy.html#spectral-entropy-h-f-x">1.1.12. Spectral Entropy <span class="math notranslate nohighlight">\(H_{f}(X)\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_entropy.html#svd-entropy-h-sigma-x">1.1.13. SVD Entropy <span class="math notranslate nohighlight">\(H_{\Sigma}(X)\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_entropy.html#permutation-entropy-h-pi-x">1.1.14. Permutation Entropy <span class="math notranslate nohighlight">\(H_{\pi}(X)\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_entropy.html#sample-entropy-approximate-entropy">1.1.15. Sample Entropy &amp;  Approximate Entropy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_entropy.html#spectral-entropy-permutation-entropy">1.1.16. Spectral Entropy &amp; Permutation Entropy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/it_disperssion_differential.html">1.2. Dispersion and Differential Entropy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_disperssion_differential.html#dispersion-entropy-h-de-x">1.2.1. Dispersion Entropy <span class="math notranslate nohighlight">\(H_{de}(X)\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_disperssion_differential.html#multi-scale-dispersion-entropy">1.2.2. Multi-scale Dispersion Entropy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_disperssion_differential.html#dispersion-entropy-shannon-entropy">1.2.3. Dispersion Entropy &amp; Shannon Entropy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_disperssion_differential.html#dispersion-entropy-sample-entropy">1.2.4. Dispersion Entropy &amp; Sample Entropy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_disperssion_differential.html#differential-entropy-functions-h-partial-cdot">1.2.5. Differential Entropy Functions <span class="math notranslate nohighlight">\(H_{\partial}(\cdot)\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_disperssion_differential.html#differential-entropy-h-partial-x">1.2.6. Differential Entropy <span class="math notranslate nohighlight">\(H_{\partial}(X)\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_disperssion_differential.html#self-conditional-entropy-h-partial-x-i-1-x-i">1.2.7. Self-Conditional Entropy <span class="math notranslate nohighlight">\(H_{\partial}(X_{i+1}|X_{i})\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_disperssion_differential.html#conditional-entropy-h-partial-x-i-1-x-i-y-i">1.2.8. Conditional Entropy <span class="math notranslate nohighlight">\(H_{\partial}(X_{i+1}|X_{i},Y_{i})\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_disperssion_differential.html#joint-entropy-h-partial-x-y">1.2.9. Joint Entropy <span class="math notranslate nohighlight">\(H_{\partial}(X,Y)\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_disperssion_differential.html#self-mutual-information-i-partial-x-i-1-x-i">1.2.10. Self-Mutual Information <span class="math notranslate nohighlight">\(I_{\partial}(X_{i+1}|X_{i})\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_disperssion_differential.html#mutual-information-i-partial-x-y">1.2.11. Mutual Information <span class="math notranslate nohighlight">\(I_{\partial}(X,Y)\)</span></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/it_apps.html">1.3. Applications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_apps.html#transfer-entropy-te-x-rightarrow-y">1.3.1. Transfer Entropy  <span class="math notranslate nohighlight">\(TE_{X \rightarrow Y}\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_apps.html#partial-transfer-entropy-te-x-rightarrow-y-z">1.3.2. Partial Transfer Entropy  <span class="math notranslate nohighlight">\(TE_{X \rightarrow Y | Z}\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_apps.html#granger-causality-gc-x-rightarrow-y">1.3.3. Granger Causality  <span class="math notranslate nohighlight">\(GC_{X \rightarrow Y}\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/it_apps.html#connectivity-analysis-x-rightarrow-y">1.3.4. Connectivity Analysis  <span class="math notranslate nohighlight">\({X \rightarrow Y}\)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules/spsignal_filtering.html">2. Signal Filtering</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/sp_filtering_drift.html">2.1. Drift Removing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_filtering_drift.html#iir-filters-of-order-1">2.1.1. IIR Filters of Order 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_filtering_drift.html#spectral-filter-iir-filters">2.1.2. Spectral filter - IIR Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_filtering_drift.html#savitzky-golay-filter">2.1.3. Savitzky-Golay filter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/sp_filtering_smooth.html">2.2. Smoothing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_filtering_smooth.html#spectral-filters">2.2.1. Spectral Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_filtering_smooth.html#savitzky-golay-filter">2.2.2. Savitzky-Golay filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_filtering_smooth.html#gaussian-filter">2.2.3. Gaussian Filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_filtering_smooth.html#mollifier">2.2.4. Mollifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_filtering_smooth.html#wavelet-filtering">2.2.5. Wavelet Filtering</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/sp_filtering_spectral.html">2.3. Spectral Filtering</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_filtering_spectral.html#lowpass-filtering">2.3.1. Lowpass filtering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_filtering_spectral.html#highpass-filtering">2.3.2. Highpass filtering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_filtering_spectral.html#bandpass-filtering">2.3.3. Bandpass filtering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_filtering_spectral.html#bandreject-bandstop-filtering">2.3.4. Bandreject/bandstop filtering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_filtering_spectral.html#custom-filtering">2.3.5. Custom filtering</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/sp_filtering_kernel.html">2.4. Kernel Filtering</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_filtering_kernel.html#id1">2.4.1. Kernel Filtering</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/sp_filtering_pipe.html">2.5. Filtering Pipeline</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_filtering_pipe.html#id2">2.5.1. Filtering Pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_filtering_pipe.html#powerline-interference-removal">2.5.2. Powerline Interference removal</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/sp_filtering_spatial.html">2.6. Spatial Filtering (3D)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_filtering_spatial.html#using-adjacency-matrix">2.6.1. Using Adjacency matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_filtering_spatial.html#using-proximity-distance">2.6.2. Using Proximity (distance)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_filtering_spatial.html#using-nearest-neighbours">2.6.3. Using Nearest Neighbours</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/sp_filtering_graph.html">2.7. Graph Filtering</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_filtering_graph.html#using-adjacency-matrix">2.7.1. Using Adjacency matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_filtering_graph.html#using-proximity-distance">2.7.2. Using Proximity (distance)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_filtering_graph.html#using-nearest-neighbours">2.7.3. Using Nearest Neighbours</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules/spwavelet_analysis.html">3. Wavelet Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/sp_cwt.html">3.1. Continues Wavelet Transform</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_cwt.html#gauss-wavelet">3.1.1. Gauss wavelet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_cwt.html#morlet-wavelet">3.1.2. Morlet wavelet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_cwt.html#gabor-wavelet">3.1.3. Gabor wavelet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_cwt.html#poisson-wavelet">3.1.4. Poisson wavelet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_cwt.html#maxican-wavelet">3.1.5. Maxican wavelet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_cwt.html#shannon-wavelet">3.1.6. Shannon wavelet</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/sp_dwt.html">3.2. Discreet Wavelet Transform</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_dwt.html#wavelet-filtering-shrinkage">3.2.1. Wavelet Filtering &amp; Shrinkage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_dwt.html#wavelet-package-analysis">3.2.2. Wavelet Package Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_dwt.html#wavelet-decomposed-signals">3.2.3. Wavelet decomposed signals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_dwt.html#temporal-analysis">3.2.4. Temporal analysis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules/spsignal_analysis.html">4. Signal Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/sp_dft.html">4.1. Discrete Fourier Transfer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_dft.html#analysis">4.1.1. Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_dft.html#synthesis">4.1.2. Synthesis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/sp_stft.html">4.2. Short-Time Fourier Transform</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_stft.html#analysis">4.2.1. Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_stft.html#synthesis">4.2.2. Synthesis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/sp_frft.html">4.3. Fractional Fourier Transform</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_frft.html#analysis">4.3.1. Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_frft.html#synthesis">4.3.2. Synthesis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/sp_sinusoidal.html">4.4. Sinusoidal Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_sinusoidal.html#analysis">4.4.1. Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_sinusoidal.html#synthesis">4.4.2. Synthesis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/sp_ramanujan.html">4.5. Ramanujan Methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_ramanujan.html#period-analysis">4.5.1. Period Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/sp_differentiation.html">4.6. Differentiation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_differentiation.html#signal-gradient">4.6.1. Signal Gradient</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/sp_simplify.html">4.7. Simplifying a complex signal</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_simplify.html#simplifying-using-sinasudol-models">4.7.1. Simplifying using Sinasudol Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_simplify.html#simplifying-using-dft">4.7.2. Simplifying using DFT</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/sp_mapping.html">4.8. Signal Temporal Mapping</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_mapping.html#linear-mapping">4.8.1. Linear mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/sp_mapping.html#non-linear-mapping">4.8.2. Non-linear mapping</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules/biomedical_signals.html">5. Biomedical Signal Processing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/bsp_eeg.html">5.1. Electroencephalography</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_eeg.html#preprocessing">5.1.1. Preprocessing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_eeg.html#removing-artifacts">5.1.2. Removing Artifacts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/bsp_ecg.html">5.2. Electrocardiography</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_ecg.html#filtering-cleaning">5.2.1. Filtering (cleaning)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_ecg.html#r-peak-detection">5.2.2. R Peak Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/bsp_egm.html">5.3. Electrogram</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_egm.html#filtering">5.3.1. Filtering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_egm.html#activation-time">5.3.2. Activation Time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_egm.html#phase-analysis">5.3.3. Phase Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_egm.html#multi-channel-egms">5.3.4. Multi-Channel EGMs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/bsp_mea.html">5.4. Multi-Electrode Array Processing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_mea.html#complete-analysis-of-a-recording">5.4.1. Complete Analysis of a recording</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_mea.html#step-wise-analysis">5.4.2. Step-wise Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_mea.html#read-hdf-file">5.4.3. 1. Read HDF File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_mea.html#stim-localisation">5.4.4. 2. Stim Localisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_mea.html#alignment-of-stim-cycles">5.4.5. 3. Alignment of Stim Cycles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_mea.html#averaging-cycles-or-selecting-one">5.4.6. 4. Averaging Cycles or Selecting one</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_mea.html#activation-time">5.4.7. 5. Activation Time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_mea.html#repolarisation-time-optional">5.4.8. 6. Repolarisation Time (optional)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_mea.html#apd-if-rt-is-computed">5.4.9. 7. APD (if RT is computed)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_mea.html#extracting-egm">5.4.10. 8. Extracting EGM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_mea.html#egm-feature-extraction">5.4.11. 9. EGM Feature Extraction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_mea.html#identifying-bad-channels-electrodes">5.4.12. 10. Identifying BAD Channels/electrodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_mea.html#creating-feature-matrix">5.4.13. 11. Creating Feature Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_mea.html#interpolation">5.4.14. 12. Interpolation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_mea.html#conduction-velocity">5.4.15. 13. Conduction Velocity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_mea.html#plots-and-figures">5.4.16. Plots and Figures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_mea.html#id1">5.4.17. Extracting EGM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_mea.html#egm-processing-feature-extractions">5.4.18. EGM Processing &amp; Feature Extractions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/bsp_mea.html#conduction-and-activation-map">5.4.19. Conduction and Activation Map</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules/machine_learning.html">6. Machine Learning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/ml_logistic_regression.html">6.1. Logistic Regression</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/ml_logistic_regression.html#classification">6.1.1. Classification</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/ml_naive_bayes.html">6.2. Naive Bayes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/ml_decision_trees.html">6.3. Decision Trees</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/ml_decision_trees.html#classification-trees">6.3.1. Classification Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/ml_decision_trees.html#regression-trees">6.3.2. Regression Trees</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules/statisticsutils.html">7. Statistics/Utilities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/statsfun.html">7.1. Statistics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/statsfun.html#testing-two-groups">7.1.1. Testing Two Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/statsfun.html#testing-gropus">7.1.2. Testing gropus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/statsfun.html#id1">7.1.3. Testing gropus</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/ioutils.html">7.2. IO Read/Write</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/ioutils.html#read-hdf-edf-file">7.2.1. Read HDF/EDF file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/ioutils.html#read-bdf-file">7.2.2. Read BDF file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/ioutils.html#read-surf-file">7.2.3. Read Surf file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/ioutils.html#read-vtk-file">7.2.4. Read VTK file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/ioutils.html#write-vtk-file">7.2.5. Write VTK File</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/utils.html">7.3. Utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules/data.html">8. Data Samples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/data_samples.html">8.1. Real-world-Samples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/data_samples.html#eeg-sample">8.1.1. EEG-Sample</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/data_samples.html#ecg-sample">8.1.2. ECG-Sample</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/data_samples.html#optical-data">8.1.3. Optical Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/data_samples.html#ppg-photoplethysmogram">8.1.4. PPG:  Photoplethysmogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/data_samples.html#gsr-eda-galvanic-skin-response">8.1.5. GSR/EDA: Galvanic Skin Response</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/data_simulation.html">8.2. Simulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/data_simulation.html#d-arbitary-signal">8.2.1. 1D- Arbitary signal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/data_simulation.html#d-image-patch">8.2.2. 2D-Image Patch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/data_simulation.html#d-data-for-ml">8.2.3. 2D-Data for ML</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="under-development-install">
+<h2>Under Development - Install<a class="headerlink" href="#under-development-install" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">1. Installing spkit</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+      </div>
+      <div class="container">
+        <footer class="spk-content-footer">
+          &copy; 2019 - 2024, spkit developers (BSD License).
+          <!-- -->
+          <!-- <a href="_sources/user_guide.rst.txt" rel="nofollow">Show this page source</a> -->
+          <!-- -->
+        </footer>
+      </div>
+
+      <div class="container-fluid py-3">
+        <hr>
+        <div class="container spk-landing-container">
+              <a class="spk-footer-funding-link" href="about.html#funding">
+              <div class="text-center">
+                      <p class="mt-2">
+                        Spkit developed in collabration with other projects:
+                      </p>
+                      <a href="https://PhyAAt.github.io" target="_blank"><img class="spk-footer-funding-logo" src="_static/phyaat_logo.png" title="PhyAAt"></a>
+                      <a href="https://PyLFSR.github.io" target="_blank"><img class="spk-footer-funding-logo" src="_static/pylfsr_logo.png" title="PyLFSR" ></a>
+                      <a href="https://MLEndDatasets.github.io" target="_blank"><img class="spk-footer-funding-logo" src="_static/mlend_logo.png" title="MLEnd-Datasets" ></a>
+              </div>
+              </a>
+              <div style="width:3px;">
+                <a href="https://clustrmaps.com/site/1b9h1"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=eQr8xSBiKVuSq6m0psK-Ey9TZ7rLzjRX-MpatyfFGQI&cl=ffffff" /></a>  
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="_static/js/vendor/bootstrap.min.js"></script>
+  
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-59299155-3', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<!-- 
+<script defer data-domain="scikit-learn.org" src="https://views.scientific-python.org/js/script.js">
+</script>
+ -->
+
+<script src="_static/clipboard.min.js"></script>
+<script src="_static/copybutton.js"></script>
+
+<script>
+$(document).ready(function() {
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		        '.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	});
+});
+
+</script>
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    
+</body>
+
+</html>

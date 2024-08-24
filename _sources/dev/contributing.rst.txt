@@ -1,0 +1,24 @@
+.. _contibuting:
+
+===============
+Contributing
+===============
+
+
+By using library you are already contributing. To be involved more,
+you can test the functions and their accuracies, report them or suggestion
+changes and modifications.
+
+
+How to contibute or Involve?
+============================
+
+* `Discussion Forum <https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=>`_
+* `Report Issues <https://github.com/Nikeshbajaj/spkit/issues?>`_
+* 
+
+
+.. raw:: html
+
+  <div class="">
+   </div>

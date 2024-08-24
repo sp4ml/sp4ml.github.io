@@ -1,0 +1,40 @@
+.. _frft:
+
+============================
+Fractional Fourier Transform
+============================
+
+
+
+Analysis
+--------
+
+::
+
+    X,fs, ch_names = sp.data.eeg_sample_14ch()
+    x = X[:,1]
+    t = np.arange(len(x))/fs
+    Xa = sp.frft(x.copy(),alpha=0.2)
+
+
+
+Synthesis
+---------
+
+::
+    
+
+    y  = sp.ifrft(Xa.copy(),alpha=0.2)
+    yi = sp.frft(Xa.copy(),alpha=-0.2)
+
+
+
+.. figure:: ../auto_examples/signal_processing/images/sphx_glr_plot_sp_fractional_fourier_transform_001.png
+   :target: ../auto_examples/signal_processing/plot_sp_fractional_fourier_transform.html
+   :align: center
+   :scale: 90%
+
+.. topic:: Examples:
+
+   * :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_fractional_fourier_transform.py`
+

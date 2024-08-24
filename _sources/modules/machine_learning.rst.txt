@@ -1,0 +1,17 @@
+.. Places parent toc into the sidebar
+
+:parenttoc: True
+
+.. include:: includes/big_toc_css.rst
+
+.. _machine_learning:
+
+Machine Learning
+-------------------
+
+.. toctree::
+    :maxdepth: 2
+
+    ml_logistic_regression
+    ml_naive_bayes
+    ml_decision_trees

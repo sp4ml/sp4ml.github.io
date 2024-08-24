@@ -1,0 +1,23 @@
+
+:parenttoc: True
+
+.. include:: includes/big_toc_css.rst
+
+.. _filtering_spatial:
+
+
+=======================
+Spatial Filtering (3D)
+=======================
+
+
+Using Adjacency matrix 
+=======================
+
+
+Using Proximity (distance)
+==========================
+
+
+Using Nearest Neighbours
+========================

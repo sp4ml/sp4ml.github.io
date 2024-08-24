@@ -1,0 +1,20 @@
+.. Places parent toc into the sidebar
+
+:parenttoc: True
+
+.. include:: includes/big_toc_css.rst
+
+.. _biomedical_signal:
+
+Biomedical Signal Processing
+----------------------------
+
+.. toctree::
+    :maxdepth: 2
+
+    bsp_eeg
+    notebooks/atar_algorithm_with_example
+    bsp_ecg
+    bsp_egm
+    bsp_mea
+    

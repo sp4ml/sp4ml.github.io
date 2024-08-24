@@ -1,0 +1,88 @@
+:parenttoc: True
+
+.. include:: includes/big_toc_css.rst
+
+.. _filtering_drift:
+
+==================
+Drift Removing
+==================
+
+.. currentmodule:: spkit.core.processing
+
+
+While recording signal, it is very common to observe the baseline wondering
+or drift in the signal. It is very slow moving artifact (low-frequency), usually appears in the signals.
+In some of the applications, slow drift could carry vital information, however, in majority of the cases,
+these are considered as unintended/ unimportant effects. To process signal further, usually first step is 
+to remove the drift from signal. The common causes of drift are instruments/powerline intereference and 
+some slow underlying physiological processes.
+
+.. note::
+    Depends on the field of study, it is known as:
+    drift, baseline wandering, very-low-frequency (~0Hz, DC) component.
+
+
+IIR Filters of Order 1
+======================
+
+Filter out DC component - Remving drift using Recursive (IIR type) filter
+    
+          .. math::
+              
+             y[n] = \frac{(alpha-1)}{alpha} * ( x[n] - x[n-1] -y[n-1])
+
+          where :math:`y[-1] = x[0]`, :math:`x[-1] = x[0]`
+          resulting :math:`y[0] = 0`
+
+    Implemenatation works for single (1d array) or multi-channel (2d array)
+
+
+
+::
+
+  import numpy as np
+  import matplotlib.pyplot as plt
+
+  import spkit as sp
+
+  xf = sp.filterDC(x,alpha=256,return_background=False)
+
+
+
+Spectral filter - IIR Filters
+=============================
+
+A common approach to remove drift is also to use spectral filtering such as buttorworth filter to filter-out 0 frequency component.
+
+
+::
+
+  import spkit as sp
+  x,fs = sp.load_data.eeg_sample_1ch()
+  t = np.arange(len(x))/fs
+  xf = sp.filter_X(x.copy(),fs=128.0, band=[0.5], btype='highpass',ftype='SOS')
+
+
+Savitzky-Golay filter
+=====================
+
+
+Filter out DC component using Savitzky-Golay filter
+
+    **Filter out DC component - Removing drift using Savitzky-Golay filter**
+    
+
+    Savitzky-Golay filter for multi-channels signal: From Scipy library
+
+::
+
+  import numpy as np
+  import matplotlib.pyplot as plt
+  import spkit as sp
+
+  x = sp.create_signal_1d(n=1000, sg_polyorder=1, sg_winlen=1, seed=1)
+  y = sp.filterDC_sGolay(x.copy(),window_length=127, polyorder=1)
+  xf = sp.filterDC_sGolay(x,window_length=127, polyorder=3)
+
+

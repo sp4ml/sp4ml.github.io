@@ -1,0 +1,136 @@
+
+:orphan:
+
+.. _sphx_glr_sg_execution_times:
+
+
+Computation times
+=================
+**00:08.267** total execution time for 34 files **from all galleries**:
+
+.. container::
+
+  .. raw:: html
+
+    <style scoped>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script type="text/javascript" class="init">
+    $(document).ready( function () {
+        $('table.sg-datatable').DataTable({order: [[1, 'desc']]});
+    } );
+    </script>
+
+  .. list-table::
+   :header-rows: 1
+   :class: table table-striped sg-datatable
+
+   * - Example
+     - Time
+     - Mem (MB)
+   * - :ref:`sphx_glr_auto_examples_machine_learning_plot_ml_naive_bayes_examples.py` (``../examples/machine_learning/plot_ml_naive_bayes_examples.py``)
+     - 00:08.267
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_electroencephalogram_plot_sp_ATAR_algorithm_tuning.py` (``../examples/electroencephalogram/plot_sp_ATAR_algorithm_tuning.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_electroencephalogram_plot_sp_ICA_eeg_example.py` (``../examples/electroencephalogram/plot_sp_ICA_eeg_example.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_electroencephalogram_plot_sp_eeg_artifact_removal_ATAR_algorithm.py` (``../examples/electroencephalogram/plot_sp_eeg_artifact_removal_ATAR_algorithm.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_electroencephalogram_plot_sp_eeg_artifact_removal_ICA.py` (``../examples/electroencephalogram/plot_sp_eeg_artifact_removal_ICA.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_electroencephalogram_plot_sp_eeg_artifact_removal_ICA_ATAR.py` (``../examples/electroencephalogram/plot_sp_eeg_artifact_removal_ICA_ATAR.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_electroencephalogram_plot_sp_eeg_rhythmic_features.py` (``../examples/electroencephalogram/plot_sp_eeg_rhythmic_features.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_electroencephalogram_plot_sp_eeg_topomaps.py` (``../examples/electroencephalogram/plot_sp_eeg_topomaps.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_information_theory_plot_it_dispersion_entropy_eeg_emb2.py` (``../examples/information_theory/plot_it_dispersion_entropy_eeg_emb2.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_information_theory_plot_it_dispersion_entropy_top_patterns.py` (``../examples/information_theory/plot_it_dispersion_entropy_top_patterns.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_information_theory_plot_it_entropy_discreet_example.py` (``../examples/information_theory/plot_it_entropy_discreet_example.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_information_theory_plot_it_entropy_eeg_multi_channel.py` (``../examples/information_theory/plot_it_entropy_eeg_multi_channel.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_information_theory_plot_it_entropy_real_valued_example.py` (``../examples/information_theory/plot_it_entropy_real_valued_example.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_information_theory_plot_it_sample_approx_entropy_comp.py` (``../examples/information_theory/plot_it_sample_approx_entropy_comp.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_machine_learning_plot_ml_decision_tree_catogorical_features.py` (``../examples/machine_learning/plot_ml_decision_tree_catogorical_features.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_machine_learning_plot_ml_decision_tree_classification.py` (``../examples/machine_learning/plot_ml_decision_tree_classification.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_machine_learning_plot_ml_decision_tree_shrinking_capability_cls.py` (``../examples/machine_learning/plot_ml_decision_tree_shrinking_capability_cls.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_machine_learning_plot_ml_decision_tree_shrinking_capability_reg.py` (``../examples/machine_learning/plot_ml_decision_tree_shrinking_capability_reg.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_machine_learning_plot_ml_decision_tree_visualisation.py` (``../examples/machine_learning/plot_ml_decision_tree_visualisation.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_machine_learning_plot_ml_logistic_regression_examples.py` (``../examples/machine_learning/plot_ml_logistic_regression_examples.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_multielectrode-array_plot_mea_minimal_setting_example.py` (``../examples/multielectrode-array/plot_mea_minimal_setting_example.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_multielectrode-array_plot_mea_stepwise_example.py` (``../examples/multielectrode-array/plot_mea_stepwise_example.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_release_highlights_plot_release_highlights_0_0_9_7.py` (``../examples/release_highlights/plot_release_highlights_0_0_9_7.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_RFB_for_period_estimation_demo_examples.py` (``../examples/signal_processing/plot_sp_RFB_for_period_estimation_demo_examples.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_RFB_for_period_estimation_from_signal.py` (``../examples/signal_processing/plot_sp_RFB_for_period_estimation_from_signal.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_RFB_for_period_estimation_with_sparse_penalty.py` (``../examples/signal_processing/plot_sp_RFB_for_period_estimation_with_sparse_penalty.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_analysis_sythesis_models.py` (``../examples/signal_processing/plot_sp_analysis_sythesis_models.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_fractional_fourier_transform.py` (``../examples/signal_processing/plot_sp_fractional_fourier_transform.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_sinusodal_model_analysis_synthesis.py` (``../examples/signal_processing/plot_sp_sinusodal_model_analysis_synthesis.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_sinusodal_model_example_sound.py` (``../examples/signal_processing/plot_sp_sinusodal_model_example_sound.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_statistics_plot_stats_group_boxplotes.py` (``../examples/statistics/plot_stats_group_boxplotes.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_statistics_plot_stats_testing_2groups_demo.py` (``../examples/statistics/plot_stats_testing_2groups_demo.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_wavelet_analysis_plot_sp_scalogram_cwt_example.py` (``../examples/wavelet_analysis/plot_sp_scalogram_cwt_example.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_wavelet_analysis_plot_sp_wavelet_filtering_example.py` (``../examples/wavelet_analysis/plot_sp_wavelet_filtering_example.py``)
+     - 00:00.000
+     - 0.0

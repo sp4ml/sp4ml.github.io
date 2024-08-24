@@ -1,0 +1,17 @@
+﻿..
+    The empty line below should not be removed. It is added such that the `rst_prolog`
+    is added before the :mod: directive. Otherwise, the rendering will show as a
+    paragraph instead of a header.
+
+:mod:`spkit.eeg`.s1010_get_epos2d
+==============================================
+
+.. currentmodule:: spkit.eeg
+
+.. autofunction:: s1010_get_epos2d
+
+.. include:: spkit.eeg.s1010_get_epos2d.examples
+
+.. raw:: html
+
+    <div class="clearer"></div>

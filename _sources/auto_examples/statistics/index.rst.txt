@@ -1,0 +1,63 @@
+
+
+.. _sphx_glr_auto_examples_statistics:
+
+.. _statistics_examples:
+
+Statistics
+----------
+
+General examples about statistics.
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Auditory Attention: Plot Group Data">
+
+.. only:: html
+
+  .. image:: /auto_examples/statistics/images/thumb/sphx_glr_plot_stats_group_boxplotes_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_statistics_plot_stats_group_boxplotes.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Auditory Attention: Plot Group Data</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Testing two groups">
+
+.. only:: html
+
+  .. image:: /auto_examples/statistics/images/thumb/sphx_glr_plot_stats_testing_2groups_demo_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_statistics_plot_stats_testing_2groups_demo.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Testing two groups</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/statistics/plot_stats_group_boxplotes
+   /auto_examples/statistics/plot_stats_testing_2groups_demo
+

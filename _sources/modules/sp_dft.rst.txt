@@ -1,0 +1,49 @@
+.. _dft:
+
+=========================
+Discrete Fourier Transfer
+=========================
+
+
+::
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import spkit as sp
+
+
+Analysis
+--------
+
+
+::
+    
+    X,fs, ch_names = sp.data.eeg_sample_14ch()
+    x = X[:,1]
+    t = np.arange(len(x))/fs
+    mX, pX, N = sp.dft_analysis(x, window='boxcar')
+    print(mX.shape,pX.shape, N)
+
+    
+
+
+
+Synthesis
+---------
+
+::
+    
+    y = sp.dft_synthesis(mX, pX, M=N, window='boxcar')
+
+
+
+.. figure:: ../auto_examples/signal_processing/images/sphx_glr_plot_sp_analysis_sythesis_models_001.png
+   :target: ../auto_examples/signal_processing/plot_sp_analysis_sythesis_models.html
+   :align: center
+   :scale: 50%
+
+
+.. topic:: Examples:
+
+   * :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_analysis_sythesis_models.py`
+

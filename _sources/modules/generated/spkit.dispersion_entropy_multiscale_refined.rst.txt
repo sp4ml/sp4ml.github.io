@@ -1,0 +1,17 @@
+﻿..
+    The empty line below should not be removed. It is added such that the `rst_prolog`
+    is added before the :mod: directive. Otherwise, the rendering will show as a
+    paragraph instead of a header.
+
+:mod:`spkit`.dispersion_entropy_multiscale_refined
+===============================================================
+
+.. currentmodule:: spkit
+
+.. autofunction:: dispersion_entropy_multiscale_refined
+
+.. include:: spkit.dispersion_entropy_multiscale_refined.examples
+
+.. raw:: html
+
+    <div class="clearer"></div>

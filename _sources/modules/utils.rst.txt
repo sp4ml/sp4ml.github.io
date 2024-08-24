@@ -1,0 +1,31 @@
+.. Places parent toc into the sidebar
+
+:parenttoc: True
+
+.. include:: includes/big_toc_css.rst
+
+
+.. _utils_fun:
+
+=============
+Utilities
+=============
+
+**Progross Bar**
+
+  -  :func:`spkit.utils.ProgBar_JL`
+  -  :func:`spkit.utils.ProgBar`
+
+
+**Printing List**
+
+  -  :func:`spkit.utils.pretty_print`
+
+**View hierarchical Order**
+
+  - :func:`spkit.utils.view_hierarchical_order`
+
+
+**Coloring Text**
+
+  - :func:`spkit.utils.txcolors`

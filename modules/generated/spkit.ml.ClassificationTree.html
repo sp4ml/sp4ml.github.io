@@ -1,0 +1,841 @@
+
+
+<!DOCTYPE html>
+<!-- data-theme below is forced to be "light" but should be changed if we use pydata-theme-sphinx in the future -->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" data-content_root="../../" data-theme="light"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" data-content_root="../../" data-theme="light">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="spkit.ml.ClassificationTree" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://spkit.github.io/modules/generated/spkit.ml.ClassificationTree.html" />
+<meta property="og:site_name" content="spkit" />
+<meta property="og:description" content="Examples using spkit.ml.ClassificationTree: Classification Trees: Depth & Decision boundaries Decision Trees with shrinking capability - Classification example Decision Trees with visualisations wh..." />
+<meta property="og:image" content="https://spkit.github.io/_images/spkit-ml-ClassificationTree-1.png" />
+<meta property="og:image:alt" content="spkit" />
+<meta name="description" content="Examples using spkit.ml.ClassificationTree: Classification Trees: Depth & Decision boundaries Decision Trees with shrinking capability - Classification example Decision Trees with visualisations wh..." />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>spkit.ml.ClassificationTree &mdash; spkit 0.0.9.7 documentation</title>
+  
+  <link rel="canonical" href="http://spkit.github.io/stable/modules/generated/spkit.ml.ClassificationTree.html" />
+
+  
+  <link rel="shortcut icon" href="../../_static/favicon.ico" />
+  
+
+  <link rel="stylesheet" href="../../_static/css/vendor/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
+  <link rel="stylesheet" href="../../https://fonts.googleapis.com/css?family=Vibur" type="text/css" />
+  <link rel="stylesheet" href="../../_static/jupyterlite_sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <script id="documentation_options" data-url_root="../../"
+    src="../../_static/documentation_options.js"></script>
+  <script src="../../_static/js/vendor/jquery-3.6.3.slim.min.js"></script>
+  <script src="../../_static/js/details-permalink.js"></script>
+
+  <link rel="stylesheet" href="../../_static/css/vendor/nature_spkit.css" type="text/css" /> 
+
+
+</head>
+
+<body>
+  
+
+
+
+
+
+<!-- ('About us', pathto('about'), ''), -->
+
+
+<div id="logo-banner">
+  <div class="logo">
+    <!-- <a href="../../%23.html"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a> -->
+  <!-- <a href="#"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a> -->
+  <a href="../../index.html"><img src="../../_static/spkit_logo.png" alt="spkit logo"  border="0" /></a>
+  </div>
+  <div class="tags">
+  <ul>
+    <li>&#9672; Easy to use toolkit for signal processing and analysis</li>
+    <li>&#9672; More of biomedical signal analysis with visualization</li>
+    <li>&#9672; Includes basic machine learning models with visualization</li>
+    <!-- <li>&#9672; Open source</li> -->
+  </ul>
+  </div>
+  <div class="banner">
+  <h2>Signal Processing Toolkit</h2>
+  <h4><i>Simple and easy to use for signal analysis and predictive analysis</i></h4>
+  </div>
+</div>
+<nav id="navbar" class="spk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid spk-docs-container px-0">
+      <a class="navbar-brand py-0" href="../../index.html">
+        <img
+          class="spk-brand-img"
+          src="../../_static/spkit_small_icon_v.png"
+          alt="logo"/>
+      </a>
+    <button
+      id="spk-navbar-toggler"
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="spk-navbar-collapse collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../index.html">Home</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../install.html">Install</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../user_guide.html">User Guide</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../classes.html">API</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../auto_examples/index.html">Examples</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../tutorials/index.html">Tutorials</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" target="_blank" rel="noopener noreferrer" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=">Discussion Forum</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../about.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="../../getting_started.html" >Getting Started</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="../../whats_new/v0.0.9.7.html" >What's new</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://github.com/nikeshbajaj/spkit" >GitHub</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://spkit.github.io/dev/index.html" target="_blank" rel="noopener noreferrer">Development</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" >Get Involved</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://spkit.github.io/dev/versions.html" >Other Versions and Download</a>
+        </li>
+        <li class="nav-item dropdown nav-more-item-dropdown">
+          <a class="spk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="spk-nav-dropdown-item dropdown-item" href="../../getting_started.html" >Getting Started</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="../../whats_new/v0.0.9.7.html" >What's new</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://github.com/nikeshbajaj/spkit" >GitHub</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://spkit.github.io/dev/index.html" target="_blank" rel="noopener noreferrer">Development</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" >Get Involved</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://spkit.github.io/dev/versions.html" >Other Versions and Download</a>
+          </div>
+        </li>
+      </ul>
+      <div id="searchbox" role="search">
+          <div class="searchformwrapper">
+          <form class="search" action="../../search.html" method="get">
+            <input class="spk-search-text-input" type="text" name="q" aria-labelledby="searchlabel" />
+            <input class="spk-search-text-btn" type="submit" value="Go" />
+          </form>
+          </div>
+      </div>
+      <a class ="nav-more-item-dropdown">
+      <font size="4em" style="margin: 5px 5px 0px 5px;color:rgb(0, 0, 0)">V</font>
+      </a>
+      <div class="nav-item dropdown nav-more-item-dropdown-vs">
+        <a class="sp-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <font color="black">0.0.9.7 (latest)</font>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../index.html" >0.0.9.7 (latest)</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.6/index.html" >0.0.9.6</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.5/index.html" >0.0.9.5</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.4/index.html" >0.0.9.4</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.3/index.html" >0.0.9.3</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.2/index.html" >0.0.9.2</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.1/index.html" >0.0.9.1</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="https://github.com/Nikeshbajaj/spkit/releases" >More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+  <div class="d-flex" id="spk-doc-wrapper" class="border-right">
+    <input type="checkbox" name="spk-toggle-checkbox" id="spk-toggle-checkbox">
+    <label id="spk-sidemenu-toggle" class="spk-btn-toggle-toc btn spk-btn-primary" for="spk-toggle-checkbox">Toggle
+      Menu</label>
+      <div id="spk-sidebar-top-logoimg">
+        <a href="../../index.html">
+          <img class="spk-brand-img-side" src="../../_static/spkit_logo.png" alt="spkit logo"  border="0" />
+        </a>
+      </div>
+    <div id="spk-sidebar-wrapper" class="border-right">
+      <div class="spk-sidebar-top-content">
+        <hr style="margin: 0 0 10px 0" />
+        <div class="alert alert-danger p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            <strong>SpKit 0.0.9.7</strong><br />
+            <!-- <a class="reference external" href="https://pypi.org/project/spkit" target="_blank"><img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/Nikeshbajaj/spkit?label=latest%20version&style=plastic"></a> -->
+            <a class="reference external" href="https://pepy.tech/project/spkit" target="_blank"><img
+                src="https://static.pepy.tech/personalized-badge/spkit?period=total&amp;units=international_system&amp;left_color=black&amp;right_color=orange&amp;left_text=downloads"
+                alt="PyPI - Downloads" /></a>
+            <a class="reference external" href="https://pypi.python.org/pypi/spkit" target="_blank"><img
+                alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/spkit?style=plastic"></a>
+            <!-- <a href="http://spkit.github.io/dev/versions.html">Other versions</a> -->
+          </p>
+        </div>
+        <div class="alert alert-warning p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            Please <a class="font-weight-bold" href="../../about.html#citing-spkit">
+              <string>cite us</string>
+            </a> if you use the software.
+          </p>
+        </div>
+        <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+          <a href="#" role="button" class="btn spk-btn-rellink py-1 disabled"">Prev</a>
+          <a href="#" role="button" class="btn spk-btn-rellink disabled py-1">Up</a>
+          <a href="#" role="button" class="btn spk-btn-rellink py-1 disabled"">Next</a>
+        </div>
+        <hr>
+      </div>
+      <div class=" spk-sidebar-toc-wrapper">
+          <!-- <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+            <a href="#" role="button" class="btn spk-btn-rellink py-1 disabled"">Prev</a>
+            <a href="#" role="button" class="btn spk-btn-rellink disabled py-1">Up</a>
+            <a href="#" role="button" class="btn spk-btn-rellink py-1 disabled"">Next</a>
+          </div>
+          <hr> -->
+          <div class="spk-sidebar-toc">
+            <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.ml</span></code>.ClassificationTree</a><ul>
+<li><a class="reference internal" href="#spkit.ml.ClassificationTree"><code class="docutils literal notranslate"><span class="pre">ClassificationTree</span></code></a><ul>
+<li><a class="reference internal" href="#spkit.ml.ClassificationTree.DictDepth"><code class="docutils literal notranslate"><span class="pre">ClassificationTree.DictDepth</span></code></a></li>
+<li><a class="reference internal" href="#spkit.ml.ClassificationTree.fit"><code class="docutils literal notranslate"><span class="pre">ClassificationTree.fit</span></code></a></li>
+<li><a class="reference internal" href="#spkit.ml.ClassificationTree.getLcurve"><code class="docutils literal notranslate"><span class="pre">ClassificationTree.getLcurve</span></code></a></li>
+<li><a class="reference internal" href="#spkit.ml.ClassificationTree.getTreeDepth"><code class="docutils literal notranslate"><span class="pre">ClassificationTree.getTreeDepth</span></code></a></li>
+<li><a class="reference internal" href="#spkit.ml.ClassificationTree.get_tree"><code class="docutils literal notranslate"><span class="pre">ClassificationTree.get_tree</span></code></a></li>
+<li><a class="reference internal" href="#spkit.ml.ClassificationTree.plotLcurve"><code class="docutils literal notranslate"><span class="pre">ClassificationTree.plotLcurve</span></code></a></li>
+<li><a class="reference internal" href="#spkit.ml.ClassificationTree.plotTree"><code class="docutils literal notranslate"><span class="pre">ClassificationTree.plotTree</span></code></a></li>
+<li><a class="reference internal" href="#spkit.ml.ClassificationTree.plotTreePath"><code class="docutils literal notranslate"><span class="pre">ClassificationTree.plotTreePath</span></code></a></li>
+<li><a class="reference internal" href="#spkit.ml.ClassificationTree.predict"><code class="docutils literal notranslate"><span class="pre">ClassificationTree.predict</span></code></a></li>
+<li><a class="reference internal" href="#spkit.ml.ClassificationTree.predict_proba"><code class="docutils literal notranslate"><span class="pre">ClassificationTree.predict_proba</span></code></a></li>
+<li><a class="reference internal" href="#spkit.ml.ClassificationTree.pruneTree"><code class="docutils literal notranslate"><span class="pre">ClassificationTree.pruneTree</span></code></a></li>
+<li><a class="reference internal" href="#spkit.ml.ClassificationTree.set_featureNames"><code class="docutils literal notranslate"><span class="pre">ClassificationTree.set_featureNames</span></code></a></li>
+<li><a class="reference internal" href="#spkit.ml.ClassificationTree.set_xyNode"><code class="docutils literal notranslate"><span class="pre">ClassificationTree.set_xyNode</span></code></a></li>
+<li><a class="reference internal" href="#spkit.ml.ClassificationTree.showTree"><code class="docutils literal notranslate"><span class="pre">ClassificationTree.showTree</span></code></a></li>
+<li><a class="reference internal" href="#spkit.ml.ClassificationTree.shrinkTree"><code class="docutils literal notranslate"><span class="pre">ClassificationTree.shrinkTree</span></code></a></li>
+<li><a class="reference internal" href="#spkit.ml.ClassificationTree.treeDepth"><code class="docutils literal notranslate"><span class="pre">ClassificationTree.treeDepth</span></code></a></li>
+<li><a class="reference internal" href="#spkit.ml.ClassificationTree.updateTree"><code class="docutils literal notranslate"><span class="pre">ClassificationTree.updateTree</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#examples-using-spkit-ml-classificationtree">Examples using <code class="docutils literal notranslate"><span class="pre">spkit.ml.ClassificationTree</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+    <div id="spk-page-content-wrapper">
+      <div class="spk-page-content container-fluid body px-md-3" role="main">
+        
+  <section id="spkit-ml-classificationtree">
+<h1><a class="reference internal" href="../classes.html#module-spkit.ml" title="spkit.ml"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.ml</span></code></a>.ClassificationTree<a class="headerlink" href="#spkit-ml-classificationtree" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="spkit.ml.ClassificationTree">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">spkit.ml.</span></span><span class="sig-name descname"><span class="pre">ClassificationTree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_samples_split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_impurity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-07</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">inf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresholdFromMean</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spkit.ml.ClassificationTree" title="Link to this definition">¶</a></dt>
+<dd><p>Classification Tree</p>
+<p>Classification Tree is based on super class <a class="reference internal" href="spkit.ml.DecisionTree.html#spkit.ml.DecisionTree" title="spkit.ml.DecisionTree"><code class="xref py py-class docutils literal notranslate"><span class="pre">DecisionTree</span></code></a></p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Decsion Tree Super Class
+- For more details check <a class="reference internal" href="spkit.ml.DecisionTree.html#spkit.ml.DecisionTree" title="spkit.ml.DecisionTree"><code class="xref py py-class docutils literal notranslate"><span class="pre">DecisionTree</span></code></a></p>
+</div>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>max_depth: int:&gt;0,</strong></dt><dd><ul class="simple">
+<li><p>maximum depth to go for tree, default is Inf, which leads to overfit</p></li>
+<li><p>decrease the max depth to reduce the overfitting.</p></li>
+</ul>
+</dd>
+<dt><strong>min_samples_split: int</strong></dt><dd><ul class="simple">
+<li><p>minimum number of samples to split further</p></li>
+</ul>
+</dd>
+<dt><strong>min_impurity: float:</strong></dt><dd><ul class="simple">
+<li><p>minimum impurity (or gain) to split</p></li>
+</ul>
+</dd>
+<dt><strong>thresholdFromMean: bool, default = False.</strong></dt><dd><ul class="simple">
+<li><p>if threshold is selcted from mean of two</p></li>
+<li><dl class="simple">
+<dt>concecutive unique values of selected a an unique value of feaure.</dt><dd><p>Only applicable to float or int type features, not to catogorical type.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="spkit.ml.RegressionTree.html#spkit.ml.RegressionTree" title="spkit.ml.RegressionTree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegressionTree</span></code></a>, <a class="reference internal" href="spkit.ml.NaiveBayes.html#spkit.ml.NaiveBayes" title="spkit.ml.NaiveBayes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NaiveBayes</span></code></a>, <a class="reference internal" href="spkit.ml.LogisticRegression.html#spkit.ml.LogisticRegression" title="spkit.ml.LogisticRegression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LogisticRegression</span></code></a></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#sp.ml.ClassificationTree</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">spkit.ml</span> <span class="kn">import</span> <span class="n">ClassificationTree</span>
+
+<span class="n">mlend_happiness_dataset</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/MLEndDatasets/Happiness/main/MLEndHD_attributes.csv&#39;</span>
+<span class="c1"># check - https://mlenddatasets.github.io/happiness/</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">mlend_happiness_dataset</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span><span class="s1">&#39;Height&#39;</span><span class="p">,</span><span class="s1">&#39;Weight&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;HappinessLevel&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">y</span><span class="p">)]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">y</span><span class="p">)]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">&gt;</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+<span class="n">split</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:</span><span class="n">split</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">split</span><span class="p">:]</span>
+<span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">y</span><span class="p">[:</span><span class="n">split</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">split</span><span class="p">:]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">ClassificationTree</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">feature_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span><span class="s1">&#39;Height&#39;</span><span class="p">,</span><span class="s1">&#39;Weight&#39;</span><span class="p">])</span>
+<span class="n">ytp</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">ysp</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Training Accuracy : &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">ytp</span><span class="o">==</span><span class="n">y_train</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Testing  Accuracy : &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">ysp</span><span class="o">==</span><span class="n">y_test</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">plotTree</span><span class="p">(</span><span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">showtitle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">leaf_labels</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="s1">&#39;Happy&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="s1">&#39;Unhappy&#39;</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Happiness: Classification Tree&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<figure class="align-default">
+<img alt="../../_images/spkit-ml-ClassificationTree-1.png" class="plot-directive" src="../../_images/spkit-ml-ClassificationTree-1.png" />
+</figure>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#spkit.ml.ClassificationTree.DictDepth" title="spkit.ml.ClassificationTree.DictDepth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DictDepth</span></code></a>(DT[, n])</p></td>
+<td><p>Get the maximum depth of dictionary</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#spkit.ml.ClassificationTree.fit" title="spkit.ml.ClassificationTree.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(X, y[, verbose, feature_names, randomBranch])</p></td>
+<td><p>Building Classification Tree</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#spkit.ml.ClassificationTree.getLcurve" title="spkit.ml.ClassificationTree.getLcurve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLcurve</span></code></a>([Xt, yt, Xs, ys, measure])</p></td>
+<td><p>Getting Learning Curve By supplying Trainign and Testing Data, compute the given measure for each level of depth</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#spkit.ml.ClassificationTree.getTreeDepth" title="spkit.ml.ClassificationTree.getTreeDepth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTreeDepth</span></code></a>([DT])</p></td>
+<td><p>Get the maximum depth of the tree</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#spkit.ml.ClassificationTree.get_tree" title="spkit.ml.ClassificationTree.get_tree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_tree</span></code></a>()</p></td>
+<td><p>Extract built tree</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#spkit.ml.ClassificationTree.plotLcurve" title="spkit.ml.ClassificationTree.plotLcurve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plotLcurve</span></code></a>([ax, title])</p></td>
+<td><p>Plotting Learning Curve</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#spkit.ml.ClassificationTree.plotTree" title="spkit.ml.ClassificationTree.plotTree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plotTree</span></code></a>([scale, show, showtitle, ...])</p></td>
+<td><p>Plot Decision Tree</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#spkit.ml.ClassificationTree.plotTreePath" title="spkit.ml.ClassificationTree.plotTreePath"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plotTreePath</span></code></a>(path[, ax, fig])</p></td>
+<td><p>Plotting the path of the tree</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#spkit.ml.ClassificationTree.predict" title="spkit.ml.ClassificationTree.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(X[, max_depth, treePath])</p></td>
+<td><p>Predicting labels</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#spkit.ml.ClassificationTree.predict_proba" title="spkit.ml.ClassificationTree.predict_proba"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict_proba</span></code></a>(X[, label_counts, max_depth, ...])</p></td>
+<td><p>Predicting probabilties of labels</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#spkit.ml.ClassificationTree.pruneTree" title="spkit.ml.ClassificationTree.pruneTree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pruneTree</span></code></a>(DT)</p></td>
+<td><p>Prunning the tree</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#spkit.ml.ClassificationTree.set_featureNames" title="spkit.ml.ClassificationTree.set_featureNames"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_featureNames</span></code></a>([feature_names])</p></td>
+<td><p>Set Feature names</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#spkit.ml.ClassificationTree.set_xyNode" title="spkit.ml.ClassificationTree.set_xyNode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_xyNode</span></code></a>(DT[, lxy, xy, rxy, ldiff])</p></td>
+<td><p>Setting the xy location of each node</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#spkit.ml.ClassificationTree.showTree" title="spkit.ml.ClassificationTree.showTree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">showTree</span></code></a>(DT[, DiffBranchColor, ...])</p></td>
+<td><p>Helper function fot plotTree</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#spkit.ml.ClassificationTree.shrinkTree" title="spkit.ml.ClassificationTree.shrinkTree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shrinkTree</span></code></a>(DT[, max_depth])</p></td>
+<td><p>Shinking the tree</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#spkit.ml.ClassificationTree.treeDepth" title="spkit.ml.ClassificationTree.treeDepth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">treeDepth</span></code></a>(DT[, mx])</p></td>
+<td><p>Compute the maximum depth of the tree</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#spkit.ml.ClassificationTree.updateTree" title="spkit.ml.ClassificationTree.updateTree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">updateTree</span></code></a>([DT, shrink, max_depth])</p></td>
+<td><p>Updating Tree with Shrinking and Pruning</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="spkit.ml.ClassificationTree.DictDepth">
+<span class="sig-name descname"><span class="pre">DictDepth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">DT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spkit.ml.ClassificationTree.DictDepth" title="Link to this definition">¶</a></dt>
+<dd><p>Get the maximum depth of dictionary</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spkit.ml.ClassificationTree.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomBranch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spkit.ml.ClassificationTree.fit" title="Link to this definition">¶</a></dt>
+<dd><p>Building Classification Tree</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X: ndarray</strong></dt><dd><ul class="simple">
+<li><p>(number of sample, number of features)</p></li>
+</ul>
+</dd>
+<dt><strong>y: list of 1D array</strong></dt><dd><ul class="simple">
+<li><p>labels</p></li>
+</ul>
+</dd>
+<dt><strong>verbose: int, deafult=0</strong></dt><dd><ul class="simple">
+<li><p>0 - no progress or tree (silent)</p></li>
+<li><p>1 - show progress in short</p></li>
+<li><dl class="simple">
+<dt>2 - show progress with details with branches</dt><dd><ul>
+<li><p>3 - show progress with branches True/False</p></li>
+<li><p>4 - show progress in short with plot tree</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt><strong>feature_names: list</strong></dt><dd><ul class="simple">
+<li><p>Provide for better look at tree while plotting or showing the progress,</p></li>
+<li><p>default to None, if not provided, features are named as f1,…fn</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spkit.ml.ClassificationTree.getLcurve">
+<span class="sig-name descname"><span class="pre">getLcurve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Xt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Xs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">measure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'acc'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spkit.ml.ClassificationTree.getLcurve" title="Link to this definition">¶</a></dt>
+<dd><p>Getting Learning Curve
+By supplying Trainign and Testing Data, compute the given measure for each level of depth</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>Xt, yt: training data</strong></dt><dd></dd>
+<dt><strong>Xs, ys: testing data</strong></dt><dd></dd>
+<dt><strong>measure: str, metric</strong></dt><dd><p>default=’acc’ for accuracy</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>Lcurve: dict,</dt><dd><ul class="simple">
+<li><p>as training and testing measures at each level of depth</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spkit.ml.ClassificationTree.getTreeDepth">
+<span class="sig-name descname"><span class="pre">getTreeDepth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">DT</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spkit.ml.ClassificationTree.getTreeDepth" title="Link to this definition">¶</a></dt>
+<dd><p>Get the maximum depth of the tree</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spkit.ml.ClassificationTree.get_tree">
+<span class="sig-name descname"><span class="pre">get_tree</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#spkit.ml.ClassificationTree.get_tree" title="Link to this definition">¶</a></dt>
+<dd><p>Extract built tree</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spkit.ml.ClassificationTree.plotLcurve">
+<span class="sig-name descname"><span class="pre">plotLcurve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spkit.ml.ClassificationTree.plotLcurve" title="Link to this definition">¶</a></dt>
+<dd><p>Plotting Learning Curve</p>
+<p>After computing Learning Curve using <a class="reference internal" href="#spkit.ml.ClassificationTree.getLcurve" title="spkit.ml.ClassificationTree.getLcurve"><code class="xref py py-func docutils literal notranslate"><span class="pre">getLcurve</span></code></a>, Learnign curve can be plotted</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ax: axis to plot</strong></dt><dd></dd>
+<dt><strong>title: bool, if to show title</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spkit.ml.ClassificationTree.plotTree">
+<span class="sig-name descname"><span class="pre">plotTree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showtitle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showDirection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DiffBranchColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showNodevalues</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showThreshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hlines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Measures</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dcml</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">leaf_labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spkit.ml.ClassificationTree.plotTree" title="Link to this definition">¶</a></dt>
+<dd><p>Plot Decision Tree</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>scale:</strong></dt><dd></dd>
+<dt><strong>show:</strong></dt><dd></dd>
+<dt><strong>showtitle:</strong></dt><dd></dd>
+<dt><strong>showDirection:</strong></dt><dd></dd>
+<dt><strong>DiffBranchColor:</strong></dt><dd></dd>
+<dt><strong>legend:</strong></dt><dd></dd>
+<dt><strong>showNodevalues:</strong></dt><dd></dd>
+<dt><strong>showThreshold:</strong></dt><dd></dd>
+<dt><strong>hlines:</strong></dt><dd></dd>
+<dt><strong>Measures:</strong></dt><dd></dd>
+<dt><strong>dcml:</strong></dt><dd></dd>
+<dt><strong>leaf_labels:</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spkit.ml.ClassificationTree.plotTreePath">
+<span class="sig-name descname"><span class="pre">plotTreePath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spkit.ml.ClassificationTree.plotTreePath" title="Link to this definition">¶</a></dt>
+<dd><p>Plotting the path of the tree</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spkit.ml.ClassificationTree.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">inf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">treePath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spkit.ml.ClassificationTree.predict" title="Link to this definition">¶</a></dt>
+<dd><p>Predicting labels</p>
+<p>USE “max_depth” to limit the depth of tree for expected values</p>
+<p>Compute expected value for each sample in X, up till depth=max_depth of the tree</p>
+<p>For classification:
+Expected value is a label with maximum probabilty among the samples at leaf nodes.
+For probability and count of each labels at leaf node, use “.predict_proba” method</p>
+<p>For Regression:
+Expected value is a mean value of smaples at the leaf node.
+For Standard Deviation and number of samples at leaf node, use “.predict_proba” method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X: ndarray</strong></dt><dd><ul class="simple">
+<li><p>(number of sample, number of features)</p></li>
+</ul>
+</dd>
+<dt><strong>max_depth: int, default=np.inf</strong></dt><dd><ul class="simple">
+<li><p>maximum depth of the tree to use for the prediction</p></li>
+</ul>
+</dd>
+<dt><strong>treePath: bool, Default=False</strong></dt><dd><ul class="simple">
+<li><p>if True, path of the tree is also returned, such as ‘TTFTFT…’</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>y: list of 1D array</dt><dd><ul class="simple">
+<li><p>labels</p></li>
+<li><p>and paths, if <code class="docutils literal notranslate"><span class="pre">treePath</span></code> is True</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spkit.ml.ClassificationTree.predict_proba">
+<span class="sig-name descname"><span class="pre">predict_proba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_counts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">inf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">treePath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spkit.ml.ClassificationTree.predict_proba" title="Link to this definition">¶</a></dt>
+<dd><p>Predicting probabilties of labels</p>
+<p>USE “max_depth” to limit the depth of tree for expected values
+Compute probabilty/SD for labeles at the leaf till max_depth level, for each sample in X</p>
+<p>For classification:
+Returns the Probability of samples one by one and return the set of labels
+label_counts=True: Includes in the return, the counts of labels at the leaf</p>
+<p>For Regression:
+Returns the standard deviation of values at the leaf node. Mean value is returened with “.predice()” method
+label_counts=True: Includes in the return, the number of samples at the leaf</p>
+<p>treePath=True: Includes the path of tree for each sample as string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X: ndarray</strong></dt><dd><ul class="simple">
+<li><p>(number of sample, number of features)</p></li>
+</ul>
+</dd>
+<dt><strong>max_depth: int, default=np.inf</strong></dt><dd><ul class="simple">
+<li><p>maximum depth of the tree to use for the prediction</p></li>
+</ul>
+</dd>
+<dt><strong>label_counts: bool, default=False</strong></dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>If true </dt><dd><ul>
+<li><p>count of each class labels are returned (classification)</p></li>
+<li><p>count of samples at the leaf returned (regression)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt><strong>treePath: bool, Default=False</strong></dt><dd><ul class="simple">
+<li><p>if True, path of the tree is also returned, such as ‘TTFTFT…’</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>y_prob: 1D/2D array</dt><dd><ul class="simple">
+<li><p>labels</p></li>
+</ul>
+</dd>
+<dt>y_counts: count of labels</dt><dd></dd>
+<dt>y_paths: path of each samples</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spkit.ml.ClassificationTree.pruneTree">
+<span class="sig-name descname"><span class="pre">pruneTree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">DT</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spkit.ml.ClassificationTree.pruneTree" title="Link to this definition">¶</a></dt>
+<dd><p>Prunning the tree</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>DT: A decision Tree</strong></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>DT: Prunned Tree</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spkit.ml.ClassificationTree.set_featureNames">
+<span class="sig-name descname"><span class="pre">set_featureNames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spkit.ml.ClassificationTree.set_featureNames" title="Link to this definition">¶</a></dt>
+<dd><p>Set Feature names</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spkit.ml.ClassificationTree.set_xyNode">
+<span class="sig-name descname"><span class="pre">set_xyNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">DT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lxy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0,</span> <span class="pre">1]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[1,</span> <span class="pre">1]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rxy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[2,</span> <span class="pre">1]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ldiff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spkit.ml.ClassificationTree.set_xyNode" title="Link to this definition">¶</a></dt>
+<dd><p>Setting the xy location of each node</p>
+<p>in the tree</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spkit.ml.ClassificationTree.showTree">
+<span class="sig-name descname"><span class="pre">showTree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">DT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DiffBranchColor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showNodevalues</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showThreshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spkit.ml.ClassificationTree.showTree" title="Link to this definition">¶</a></dt>
+<dd><p>Helper function fot plotTree</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spkit.ml.ClassificationTree.shrinkTree">
+<span class="sig-name descname"><span class="pre">shrinkTree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">DT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">inf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spkit.ml.ClassificationTree.shrinkTree" title="Link to this definition">¶</a></dt>
+<dd><p>Shinking the tree</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>DT: A decision Tree</strong></dt><dd></dd>
+<dt><strong>max_depth: int</strong></dt><dd><ul class="simple">
+<li><p>depth, to which tree is to be shrinked</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>DT: Shrinked Tree</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spkit.ml.ClassificationTree.treeDepth">
+<span class="sig-name descname"><span class="pre">treeDepth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">DT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spkit.ml.ClassificationTree.treeDepth" title="Link to this definition">¶</a></dt>
+<dd><p>Compute the maximum depth of the tree</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="spkit.ml.ClassificationTree.updateTree">
+<span class="sig-name descname"><span class="pre">updateTree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">DT</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shrink</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">inf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spkit.ml.ClassificationTree.updateTree" title="Link to this definition">¶</a></dt>
+<dd><p>Updating Tree with Shrinking and Pruning</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>DT: A decision Tree,</strong></dt><dd><ul class="simple">
+<li><p>if None, root tree self.tree is used</p></li>
+</ul>
+</dd>
+<dt><strong>max_depth: int</strong></dt><dd><ul class="simple">
+<li><p>depth, to which tree is to be shrinked</p></li>
+</ul>
+</dd>
+<dt><strong>shrink: bool,</strong></dt><dd><ul class="simple">
+<li><p>if to shrink the tree</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>DT: Updated Tree</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<section id="examples-using-spkit-ml-classificationtree">
+<h2>Examples using <code class="docutils literal notranslate"><span class="pre">spkit.ml.ClassificationTree</span></code><a class="headerlink" href="#examples-using-spkit-ml-classificationtree" title="Link to this heading">¶</a></h2>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Classification Trees: Depth &amp; Decision boundaries"><img alt="" src="../../_images/sphx_glr_plot_ml_decision_tree_classification_thumb.png" />
+<p><a class="reference internal" href="../../auto_examples/machine_learning/plot_ml_decision_tree_classification.html#sphx-glr-auto-examples-machine-learning-plot-ml-decision-tree-classification-py"><span class="std std-ref">Classification Trees: Depth &amp; Decision boundaries</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Classification Trees: Depth & Decision boundaries</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip=" Decision Trees with shrinking capability from SpKit (Classification example)"><img alt="" src="../../_images/sphx_glr_plot_ml_decision_tree_shrinking_capability_cls_thumb.png" />
+<p><a class="reference internal" href="../../auto_examples/machine_learning/plot_ml_decision_tree_shrinking_capability_cls.html#sphx-glr-auto-examples-machine-learning-plot-ml-decision-tree-shrinking-capability-cls-py"><span class="std std-ref">Decision Trees with shrinking capability - Classification example</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Decision Trees with shrinking capability - Classification example</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Decision Trees with visualisation while building trees."><img alt="" src="../../_images/sphx_glr_plot_ml_decision_tree_visualisation_thumb.png" />
+<p><a class="reference internal" href="../../auto_examples/machine_learning/plot_ml_decision_tree_visualisation.html#sphx-glr-auto-examples-machine-learning-plot-ml-decision-tree-visualisation-py"><span class="std std-ref">Decision Trees with visualisations while buiding tree</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Decision Trees with visualisations while buiding tree</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip=" Decision Trees without converting Catogorical Features using SpKit"><img alt="" src="../../_images/sphx_glr_plot_ml_decision_tree_catogorical_features_thumb.png" />
+<p><a class="reference internal" href="../../auto_examples/machine_learning/plot_ml_decision_tree_catogorical_features.html#sphx-glr-auto-examples-machine-learning-plot-ml-decision-tree-catogorical-features-py"><span class="std std-ref">Decision Trees without converting Catogorical Features</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Decision Trees without converting Catogorical Features</div>
+</div></div><div class="clearer"></div></section>
+</section>
+
+
+      </div>
+      <div class="container">
+        <footer class="spk-content-footer">
+          &copy; 2019 - 2024, spkit developers (BSD License).
+          <!-- -->
+          <!-- <a href="../../_sources/modules/generated/spkit.ml.ClassificationTree.rst.txt" rel="nofollow">Show this page source</a> -->
+          <!-- -->
+        </footer>
+      </div>
+
+      <div class="container-fluid py-3">
+        <hr>
+        <div class="container spk-landing-container">
+              <a class="spk-footer-funding-link" href="about.html#funding">
+              <div class="text-center">
+                      <p class="mt-2">
+                        Spkit developed in collabration with other projects:
+                      </p>
+                      <a href="https://PhyAAt.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../../_static/phyaat_logo.png" title="PhyAAt"></a>
+                      <a href="https://PyLFSR.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../../_static/pylfsr_logo.png" title="PyLFSR" ></a>
+                      <a href="https://MLEndDatasets.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../../_static/mlend_logo.png" title="MLEnd-Datasets" ></a>
+              </div>
+              </a>
+              <div style="width:3px;">
+                <a href="https://clustrmaps.com/site/1b9h1"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=eQr8xSBiKVuSq6m0psK-Ey9TZ7rLzjRX-MpatyfFGQI&cl=ffffff" /></a>  
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../../_static/js/vendor/bootstrap.min.js"></script>
+  
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-59299155-3', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<!-- 
+<script defer data-domain="scikit-learn.org" src="https://views.scientific-python.org/js/script.js">
+</script>
+ -->
+
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+
+<script>
+$(document).ready(function() {
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		        '.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	});
+});
+
+</script>
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    
+</body>
+
+</html>

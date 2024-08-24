@@ -1,0 +1,971 @@
+.. _api_ref:
+
+=============
+API Reference
+=============
+
+This is the function and class objects reference of spkit. This the most up-to-date documentation
+of spkit functions/classes/modules. We are set out to write comprehensive :ref:`User Guide <user_guide>`
+and we are continuously updating it, however, it might be missing the full details of functions.
+Please refer to each function here at :ref:`api_ref`, where the docstring of each function and class
+have been written with most of the information with examples.
+
+.. For reference on concepts repeated across the API, see :ref:`glossary`.
+
+
+Entropy Funtions
+================
+
+:mod:`spkit.core` 
+-----------------
+
+
+:mod:`spkit.core` : core module
+
+.. automodule:: spkit
+    :no-members:
+    :no-inherited-members:
+
+.. currentmodule:: spkit
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+   entropy
+   mutual_info
+   entropy_joint
+   entropy_cond
+   entropy_cross
+   entropy_kld
+   entropy_sample
+   entropy_approx
+   entropy_spectral
+   entropy_svd
+   entropy_permutation
+
+Information Theory - Advanced
+=============================
+
+:mod:`spkit.core`
+-----------------
+
+.. automodule:: spkit
+    :no-members:
+    :no-inherited-members:
+
+.. currentmodule:: spkit
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+
+   dispersion_entropy
+   dispersion_entropy_multiscale_refined
+   entropy_differential
+   entropy_diff_cond_self
+   entropy_diff_cond
+   entropy_diff_joint
+   entropy_diff_joint_cond
+   mutual_info_diff_self
+   mutual_info_diff
+   transfer_entropy
+   transfer_entropy_cond
+   partial_transfer_entropy
+   entropy_granger_causality
+
+
+Filtering - Signal Processing
+==============================
+
+:mod:`spkit.core.processing`
+----------------------------
+
+.. currentmodule:: spkit
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+   filter_X
+   filterDC
+   filterDC_sGolay
+   filter_smooth_gauss
+   filter_smooth_mollifier
+   filter_smooth_sGolay
+   filter_with_kernel
+   filter_powerline
+   filtering_pipeline
+   graph_filter_dist
+   graph_filter_adj
+   spatial_filter_adj
+   spatial_filter_dist
+   conv1d_fft
+   conv1d_fb
+   conv1d_nan
+   conv2d_nan
+
+
+Analysis & Sythesis Models
+===========================
+
+:mod:`spkit.core.advnace_techniques`
+------------------------------------
+
+.. currentmodule:: spkit
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+   dft_analysis
+   dft_synthesis
+   stft_analysis
+   stft_synthesis
+   sineModel_analysis
+   sineModel_synthesis
+   frft
+   ifrft
+   ffrft
+   iffrft
+
+
+Wavelet Analysis
+=================
+
+:mod:`spkit.core` : DWT
+-----------------------
+
+.. currentmodule:: spkit
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+   wavelet_filtering
+   wavelet_filtering_win
+   periodogram
+   wpa_coeff
+   wpa_coeff_win
+   wpa_plot
+   wavelet_decomposed_signals
+
+
+:mod:`spkit.cwt`: CWT 
+----------------------
+
+.. currentmodule:: spkit.cwt
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+   ScalogramCWT
+   WavePSD
+   GaussWave
+   MorlateWave
+   GaborWave
+   PoissonWave
+   cMaxicanHatWave
+   ShannonWave
+   compare_cwt_example
+
+
+Ramanujan Methods
+=================
+
+:mod:`spkit.core`
+------------------
+
+.. currentmodule:: spkit
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+   ramanujan_filter
+   ramanujan_filter_prange
+   regularised_period_estimation
+   create_dictionary
+   RFB_example_1
+   RFB_example_2
+
+
+   
+
+Simulate Signals
+=================
+
+.. currentmodule:: spkit
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+   create_signal_1d
+   create_signal_2d
+   
+
+
+
+EEG Signal Processing
+=====================
+
+:mod:`spkit.eeg`
+----------------
+
+.. automodule:: spkit.eeg
+   :no-members:
+   :no-inherited-members:
+
+.. currentmodule:: spkit.eeg
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+   ATAR
+   ATAR_1Ch
+   ATAR_mCh
+   ICA_filtering
+   rhythmic_powers
+   rhythmic_powers_win
+   s1020_get_epos2d
+   s1010_get_epos2d
+   s1005_get_epos2d
+   topomap
+   gen_ssfi
+   TopoMap_Zi
+
+
+MEA  - Multi-Electrode Array
+=============================
+
+:mod:`spkit.mea`
+-----------------
+
+.. currentmodule:: spkit.mea
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+   analyse_mea_file
+   get_stim_loc
+   find_bad_channels_idx
+   align_cycles
+   activation_time_loc
+   activation_repol_time_loc
+   extract_egm
+   egm_features
+   mea_feature_map
+   compute_cv
+   arrange_mea_grid
+   unarrange_mea_grid
+   plot_mea_grid
+   mat_1_show
+   mat_list_show
+
+
+
+
+Signal Analysis and Processing
+==============================
+
+.. currentmodule:: spkit
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+   sinc_interp
+   gaussian_kernel
+   friedrichs_mollifier_kernel
+   denorm_kernel
+   periodogram
+   bin_width
+   hist_plot
+   mean_minSE
+   minMSE
+   is_power2
+   plotJointEntropyXY
+   show_farmulas
+
+
+New Methods
+-----------
+
+.. currentmodule:: spkit
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+   signal_diff
+   simplify_signal
+   elbow_knee_point
+   total_variation
+   total_variation_win
+   fill_nans_1d
+   fill_nans_2d
+   add_noise
+
+
+Signal Transformations/Mapping
+==============================
+
+:mod:`spkit.core`
+------------------
+
+ .. currentmodule:: spkit
+
+ .. autosummary::
+    :toctree: generated/
+    :template: function.rst
+
+    Mu_law
+    A_law
+    cdf_mapping
+    quantize_signal
+    quantize_FD
+    low_resolution
+    signal_delayed_space
+    create_multidim_space_signal
+    TD_Embed
+    
+
+Event Analysis
+==============
+
+.. currentmodule:: spkit
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+   get_activation_time
+   get_repolarisation_time
+   peak_detection
+   peak_interp
+   f0_detection
+   sinc_dirichlet
+   blackman_lobe
+   sine_tracking
+   sinetracks_cleaning
+   sine_spectrum
+   TWM_f0
+   TWM_algo
+
+
+
+Phase, Angles, Dominent Frequencies
+===================================
+
+.. currentmodule:: spkit
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+   phase_map
+   clean_phase
+   phase_map_reconstruction
+   dominent_freq
+   dominent_freq_win
+   agg_angles
+   show_compass
+   direction_flow_map
+
+   .. amplitude_equalizer
+
+
+Machine Learning
+=================
+
+:mod:`spkit.ml`
+----------------
+
+.. automodule:: spkit.ml
+   :no-members:
+   :no-inherited-members:
+
+.. currentmodule:: spkit.ml
+
+.. autosummary::
+   :toctree: generated/
+   :template: class.rst
+
+   LogisticRegression
+   NaiveBayes
+   DecisionTree
+   ClassificationTree
+   RegressionTree
+
+
+Sample Data & Simulate
+======================
+
+:mod:`spkit.data`
+------------------
+
+.. automodule:: spkit.data
+   :no-members:
+   :no-inherited-members:
+
+.. **User guide:** See the :ref:`data` section for further details.
+
+Sample of real data/signal
+---------------------------
+
+.. currentmodule:: spkit
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+   data.eeg_sample_14ch
+   data.eeg_sample_1ch
+   data.eeg_sample_artifact
+   data.ecg_sample_12leads
+   data.ecg_sample
+   data.optical_sample
+   data.ppg_sample
+   data.gsr_sample
+   data.eda_sample
+   data.egm_sample
+   data.primitive_polynomials
+
+
+Simulation of Data
+------------------
+
+For Machine Learning
+--------------------
+
+.. currentmodule:: spkit
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+   data.linear
+   data.gaussian
+   data.moons
+   data.sinusoidal
+   data.spiral
+   data.create_dataset
+   data.mclass_gauss
+
+
+For Signal Processing
+----------------------
+
+.. currentmodule:: spkit
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+   create_signal_1d
+   create_signal_2d
+
+.. _decomposition_ref:
+
+Matrix Decomposition
+====================
+
+
+.. **User guide:** See the :ref:`decompositions` section for further details.
+
+.. currentmodule:: spkit
+
+.. autosummary::
+   :toctree: generated/
+   :template: class.rst
+
+   ICA
+   PCA
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+   SVD
+
+
+Statististics
+==============
+
+:mod:`spkit.stats`
+------------------
+
+.. currentmodule:: spkit.stats
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+   quick_stats
+   outliers
+   get_stats
+   test_2groups
+   test_groups
+   plot_groups_boxes
+
+
+Read/Write Files I/O
+===================
+
+
+:mod:`spkit.io`
+------------------
+
+.. automodule:: spkit.io
+   :no-members:
+   :no-inherited-members:
+
+.. currentmodule:: spkit.io
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+   read_hdf
+   read_surf
+   read_bdf
+   read_vtk
+   write_vtk
+
+
+
+
+
+.. _utils_ref:
+
+Utilities
+==========
+
+:mod:`spkit.utils`
+------------------
+
+.. .. automodule:: spkit.utils
+..    :no-members:
+..    :no-inherited-members:
+..  **Developer guide:** See the :ref:`developers-utils` page for further details.
+
+
+.. currentmodule:: spkit.utils
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+   ProgBar_JL
+   ProgBar
+   pretty_print
+   view_hierarchical_order
+
+.. currentmodule:: spkit
+
+.. autosummary::
+   :toctree: generated/
+   :template: class.rst
+
+   utils.txcolors
+   utils.bcolors
+
+
+Geometrical functions [UNDER DEVELOPMENT]
+========================================
+
+:mod:`spkit.geometry`
+------------------
+
+.. currentmodule:: spkit.geometry
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+   car2spar
+   spar2car
+   get_adjacency_matrix_depth
+   get_adjacency_matrix_dist
+   get_adjacency_matrix_kNN
+   node2C_to_adjacency_matrix
+   get_neibours
+   get_optimal_projection
+   get_plane
+   get_PCA
+   opt_project
+   plot_proj
+   dir_vectors
+   area_tri
+   get_circle
+   get_circular_grid
+   get_square
+   get_square_grid
+   get_sphare
+   get_ellipsoid
+   lin_inter
+   surface_reconstruction
+   surface_plot_mayavi
+   getTriFaces_V2
+   getTriFaces
+   rotation_matrix
+   divide_space
+   get_center
+   
+
+   .. unwrape_3d
+   .. unwrape_surface
+   .. unwrape_surface_mirror
+   .. surface_reconstruction
+   .. downsampling_space
+   .. downsampling_surface_points
+   .. remove_long_edges_k
+   .. RadialMapping
+   .. FGSquircular
+   .. Elliptical
+   .. ShirleyEA
+   .. ds_mapping
+   .. transform_image
+   .. transform_image_all
+   .. multi_plots
+   .. project_on_hemisphere
+   .. points_insideCurve
+   .. create_random_map_2d
+   .. get_boundary_points
+   .. get_boundary_points_r
+   .. map_to_circle_v1
+   .. map_to_circle_v2
+   .. get_boundary_v1
+   .. get_boundary_v2
+   .. plot_map_2d
+
+   .. demo_1
+   .. demo_2
+   .. demo_3
+
+.. currentmodule:: spkit.geometry
+
+.. autosummary::
+   :toctree: generated/
+   :template: class.rst
+
+   TriAng
+   Inter2DPlane
+   
+
+
+
+
+TO BE DEPRECATED
+================
+
+
+Wavelet Analysis
+----------------
+
+.. currentmodule:: spkit
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+
+   WPA_temporal
+   WPA_plot
+   Wavelet_decompositions
+   .. get_theta
+
+   
+Ramanujan Methods
+-----------------
+
+.. currentmodule:: spkit
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+
+   RFB
+   RFB_prange
+   Create_Dictionary
+   PeriodStrength
+
+EEG Signal Processing
+---------------------
+
+.. automodule:: spkit.eeg
+   :no-members:
+   :no-inherited-members:
+
+.. currentmodule:: spkit.eeg
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+   display_topo_RGB
+   RhythmicDecomposition
+   TopoMap
+   showTOPO
+   Gen_SSFI
+
+
+Statistics
+-----------
+
+.. currentmodule:: spkit
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+   getStats
+   getQuickStats
+   OutLiers
+
+
+IO Utilities
+------------
+
+.. currentmodule:: spkit.io
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+   read_surf_file
+
+
+
+Data
+----------------
+
+.. currentmodule:: spkit
+
+.. autosummary::
+   :toctree: generated/
+   :template: function.rst
+
+   data.linear_data
+
+
+
+
+.. .. _utils_ref:
+
+.. :mod:`sklearn.utils`: Utilities
+.. ===============================
+
+.. .. automodule:: sklearn.utils
+..    :no-members:
+..    :no-inherited-members:
+
+.. **Developer guide:** See the :ref:`developers-utils` page for further details.
+
+.. .. currentmodule:: sklearn
+
+.. .. autosummary::
+..    :toctree: generated/
+..    :template: class.rst
+
+..    utils.Bunch
+
+.. .. autosummary::
+..    :toctree: generated/
+..    :template: function.rst
+
+..    utils.as_float_array
+..    utils.assert_all_finite
+..    utils.deprecated
+..    utils.estimator_html_repr
+..    utils.gen_batches
+..    utils.gen_even_slices
+..    utils.indexable
+..    utils.murmurhash3_32
+..    utils.resample
+..    utils._safe_indexing
+..    utils.safe_mask
+..    utils.safe_sqr
+..    utils.shuffle
+
+.. Input and parameter validation
+.. ------------------------------
+
+.. .. automodule:: sklearn.utils.validation
+..    :no-members:
+..    :no-inherited-members:
+
+.. .. currentmodule:: sklearn
+
+.. .. autosummary::
+..    :toctree: generated/
+..    :template: function.rst
+
+..    utils.check_X_y
+..    utils.check_array
+..    utils.check_scalar
+..    utils.check_consistent_length
+..    utils.check_random_state
+..    utils.validation.check_is_fitted
+..    utils.validation.check_memory
+..    utils.validation.check_symmetric
+..    utils.validation.column_or_1d
+..    utils.validation.has_fit_parameter
+
+.. Utilities used in meta-estimators
+.. ---------------------------------
+
+.. .. automodule:: sklearn.utils.metaestimators
+..    :no-members:
+..    :no-inherited-members:
+
+.. .. currentmodule:: sklearn
+
+.. .. autosummary::
+..    :toctree: generated/
+..    :template: function.rst
+
+..    utils.metaestimators.available_if
+
+.. Utilities to handle weights based on class labels
+.. -------------------------------------------------
+
+.. .. automodule:: sklearn.utils.class_weight
+..    :no-members:
+..    :no-inherited-members:
+
+.. .. currentmodule:: sklearn
+
+.. .. autosummary::
+..    :toctree: generated/
+..    :template: function.rst
+
+..    utils.class_weight.compute_class_weight
+..    utils.class_weight.compute_sample_weight
+
+.. Utilities to deal with multiclass target in classifiers
+.. -------------------------------------------------------
+
+.. .. automodule:: sklearn.utils.multiclass
+..    :no-members:
+..    :no-inherited-members:
+
+.. .. currentmodule:: sklearn
+
+.. .. autosummary::
+..    :toctree: generated/
+..    :template: function.rst
+
+..    utils.multiclass.type_of_target
+..    utils.multiclass.is_multilabel
+..    utils.multiclass.unique_labels
+
+.. Utilities for optimal mathematical operations
+.. ---------------------------------------------
+
+.. .. automodule:: sklearn.utils.extmath
+..    :no-members:
+..    :no-inherited-members:
+
+.. .. currentmodule:: sklearn
+
+.. .. autosummary::
+..    :toctree: generated/
+..    :template: function.rst
+
+..    utils.extmath.safe_sparse_dot
+..    utils.extmath.randomized_range_finder
+..    utils.extmath.randomized_svd
+..    utils.extmath.fast_logdet
+..    utils.extmath.density
+..    utils.extmath.weighted_mode
+
+.. Utilities to work with sparse matrices and arrays
+.. -------------------------------------------------
+
+.. .. automodule:: sklearn.utils.sparsefuncs
+..    :no-members:
+..    :no-inherited-members:
+
+.. .. currentmodule:: sklearn
+
+.. .. autosummary::
+..    :toctree: generated/
+..    :template: function.rst
+
+..    utils.sparsefuncs.incr_mean_variance_axis
+..    utils.sparsefuncs.inplace_column_scale
+..    utils.sparsefuncs.inplace_row_scale
+..    utils.sparsefuncs.inplace_swap_row
+..    utils.sparsefuncs.inplace_swap_column
+..    utils.sparsefuncs.mean_variance_axis
+..    utils.sparsefuncs.inplace_csr_column_scale
+
+.. .. automodule:: sklearn.utils.sparsefuncs_fast
+..    :no-members:
+..    :no-inherited-members:
+
+.. .. currentmodule:: sklearn
+
+.. .. autosummary::
+..    :toctree: generated/
+..    :template: function.rst
+
+..    utils.sparsefuncs_fast.inplace_csr_row_normalize_l1
+..    utils.sparsefuncs_fast.inplace_csr_row_normalize_l2
+
+.. Utilities to work with graphs
+.. -----------------------------
+
+.. .. automodule:: sklearn.utils.graph
+..    :no-members:
+..    :no-inherited-members:
+
+.. .. currentmodule:: sklearn
+
+.. .. autosummary::
+..    :toctree: generated/
+..    :template: function.rst
+
+..    utils.graph.single_source_shortest_path_length
+
+.. Utilities for random sampling
+.. -----------------------------
+
+.. .. automodule:: sklearn.utils.random
+..    :no-members:
+..    :no-inherited-members:
+
+.. .. currentmodule:: sklearn
+
+.. .. autosummary::
+..    :toctree: generated/
+..    :template: function.rst
+
+..    utils.random.sample_without_replacement
+
+
+.. Utilities to operate on arrays
+.. ------------------------------
+
+.. .. automodule:: sklearn.utils.arrayfuncs
+..    :no-members:
+..    :no-inherited-members:
+
+.. .. currentmodule:: sklearn
+
+.. .. autosummary::
+..    :toctree: generated/
+..    :template: function.rst
+
+..    utils.arrayfuncs.min_pos
+
+
+
+

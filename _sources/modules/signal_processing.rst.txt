@@ -1,0 +1,38 @@
+.. Places parent toc into the sidebar
+
+:parenttoc: True
+
+.. include:: includes/big_toc_css.rst
+
+.. _signal_processing:
+
+Signal Processing
+-------------------
+
+.. toctree::
+    :maxdepth: 2
+
+    sp_filtering
+    sp_differentiation
+    sp_dft
+    sp_stft
+    sp_frft
+    sp_sinusoidal
+
+
+
+:parenttoc: True
+
+.. include:: includes/big_toc_css.rst
+
+.. _wavelet_analysis:
+
+Wavelet Analysis
+-------------------
+
+.. toctree::
+    :maxdepth: 2
+
+    sp_cwt
+    sp_dwt
+

@@ -1,0 +1,43 @@
+.. _entropy:
+
+================
+Sinusoidal Model
+================
+
+
+Analysis
+--------
+
+::
+
+    N=20
+
+    fXst, mXst, pXst = sp.sineModel_analysis(x,fs,winlen=3001,overlap=750,
+                                window='blackmanharris', nfft=None, thr=-10, 
+                                maxn_sines=N,minDur=0.01, freq_devOffset=10,freq_devSlope=0.1)
+
+    
+
+
+
+Synthesis
+---------
+
+
+::
+
+    Xr = sp.sineModel_synthesis(fXst, mXst, pXst,fs,overlap=750,crop_end=False)
+    print(Xr.shape)
+
+
+
+
+.. figure:: ../auto_examples/signal_processing/images/sphx_glr_plot_sp_sinusodal_model_example_sound_001.png
+   :target: ../auto_examples/signal_processing/plot_sp_sinusodal_model_example_sound.html
+   :align: center
+   :scale: 70%
+
+.. topic:: Examples:
+
+   * :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_sinusodal_model_example_sound.py`
+

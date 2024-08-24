@@ -1,0 +1,603 @@
+
+
+<!DOCTYPE html>
+<!-- data-theme below is forced to be "light" but should be changed if we use pydata-theme-sphinx in the future -->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" data-content_root="../../" data-theme="light"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" data-content_root="../../" data-theme="light">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="MEA: Minimal Setting: Example" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://spkit.github.io/auto_examples/multielectrode-array/plot_mea_minimal_setting_example.html" />
+<meta property="og:site_name" content="spkit" />
+<meta property="og:description" content="In this example code, we demonstrate analysis of MEA Recording, with minimal settings, using signle line that includes all the 13 steps Read HDF File, Stim loc, Align Cycles, Average Cycles/Select ..." />
+<meta property="og:image" content="https://github.com/spkit/spkit.github.io/blob/master/assets/logo/logo.png" />
+<meta property="og:image:alt" content="spkit" />
+<meta name="description" content="In this example code, we demonstrate analysis of MEA Recording, with minimal settings, using signle line that includes all the 13 steps Read HDF File, Stim loc, Align Cycles, Average Cycles/Select ..." />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>MEA: Minimal Setting: Example &mdash; spkit 0.0.9.7 documentation</title>
+  
+  <link rel="canonical" href="http://spkit.github.io/stable/auto_examples/multielectrode-array/plot_mea_minimal_setting_example.html" />
+
+  
+  <link rel="shortcut icon" href="../../_static/favicon.ico" />
+  
+
+  <link rel="stylesheet" href="../../_static/css/vendor/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
+  <link rel="stylesheet" href="../../https://fonts.googleapis.com/css?family=Vibur" type="text/css" />
+  <link rel="stylesheet" href="../../_static/jupyterlite_sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <script id="documentation_options" data-url_root="../../"
+    src="../../_static/documentation_options.js"></script>
+  <script src="../../_static/js/vendor/jquery-3.6.3.slim.min.js"></script>
+  <script src="../../_static/js/details-permalink.js"></script>
+
+  <link rel="stylesheet" href="../../_static/css/vendor/nature_spkit.css" type="text/css" /> 
+
+
+</head>
+
+<body>
+  
+
+
+
+
+
+<!-- ('About us', pathto('about'), ''), -->
+
+
+<div id="logo-banner">
+  <div class="logo">
+    <!-- <a href="../../%23.html"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a> -->
+  <!-- <a href="#"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a> -->
+  <a href="../../index.html"><img src="../../_static/spkit_logo.png" alt="spkit logo"  border="0" /></a>
+  </div>
+  <div class="tags">
+  <ul>
+    <li>&#9672; Easy to use toolkit for signal processing and analysis</li>
+    <li>&#9672; More of biomedical signal analysis with visualization</li>
+    <li>&#9672; Includes basic machine learning models with visualization</li>
+    <!-- <li>&#9672; Open source</li> -->
+  </ul>
+  </div>
+  <div class="banner">
+  <h2>Signal Processing Toolkit</h2>
+  <h4><i>Simple and easy to use for signal analysis and predictive analysis</i></h4>
+  </div>
+</div>
+<nav id="navbar" class="spk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid spk-docs-container px-0">
+      <a class="navbar-brand py-0" href="../../index.html">
+        <img
+          class="spk-brand-img"
+          src="../../_static/spkit_small_icon_v.png"
+          alt="logo"/>
+      </a>
+    <button
+      id="spk-navbar-toggler"
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="spk-navbar-collapse collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../index.html">Home</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../install.html">Install</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../user_guide.html">User Guide</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../modules/classes.html">API</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../index.html">Examples</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../tutorials/index.html">Tutorials</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" target="_blank" rel="noopener noreferrer" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=">Discussion Forum</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../about.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="../../getting_started.html" >Getting Started</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="../../whats_new/v0.0.9.7.html" >What's new</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://github.com/nikeshbajaj/spkit" >GitHub</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://spkit.github.io/dev/index.html" target="_blank" rel="noopener noreferrer">Development</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" >Get Involved</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://spkit.github.io/dev/versions.html" >Other Versions and Download</a>
+        </li>
+        <li class="nav-item dropdown nav-more-item-dropdown">
+          <a class="spk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="spk-nav-dropdown-item dropdown-item" href="../../getting_started.html" >Getting Started</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="../../whats_new/v0.0.9.7.html" >What's new</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://github.com/nikeshbajaj/spkit" >GitHub</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://spkit.github.io/dev/index.html" target="_blank" rel="noopener noreferrer">Development</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" >Get Involved</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://spkit.github.io/dev/versions.html" >Other Versions and Download</a>
+          </div>
+        </li>
+      </ul>
+      <div id="searchbox" role="search">
+          <div class="searchformwrapper">
+          <form class="search" action="../../search.html" method="get">
+            <input class="spk-search-text-input" type="text" name="q" aria-labelledby="searchlabel" />
+            <input class="spk-search-text-btn" type="submit" value="Go" />
+          </form>
+          </div>
+      </div>
+      <a class ="nav-more-item-dropdown">
+      <font size="4em" style="margin: 5px 5px 0px 5px;color:rgb(0, 0, 0)">V</font>
+      </a>
+      <div class="nav-item dropdown nav-more-item-dropdown-vs">
+        <a class="sp-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <font color="black">0.0.9.7 (latest)</font>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../index.html" >0.0.9.7 (latest)</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.6/index.html" >0.0.9.6</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.5/index.html" >0.0.9.5</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.4/index.html" >0.0.9.4</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.3/index.html" >0.0.9.3</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.2/index.html" >0.0.9.2</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.1/index.html" >0.0.9.1</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="https://github.com/Nikeshbajaj/spkit/releases" >More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+  <div class="d-flex" id="spk-doc-wrapper" class="border-right">
+    <input type="checkbox" name="spk-toggle-checkbox" id="spk-toggle-checkbox">
+    <label id="spk-sidemenu-toggle" class="spk-btn-toggle-toc btn spk-btn-primary" for="spk-toggle-checkbox">Toggle
+      Menu</label>
+      <div id="spk-sidebar-top-logoimg">
+        <a href="../../index.html">
+          <img class="spk-brand-img-side" src="../../_static/spkit_logo.png" alt="spkit logo"  border="0" />
+        </a>
+      </div>
+    <div id="spk-sidebar-wrapper" class="border-right">
+      <div class="spk-sidebar-top-content">
+        <hr style="margin: 0 0 10px 0" />
+        <div class="alert alert-danger p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            <strong>SpKit 0.0.9.7</strong><br />
+            <!-- <a class="reference external" href="https://pypi.org/project/spkit" target="_blank"><img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/Nikeshbajaj/spkit?label=latest%20version&style=plastic"></a> -->
+            <a class="reference external" href="https://pepy.tech/project/spkit" target="_blank"><img
+                src="https://static.pepy.tech/personalized-badge/spkit?period=total&amp;units=international_system&amp;left_color=black&amp;right_color=orange&amp;left_text=downloads"
+                alt="PyPI - Downloads" /></a>
+            <a class="reference external" href="https://pypi.python.org/pypi/spkit" target="_blank"><img
+                alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/spkit?style=plastic"></a>
+            <!-- <a href="http://spkit.github.io/dev/versions.html">Other versions</a> -->
+          </p>
+        </div>
+        <div class="alert alert-warning p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            Please <a class="font-weight-bold" href="../../about.html#citing-spkit">
+              <string>cite us</string>
+            </a> if you use the software.
+          </p>
+        </div>
+        <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+          <a href="index.html" role="button" class="btn spk-btn-rellink py-1"
+            spk-rellink-tooltip="Multi-Electrode-Array (MEA)">Prev</a><a href=" index.html" role="button" class="btn spk-btn-rellink py-1"
+            spk-rellink-tooltip="Multi-Electrode-Array (MEA)">Up</a>
+          <a href="plot_mea_stepwise_example.html" role="button" class="btn spk-btn-rellink py-1"
+            spk-rellink-tooltip="MEA: Step-wise Analysis: Example">Next</a>
+        </div>
+        <hr>
+      </div>
+      <div class=" spk-sidebar-toc-wrapper">
+          <!-- <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+            <a href="index.html" role="button" class="btn spk-btn-rellink py-1"
+              spk-rellink-tooltip="Multi-Electrode-Array (MEA)">Prev</a><a href=" index.html" role="button" class="btn spk-btn-rellink py-1"
+              spk-rellink-tooltip="Multi-Electrode-Array (MEA)">Up</a>
+            <a href="plot_mea_stepwise_example.html" role="button" class="btn spk-btn-rellink py-1"
+              spk-rellink-tooltip="MEA: Step-wise Analysis: Example">Next</a>
+          </div>
+          <hr> -->
+          <div class="spk-sidebar-toc">
+            <ul>
+<li><a class="reference internal" href="#">MEA: Minimal Setting: Example</a><ul>
+<li><a class="reference internal" href="#results">Results</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+    <div id="spk-page-content-wrapper">
+      <div class="spk-page-content container-fluid body px-md-3" role="main">
+        
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-auto-examples-multielectrode-array-plot-mea-minimal-setting-example-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code or to run this example in your browser via JupyterLite or Binder</p>
+</div>
+<section class="sphx-glr-example-title" id="mea-minimal-setting-example">
+<span id="sphx-glr-auto-examples-multielectrode-array-plot-mea-minimal-setting-example-py"></span><h1>MEA: Minimal Setting: Example<a class="headerlink" href="#mea-minimal-setting-example" title="Link to this heading">¶</a></h1>
+<p>In this example code, we demonstrate analysis of MEA Recording, with minimal settings, using signle line
+that includes all the 13 steps</p>
+<ol class="arabic simple">
+<li><p>Read HDF File</p></li>
+<li><p>Stim loc</p></li>
+<li><p>Align Cycles</p></li>
+<li><p>Average Cycles/Select one</p></li>
+<li><p>Activation Time</p></li>
+<li><p>Activation &amp; Repolarisation Time</p></li>
+<li><p>APD computation</p></li>
+<li><p>Extract EGM</p></li>
+<li><p>EGM Feature Extraction</p></li>
+<li><p>BAD Channels</p></li>
+<li><p>Feature Matrix</p></li>
+<li><p>Interpolation</p></li>
+<li><p>Conduction Velocity</p></li>
+</ol>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1">#sp.mea</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">spkit</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;spkit-version: &#39;</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+
+<span class="c1"># Download Sample file if not done already</span>
+
+<span class="n">file_name</span><span class="o">=</span> <span class="s1">&#39;MEA_Sample_North_1000mV_1Hz.h5&#39;</span>
+
+<span class="k">if</span> <span class="ow">not</span><span class="p">(</span><a href="https://docs.python.org/3/library/os.path.html#os.path.exists" title="os.path.exists" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span></a><span class="p">(</span><span class="n">file_name</span><span class="p">)):</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;https://spkit.github.io/data_samples/files/MEA_Sample_North_1000mV_1Hz.h5&#39;</span>
+    <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>spkit-version:  0.0.9.7
+</pre></div>
+</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">Features_df</span><span class="p">,</span><span class="n">Features_ch</span><span class="p">,</span><span class="n">Features_mat</span><span class="p">,</span> <span class="n">Data</span> <span class="o">=</span> <a href="../../modules/generated/spkit.mea.analyse_mea_file.html#spkit.mea.analyse_mea_file" title="spkit.mea.analyse_mea_file" class="sphx-glr-backref-module-spkit-mea sphx-glr-backref-type-py-function"><span class="n">sp</span><span class="o">.</span><span class="n">mea</span><span class="o">.</span><span class="n">analyse_mea_file</span></a><span class="p">(</span><span class="n">file_name</span><span class="p">,</span><span class="n">stim_fhz</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="sphx-glr-horizontal">
+<li><img src="../../_images/sphx_glr_plot_mea_minimal_setting_example_001.png" srcset="../../_images/sphx_glr_plot_mea_minimal_setting_example_001.png" alt="Full recording of channels" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_mea_minimal_setting_example_002.png" srcset="../../_images/sphx_glr_plot_mea_minimal_setting_example_002.png" alt="Stimulus spikes loc., average duration = 25000.67 samples, Stimulus spikes time (ms), average duration = 1000.03 ms" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_mea_minimal_setting_example_003.png" srcset="../../_images/sphx_glr_plot_mea_minimal_setting_example_003.png" alt="Time Trace + AT, 47, 48, 46, 45, 38, 37, 28, 36, 27, 17, 26, 16, 35, 25, 15, 14, 24, 34, 13, 23, 12, 22, 33, 21, 32, 31, 44, 43, 41, 42, 52, 51, 53, 54, 61, 62, 71, 63, 72, 82, 73, 83, 64, 74, 84, 85, 75, 65, 86, 76, 87, 77, 66, 78, 67, 68, 55, 56, 58, 57" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_mea_minimal_setting_example_004.png" srcset="../../_images/sphx_glr_plot_mea_minimal_setting_example_004.png" alt="EGM, 47, 48, 46, 45, 38, 37, 28, 36, 27, 17, 26, 16, 35, 25, 15, 14, 24, 34, 13, 23, 12, 22, 33, 21, 32, 31, 44, 43, 41, 42, 52, 51, 53, 54, 61, 62, 71, 63, 72, 82, 73, 83, 64, 74, 84, 85, 75, 65, 86, 76, 87, 77, 66, 78, 67, 68, 55, 56, 58, 57" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_mea_minimal_setting_example_005.png" srcset="../../_images/sphx_glr_plot_mea_minimal_setting_example_005.png" alt="Activation Time, Activation Time (- bad channels)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_mea_minimal_setting_example_006.png" srcset="../../_images/sphx_glr_plot_mea_minimal_setting_example_006.png" alt="Peak-to-Peak, Peak-to-Peak (- bad channels)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_mea_minimal_setting_example_007.png" srcset="../../_images/sphx_glr_plot_mea_minimal_setting_example_007.png" alt="EGM Duration, EGM Duration (- bad channels)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_mea_minimal_setting_example_008.png" srcset="../../_images/sphx_glr_plot_mea_minimal_setting_example_008.png" alt="Fractionation Index, Fractionation Index (- bad channels)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_mea_minimal_setting_example_009.png" srcset="../../_images/sphx_glr_plot_mea_minimal_setting_example_009.png" alt="Activation Time, - Bad Channels, Interpolated Activation Time" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_mea_minimal_setting_example_010.png" srcset="../../_images/sphx_glr_plot_mea_minimal_setting_example_010.png" alt="Interpolated (preserving original values), Interpolation-Smooth" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_mea_minimal_setting_example_011.png" srcset="../../_images/sphx_glr_plot_mea_minimal_setting_example_011.png" alt="AT, AT: dx, AT: dy" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_mea_minimal_setting_example_012.png" srcset="../../_images/sphx_glr_plot_mea_minimal_setting_example_012.png" alt="CV-raw, CV, CV (-bad channels)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_mea_minimal_setting_example_013.png" srcset="../../_images/sphx_glr_plot_mea_minimal_setting_example_013.png" alt="CV | Interpolated: mean =26.82, CV | Original: mean =24.96" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_mea_minimal_setting_example_014.png" srcset="../../_images/sphx_glr_plot_mea_minimal_setting_example_014.png" alt="CV: Compass plot, including all, CV: Compass plot, excluding bad channels" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_mea_minimal_setting_example_015.png" srcset="../../_images/sphx_glr_plot_mea_minimal_setting_example_015.png" alt="Activation Map, Cond. Velocity" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_mea_minimal_setting_example_016.png" srcset="../../_images/sphx_glr_plot_mea_minimal_setting_example_016.png" alt="CV: Directional flow Map, CV: Streamlined flow" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_mea_minimal_setting_example_017.png" srcset="../../_images/sphx_glr_plot_mea_minimal_setting_example_017.png" alt="CV (Smooth): Directional flow Map, CV (Smooth): Streamlined flow" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_mea_minimal_setting_example_018.png" srcset="../../_images/sphx_glr_plot_mea_minimal_setting_example_018.png" alt="CV (upsampled): Directional flow Map, CV (upsampled): Streamlined flow" class = "sphx-glr-multi-img"/></li>
+</ul>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>----------------------------------------------------------------------------------------------------
+file name
+MEA_Sample_North_1000mV_1Hz.h5
+----------------------------------------------------------------------------------------------------
+500 ms of duration after stimulus is selected, to change it set &#39;dur_after_spike&#39;
+
+Reading File...
+base key(s) found in file &lt;KeysViewHDF5 [&#39;Data&#39;]&gt;
+Shape of Signals:  (60, 250000)
+- #Channels    = 60
+- Duration (s) = 10.0
+Shape: (60, 12450, 9)
+Number of EGMs/Cycles per channel = 9
+ -- Averaged All EGM
+EGM Shape :  (60, 12450)
+----------------------------------------------------------------------------------------------------
+Following EGM Features are etracted:  [&#39;peak_to_peak&#39;, &#39;egm_duration&#39;, &#39;f_index&#39;, &#39;new_duration&#39;, &#39;energy_mean&#39;, &#39;energy_sd&#39;, &#39;noise_var&#39;]
+EGM_Feat shape : (60, 7)
+Shapes: XE = (60, 250) , AT = (60,) , EGM_F= (60, 7)
+----------------------------------------------------------------------------------------------------
+BAD CHANNELS
+- BASED ON STIM thr = 2
+  - ch: [21, 31, 43, 41, 51, 61, 71]
+- BASED ON Peak-to-Peak volt thr: 5
+  - ch: [15, 21, 31, 43, 41, 52, 51, 61, 71]
+- BASED ON Activation time (ms) range thr: [0, 50]
+  - ch: [27, 15, 21, 31, 43, 41, 52, 51, 61, 71, 73, 85]
+- Manually passed:
+  - ch: []
+GOOD CHANNELS passed:
+  - ch: []
+--------------------------------------------------
+Final list of Bad Channels:
+ - ch: [15, 21, 27, 31, 41, 43, 51, 52, 61, 71, 73, 85]
+Final list of Good Channels:
+ - ch: [47 48 46 45 38 37 28 36 17 26 16 35 25 14 24 34 13 23 12 22 33 32 44 42
+ 53 54 62 63 72 82 83 64 74 84 75 65 86 76 87 77 66 78 67 68 55 56 58 57]
+----------------------------------------------------------------------------------------------------
+           Interpolated  Original
+CV_mean          26.817    24.965
+CV_median        24.969    24.292
+CV_sd             5.987     2.459
+inv_speed         0.004     0.004
+avg_angle        -1.693    -1.685
+Smooth Plot
+With upsampling by 2
+</pre></div>
+</div>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Link to this heading">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Features_df</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Features_ch</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>                                           Original                    Interpolated
+at_ms_mean                                11.484167                       67.361333
+at_ms_median                                  11.06                           13.94
+at_ms_sd                                   5.393794                      116.845063
+peak_to_peak_mean                        194.296019                      156.026815
+peak_to_peak_median                      198.877604                      170.335079
+peak_to_peak_sd                           80.811005                      105.284933
+egm_duration_mean                         37.043771                       35.840246
+egm_duration_median                       31.205426                       30.812905
+egm_duration_sd                           20.499696                       24.769817
+f_index_mean                               1.020833                        1.266667
+f_index_median                                  1.0                             1.0
+f_index_sd                                 0.142826                        1.424391
+new_duration_mean                         38.886978                       39.366179
+new_duration_median                       31.396708                       31.099283
+new_duration_sd                           22.934721                       31.052041
+energy_mean_mean                         634.703597                      508.018861
+energy_mean_median                       528.960827                      429.291967
+energy_mean_sd                           440.939276                      468.763144
+energy_sd_mean                          2331.557953                     1865.581011
+energy_sd_median                         1981.04279                     1463.436099
+energy_sd_sd                            1702.987816                     1785.685722
+noise_var_mean                             4.483589                        3.748528
+noise_var_median                           4.398441                        4.078418
+noise_var_sd                               1.679903                          2.1329
+cv_cm_s_mean                              24.964751                       26.143832
+cv_cm_s_median                            24.292091                       24.923668
+cv_cm_s_sd                                 2.458801                        4.490185
+inv_speed                                  0.004041                        0.003854
+avg_angle                                 -1.685121                       -1.692971
+n_bad_ch                                         12                               0
+n_good_ch                                        48                              60
+file_name            MEA_Sample_North_1000mV_1Hz.h5  MEA_Sample_North_1000mV_1Hz.h5
+     at_ms  peak_to_peak  egm_duration  f_index  new_duration  ...    energy_sd  noise_var    cv_cm_s  CH_Label  Bad_CH
+0    16.64    185.024967     32.888097      1.0     32.888097  ...  1738.891824   4.806276  24.994262        47   False
+1    19.56    207.645492     29.078587      1.0     29.078587  ...  1965.390988   4.757493  23.972602        48   False
+2    13.96    137.696900     45.199420      1.0     45.199420  ...  1313.511807   5.826316  24.300282        46   False
+3    10.88    110.208074     37.244166      1.0     37.244166  ...   589.373654   2.835411  23.614175        45   False
+4    19.52    194.957333     28.186365      1.0     28.186365  ...  1633.030667   3.361641  26.406259        38   False
+5    16.88    146.507319     31.930925      1.0     31.930925  ...  1035.150207   3.791908  25.158138        37   False
+6    20.04    284.495890     26.216436      1.0     26.216436  ...  3611.331072   3.189918  28.737474        28   False
+7    14.04    220.728300     29.077200      1.0     29.077200  ...  2302.812305   3.838855  25.588377        36   False
+8   323.44      9.426356     19.029424      1.0     19.029424  ...     8.203725   2.408528  25.561067        27    True
+9    18.60    163.620594     27.617619      1.0     27.617619  ...  1234.744236   2.870040  33.872723        17   False
+10   14.84    236.031266     28.412209      1.0     28.412209  ...  2896.596687   4.079189  24.898835        26   False
+11   16.16    108.990994    115.117881      1.0    115.117881  ...   807.893237   3.395177  22.627833        16   False
+12   11.48    101.917566     22.773716      1.0     22.773716  ...   513.439767   2.768145  23.349423        35   False
+13   12.40     46.874862     22.418585      2.0    110.892525  ...   143.344650   1.137642  25.123060        25   False
+14  284.08      0.695701     23.789267      2.0     35.323118  ...     0.040085   0.187772  24.775147        15    True
+15   10.64     26.462483     33.079279      1.0     33.079279  ...    63.254152   0.801556  30.250936        14   False
+16    9.48    105.900375     28.313894      1.0     28.313894  ...   663.290624   1.506374  23.691410        24   False
+17    8.24    183.043845     27.251336      1.0     27.251336  ...  2187.811774   4.457476  22.689037        34   False
+18    9.00    135.499567     22.598340      1.0     22.598340  ...  1225.741769   4.232107  29.345526        13   False
+19    7.00    208.095476     30.768363      1.0     30.768363  ...  1996.694592   5.713667  24.572447        23   False
+20    8.04    174.705308     29.125530      1.0     29.125530  ...  1794.933818   2.115191  20.856701        12   False
+21    5.00    197.765137     31.110845      1.0     31.110845  ...  1605.567895   2.933420  22.889576        22   False
+22    5.48    199.990070     37.185192      1.0     37.185192  ...  2428.124139   4.159148  23.929110        33   False
+23  174.48      0.672183    147.479525     12.0    204.713549  ...     0.119499   0.305310  27.257815        21    True
+24    2.72    234.087601     30.857447      1.0     30.857447  ...  3941.533424   8.792507  27.295478        32   False
+25  176.40      1.220167     21.325327      1.0     21.325327  ...     0.130375   0.271223  29.789960        31    True
+26    8.04    267.936098     32.318821      1.0     32.318821  ...  4205.093145   5.288281  24.013662        44   False
+27  357.00      1.085440     22.911071      1.0     22.911071  ...     0.123967   0.217650  22.412884        43    True
+28  394.88      0.475323     11.002538      1.0     11.002538  ...     0.299669   0.597950  36.126649        41    True
+29    1.84     28.585665     92.324811      1.0     92.324811  ...    68.006625   2.563891  27.265852        42   False
+30  349.76      2.784590     26.700329      1.0     26.700329  ...     0.403634   0.427144  29.575117        52    True
+31  345.48      0.949954     17.314854      1.0     17.314854  ...     0.136271   0.300426  42.650681        51    True
+32    4.72     85.242921     42.173367      1.0     42.173367  ...   416.599180   2.618208  22.388949        53   False
+33    7.88    154.565858     38.989405      1.0     38.989405  ...  1319.499289   3.854213  21.678996        54   False
+34  209.08      0.020953      1.206467      1.0      1.206467  ...     0.198213   0.467681  45.108018        61    True
+35    1.48    249.095678     34.198601      1.0     34.198601  ...  3865.931980   5.747313  29.443430        62   False
+36  201.60      0.818095     22.494695      2.0     31.005287  ...     0.164918   0.365871  34.893927        71    True
+37    4.64    301.713155     31.300006      1.0     31.300006  ...  4548.332537   5.208267  22.831155        63   False
+38    2.68    262.489993     35.555927      1.0     35.555927  ...  3845.349801   7.809549  26.468601        72   False
+39    4.12    165.964851     37.289210      1.0     37.289210  ...  1321.304302   4.306614  25.849839        82   False
+40  330.32      9.289875      9.507392      2.0     31.100453  ...     4.543717   1.983761  25.086544        73    True
+41    6.56    286.334120     30.977130      1.0     30.977130  ...  3690.857045   4.709205  25.321557        83   False
+42    7.56    247.082172     31.098113      1.0     31.098113  ...  3972.649231   7.058398  23.808972        64   False
+43    7.92    354.963382     28.989166      1.0     28.989166  ...  7221.839931   6.985230  24.575674        74   False
+44    9.24     48.073097    129.149889      1.0    129.149889  ...   150.594577   6.105692  25.241695        84   False
+45  343.92      7.961333     49.552862      2.0     73.763354  ...     5.714858   2.166059  27.084073        85    True
+46   10.96    270.760250     29.885907      1.0     29.885907  ...  3957.074664   5.452439  23.681946        75   False
+47   10.52    366.615413     28.754012      1.0     28.754012  ...  7866.874997   7.662611  23.166111        65   False
+48   14.32    235.104306     35.903772      1.0     35.903772  ...  3289.930349   6.583009  24.173149        86   False
+49   13.76    221.883263     34.859990      1.0     34.859990  ...  2237.905717   5.284190  24.283899        76   False
+50   17.12    246.211356     30.157142      1.0     30.157142  ...  2985.265406   4.497298  30.173894        87   False
+51   16.68    285.388401     26.533913      1.0     26.533913  ...  3509.150114   4.464566  23.511653        77   False
+52   13.60    149.778181     36.610816      1.0     36.610816  ...  1060.727601   4.077647  23.481472        66   False
+53   19.68    195.988603     30.106471      1.0     30.106471  ...  1688.048984   4.306425  23.215825        78   False
+54   16.48    275.228959     31.493410      1.0     31.493410  ...  3944.379419   5.551180  23.807320        67   False
+55   19.48    316.971262     28.380379      1.0     28.380379  ...  4342.037972   4.339405  23.325041        68   False
+56   11.16    216.102190     32.922939      1.0     32.922939  ...  2337.948079   4.871648  23.137746        55   False
+57   13.92    106.317816     52.826650      1.0     52.826650  ...   790.835827   5.137693  24.948501        56   False
+58   19.52    143.025948     34.196825      1.0     34.196825  ...   945.021764   3.442592  25.359655        58   False
+59   16.76    234.536550     34.652898      1.0     34.652898  ...  2641.059900   5.917260  24.989802        57   False
+
+[60 rows x 11 columns]
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 7.038 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-multielectrode-array-plot-mea-minimal-setting-example-py">
+<div class="binder-badge docutils container">
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/spkit/spkit/0.9.X?urlpath=lab/tree/notebooks/auto_examples/multielectrode-array/plot_mea_minimal_setting_example.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo3.svg" width="150px" /></a>
+</div>
+<div class="lite-badge docutils container">
+<a class="reference external image-reference" href="../../lite/lab/?path=auto_examples/multielectrode-array/plot_mea_minimal_setting_example.ipynb"><img alt="Launch JupyterLite" src="../../_images/jupyterlite_badge_logo3.svg" width="150px" /></a>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/a07bd42753f8aa20e096d12a81c92c5f/plot_mea_minimal_setting_example.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_mea_minimal_setting_example.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/1588b48393875190c0415310b68327ef/plot_mea_minimal_setting_example.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_mea_minimal_setting_example.py</span></code></a></p>
+</div>
+</div>
+<p class="rubric">Related examples</p>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="In this example code, we demonstrate analysis of MEA Recording, with each step. There are 13 st..."><img alt="" src="../../_images/sphx_glr_plot_mea_stepwise_example_thumb.png" />
+<p><a class="reference internal" href="plot_mea_stepwise_example.html#sphx-glr-auto-examples-multielectrode-array-plot-mea-stepwise-example-py"><span class="std std-ref">MEA: Step-wise Analysis: Example</span></a></p>
+  <div class="sphx-glr-thumbnail-title">MEA: Step-wise Analysis: Example</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="We are pleased to announce the release of spkit 0.0.9.7, which comes with many bug fixes, more ..."><img alt="" src="../../_images/sphx_glr_plot_release_highlights_0_0_9_7_thumb.png" />
+<p><a class="reference internal" href="../release_highlights/plot_release_highlights_0_0_9_7.html#sphx-glr-auto-examples-release-highlights-plot-release-highlights-0-0-9-7-py"><span class="std std-ref">Release Highlights for spkit 0.0.9.7</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Release Highlights for spkit 0.0.9.7</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="     ICA Filtering algorithm uses following three criteria for removing artifacts for EEG."><img alt="" src="../../_images/sphx_glr_plot_sp_eeg_artifact_removal_ICA_thumb.png" />
+<p><a class="reference internal" href="../electroencephalogram/plot_sp_eeg_artifact_removal_ICA.html#sphx-glr-auto-examples-electroencephalogram-plot-sp-eeg-artifact-removal-ica-py"><span class="std std-ref">EEG Artifact removal using ICA</span></a></p>
+  <div class="sphx-glr-thumbnail-title">EEG Artifact removal using ICA</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Analysis and Synthesis Models"><img alt="" src="../../_images/sphx_glr_plot_sp_fractional_fourier_transform_thumb.png" />
+<p><a class="reference internal" href="../signal_processing/plot_sp_fractional_fourier_transform.html#sphx-glr-auto-examples-signal-processing-plot-sp-fractional-fourier-transform-py"><span class="std std-ref">Fractional Fourier Transform: FRFT</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Fractional Fourier Transform: FRFT</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Dispersion Entropy is computed by first discretising the signal and then extracting all the dis..."><img alt="" src="../../_images/sphx_glr_plot_it_dispersion_entropy_eeg_emb2_thumb.png" />
+<p><a class="reference internal" href="../information_theory/plot_it_dispersion_entropy_eeg_emb2.html#sphx-glr-auto-examples-information-theory-plot-it-dispersion-entropy-eeg-emb2-py"><span class="std std-ref">Dispersion Entropy with Embedding dim</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Dispersion Entropy with Embedding dim</div>
+</div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+</section>
+
+
+      </div>
+      <div class="container">
+        <footer class="spk-content-footer">
+          &copy; 2019 - 2024, spkit developers (BSD License).
+          <!-- -->
+          <!-- <a href="../../_sources/auto_examples/multielectrode-array/plot_mea_minimal_setting_example.rst.txt" rel="nofollow">Show this page source</a> -->
+          <!-- -->
+        </footer>
+      </div>
+
+      <div class="container-fluid py-3">
+        <hr>
+        <div class="container spk-landing-container">
+              <a class="spk-footer-funding-link" href="about.html#funding">
+              <div class="text-center">
+                      <p class="mt-2">
+                        Spkit developed in collabration with other projects:
+                      </p>
+                      <a href="https://PhyAAt.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../../_static/phyaat_logo.png" title="PhyAAt"></a>
+                      <a href="https://PyLFSR.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../../_static/pylfsr_logo.png" title="PyLFSR" ></a>
+                      <a href="https://MLEndDatasets.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../../_static/mlend_logo.png" title="MLEnd-Datasets" ></a>
+              </div>
+              </a>
+              <div style="width:3px;">
+                <a href="https://clustrmaps.com/site/1b9h1"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=eQr8xSBiKVuSq6m0psK-Ey9TZ7rLzjRX-MpatyfFGQI&cl=ffffff" /></a>  
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../../_static/js/vendor/bootstrap.min.js"></script>
+  
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-59299155-3', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<!-- 
+<script defer data-domain="scikit-learn.org" src="https://views.scientific-python.org/js/script.js">
+</script>
+ -->
+
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+
+<script>
+$(document).ready(function() {
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		        '.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	});
+});
+
+</script>
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    
+</body>
+
+</html>

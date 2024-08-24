@@ -1,0 +1,49 @@
+.. Places parent toc into the sidebar
+
+:parenttoc: True
+
+.. title:: User guide: contents
+
+.. _user_guide:
+
+==========
+User Guide
+==========
+
+.. seealso:: User Guide - API
+    
+    **User Guide is in continues development. It is not complete yet, we are keep updating the contents.**
+    Please check API: :ref:`api_ref`, which is the most complete documentation of spkit.
+
+
+
+
+.. include:: includes/big_toc_css.rst
+
+.. nice layout in the toc
+
+.. include:: tune_toc.rst
+
+.. toctree::
+   :numbered:
+   :maxdepth: 3
+   
+   modules/information_theory.rst
+   modules/spsignal_filtering.rst
+   modules/spwavelet_analysis.rst
+   modules/spsignal_analysis.rst
+   modules/biomedical_signals.rst
+   modules/machine_learning.rst
+   modules/statisticsutils.rst
+   modules/data.rst
+   
+
+
+Under Development - Install
+---------------------------
+
+.. toctree::
+   :numbered:
+   :maxdepth: 1
+
+   install.rst

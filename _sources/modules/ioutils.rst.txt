@@ -1,0 +1,55 @@
+.. Places parent toc into the sidebar
+
+:parenttoc: True
+
+.. include:: includes/big_toc_css.rst
+
+
+.. _io_utils_userguide:
+
+=============
+IO Read/Write
+=============
+
+
+.. currentmodule:: spkit.io
+
+.. include:: spkit.io.examples
+
+
+Read HDF/EDF file
+=================
+
+:func:`spkit.io.read_hdf`
+
+
+Read BDF file
+=============
+
+
+:func:`spkit.io.read_bdf`
+
+
+
+
+Read Surf file
+===============
+
+
+:func:`spkit.io.read_surf`
+
+
+Read VTK file
+=============
+
+
+:func:`spkit.io.read_vtk`
+
+
+
+
+Write VTK File
+===============
+
+
+:func:`spkit.io.write_vtk`

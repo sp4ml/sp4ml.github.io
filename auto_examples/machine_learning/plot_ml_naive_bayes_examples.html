@@ -1,0 +1,617 @@
+
+
+<!DOCTYPE html>
+<!-- data-theme below is forced to be "light" but should be changed if we use pydata-theme-sphinx in the future -->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" data-content_root="../../" data-theme="light"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" data-content_root="../../" data-theme="light">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Naive Bayes classifier -  Visualisation" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://spkit.github.io/auto_examples/machine_learning/plot_ml_naive_bayes_examples.html" />
+<meta property="og:site_name" content="spkit" />
+<meta property="og:description" content="Naive Bayes classifier Computing the posterior probability of x being from class c using Bayes rule. P(y_c|x)= \frac{P(x|y_c)P(y_c)}{P(x)} This script demonstrates Naive Bayes classifier using thre..." />
+<meta property="og:image" content="https://github.com/spkit/spkit.github.io/blob/master/assets/logo/logo.png" />
+<meta property="og:image:alt" content="spkit" />
+<meta name="description" content="Naive Bayes classifier Computing the posterior probability of x being from class c using Bayes rule. P(y_c|x)= \frac{P(x|y_c)P(y_c)}{P(x)} This script demonstrates Naive Bayes classifier using thre..." />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Naive Bayes classifier - Visualisation &mdash; spkit 0.0.9.7 documentation</title>
+  
+  <link rel="canonical" href="http://spkit.github.io/stable/auto_examples/machine_learning/plot_ml_naive_bayes_examples.html" />
+
+  
+  <link rel="shortcut icon" href="../../_static/favicon.ico" />
+  
+
+  <link rel="stylesheet" href="../../_static/css/vendor/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
+  <link rel="stylesheet" href="../../https://fonts.googleapis.com/css?family=Vibur" type="text/css" />
+  <link rel="stylesheet" href="../../_static/jupyterlite_sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <script id="documentation_options" data-url_root="../../"
+    src="../../_static/documentation_options.js"></script>
+  <script src="../../_static/js/vendor/jquery-3.6.3.slim.min.js"></script>
+  <script src="../../_static/js/details-permalink.js"></script>
+
+  <link rel="stylesheet" href="../../_static/css/vendor/nature_spkit.css" type="text/css" /> 
+
+
+</head>
+
+<body>
+  
+
+
+
+
+
+<!-- ('About us', pathto('about'), ''), -->
+
+
+<div id="logo-banner">
+  <div class="logo">
+    <!-- <a href="../../%23.html"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a> -->
+  <!-- <a href="#"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a> -->
+  <a href="../../index.html"><img src="../../_static/spkit_logo.png" alt="spkit logo"  border="0" /></a>
+  </div>
+  <div class="tags">
+  <ul>
+    <li>&#9672; Easy to use toolkit for signal processing and analysis</li>
+    <li>&#9672; More of biomedical signal analysis with visualization</li>
+    <li>&#9672; Includes basic machine learning models with visualization</li>
+    <!-- <li>&#9672; Open source</li> -->
+  </ul>
+  </div>
+  <div class="banner">
+  <h2>Signal Processing Toolkit</h2>
+  <h4><i>Simple and easy to use for signal analysis and predictive analysis</i></h4>
+  </div>
+</div>
+<nav id="navbar" class="spk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid spk-docs-container px-0">
+      <a class="navbar-brand py-0" href="../../index.html">
+        <img
+          class="spk-brand-img"
+          src="../../_static/spkit_small_icon_v.png"
+          alt="logo"/>
+      </a>
+    <button
+      id="spk-navbar-toggler"
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="spk-navbar-collapse collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../index.html">Home</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../install.html">Install</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../user_guide.html">User Guide</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../modules/classes.html">API</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../index.html">Examples</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../tutorials/index.html">Tutorials</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" target="_blank" rel="noopener noreferrer" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=">Discussion Forum</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../about.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="../../getting_started.html" >Getting Started</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="../../whats_new/v0.0.9.7.html" >What's new</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://github.com/nikeshbajaj/spkit" >GitHub</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://spkit.github.io/dev/index.html" target="_blank" rel="noopener noreferrer">Development</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" >Get Involved</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://spkit.github.io/dev/versions.html" >Other Versions and Download</a>
+        </li>
+        <li class="nav-item dropdown nav-more-item-dropdown">
+          <a class="spk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="spk-nav-dropdown-item dropdown-item" href="../../getting_started.html" >Getting Started</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="../../whats_new/v0.0.9.7.html" >What's new</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://github.com/nikeshbajaj/spkit" >GitHub</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://spkit.github.io/dev/index.html" target="_blank" rel="noopener noreferrer">Development</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" >Get Involved</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://spkit.github.io/dev/versions.html" >Other Versions and Download</a>
+          </div>
+        </li>
+      </ul>
+      <div id="searchbox" role="search">
+          <div class="searchformwrapper">
+          <form class="search" action="../../search.html" method="get">
+            <input class="spk-search-text-input" type="text" name="q" aria-labelledby="searchlabel" />
+            <input class="spk-search-text-btn" type="submit" value="Go" />
+          </form>
+          </div>
+      </div>
+      <a class ="nav-more-item-dropdown">
+      <font size="4em" style="margin: 5px 5px 0px 5px;color:rgb(0, 0, 0)">V</font>
+      </a>
+      <div class="nav-item dropdown nav-more-item-dropdown-vs">
+        <a class="sp-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <font color="black">0.0.9.7 (latest)</font>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../index.html" >0.0.9.7 (latest)</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.6/index.html" >0.0.9.6</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.5/index.html" >0.0.9.5</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.4/index.html" >0.0.9.4</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.3/index.html" >0.0.9.3</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.2/index.html" >0.0.9.2</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.1/index.html" >0.0.9.1</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="https://github.com/Nikeshbajaj/spkit/releases" >More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+  <div class="d-flex" id="spk-doc-wrapper" class="border-right">
+    <input type="checkbox" name="spk-toggle-checkbox" id="spk-toggle-checkbox">
+    <label id="spk-sidemenu-toggle" class="spk-btn-toggle-toc btn spk-btn-primary" for="spk-toggle-checkbox">Toggle
+      Menu</label>
+      <div id="spk-sidebar-top-logoimg">
+        <a href="../../index.html">
+          <img class="spk-brand-img-side" src="../../_static/spkit_logo.png" alt="spkit logo"  border="0" />
+        </a>
+      </div>
+    <div id="spk-sidebar-wrapper" class="border-right">
+      <div class="spk-sidebar-top-content">
+        <hr style="margin: 0 0 10px 0" />
+        <div class="alert alert-danger p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            <strong>SpKit 0.0.9.7</strong><br />
+            <!-- <a class="reference external" href="https://pypi.org/project/spkit" target="_blank"><img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/Nikeshbajaj/spkit?label=latest%20version&style=plastic"></a> -->
+            <a class="reference external" href="https://pepy.tech/project/spkit" target="_blank"><img
+                src="https://static.pepy.tech/personalized-badge/spkit?period=total&amp;units=international_system&amp;left_color=black&amp;right_color=orange&amp;left_text=downloads"
+                alt="PyPI - Downloads" /></a>
+            <a class="reference external" href="https://pypi.python.org/pypi/spkit" target="_blank"><img
+                alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/spkit?style=plastic"></a>
+            <!-- <a href="http://spkit.github.io/dev/versions.html">Other versions</a> -->
+          </p>
+        </div>
+        <div class="alert alert-warning p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            Please <a class="font-weight-bold" href="../../about.html#citing-spkit">
+              <string>cite us</string>
+            </a> if you use the software.
+          </p>
+        </div>
+        <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+          <a href="plot_ml_logistic_regression_examples.html" role="button" class="btn spk-btn-rellink py-1"
+            spk-rellink-tooltip="Logistic Regression - Visualisation">Prev</a><a href=" index.html" role="button" class="btn spk-btn-rellink py-1"
+            spk-rellink-tooltip="Machine Learning">Up</a>
+          <a href="../signal_processing/index.html" role="button" class="btn spk-btn-rellink py-1"
+            spk-rellink-tooltip="Signal Processing">Next</a>
+        </div>
+        <hr>
+      </div>
+      <div class=" spk-sidebar-toc-wrapper">
+          <!-- <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+            <a href="plot_ml_logistic_regression_examples.html" role="button" class="btn spk-btn-rellink py-1"
+              spk-rellink-tooltip="Logistic Regression - Visualisation">Prev</a><a href=" index.html" role="button" class="btn spk-btn-rellink py-1"
+              spk-rellink-tooltip="Machine Learning">Up</a>
+            <a href="../signal_processing/index.html" role="button" class="btn spk-btn-rellink py-1"
+              spk-rellink-tooltip="Signal Processing">Next</a>
+          </div>
+          <hr> -->
+          <div class="spk-sidebar-toc">
+            <ul>
+<li><a class="reference internal" href="#">Naive Bayes classifier -  Visualisation</a><ul>
+<li><a class="reference internal" href="#example-1-iris-dataset">Example 1 : Iris dataset</a></li>
+<li><a class="reference internal" href="#example-2-breast-cancer">Example 2: Breast Cancer</a></li>
+<li><a class="reference internal" href="#example-3-digit-classification">Example 3:: Digit Classification</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+    <div id="spk-page-content-wrapper">
+      <div class="spk-page-content container-fluid body px-md-3" role="main">
+        
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-auto-examples-machine-learning-plot-ml-naive-bayes-examples-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code or to run this example in your browser via JupyterLite or Binder</p>
+</div>
+<section class="sphx-glr-example-title" id="naive-bayes-classifier-visualisation">
+<span id="sphx-glr-auto-examples-machine-learning-plot-ml-naive-bayes-examples-py"></span><h1>Naive Bayes classifier -  Visualisation<a class="headerlink" href="#naive-bayes-classifier-visualisation" title="Link to this heading">¶</a></h1>
+<p>Naive Bayes classifier</p>
+<p>Computing the posterior probability of <em>x</em> being from class <strong>c</strong> using <strong>Bayes</strong> rule.</p>
+<div class="math notranslate nohighlight">
+\[P(y_c|x)= \frac{P(x|y_c)P(y_c)}{P(x)}\]</div>
+<p>This script demonstrates Naive Bayes classifier using three examples</p>
+<ul class="simple">
+<li><p>Example 1: Iris dataset</p></li>
+<li><p>Example 2: Breast Cancer</p></li>
+<li><p>Example 3: Digit Classification</p></li>
+</ul>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># libraries</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="kn">import</span> <span class="nn">spkit</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;spkit version :&#39;</span><span class="p">,</span> <span class="n">spkit</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">spkit.ml</span> <span class="kn">import</span> <a href="../../modules/generated/spkit.ml.NaiveBayes.html#spkit.ml.NaiveBayes" title="spkit.ml.NaiveBayes" class="sphx-glr-backref-module-spkit-ml sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">NaiveBayes</span></a>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>spkit version : 0.0.9.7
+</pre></div>
+</div>
+<section id="example-1-iris-dataset">
+<h2>Example 1 : Iris dataset<a class="headerlink" href="#example-1-iris-dataset" title="Link to this heading">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">data</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">target</span>
+
+<span class="n">Xt</span><span class="p">,</span><span class="n">Xs</span><span class="p">,</span><span class="n">yt</span><span class="p">,</span><span class="n">ys</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Shapes: &#39;</span><span class="p">,</span><span class="n">Xt</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">yt</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">Xs</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">ys</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># Fitting model (Estimating the parameters)</span>
+
+<span class="n">model</span> <span class="o">=</span> <a href="../../modules/generated/spkit.ml.NaiveBayes.html#spkit.ml.NaiveBayes" title="spkit.ml.NaiveBayes" class="sphx-glr-backref-module-spkit-ml sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">NaiveBayes</span></a><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span><span class="n">yt</span><span class="p">)</span>
+
+
+<span class="c1"># ## Prediction and Accuracy</span>
+<span class="n">ytp</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xt</span><span class="p">)</span>
+<span class="n">ysp</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xs</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Training Accuracy : &#39;</span><span class="p">,</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">ytp</span><span class="o">==</span><span class="n">yt</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Testing  Accuracy : &#39;</span><span class="p">,</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">ysp</span><span class="o">==</span><span class="n">ys</span><span class="p">))</span>
+
+
+<span class="c1"># Predicting probabilities</span>
+
+<span class="n">ytpr</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_prob</span><span class="p">(</span><span class="n">Xt</span><span class="p">)</span>
+<span class="n">yspr</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_prob</span><span class="p">(</span><span class="n">Xs</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ytpr</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xs</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_prob</span><span class="p">(</span><span class="n">Xs</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="c1"># Parameters :: $\mu$, $\sigma$</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;model parameters&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">)</span>
+
+
+<span class="c1"># Visualizing the distribution</span>
+
+<span class="c1"># Setting the names of classes and features (Optional)</span>
+
+
+<span class="n">model</span><span class="o">.</span><span class="n">set_class_labels</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;target_names&#39;</span><span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">set_feature_names</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;feature_names&#39;</span><span class="p">])</span>
+
+<span class="n">fig</span> <span class="o">=</span> <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">VizPx</span><span class="p">(</span><span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.suptitle.html#matplotlib.pyplot.suptitle" title="matplotlib.pyplot.suptitle" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span></a><span class="p">(</span><span class="s1">&#39;Example 1: Iris dataset&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout" title="matplotlib.pyplot.tight_layout" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span></a><span class="p">()</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_ml_naive_bayes_examples_001.png" srcset="../../_images/sphx_glr_plot_ml_naive_bayes_examples_001.png" alt="Example 1: Iris dataset" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Shapes:  (105, 4) (105,) (45, 4) (45,)
+Training Accuracy :  0.9619047619047619
+Testing  Accuracy :  0.8888888888888888
+[1.00000000e+00 7.04728107e-11 7.04718031e-11]
+[1] [[4.60309433e-10 9.98360004e-01 1.63999602e-03]]
+model parameters
+{0: {&#39;mu&#39;: array([5.01666667, 3.45      , 1.48055556, 0.24722222]), &#39;sig&#39;: array([0.13138889, 0.12861111, 0.02989969, 0.01249228]), &#39;prior&#39;: 0.34285714285714286}, 1: {&#39;mu&#39;: array([5.775     , 2.68928571, 4.16785714, 1.30714286]), &#39;sig&#39;: array([0.18830357, 0.11809949, 0.23289541, 0.04566327]), &#39;prior&#39;: 0.26666666666666666}, 2: {&#39;mu&#39;: array([6.59512195, 2.98780488, 5.54878049, 2.03902439]), &#39;sig&#39;: array([0.39851279, 0.09960738, 0.29713266, 0.06774539]), &#39;prior&#39;: 0.3904761904761905}}
+</pre></div>
+</div>
+</section>
+<section id="example-2-breast-cancer">
+<h2>Example 2: Breast Cancer<a class="headerlink" href="#example-2-breast-cancer" title="Link to this heading">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_breast_cancer</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">data</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">target</span>
+
+<span class="n">Xt</span><span class="p">,</span><span class="n">Xs</span><span class="p">,</span><span class="n">yt</span><span class="p">,</span><span class="n">ys</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Xt</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">yt</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">Xs</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">ys</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+
+<span class="c1"># ## Fitting model (estimating the parameters)</span>
+
+<span class="n">model</span> <span class="o">=</span> <a href="../../modules/generated/spkit.ml.NaiveBayes.html#spkit.ml.NaiveBayes" title="spkit.ml.NaiveBayes" class="sphx-glr-backref-module-spkit-ml sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">NaiveBayes</span></a><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span><span class="n">yt</span><span class="p">)</span>
+
+
+<span class="c1"># ## Accuracy</span>
+
+
+<span class="n">ytp</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xt</span><span class="p">)</span>
+<span class="n">ysp</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xs</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Training Accuracy : &#39;</span><span class="p">,</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">ytp</span><span class="o">==</span><span class="n">yt</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Testing  Accuracy : &#39;</span><span class="p">,</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">ysp</span><span class="o">==</span><span class="n">ys</span><span class="p">))</span>
+
+
+<span class="c1"># Parameters :: $\mu$, $\sigma$</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;model parameters&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">set_class_labels</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;target_names&#39;</span><span class="p">])</span>
+
+
+<span class="c1"># Visualizing first 16 features</span>
+
+<span class="n">fig</span> <span class="o">=</span> <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">VizPx</span><span class="p">(</span><span class="n">nfeatures</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span><span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.suptitle.html#matplotlib.pyplot.suptitle" title="matplotlib.pyplot.suptitle" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span></a><span class="p">(</span><span class="s1">&#39;Example 2: Breast Cancer&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout" title="matplotlib.pyplot.tight_layout" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span></a><span class="p">()</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+
+<span class="c1"># Visualizing next 14 features</span>
+
+<span class="n">fig</span> <span class="o">=</span> <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">VizPx</span><span class="p">(</span><span class="n">nfeatures</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span><span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.suptitle.html#matplotlib.pyplot.suptitle" title="matplotlib.pyplot.suptitle" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span></a><span class="p">(</span><span class="s1">&#39;Example 2: Breast Cancer&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout" title="matplotlib.pyplot.tight_layout" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span></a><span class="p">()</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="sphx-glr-horizontal">
+<li><img src="../../_images/sphx_glr_plot_ml_naive_bayes_examples_002.png" srcset="../../_images/sphx_glr_plot_ml_naive_bayes_examples_002.png" alt="Example 2: Breast Cancer" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_ml_naive_bayes_examples_003.png" srcset="../../_images/sphx_glr_plot_ml_naive_bayes_examples_003.png" alt="Example 2: Breast Cancer" class = "sphx-glr-multi-img"/></li>
+</ul>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(398, 30) (398,) (171, 30) (171,)
+Training Accuracy :  0.9346733668341709
+Testing  Accuracy :  0.9590643274853801
+model parameters
+{&#39;mu&#39;: array([1.73966667e+01, 2.18275510e+01, 1.15002585e+02, 9.69621088e+02,
+       1.02753673e-01, 1.46457891e-01, 1.59858980e-01, 8.69185714e-02,
+       1.94236054e-01, 6.26795918e-02, 6.12984354e-01, 1.22654150e+00,
+       4.36846939e+00, 7.20774830e+01, 6.69765986e-03, 3.30667211e-02,
+       4.21244898e-02, 1.49212653e-02, 2.08996531e-02, 4.09656463e-03,
+       2.10225170e+01, 2.95112245e+01, 1.40775034e+02, 1.40174830e+03,
+       1.43621701e-01, 3.77730680e-01, 4.48638639e-01, 1.79744626e-01,
+       3.25874150e-01, 9.16917687e-02]), &#39;sig&#39;: array([9.95480726e+00, 1.38880539e+01, 4.68960299e+02, 1.29212768e+05,
+       1.59966779e-04, 2.94649712e-03, 5.75380069e-03, 1.21827179e-03,
+       7.88506079e-04, 5.70942046e-05, 1.16956087e-01, 2.72341753e-01,
+       6.75019135e+00, 3.27652579e+03, 1.02654553e-05, 3.91052970e-04,
+       5.34337825e-04, 3.36362895e-05, 1.17125785e-04, 4.62239505e-06,
+       1.74063835e+01, 2.91754012e+01, 8.28866575e+02, 3.29108921e+05,
+       5.28779271e-04, 2.90755457e-02, 3.41376116e-02, 2.31114044e-03,
+       6.02900732e-03, 4.47106286e-04]), &#39;prior&#39;: 0.3693467336683417}
+</pre></div>
+</div>
+</section>
+<section id="example-3-digit-classification">
+<h2>Example 3:: Digit Classification<a class="headerlink" href="#example-3-digit-classification" title="Link to this heading">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_digits</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">data</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">target</span>
+
+<span class="c1"># Avoiding features with zero variance (contant value)</span>
+<span class="c1"># X = X[:,X.var(0)&gt;0]</span>
+
+<span class="n">Xt</span><span class="p">,</span><span class="n">Xs</span><span class="p">,</span><span class="n">yt</span><span class="p">,</span><span class="n">ys</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Xt</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">yt</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">Xs</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">ys</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+
+<span class="c1"># Fitting model (estimating the parameters)</span>
+
+<span class="n">model</span> <span class="o">=</span> <a href="../../modules/generated/spkit.ml.NaiveBayes.html#spkit.ml.NaiveBayes" title="spkit.ml.NaiveBayes" class="sphx-glr-backref-module-spkit-ml sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">NaiveBayes</span></a><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span><span class="n">yt</span><span class="p">)</span>
+
+
+<span class="c1"># Accuracy</span>
+
+<span class="n">ytp</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xt</span><span class="p">)</span>
+<span class="n">ysp</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xs</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Training Accuracy : &#39;</span><span class="p">,</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">ytp</span><span class="o">==</span><span class="n">yt</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Testing  Accuracy : &#39;</span><span class="p">,</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">ysp</span><span class="o">==</span><span class="n">ys</span><span class="p">))</span>
+
+
+<span class="c1"># Predicting probablities</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xs</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_prob</span><span class="p">(</span><span class="n">Xs</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow" title="matplotlib.pyplot.imshow" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span></a><span class="p">(</span><span class="n">Xs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">([</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">]),</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.axis.html#matplotlib.pyplot.axis" title="matplotlib.pyplot.axis" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">axis</span></a><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Prediction&#39;</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xs</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+
+<span class="c1"># Visualizing</span>
+<span class="n">fig</span> <span class="o">=</span> <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">VizPx</span><span class="p">(</span><span class="n">nfeatures</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">19</span><span class="p">),</span><span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.suptitle.html#matplotlib.pyplot.suptitle" title="matplotlib.pyplot.suptitle" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span></a><span class="p">(</span><span class="s1">&#39;Example 3: Digit Classification&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout" title="matplotlib.pyplot.tight_layout" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span></a><span class="p">()</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="sphx-glr-horizontal">
+<li><img src="../../_images/sphx_glr_plot_ml_naive_bayes_examples_004.png" srcset="../../_images/sphx_glr_plot_ml_naive_bayes_examples_004.png" alt="plot ml naive bayes examples" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_ml_naive_bayes_examples_005.png" srcset="../../_images/sphx_glr_plot_ml_naive_bayes_examples_005.png" alt="Example 3: Digit Classification" class = "sphx-glr-multi-img"/></li>
+</ul>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(1257, 64) (1257,) (540, 64) (540,)
+Training Accuracy :  0.7987271280827367
+Testing  Accuracy :  0.7833333333333333
+[2] [[0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1]]
+Prediction [2]
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 8.267 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-machine-learning-plot-ml-naive-bayes-examples-py">
+<div class="binder-badge docutils container">
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/spkit/spkit/0.9.X?urlpath=lab/tree/notebooks/auto_examples/machine_learning/plot_ml_naive_bayes_examples.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo2.svg" width="150px" /></a>
+</div>
+<div class="lite-badge docutils container">
+<a class="reference external image-reference" href="../../lite/lab/?path=auto_examples/machine_learning/plot_ml_naive_bayes_examples.ipynb"><img alt="Launch JupyterLite" src="../../_images/jupyterlite_badge_logo2.svg" width="150px" /></a>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/10d650e13060847cfe4c4147b53f9af0/plot_ml_naive_bayes_examples.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_ml_naive_bayes_examples.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/b8ce3092fb478e35f95962a6e1b776da/plot_ml_naive_bayes_examples.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_ml_naive_bayes_examples.py</span></code></a></p>
+</div>
+</div>
+<p class="rubric">Related examples</p>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip=" An example of a Logistic Regression with visualasation"><img alt="" src="../../_images/sphx_glr_plot_ml_logistic_regression_examples_thumb.png" />
+<p><a class="reference internal" href="plot_ml_logistic_regression_examples.html#sphx-glr-auto-examples-machine-learning-plot-ml-logistic-regression-examples-py"><span class="std std-ref">Logistic Regression -  Visualisation</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Logistic Regression -  Visualisation</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Decision Trees with shrinking capability from SpKit (Regression example)"><img alt="" src="../../_images/sphx_glr_plot_ml_decision_tree_shrinking_capability_reg_thumb.png" />
+<p><a class="reference internal" href="plot_ml_decision_tree_shrinking_capability_reg.html#sphx-glr-auto-examples-machine-learning-plot-ml-decision-tree-shrinking-capability-reg-py"><span class="std std-ref">Decision Trees with shrinking capability - Regression example</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Decision Trees with shrinking capability - Regression example</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip=" Decision Trees with shrinking capability from SpKit (Classification example)"><img alt="" src="../../_images/sphx_glr_plot_ml_decision_tree_shrinking_capability_cls_thumb.png" />
+<p><a class="reference internal" href="plot_ml_decision_tree_shrinking_capability_cls.html#sphx-glr-auto-examples-machine-learning-plot-ml-decision-tree-shrinking-capability-cls-py"><span class="std std-ref">Decision Trees with shrinking capability - Classification example</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Decision Trees with shrinking capability - Classification example</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Decision Trees with visualisation while building trees."><img alt="" src="../../_images/sphx_glr_plot_ml_decision_tree_visualisation_thumb.png" />
+<p><a class="reference internal" href="plot_ml_decision_tree_visualisation.html#sphx-glr-auto-examples-machine-learning-plot-ml-decision-tree-visualisation-py"><span class="std std-ref">Decision Trees with visualisations while buiding tree</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Decision Trees with visualisations while buiding tree</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip=" Decision Trees without converting Catogorical Features using SpKit"><img alt="" src="../../_images/sphx_glr_plot_ml_decision_tree_catogorical_features_thumb.png" />
+<p><a class="reference internal" href="plot_ml_decision_tree_catogorical_features.html#sphx-glr-auto-examples-machine-learning-plot-ml-decision-tree-catogorical-features-py"><span class="std std-ref">Decision Trees without converting Catogorical Features</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Decision Trees without converting Catogorical Features</div>
+</div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+</section>
+
+
+      </div>
+      <div class="container">
+        <footer class="spk-content-footer">
+          &copy; 2019 - 2024, spkit developers (BSD License).
+          <!-- -->
+          <!-- <a href="../../_sources/auto_examples/machine_learning/plot_ml_naive_bayes_examples.rst.txt" rel="nofollow">Show this page source</a> -->
+          <!-- -->
+        </footer>
+      </div>
+
+      <div class="container-fluid py-3">
+        <hr>
+        <div class="container spk-landing-container">
+              <a class="spk-footer-funding-link" href="about.html#funding">
+              <div class="text-center">
+                      <p class="mt-2">
+                        Spkit developed in collabration with other projects:
+                      </p>
+                      <a href="https://PhyAAt.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../../_static/phyaat_logo.png" title="PhyAAt"></a>
+                      <a href="https://PyLFSR.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../../_static/pylfsr_logo.png" title="PyLFSR" ></a>
+                      <a href="https://MLEndDatasets.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../../_static/mlend_logo.png" title="MLEnd-Datasets" ></a>
+              </div>
+              </a>
+              <div style="width:3px;">
+                <a href="https://clustrmaps.com/site/1b9h1"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=eQr8xSBiKVuSq6m0psK-Ey9TZ7rLzjRX-MpatyfFGQI&cl=ffffff" /></a>  
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../../_static/js/vendor/bootstrap.min.js"></script>
+  
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-59299155-3', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<!-- 
+<script defer data-domain="scikit-learn.org" src="https://views.scientific-python.org/js/script.js">
+</script>
+ -->
+
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+
+<script>
+$(document).ready(function() {
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		        '.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	});
+});
+
+</script>
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    
+</body>
+
+</html>

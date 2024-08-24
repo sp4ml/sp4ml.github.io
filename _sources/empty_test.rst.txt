@@ -1,0 +1,33 @@
+.. _empty:
+
+=======================
+Empty Page
+=======================
+
+  * :ref:`Install the latest official release <install_official_release>`. 
+
+
+
+Heading
+=======
+
+
+
+.. raw:: html
+
+  <div class="install">
+       <strong>Operating System</strong>
+          <input type="radio" name="os" id="quickstart-win" checked>
+          <label for="quickstart-win">Windows</label>
+          <input type="radio" name="os" id="quickstart-mac">
+          <label for="quickstart-mac">macOS</label>
+          <input type="radio" name="os" id="quickstart-lin">
+          <label for="quickstart-lin">Linux</label><br />
+       <strong>Packager</strong>
+          <input type="radio" name="packager" id="quickstart-pip" checked>
+          <label for="quickstart-pip">pip</label>
+          <input type="radio" name="packager" id="quickstart-conda">
+          <label for="quickstart-conda">conda</label><br />
+          <input type="checkbox" name="config" id="quickstart-venv">
+          <label for="quickstart-venv"></label>
+       </span>

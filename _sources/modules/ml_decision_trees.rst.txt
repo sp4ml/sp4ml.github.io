@@ -1,0 +1,30 @@
+.. _ml_trees:
+
+=============
+Decision Trees
+=============
+
+
+
+Classification Trees
+====================
+
+Visualising Trees
+----------------
+
+
+
+Shrinking/proning Trees
+---------------------
+
+
+Tree for catogories features
+-----------------------------
+
+
+
+
+
+
+Regression Trees
+====================

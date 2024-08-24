@@ -1,0 +1,16 @@
+.. currentmodule:: spkit
+.. include:: whats_new/_contributors.rst
+
+Release History
+===============
+
+Release notes for all spkit releases are linked in this page.
+
+**Tip:** `Subscribe to scikit-learn releases <https://libraries.io/pypi/spkit>`__
+on libraries.io to be notified when new versions are released.
+
+.. toctree::
+    :maxdepth: 1
+
+    Version 0.0.9.7 <whats_new/v0.0.9.7.rst>
+    Version 0.0.9.6 <whats_new/v0.0.9.6.rst>

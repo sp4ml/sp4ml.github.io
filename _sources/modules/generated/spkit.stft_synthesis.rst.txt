@@ -1,0 +1,17 @@
+﻿..
+    The empty line below should not be removed. It is added such that the `rst_prolog`
+    is added before the :mod: directive. Otherwise, the rendering will show as a
+    paragraph instead of a header.
+
+:mod:`spkit`.stft_synthesis
+========================================
+
+.. currentmodule:: spkit
+
+.. autofunction:: stft_synthesis
+
+.. include:: spkit.stft_synthesis.examples
+
+.. raw:: html
+
+    <div class="clearer"></div>

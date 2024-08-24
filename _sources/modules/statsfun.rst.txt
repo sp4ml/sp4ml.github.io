@@ -1,0 +1,40 @@
+.. Places parent toc into the sidebar
+
+:parenttoc: True
+
+.. include:: includes/big_toc_css.rst
+
+
+.. _stats_helper:
+
+=============
+Statistics
+=============
+
+.. currentmodule:: spkit.stats
+
+.. include:: spkit.stats.test_2groups.examples
+
+
+
+Testing Two Groups
+==================
+
+:func:`test_2groups`
+
+
+
+Testing gropus
+==============
+
+:func:`test_groups`
+
+
+Testing gropus
+==============
+
+
+Spkit includes function to visualise the statictical results with plots
+
+
+:func:`plot_groups_boxes`

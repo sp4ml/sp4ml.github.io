@@ -1,0 +1,17 @@
+.. Places parent toc into the sidebar
+
+:parenttoc: True
+
+.. include:: includes/big_toc_css.rst
+
+.. _information_theory:
+
+Information Theory
+-------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    it_entropy
+    it_disperssion_differential
+    it_apps

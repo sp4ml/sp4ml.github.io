@@ -1,0 +1,13 @@
+:parenttoc: True
+
+.. include:: includes/big_toc_css.rst
+
+.. _filtering_kernel:
+
+
+==================
+Kernel Filtering
+==================
+
+Kernel Filtering
+=================

@@ -1,0 +1,514 @@
+
+
+<!DOCTYPE html>
+<!-- data-theme below is forced to be "light" but should be changed if we use pydata-theme-sphinx in the future -->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" data-content_root="../../" data-theme="light"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" data-content_root="../../" data-theme="light">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Wavelet Filtering" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://spkit.github.io/auto_examples/signal_processing/plot_sp_wavelet_filtering_example.html" />
+<meta property="og:site_name" content="spkit" />
+<meta property="og:description" content="Background Other than classical spectral filtering, Wavelet filtering is one of common techniques used in signal processing. It allows to filter out short-time duration patterns captured by used wa..." />
+<meta property="og:image" content="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/wavelet_filtering_block_dia_1.png" />
+<meta property="og:image:alt" content="spkit" />
+<meta name="description" content="Background Other than classical spectral filtering, Wavelet filtering is one of common techniques used in signal processing. It allows to filter out short-time duration patterns captured by used wa..." />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Wavelet Filtering &mdash; spkit 0.0.9.7 documentation</title>
+  
+  <link rel="canonical" href="http://spkit.github.io/stable/auto_examples/signal_processing/plot_sp_wavelet_filtering_example.html" />
+
+  
+  <link rel="shortcut icon" href="../../_static/favicon.ico" />
+  
+
+  <link rel="stylesheet" href="../../_static/css/vendor/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
+  <link rel="stylesheet" href="../../https://fonts.googleapis.com/css?family=Vibur" type="text/css" />
+  <link rel="stylesheet" href="../../_static/jupyterlite_sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <script id="documentation_options" data-url_root="../../"
+    src="../../_static/documentation_options.js"></script>
+  <script src="../../_static/js/vendor/jquery-3.6.3.slim.min.js"></script>
+  <script src="../../_static/js/details-permalink.js"></script>
+
+  <link rel="stylesheet" href="../../_static/css/vendor/nature_spkit.css" type="text/css" /> 
+
+
+</head>
+
+<body>
+  
+
+
+
+
+
+<!-- ('About us', pathto('about'), ''), -->
+
+
+<div id="logo-banner">
+  <div class="logo">
+    <!-- <a href="../../%23.html"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a> -->
+  <!-- <a href="#"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a> -->
+  <a href="../../index.html"><img src="../../_static/spkit_logo.png" alt="spkit logo"  border="0" /></a>
+  </div>
+  <div class="tags">
+  <ul>
+    <li>&#9672; Easy to use toolkit for signal processing and analysis</li>
+    <li>&#9672; More of biomedical signal analysis with visualization</li>
+    <li>&#9672; Includes basic machine learning models with visualization</li>
+    <!-- <li>&#9672; Open source</li> -->
+  </ul>
+  </div>
+  <div class="banner">
+  <h2>Signal Processing Toolkit</h2>
+  <h4><i>Simple and easy to use for signal analysis and predictive analysis</i></h4>
+  </div>
+</div>
+<nav id="navbar" class="spk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid spk-docs-container px-0">
+      <a class="navbar-brand py-0" href="../../index.html">
+        <img
+          class="spk-brand-img"
+          src="../../_static/spkit_small_icon_v.png"
+          alt="logo"/>
+      </a>
+    <button
+      id="spk-navbar-toggler"
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="spk-navbar-collapse collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../index.html">Home</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../install.html">Install</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../user_guide.html">User Guide</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../modules/classes.html">API</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../index.html">Examples</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../tutorials/index.html">Tutorials</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" target="_blank" rel="noopener noreferrer" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=">Discussion Forum</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../about.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="../../getting_started.html" >Getting Started</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="../../whats_new/v0.0.9.7.html" >What's new</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://github.com/nikeshbajaj/spkit" >GitHub</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://spkit.github.io/dev/index.html" target="_blank" rel="noopener noreferrer">Development</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" >Get Involved</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://spkit.github.io/dev/versions.html" >Other Versions and Download</a>
+        </li>
+        <li class="nav-item dropdown nav-more-item-dropdown">
+          <a class="spk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="spk-nav-dropdown-item dropdown-item" href="../../getting_started.html" >Getting Started</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="../../whats_new/v0.0.9.7.html" >What's new</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://github.com/nikeshbajaj/spkit" >GitHub</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://spkit.github.io/dev/index.html" target="_blank" rel="noopener noreferrer">Development</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" >Get Involved</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://spkit.github.io/dev/versions.html" >Other Versions and Download</a>
+          </div>
+        </li>
+      </ul>
+      <div id="searchbox" role="search">
+          <div class="searchformwrapper">
+          <form class="search" action="../../search.html" method="get">
+            <input class="spk-search-text-input" type="text" name="q" aria-labelledby="searchlabel" />
+            <input class="spk-search-text-btn" type="submit" value="Go" />
+          </form>
+          </div>
+      </div>
+      <a class ="nav-more-item-dropdown">
+      <font size="4em" style="margin: 5px 5px 0px 5px;color:rgb(0, 0, 0)">V</font>
+      </a>
+      <div class="nav-item dropdown nav-more-item-dropdown-vs">
+        <a class="sp-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <font color="black">0.0.9.7 (latest)</font>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../index.html" >0.0.9.7 (latest)</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.6/index.html" >0.0.9.6</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.5/index.html" >0.0.9.5</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.4/index.html" >0.0.9.4</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.3/index.html" >0.0.9.3</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.2/index.html" >0.0.9.2</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.1/index.html" >0.0.9.1</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="https://github.com/Nikeshbajaj/spkit/releases" >More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+  <div class="d-flex" id="spk-doc-wrapper" class="border-right">
+    <input type="checkbox" name="spk-toggle-checkbox" id="spk-toggle-checkbox">
+    <label id="spk-sidemenu-toggle" class="spk-btn-toggle-toc btn spk-btn-primary" for="spk-toggle-checkbox">Toggle
+      Menu</label>
+      <div id="spk-sidebar-top-logoimg">
+        <a href="../../index.html">
+          <img class="spk-brand-img-side" src="../../_static/spkit_logo.png" alt="spkit logo"  border="0" />
+        </a>
+      </div>
+    <div id="spk-sidebar-wrapper" class="border-right">
+      <div class="spk-sidebar-top-content">
+        <hr style="margin: 0 0 10px 0" />
+        <div class="alert alert-danger p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            <strong>SpKit 0.0.9.7</strong><br />
+            <!-- <a class="reference external" href="https://pypi.org/project/spkit" target="_blank"><img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/Nikeshbajaj/spkit?label=latest%20version&style=plastic"></a> -->
+            <a class="reference external" href="https://pepy.tech/project/spkit" target="_blank"><img
+                src="https://static.pepy.tech/personalized-badge/spkit?period=total&amp;units=international_system&amp;left_color=black&amp;right_color=orange&amp;left_text=downloads"
+                alt="PyPI - Downloads" /></a>
+            <a class="reference external" href="https://pypi.python.org/pypi/spkit" target="_blank"><img
+                alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/spkit?style=plastic"></a>
+            <!-- <a href="http://spkit.github.io/dev/versions.html">Other versions</a> -->
+          </p>
+        </div>
+        <div class="alert alert-warning p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            Please <a class="font-weight-bold" href="../../about.html#citing-spkit">
+              <string>cite us</string>
+            </a> if you use the software.
+          </p>
+        </div>
+        <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+          <a href="#" role="button" class="btn spk-btn-rellink py-1 disabled"">Prev</a>
+          <a href="#" role="button" class="btn spk-btn-rellink disabled py-1">Up</a>
+          <a href="#" role="button" class="btn spk-btn-rellink py-1 disabled"">Next</a>
+        </div>
+        <hr>
+      </div>
+      <div class=" spk-sidebar-toc-wrapper">
+          <!-- <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+            <a href="#" role="button" class="btn spk-btn-rellink py-1 disabled"">Prev</a>
+            <a href="#" role="button" class="btn spk-btn-rellink disabled py-1">Up</a>
+            <a href="#" role="button" class="btn spk-btn-rellink py-1 disabled"">Next</a>
+          </div>
+          <hr> -->
+          <div class="spk-sidebar-toc">
+            <ul>
+<li><a class="reference internal" href="#">Wavelet Filtering</a><ul>
+<li><a class="reference internal" href="#wavelet-filtering-with-optimal-threshold-ans-db3">Wavelet filtering with optimal threshold ans db3</a></li>
+<li><a class="reference internal" href="#with-sd-threshold">With SD threshold</a></li>
+<li><a class="reference internal" href="#with-iqr">With IQR</a></li>
+<li><a class="reference internal" href="#limit-the-number-of-levels-for-decomposition-to-2">Limit the number of levels for decomposition to 2</a></li>
+<li><a class="reference internal" href="#with-db12">With <em>db12</em></a></li>
+<li><a class="reference internal" href="#with-symlet-sym4">With Symlet - <em>sym4</em></a></li>
+<li><a class="reference internal" href="#with-coiflet-coif4">With Coiflet - <em>coif4</em></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+    <div id="spk-page-content-wrapper">
+      <div class="spk-page-content container-fluid body px-md-3" role="main">
+        
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-auto-examples-signal-processing-plot-sp-wavelet-filtering-example-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code or to run this example in your browser via JupyterLite or Binder</p>
+</div>
+<section class="sphx-glr-example-title" id="wavelet-filtering">
+<span id="sphx-glr-auto-examples-signal-processing-plot-sp-wavelet-filtering-example-py"></span><h1>Wavelet Filtering<a class="headerlink" href="#wavelet-filtering" title="Link to this heading">¶</a></h1>
+<p><strong>Background</strong></p>
+<p>Other than classical spectral filtering, Wavelet filtering is one of common techniques used in signal processing.
+It allows to filter out short-time duration patterns captured by used wavelet. The patterns to be filtered out depends
+on the wavelet family (e.g. <em>db3</em>) used and number of level of decomposition.
+Algorithmically, it is very straightforward. Decompose a signal <span class="math notranslate nohighlight">\(x(n)\)</span>, into wavelet coefficients <span class="math notranslate nohighlight">\(X(k):math:\)</span>,
+where each coefficient represents the strength of wavelet pattern at particular time. With some threshold,
+remove the coefficients by zeroing out and reconstruct the signal back.</p>
+<p>The machanism to choose a threshold on the strength of wavelet coefficient depends on the application and objective.
+To remove the noise and compress the signal, a widely used approach is to filter out all the wavelet coefficients with
+smaller strength.</p>
+<p>Literature [1] suggest the <strong>Optimal threshold</strong> on the wavelet coeffiecient is</p>
+<div class="math notranslate nohighlight">
+\[\theta = \tilde{\sigma} \sqrt{2log(N)}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\tilde{\sigma}\)</span> is estimation of noise variance and <span class="math notranslate nohighlight">\(N\)</span> length of signal</p>
+<p>and <span class="math notranslate nohighlight">\(X(k)\)</span> are wavelet coeffients of <span class="math notranslate nohighlight">\(x(n)\)</span></p>
+<p>There are other methods to choose threshold too. One can choose a</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\theta =1.5\times SD(X(k))\)</span> or</p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta =IQR(X(k))\)</span></p></li>
+</ul>
+</div></blockquote>
+<p>as to select the outliers, by standard deviation and interquartile range, respectively.</p>
+<p>According to the theory, the <strong>optimal threshold</strong> should be applied by zeroing out the coefficients
+below with magnitude lower than threshold <span class="math notranslate nohighlight">\(|X(k)|&lt;\theta\)</span>, and for later two methods of thresholds,
+standard deviation and interquartile range, the coefficients outside of the threshold should be zeroing out,
+since they reprepresent the outliers. However, some of the (weired) articles use these thresholds in other-way round.</p>
+<p>A simple block-diagram shown below is the procedure of wavelet filtering.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/wavelet_filtering_block_dia_1.png"><img alt="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/wavelet_filtering_block_dia_1.png" src="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/wavelet_filtering_block_dia_1.png" /></a>
+</figure>
+<dl class="simple">
+<dt><strong>References:</strong></dt><dd><ul class="simple">
+<li><p>[1] D.L. Donoho, J.M. Johnstone, <strong>Ideal spatial adaptation by wavelet shrinkage</strong> Biometrika, 81 (1994), pp. 425-455</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>API</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>spkit.wavelet_filtering(…)</strong></p></li>
+<li><p><strong>spkit.wavelet_filtering_win(…)</strong></p></li>
+</ul>
+</div></blockquote>
+<p>In <strong>*spkit*</strong>, we have implemented all three methods for threshold computing, can be chosen by <em>threshold = ‘optimal’,
+‘sd’ or ‘iqr’</em> or can be passed as a float value for a fixed threshold, e.g. <em>threshold = 0.5</em>. It also support to choose,
+if you want to zero out coefficient below the threshold or above by setting <em>filter_out_below</em> True or False.
+However, default setting is <em>threshold=’optimal’</em> and <em>filter_out_below=True</em>.</p>
+<p>There are a few more options to tune threshold and mode of filtering.
+For more details see doc section or run <code class="xref py py-func docutils literal notranslate"><span class="pre">sp.wavelet_filtering</span></code></p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">spkit</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">__version__</span>
+
+<span class="c1"># ## Example with EEG sample signal</span>
+
+<span class="n">x</span><span class="p">,</span><span class="n">fs</span> <span class="o">=</span> <a href="../../modules/generated/spkit.data.eeg_sample_1ch.html#spkit.data.eeg_sample_1ch" title="spkit.data.eeg_sample_1ch" class="sphx-glr-backref-module-spkit-data sphx-glr-backref-type-py-function"><span class="n">sp</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">eeg_sample_1ch</span></a><span class="p">(</span><span class="n">ch</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">fs</span><span class="o">*</span><span class="mi">2</span><span class="p">:</span><span class="n">fs</span><span class="o">*</span><span class="mi">8</span><span class="p">]</span>
+<span class="n">t</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="n">fs</span>
+</pre></div>
+</div>
+<section id="wavelet-filtering-with-optimal-threshold-ans-db3">
+<h2>Wavelet filtering with optimal threshold ans db3<a class="headerlink" href="#wavelet-filtering-with-optimal-threshold-ans-db3" title="Link to this heading">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">xf</span> <span class="o">=</span> <a href="../../modules/generated/spkit.wavelet_filtering.html#spkit.wavelet_filtering" title="spkit.wavelet_filtering" class="sphx-glr-backref-module-spkit sphx-glr-backref-type-py-function"><span class="n">sp</span><span class="o">.</span><span class="n">wavelet_filtering</span></a><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span><span class="n">wv</span><span class="o">=</span><span class="s1">&#39;db3&#39;</span><span class="p">,</span><span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;optimal&#39;</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">WPD</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_sp_wavelet_filtering_example_001.png" srcset="../../_images/sphx_glr_plot_sp_wavelet_filtering_example_001.png" alt="plot sp wavelet filtering example" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>WPD: False  wv: db3  threshold: optimal  k: 1.5  mode: elim  filter_out_below?: True
+</pre></div>
+</div>
+</section>
+<section id="with-sd-threshold">
+<h2>With SD threshold<a class="headerlink" href="#with-sd-threshold" title="Link to this heading">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">xf</span> <span class="o">=</span> <a href="../../modules/generated/spkit.wavelet_filtering.html#spkit.wavelet_filtering" title="spkit.wavelet_filtering" class="sphx-glr-backref-module-spkit sphx-glr-backref-type-py-function"><span class="n">sp</span><span class="o">.</span><span class="n">wavelet_filtering</span></a><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span><span class="n">wv</span><span class="o">=</span><span class="s1">&#39;db3&#39;</span><span class="p">,</span><span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;sd&#39;</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">WPD</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_sp_wavelet_filtering_example_002.png" srcset="../../_images/sphx_glr_plot_sp_wavelet_filtering_example_002.png" alt="plot sp wavelet filtering example" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>WPD: False  wv: db3  threshold: sd  k: 1.5  mode: elim  filter_out_below?: True
+</pre></div>
+</div>
+</section>
+<section id="with-iqr">
+<h2>With IQR<a class="headerlink" href="#with-iqr" title="Link to this heading">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">xf</span> <span class="o">=</span> <a href="../../modules/generated/spkit.wavelet_filtering.html#spkit.wavelet_filtering" title="spkit.wavelet_filtering" class="sphx-glr-backref-module-spkit sphx-glr-backref-type-py-function"><span class="n">sp</span><span class="o">.</span><span class="n">wavelet_filtering</span></a><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span><span class="n">wv</span><span class="o">=</span><span class="s1">&#39;db3&#39;</span><span class="p">,</span><span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;iqr&#39;</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">WPD</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_sp_wavelet_filtering_example_003.png" srcset="../../_images/sphx_glr_plot_sp_wavelet_filtering_example_003.png" alt="plot sp wavelet filtering example" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>WPD: False  wv: db3  threshold: iqr  k: 1.5  mode: elim  filter_out_below?: True
+</pre></div>
+</div>
+</section>
+<section id="limit-the-number-of-levels-for-decomposition-to-2">
+<h2>Limit the number of levels for decomposition to 2<a class="headerlink" href="#limit-the-number-of-levels-for-decomposition-to-2" title="Link to this heading">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">xf</span> <span class="o">=</span> <a href="../../modules/generated/spkit.wavelet_filtering.html#spkit.wavelet_filtering" title="spkit.wavelet_filtering" class="sphx-glr-backref-module-spkit sphx-glr-backref-type-py-function"><span class="n">sp</span><span class="o">.</span><span class="n">wavelet_filtering</span></a><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span><span class="n">wv</span><span class="o">=</span><span class="s1">&#39;db3&#39;</span><span class="p">,</span><span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;optimal&#39;</span><span class="p">,</span><span class="n">wpd_maxlevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">WPD</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_sp_wavelet_filtering_example_004.png" srcset="../../_images/sphx_glr_plot_sp_wavelet_filtering_example_004.png" alt="plot sp wavelet filtering example" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>WPD: False  wv: db3  threshold: optimal  k: 1.5  mode: elim  filter_out_below?: True
+</pre></div>
+</div>
+</section>
+<section id="with-db12">
+<h2>With <em>db12</em><a class="headerlink" href="#with-db12" title="Link to this heading">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">xf</span> <span class="o">=</span> <a href="../../modules/generated/spkit.wavelet_filtering.html#spkit.wavelet_filtering" title="spkit.wavelet_filtering" class="sphx-glr-backref-module-spkit sphx-glr-backref-type-py-function"><span class="n">sp</span><span class="o">.</span><span class="n">wavelet_filtering</span></a><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span><span class="n">wv</span><span class="o">=</span><span class="s1">&#39;db12&#39;</span><span class="p">,</span><span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;optimal&#39;</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">WPD</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_sp_wavelet_filtering_example_005.png" srcset="../../_images/sphx_glr_plot_sp_wavelet_filtering_example_005.png" alt="plot sp wavelet filtering example" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>WPD: False  wv: db12  threshold: optimal  k: 1.5  mode: elim  filter_out_below?: True
+</pre></div>
+</div>
+</section>
+<section id="with-symlet-sym4">
+<h2>With Symlet - <em>sym4</em><a class="headerlink" href="#with-symlet-sym4" title="Link to this heading">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">xf</span> <span class="o">=</span> <a href="../../modules/generated/spkit.wavelet_filtering.html#spkit.wavelet_filtering" title="spkit.wavelet_filtering" class="sphx-glr-backref-module-spkit sphx-glr-backref-type-py-function"><span class="n">sp</span><span class="o">.</span><span class="n">wavelet_filtering</span></a><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span><span class="n">wv</span><span class="o">=</span><span class="s1">&#39;sym4&#39;</span><span class="p">,</span><span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;optimal&#39;</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">WPD</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_sp_wavelet_filtering_example_006.png" srcset="../../_images/sphx_glr_plot_sp_wavelet_filtering_example_006.png" alt="plot sp wavelet filtering example" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>WPD: False  wv: sym4  threshold: optimal  k: 1.5  mode: elim  filter_out_below?: True
+</pre></div>
+</div>
+</section>
+<section id="with-coiflet-coif4">
+<h2>With Coiflet - <em>coif4</em><a class="headerlink" href="#with-coiflet-coif4" title="Link to this heading">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">xf</span> <span class="o">=</span> <a href="../../modules/generated/spkit.wavelet_filtering.html#spkit.wavelet_filtering" title="spkit.wavelet_filtering" class="sphx-glr-backref-module-spkit sphx-glr-backref-type-py-function"><span class="n">sp</span><span class="o">.</span><span class="n">wavelet_filtering</span></a><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span><span class="n">wv</span><span class="o">=</span><span class="s1">&#39;coif4&#39;</span><span class="p">,</span><span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;optimal&#39;</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">WPD</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_sp_wavelet_filtering_example_007.png" srcset="../../_images/sphx_glr_plot_sp_wavelet_filtering_example_007.png" alt="plot sp wavelet filtering example" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>WPD: False  wv: coif4  threshold: optimal  k: 1.5  mode: elim  filter_out_below?: True
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.611 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-signal-processing-plot-sp-wavelet-filtering-example-py">
+<div class="binder-badge docutils container">
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/spkit/spkit/0.9.X?urlpath=lab/tree/notebooks/auto_examples/signal_processing/plot_sp_wavelet_filtering_example.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo5.svg" width="150px" /></a>
+</div>
+<div class="lite-badge docutils container">
+<a class="reference external image-reference" href="../../lite/lab/?path=auto_examples/signal_processing/plot_sp_wavelet_filtering_example.ipynb"><img alt="Launch JupyterLite" src="../../_images/jupyterlite_badge_logo5.svg" width="150px" /></a>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/92226d5e4c70de94b5849222243c32ab/plot_sp_wavelet_filtering_example.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_sp_wavelet_filtering_example.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/30cda801221145aec2cdd066c3296ff5/plot_sp_wavelet_filtering_example.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_sp_wavelet_filtering_example.py</span></code></a></p>
+</div>
+</div>
+<p class="rubric">Related examples</p>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Background"><img alt="" src="../../_images/sphx_glr_plot_sp_wavelet_filtering_example_thumb.png" />
+<p><a class="reference internal" href="../wavelet_analysis/plot_sp_wavelet_filtering_example.html#sphx-glr-auto-examples-wavelet-analysis-plot-sp-wavelet-filtering-example-py"><span class="std std-ref">Wavelet Filtering</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Wavelet Filtering</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Other than classical frequency filtering, Wavelet filtering is one of common techniques used in..."><img alt="" src="../../_images/sphx_glr_plot_sp_wavelet_filtering_thumb.png" />
+<p><a class="reference internal" href="../wavelet_analysis/plot_sp_wavelet_filtering.html#sphx-glr-auto-examples-wavelet-analysis-plot-sp-wavelet-filtering-py"><span class="std std-ref">Wavelet Filtering</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Wavelet Filtering</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip=" ATAR: Automatic and Tunable Artifact Removal Algorithm -  Tuning"><img alt="" src="../../_images/sphx_glr_plot_sp_ATAR_algorithm_tuning_thumb.png" />
+<p><a class="reference internal" href="../electroencephalogram/plot_sp_ATAR_algorithm_tuning.html#sphx-glr-auto-examples-electroencephalogram-plot-sp-atar-algorithm-tuning-py"><span class="std std-ref">ATAR: Automatic and Tunable Artifact Removal Algorithm</span></a></p>
+  <div class="sphx-glr-thumbnail-title">ATAR: Automatic and Tunable Artifact Removal Algorithm</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip=" ATAR: Automatic and Tunable Artifact Removal Algorithm -  Tuning"><img alt="" src="../../_images/sphx_glr_plot_sp_ATAR_algorithm_tuning_thumb1.png" />
+<p><a class="reference internal" href="plot_sp_ATAR_algorithm_tuning.html#sphx-glr-auto-examples-signal-processing-plot-sp-atar-algorithm-tuning-py"><span class="std std-ref">ATAR: Automatic and Tunable Artifact Removal Algorithm</span></a></p>
+  <div class="sphx-glr-thumbnail-title">ATAR: Automatic and Tunable Artifact Removal Algorithm</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="ATAR: Automatic and Tunable Artifact Removal Algorithm"><img alt="" src="../../_images/sphx_glr_plot_sp_ATAR_algorith_eeg_artifact_removal_thumb.png" />
+<p><a class="reference internal" href="plot_sp_ATAR_algorith_eeg_artifact_removal.html#sphx-glr-auto-examples-signal-processing-plot-sp-atar-algorith-eeg-artifact-removal-py"><span class="std std-ref">EEG Artifact removal using ATAR</span></a></p>
+  <div class="sphx-glr-thumbnail-title">EEG Artifact removal using ATAR</div>
+</div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+</section>
+
+
+      </div>
+      <div class="container">
+        <footer class="spk-content-footer">
+          &copy; 2019 - 2024, spkit developers (BSD License).
+          <!-- -->
+          <!-- <a href="../../_sources/auto_examples/signal_processing/plot_sp_wavelet_filtering_example.rst.txt" rel="nofollow">Show this page source</a> -->
+          <!-- -->
+        </footer>
+      </div>
+
+      <div class="container-fluid py-3">
+        <hr>
+        <div class="container spk-landing-container">
+              <a class="spk-footer-funding-link" href="about.html#funding">
+              <div class="text-center">
+                      <p class="mt-2">
+                        Spkit developed in collabration with other projects:
+                      </p>
+                      <a href="https://PhyAAt.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../../_static/phyaat_logo.png" title="PhyAAt"></a>
+                      <a href="https://PyLFSR.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../../_static/pylfsr_logo.png" title="PyLFSR" ></a>
+                      <a href="https://MLEndDatasets.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../../_static/mlend_logo.png" title="MLEnd-Datasets" ></a>
+              </div>
+              </a>
+              <div style="width:3px;">
+                <a href="https://clustrmaps.com/site/1b9h1"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=eQr8xSBiKVuSq6m0psK-Ey9TZ7rLzjRX-MpatyfFGQI&cl=ffffff" /></a>  
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../../_static/js/vendor/bootstrap.min.js"></script>
+  
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-59299155-3', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<!-- 
+<script defer data-domain="scikit-learn.org" src="https://views.scientific-python.org/js/script.js">
+</script>
+ -->
+
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+
+<script>
+$(document).ready(function() {
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		        '.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	});
+});
+
+</script>
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    
+</body>
+
+</html>

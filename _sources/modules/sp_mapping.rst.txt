@@ -1,0 +1,155 @@
+.. _entropy:
+
+=======================
+Signal Temporal Mapping
+=======================
+
+
+Linear mapping
+===================
+
+Quantization
+------------
+
+Quantize signal into discreet levels
+
+    Before quantization, signal is equalise using either of three methods
+    (1) A-Law, (2) Mu-Law, or (3) Cummulative Distribution Function
+
+::
+
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import spkit as sp
+    x,fs,_ = sp.data.ecg_sample_12leads(sample=3)
+    x = x[:1000,0]
+    t = np.arange(len(x))/fs
+    y1, yint = sp.quantize_signal(x.copy(),n_levels=5)
+    y2, yint = sp.quantize_signal(x.copy(),n_levels=11)
+    y3, yint = sp.quantize_signal(x.copy(),n_levels=31)
+    m1 = np.mean((x-y1)**2)
+    m2 = np.mean((x-y2)**2)
+    m3 = np.mean((x-y3)**2)
+    plt.figure(figsize=(12,3))
+    plt.plot(t,x,alpha=0.8 ,label='x')
+    plt.plot(t,y1,alpha=0.8,label=f'y1: L=5,  MSE={m1:,.4f}')
+    plt.plot(t,y2,alpha=0.8,label=f'y2: L=11, MSE={m2:,.4f}')
+    plt.plot(t,y3,alpha=0.8,label=f'y3: L=31, MSE={m3:,.4f}')
+    plt.xlim([t[0],t[-1]])
+    plt.xlabel('time (s)')
+    plt.ylabel('x')
+    plt.legend()
+    plt.grid()
+    plt.tight_layout()
+    plt.show()
+
+Low resolution
+--------------
+
+Reducing the time-resolution of signal :math:`x`
+
+    Reducing the time-resolution of signal : x. It is similar as downsampling (or decimation) of a signal,
+    except it is averaged around removed samples.
+
+::
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import spkit as sp
+    x,fs,_ = sp.data.ecg_sample_12leads(sample=3)
+    x = x[1000:2000,0]
+    x = x + 0.1*np.random.randn(len(x))
+    t = np.arange(len(x))/fs
+    N = 5
+    y1 = x[::N] # decimation by factor of N
+    y2 = sp.low_resolution(x.copy(),scale=N)
+
+
+Non-linear mapping
+===================
+
+
+
+A-Law
+------
+
+A-Law for companding and expanding (Non-linear mapping)
+
+    A-Law for companding and expanding
+    - A-Law is one of the ways to map gaussian, or laplacian distribuated signal to uniformly distributed one
+    - for companding - smaller amplitude values are stretched (since they have high-probabilty)
+      and large amplitutde values are compressed (since they have low probabiltity)
+    - for expending - it reverts the mapping
+
+    for -1 ≤ x ≤ 1 and 1 < A
+
+    Companding:
+        .. math::
+
+            y(n) &= sign(x)* \frac{A|x|}{(1 + log(A))}               if   |x|<1/A
+            
+                 &= sign(x)* \frac{((1 + log(A|x|))} {(1 + log(A)))}   else
+
+    expanding:
+
+        .. math::
+           
+           y(n) = sign(x)* \frac{|x|(1+log(A))} {A}                 if   |x|<1/(1+log(A))
+
+            = sign(x)*  \frac{(exp(-1 + |x|(1+log(A))))} {A}       else
+
+
+            
+
+    - An alternative to μ-Law
+    - The μ-law algorithm provides a slightly larger dynamic range than the A-law
+      at the cost of worse proportional distortions for small signals.
+
+
+
+μ-Law
+------
+
+μ-Law for companding and expanding (Non-linear mapping)
+    
+    μ-Law is one of the ways to map gaussian, or laplacian distribuated signal to uniformly distributed one
+    - for companding - smaller amplitude values are stretched (since they have high-probabilty)
+      and large amplitutde values are compressed (since they have low probabiltity)
+    - for expending - it reverts the mapping
+
+    for -1 ≤ x ≤ 1
+    
+    Companding:
+
+        .. math::  y(n) = sign(x)* \frac{log(1 + μ|x|)}{log(1 + μ)}
+
+    expanding:
+
+        .. math::  y(n) = sign(x)* \frac{((1 + μ)**|x| - 1)}{μ}
+
+    - An alternative to A-Law
+    - The μ-law algorithm provides a slightly larger dynamic range than the A-law
+      at the cost of worse proportional distortions for small signals.
+
+
+
+
+CDF Mapping
+-----------
+
+
+CDF: Cumulative Distribution Function Mapping (Non-linear mapping)
+
+    Map the signal x to y from into CDF of x, y will be uniformly
+    disctribuated anf ranges from 0 to 1. |1|_
+
+    CDF: Cumulative Distribution Function
+
+            .. math:: y(n) = P(X<=x(n))
+
+
+
+.. topic:: References:
+
+|1| wikipedia - https://en.wikipedia.org/wiki/Cumulative_distribution_function

@@ -1,0 +1,51 @@
+.. _empty:
+
+=======================
+Getting Started
+=======================
+
+
+
+Install
+=======
+
+First install spkit
+
+  * :ref:`Install the latest official release <install_official_release>`. 
+
+
+Sample Data
+===========
+
+Check out sample data, a set of real-world signals.
+
+  * :ref:`Sample Data <data_samples>`. 
+
+Or try simulating signals
+
+ * :ref:`Simulation of signals <data_simulation>`. 
+
+
+Examples
+========
+
+Check out some exmaples :ref:`general_examples`
+
+* :ref:`signal_processing_examples`
+* :ref:`information_theory_examples`
+* :ref:`wavelet_examples`
+* :ref:`eeg_examples`
+* :ref:`machine_learning_examples`
+* :ref:`mea_examples`
+* :ref:`statistics_examples`
+* :ref:`release_highlights_examples`
+
+
+
+
+API
+=====
+
+Finally check out the API, which is the most complete documentation of SpKit library.
+
+  * :ref:`api_ref`.

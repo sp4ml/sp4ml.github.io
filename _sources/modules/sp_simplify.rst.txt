@@ -1,0 +1,14 @@
+.. _entropy:
+
+============================
+Simplifying a complex signal
+============================
+
+
+Simplifying using Sinasudol Models
+-----------------------------------
+
+
+
+Simplifying using DFT
+-----------------------------------

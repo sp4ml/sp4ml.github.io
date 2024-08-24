@@ -1,0 +1,14 @@
+.. _ecg:
+
+=============
+Electrocardiography
+=============
+
+
+
+Filtering (cleaning)
+---------------------
+
+
+R Peak Detection
+----------------

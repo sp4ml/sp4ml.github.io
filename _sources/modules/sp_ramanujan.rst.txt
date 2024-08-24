@@ -1,0 +1,9 @@
+.. _entropy:
+
+================
+Ramanujan Methods
+================
+
+
+Period Analysis
+---------------

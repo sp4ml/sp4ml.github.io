@@ -1,0 +1,559 @@
+
+
+<!DOCTYPE html>
+<!-- data-theme below is forced to be "light" but should be changed if we use pydata-theme-sphinx in the future -->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" data-content_root="../../" data-theme="light"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" data-content_root="../../" data-theme="light">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Release Highlights for spkit 0.0.9.7" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://spkit.github.io/auto_examples/release_highlights/plot_release_highlights_0_0_9_7.html" />
+<meta property="og:site_name" content="spkit" />
+<meta property="og:description" content="We are pleased to announce the release of spkit 0.0.9.7, which comes with many bug fixes, more organised documentation and new features! For an exhaustive list of all the changes, please refer to t..." />
+<meta property="og:image" content="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/docs_fig/mea_proce_2.png" />
+<meta property="og:image:alt" content="spkit" />
+<meta name="description" content="We are pleased to announce the release of spkit 0.0.9.7, which comes with many bug fixes, more organised documentation and new features! For an exhaustive list of all the changes, please refer to t..." />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Release Highlights for spkit 0.0.9.7 &mdash; spkit 0.0.9.7 documentation</title>
+  
+  <link rel="canonical" href="http://spkit.github.io/stable/auto_examples/release_highlights/plot_release_highlights_0_0_9_7.html" />
+
+  
+  <link rel="shortcut icon" href="../../_static/favicon.ico" />
+  
+
+  <link rel="stylesheet" href="../../_static/css/vendor/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
+  <link rel="stylesheet" href="../../https://fonts.googleapis.com/css?family=Vibur" type="text/css" />
+  <link rel="stylesheet" href="../../_static/jupyterlite_sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <script id="documentation_options" data-url_root="../../"
+    src="../../_static/documentation_options.js"></script>
+  <script src="../../_static/js/vendor/jquery-3.6.3.slim.min.js"></script>
+  <script src="../../_static/js/details-permalink.js"></script>
+
+  <link rel="stylesheet" href="../../_static/css/vendor/nature_spkit.css" type="text/css" /> 
+
+
+</head>
+
+<body>
+  
+
+
+
+
+
+<!-- ('About us', pathto('about'), ''), -->
+
+
+<div id="logo-banner">
+  <div class="logo">
+    <!-- <a href="../../%23.html"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a> -->
+  <!-- <a href="#"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a> -->
+  <a href="../../index.html"><img src="../../_static/spkit_logo.png" alt="spkit logo"  border="0" /></a>
+  </div>
+  <div class="tags">
+  <ul>
+    <li>&#9672; Easy to use toolkit for signal processing and analysis</li>
+    <li>&#9672; More of biomedical signal analysis with visualization</li>
+    <li>&#9672; Includes basic machine learning models with visualization</li>
+    <!-- <li>&#9672; Open source</li> -->
+  </ul>
+  </div>
+  <div class="banner">
+  <h2>Signal Processing Toolkit</h2>
+  <h4><i>Simple and easy to use for signal analysis and predictive analysis</i></h4>
+  </div>
+</div>
+<nav id="navbar" class="spk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid spk-docs-container px-0">
+      <a class="navbar-brand py-0" href="../../index.html">
+        <img
+          class="spk-brand-img"
+          src="../../_static/spkit_small_icon_v.png"
+          alt="logo"/>
+      </a>
+    <button
+      id="spk-navbar-toggler"
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="spk-navbar-collapse collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../index.html">Home</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../install.html">Install</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../user_guide.html">User Guide</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../modules/classes.html">API</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../index.html">Examples</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../tutorials/index.html">Tutorials</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" target="_blank" rel="noopener noreferrer" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=">Discussion Forum</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../about.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="../../getting_started.html" >Getting Started</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="../../whats_new/v0.0.9.7.html" >What's new</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://github.com/nikeshbajaj/spkit" >GitHub</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://spkit.github.io/dev/index.html" target="_blank" rel="noopener noreferrer">Development</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" >Get Involved</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://spkit.github.io/dev/versions.html" >Other Versions and Download</a>
+        </li>
+        <li class="nav-item dropdown nav-more-item-dropdown">
+          <a class="spk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="spk-nav-dropdown-item dropdown-item" href="../../getting_started.html" >Getting Started</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="../../whats_new/v0.0.9.7.html" >What's new</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://github.com/nikeshbajaj/spkit" >GitHub</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://spkit.github.io/dev/index.html" target="_blank" rel="noopener noreferrer">Development</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" >Get Involved</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://spkit.github.io/dev/versions.html" >Other Versions and Download</a>
+          </div>
+        </li>
+      </ul>
+      <div id="searchbox" role="search">
+          <div class="searchformwrapper">
+          <form class="search" action="../../search.html" method="get">
+            <input class="spk-search-text-input" type="text" name="q" aria-labelledby="searchlabel" />
+            <input class="spk-search-text-btn" type="submit" value="Go" />
+          </form>
+          </div>
+      </div>
+      <a class ="nav-more-item-dropdown">
+      <font size="4em" style="margin: 5px 5px 0px 5px;color:rgb(0, 0, 0)">V</font>
+      </a>
+      <div class="nav-item dropdown nav-more-item-dropdown-vs">
+        <a class="sp-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <font color="black">0.0.9.7 (latest)</font>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../index.html" >0.0.9.7 (latest)</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.6/index.html" >0.0.9.6</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.5/index.html" >0.0.9.5</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.4/index.html" >0.0.9.4</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.3/index.html" >0.0.9.3</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.2/index.html" >0.0.9.2</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.1/index.html" >0.0.9.1</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="https://github.com/Nikeshbajaj/spkit/releases" >More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+  <div class="d-flex" id="spk-doc-wrapper" class="border-right">
+    <input type="checkbox" name="spk-toggle-checkbox" id="spk-toggle-checkbox">
+    <label id="spk-sidemenu-toggle" class="spk-btn-toggle-toc btn spk-btn-primary" for="spk-toggle-checkbox">Toggle
+      Menu</label>
+      <div id="spk-sidebar-top-logoimg">
+        <a href="../../index.html">
+          <img class="spk-brand-img-side" src="../../_static/spkit_logo.png" alt="spkit logo"  border="0" />
+        </a>
+      </div>
+    <div id="spk-sidebar-wrapper" class="border-right">
+      <div class="spk-sidebar-top-content">
+        <hr style="margin: 0 0 10px 0" />
+        <div class="alert alert-danger p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            <strong>SpKit 0.0.9.7</strong><br />
+            <!-- <a class="reference external" href="https://pypi.org/project/spkit" target="_blank"><img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/Nikeshbajaj/spkit?label=latest%20version&style=plastic"></a> -->
+            <a class="reference external" href="https://pepy.tech/project/spkit" target="_blank"><img
+                src="https://static.pepy.tech/personalized-badge/spkit?period=total&amp;units=international_system&amp;left_color=black&amp;right_color=orange&amp;left_text=downloads"
+                alt="PyPI - Downloads" /></a>
+            <a class="reference external" href="https://pypi.python.org/pypi/spkit" target="_blank"><img
+                alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/spkit?style=plastic"></a>
+            <!-- <a href="http://spkit.github.io/dev/versions.html">Other versions</a> -->
+          </p>
+        </div>
+        <div class="alert alert-warning p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            Please <a class="font-weight-bold" href="../../about.html#citing-spkit">
+              <string>cite us</string>
+            </a> if you use the software.
+          </p>
+        </div>
+        <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+          <a href="index.html" role="button" class="btn spk-btn-rellink py-1"
+            spk-rellink-tooltip="Release Highlights">Prev</a><a href=" index.html" role="button" class="btn spk-btn-rellink py-1"
+            spk-rellink-tooltip="Release Highlights">Up</a>
+          <a href="../information_theory/index.html" role="button" class="btn spk-btn-rellink py-1"
+            spk-rellink-tooltip="Information Theory">Next</a>
+        </div>
+        <hr>
+      </div>
+      <div class=" spk-sidebar-toc-wrapper">
+          <!-- <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+            <a href="index.html" role="button" class="btn spk-btn-rellink py-1"
+              spk-rellink-tooltip="Release Highlights">Prev</a><a href=" index.html" role="button" class="btn spk-btn-rellink py-1"
+              spk-rellink-tooltip="Release Highlights">Up</a>
+            <a href="../information_theory/index.html" role="button" class="btn spk-btn-rellink py-1"
+              spk-rellink-tooltip="Information Theory">Next</a>
+          </div>
+          <hr> -->
+          <div class="spk-sidebar-toc">
+            <ul>
+<li><a class="reference internal" href="#">Release Highlights for spkit 0.0.9.7</a><ul>
+<li><a class="reference internal" href="#topographic-map-correction-10-20-system">Topographic Map correction: 10-20 System</a></li>
+<li><a class="reference internal" href="#location-of-all-the-eletrodes">Location of all the eletrodes</a></li>
+<li><a class="reference internal" href="#topographic-map-10-10-system">Topographic Map 10-10 System</a></li>
+<li><a class="reference internal" href="#topographic-map-10-05-system">Topographic Map 10-05 System</a></li>
+<li><a class="reference internal" href="#mea-multi-electrode-array-processing">MEA: Multi-Electrode Array Processing</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+    <div id="spk-page-content-wrapper">
+      <div class="spk-page-content container-fluid body px-md-3" role="main">
+        
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-auto-examples-release-highlights-plot-release-highlights-0-0-9-7-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code or to run this example in your browser via JupyterLite or Binder</p>
+</div>
+<section class="sphx-glr-example-title" id="release-highlights-for-spkit-0-0-9-7">
+<span id="sphx-glr-auto-examples-release-highlights-plot-release-highlights-0-0-9-7-py"></span><h1>Release Highlights for spkit 0.0.9.7<a class="headerlink" href="#release-highlights-for-spkit-0-0-9-7" title="Link to this heading">¶</a></h1>
+<p>We are pleased to announce the release of spkit 0.0.9.7, which comes
+with many bug fixes, more organised documentation and new features!
+For an exhaustive list of all the changes, please
+refer to the <a class="reference internal" href="../../whats_new/index.html#changes-0-0-9-7"><span class="std std-ref">release notes</span></a>.</p>
+<section id="topographic-map-correction-10-20-system">
+<h2>Topographic Map correction: 10-20 System<a class="headerlink" href="#topographic-map-correction-10-20-system" title="Link to this heading">¶</a></h2>
+<p>A widely used EEG system is 10-20 system, although there are many libraries that can plot topographic map
+from EEG data, their layouts are a little different than standards.</p>
+<p>Notice the 10-20 Standard described in following</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://www.bem.fi/book/13/13.htm#03">https://www.bem.fi/book/13/13.htm#03</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/10%E2%80%9320_system_(EEG">https://en.wikipedia.org/wiki/10%E2%80%9320_system_(EEG</a>)</p></li>
+<li><p><a class="reference external" href="http://www.mariusthart.net/downloads/eeg_electrodes_10-20.pdf">http://www.mariusthart.net/downloads/eeg_electrodes_10-20.pdf</a>, <a class="reference external" href="http://www.beteredingen.nl">http://www.beteredingen.nl</a></p></li>
+</ul>
+</div></blockquote>
+<p>In above examples, Cz is the center point and horizontal line crossing is straight line.
+In Spkit we tried to correct this mapping style, however, keeping the conventional style as option.
+See following examples.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1">#sp.eeg.topomap</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">spkit</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">X</span><span class="p">,</span><span class="n">fs</span><span class="p">,</span> <span class="n">ch_names</span> <span class="o">=</span> <a href="../../modules/generated/spkit.data.eeg_sample_14ch.html#spkit.data.eeg_sample_14ch" title="spkit.data.eeg_sample_14ch" class="sphx-glr-backref-module-spkit-data sphx-glr-backref-type-py-function"><span class="n">sp</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">eeg_sample_14ch</span></a><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <a href="../../modules/generated/spkit.filterDC_sGolay.html#spkit.filterDC_sGolay" title="spkit.filterDC_sGolay" class="sphx-glr-backref-module-spkit sphx-glr-backref-type-py-function"><span class="n">sp</span><span class="o">.</span><span class="n">filterDC_sGolay</span></a><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">window_length</span><span class="o">=</span><span class="n">fs</span><span class="o">//</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Px</span><span class="p">,</span><span class="n">Pm</span><span class="p">,</span><span class="n">Pd</span> <span class="o">=</span> <a href="../../modules/generated/spkit.eeg.rhythmic_powers.html#spkit.eeg.rhythmic_powers" title="spkit.eeg.rhythmic_powers" class="sphx-glr-backref-module-spkit-eeg sphx-glr-backref-type-py-function"><span class="n">sp</span><span class="o">.</span><span class="n">eeg</span><span class="o">.</span><span class="n">rhythmic_powers</span></a><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">,</span><span class="n">fBands</span><span class="o">=</span><span class="p">[[</span><span class="mi">4</span><span class="p">],[</span><span class="mi">8</span><span class="p">,</span><span class="mi">14</span><span class="p">]],</span><span class="n">Sum</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">Mean</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">SD</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">Px</span> <span class="o">=</span> <span class="mi">20</span><span class="o">*</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.log10.html#numpy.log10" title="numpy.log10" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-data"><span class="n">np</span><span class="o">.</span><span class="n">log10</span></a><span class="p">(</span><span class="n">Px</span><span class="p">)</span>
+<span class="n">pos1</span><span class="p">,</span> <span class="n">ch</span> <span class="o">=</span> <a href="../../modules/generated/spkit.eeg.s1020_get_epos2d.html#spkit.eeg.s1020_get_epos2d" title="spkit.eeg.s1020_get_epos2d" class="sphx-glr-backref-module-spkit-eeg sphx-glr-backref-type-py-function"><span class="n">sp</span><span class="o">.</span><span class="n">eeg</span><span class="o">.</span><span class="n">s1020_get_epos2d</span></a><span class="p">(</span><span class="n">ch_names</span><span class="p">,</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;eeglab-mne&#39;</span><span class="p">)</span>
+<span class="n">pos2</span><span class="p">,</span> <span class="n">ch</span> <span class="o">=</span> <a href="../../modules/generated/spkit.eeg.s1020_get_epos2d.html#spkit.eeg.s1020_get_epos2d" title="spkit.eeg.s1020_get_epos2d" class="sphx-glr-backref-module-spkit-eeg sphx-glr-backref-type-py-function"><span class="n">sp</span><span class="o">.</span><span class="n">eeg</span><span class="o">.</span><span class="n">s1020_get_epos2d</span></a><span class="p">(</span><span class="n">ch_names</span><span class="p">,</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;spkit&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">Z1i</span><span class="p">,</span><span class="n">im1</span> <span class="o">=</span> <a href="../../modules/generated/spkit.eeg.TopoMap.html#spkit.eeg.topomap" title="spkit.eeg.topomap" class="sphx-glr-backref-module-spkit-eeg sphx-glr-backref-type-py-function"><span class="n">sp</span><span class="o">.</span><span class="n">eeg</span><span class="o">.</span><span class="n">topomap</span></a><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">pos1</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">Px</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">axes</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">return_im</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">Z2i</span><span class="p">,</span><span class="n">im2</span> <span class="o">=</span> <a href="../../modules/generated/spkit.eeg.TopoMap.html#spkit.eeg.topomap" title="spkit.eeg.topomap" class="sphx-glr-backref-module-spkit-eeg sphx-glr-backref-type-py-function"><span class="n">sp</span><span class="o">.</span><span class="n">eeg</span><span class="o">.</span><span class="n">topomap</span></a><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">pos2</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">Px</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">axes</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">return_im</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Conventional style&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;SpKit style&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.colorbar.html#matplotlib.pyplot.colorbar" title="matplotlib.pyplot.colorbar" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span></a><span class="p">(</span><span class="n">im1</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;dB&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.colorbar.html#matplotlib.pyplot.colorbar" title="matplotlib.pyplot.colorbar" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span></a><span class="p">(</span><span class="n">im2</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;dB&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.suptitle.html#matplotlib.pyplot.suptitle" title="matplotlib.pyplot.suptitle" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span></a><span class="p">(</span><span class="s1">&#39;Topographical maps&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_release_highlights_0_0_9_7_001.png" srcset="../../_images/sphx_glr_plot_release_highlights_0_0_9_7_001.png" alt="Topographical maps, Conventional style, SpKit style" class = "sphx-glr-single-img"/></section>
+<section id="location-of-all-the-eletrodes">
+<h2>Location of all the eletrodes<a class="headerlink" href="#location-of-all-the-eletrodes" title="Link to this heading">¶</a></h2>
+<p>Location of all the electrodes are shown here.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">spkit</span> <span class="k">as</span> <span class="nn">sp</span>
+
+<span class="n">ch_names_emotiv</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;AF3&#39;</span><span class="p">,</span><span class="s1">&#39;F7&#39;</span><span class="p">,</span><span class="s1">&#39;F3&#39;</span><span class="p">,</span><span class="s1">&#39;FC5&#39;</span><span class="p">,</span><span class="s1">&#39;T7&#39;</span><span class="p">,</span><span class="s1">&#39;P7&#39;</span><span class="p">,</span><span class="s1">&#39;O1&#39;</span><span class="p">,</span><span class="s1">&#39;O2&#39;</span><span class="p">,</span><span class="s1">&#39;P8&#39;</span><span class="p">,</span><span class="s1">&#39;T8&#39;</span><span class="p">,</span><span class="s1">&#39;FC6&#39;</span><span class="p">,</span><span class="s1">&#39;F4&#39;</span><span class="p">,</span><span class="s1">&#39;F8&#39;</span><span class="p">,</span><span class="s1">&#39;AF4&#39;</span><span class="p">]</span>
+<span class="n">pos1</span><span class="p">,</span> <span class="n">ch1</span> <span class="o">=</span> <a href="../../modules/generated/spkit.eeg.s1020_get_epos2d.html#spkit.eeg.s1020_get_epos2d" title="spkit.eeg.s1020_get_epos2d" class="sphx-glr-backref-module-spkit-eeg sphx-glr-backref-type-py-function"><span class="n">sp</span><span class="o">.</span><span class="n">eeg</span><span class="o">.</span><span class="n">s1020_get_epos2d</span></a><span class="p">(</span><span class="n">ch_names_emotiv</span><span class="p">)</span>
+<span class="n">pos2</span><span class="p">,</span> <span class="n">ch2</span> <span class="o">=</span> <a href="../../modules/generated/spkit.eeg.s1020_get_epos2d.html#spkit.eeg.s1020_get_epos2d" title="spkit.eeg.s1020_get_epos2d" class="sphx-glr-backref-module-spkit-eeg sphx-glr-backref-type-py-function"><span class="n">sp</span><span class="o">.</span><span class="n">eeg</span><span class="o">.</span><span class="n">s1020_get_epos2d</span></a><span class="p">(</span><span class="n">ch_names_emotiv</span><span class="p">,</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;spkit&#39;</span><span class="p">)</span>
+
+<span class="n">ch_names_all</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">eeg</span><span class="o">.</span><span class="n">presets</span><span class="o">.</span><span class="n">standard_1020_ch</span>
+<span class="n">pos3</span><span class="p">,</span> <span class="n">ch3</span> <span class="o">=</span> <a href="../../modules/generated/spkit.eeg.s1020_get_epos2d.html#spkit.eeg.s1020_get_epos2d" title="spkit.eeg.s1020_get_epos2d" class="sphx-glr-backref-module-spkit-eeg sphx-glr-backref-type-py-function"><span class="n">sp</span><span class="o">.</span><span class="n">eeg</span><span class="o">.</span><span class="n">s1020_get_epos2d</span></a><span class="p">(</span><span class="n">ch_names_all</span><span class="p">)</span>
+
+<span class="n">ch_names_spkit_all</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">eeg</span><span class="o">.</span><span class="n">presets</span><span class="o">.</span><span class="n">standard_1020_spkit_ch</span>
+<span class="n">pos4</span><span class="p">,</span> <span class="n">ch4</span> <span class="o">=</span> <a href="../../modules/generated/spkit.eeg.s1020_get_epos2d.html#spkit.eeg.s1020_get_epos2d" title="spkit.eeg.s1020_get_epos2d" class="sphx-glr-backref-module-spkit-eeg sphx-glr-backref-type-py-function"><span class="n">sp</span><span class="o">.</span><span class="n">eeg</span><span class="o">.</span><span class="n">s1020_get_epos2d</span></a><span class="p">(</span><span class="n">ch_names_spkit_all</span><span class="p">,</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;spkit&#39;</span><span class="p">)</span>
+
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html#matplotlib.pyplot.subplot" title="matplotlib.pyplot.subplot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span></a><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">pos1</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">pos1</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">ch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ch_names_emotiv</span><span class="p">):</span>
+    <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" title="matplotlib.pyplot.text" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">text</span></a><span class="p">(</span><span class="n">pos1</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">pos1</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">ch</span><span class="p">,</span><span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="matplotlib.pyplot.title" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="s1">&#39;Emotiv: 14 channels: mne-eeglab-style&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.axvline.html#matplotlib.pyplot.axvline" title="matplotlib.pyplot.axvline" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">axvline</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.axhline.html#matplotlib.pyplot.axhline" title="matplotlib.pyplot.axhline" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">axhline</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html#matplotlib.pyplot.subplot" title="matplotlib.pyplot.subplot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span></a><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">pos3</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">pos3</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">ch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ch_names_all</span><span class="p">):</span>
+    <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" title="matplotlib.pyplot.text" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">text</span></a><span class="p">(</span><span class="n">pos3</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">pos3</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">ch</span><span class="p">,</span><span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="matplotlib.pyplot.title" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;All 10-20 Channels: (n=</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ch_names_all</span><span class="p">)</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.axvline.html#matplotlib.pyplot.axvline" title="matplotlib.pyplot.axvline" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">axvline</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.axhline.html#matplotlib.pyplot.axhline" title="matplotlib.pyplot.axhline" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">axhline</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.suptitle.html#matplotlib.pyplot.suptitle" title="matplotlib.pyplot.suptitle" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span></a><span class="p">(</span><span class="s1">&#39;MNE-EEGLab style topographic map&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout" title="matplotlib.pyplot.tight_layout" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span></a><span class="p">()</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html#matplotlib.pyplot.subplot" title="matplotlib.pyplot.subplot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span></a><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">pos2</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">pos2</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">ch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ch_names_emotiv</span><span class="p">):</span>
+    <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" title="matplotlib.pyplot.text" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">text</span></a><span class="p">(</span><span class="n">pos2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">pos2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">ch</span><span class="p">,</span><span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="matplotlib.pyplot.title" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="s1">&#39;Emotiv: 14 channels&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.axvline.html#matplotlib.pyplot.axvline" title="matplotlib.pyplot.axvline" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">axvline</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.axhline.html#matplotlib.pyplot.axhline" title="matplotlib.pyplot.axhline" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">axhline</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html#matplotlib.pyplot.subplot" title="matplotlib.pyplot.subplot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span></a><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">pos4</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">pos4</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">ch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ch_names_spkit_all</span><span class="p">):</span>
+    <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" title="matplotlib.pyplot.text" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">text</span></a><span class="p">(</span><span class="n">pos4</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">pos4</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">ch</span><span class="p">,</span><span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="matplotlib.pyplot.title" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;All 10-20 Channels: (n=</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ch_names_spkit_all</span><span class="p">)</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.suptitle.html#matplotlib.pyplot.suptitle" title="matplotlib.pyplot.suptitle" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span></a><span class="p">(</span><span class="s1">&#39;SPKIT-style topographic map&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.axvline.html#matplotlib.pyplot.axvline" title="matplotlib.pyplot.axvline" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">axvline</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.axhline.html#matplotlib.pyplot.axhline" title="matplotlib.pyplot.axhline" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">axhline</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout" title="matplotlib.pyplot.tight_layout" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span></a><span class="p">()</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="sphx-glr-horizontal">
+<li><img src="../../_images/sphx_glr_plot_release_highlights_0_0_9_7_002.png" srcset="../../_images/sphx_glr_plot_release_highlights_0_0_9_7_002.png" alt="MNE-EEGLab style topographic map, Emotiv: 14 channels: mne-eeglab-style, All 10-20 Channels: (n=97)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_release_highlights_0_0_9_7_003.png" srcset="../../_images/sphx_glr_plot_release_highlights_0_0_9_7_003.png" alt="SPKIT-style topographic map, Emotiv: 14 channels, All 10-20 Channels: (n=75)" class = "sphx-glr-multi-img"/></li>
+</ul>
+</section>
+<section id="topographic-map-10-10-system">
+<h2>Topographic Map 10-10 System<a class="headerlink" href="#topographic-map-10-10-system" title="Link to this heading">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">spkit</span> <span class="k">as</span> <span class="nn">sp</span>
+
+<span class="n">ch_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;AF3&#39;</span><span class="p">,</span><span class="s1">&#39;F7&#39;</span><span class="p">,</span><span class="s1">&#39;F3&#39;</span><span class="p">,</span><span class="s1">&#39;FC5&#39;</span><span class="p">,</span><span class="s1">&#39;T7&#39;</span><span class="p">,</span><span class="s1">&#39;P7&#39;</span><span class="p">,</span><span class="s1">&#39;O1&#39;</span><span class="p">,</span><span class="s1">&#39;O2&#39;</span><span class="p">,</span><span class="s1">&#39;P8&#39;</span><span class="p">,</span><span class="s1">&#39;T8&#39;</span><span class="p">,</span><span class="s1">&#39;FC6&#39;</span><span class="p">,</span><span class="s1">&#39;F4&#39;</span><span class="p">,</span><span class="s1">&#39;F8&#39;</span><span class="p">,</span><span class="s1">&#39;AF4&#39;</span><span class="p">]</span>
+<span class="n">pos</span><span class="p">,</span> <span class="n">ch</span> <span class="o">=</span> <a href="../../modules/generated/spkit.eeg.s1010_get_epos2d.html#spkit.eeg.s1010_get_epos2d" title="spkit.eeg.s1010_get_epos2d" class="sphx-glr-backref-module-spkit-eeg sphx-glr-backref-type-py-function"><span class="n">sp</span><span class="o">.</span><span class="n">eeg</span><span class="o">.</span><span class="n">s1010_get_epos2d</span></a><span class="p">(</span><span class="n">ch_names</span><span class="p">)</span>
+
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html#matplotlib.pyplot.subplot" title="matplotlib.pyplot.subplot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span></a><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">pos</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">pos</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">ch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ch_names</span><span class="p">):</span>
+    <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" title="matplotlib.pyplot.text" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">text</span></a><span class="p">(</span><span class="n">pos</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">pos</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">ch</span><span class="p">,</span><span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="matplotlib.pyplot.title" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="s1">&#39;Emotiv: 14 channels&#39;</span><span class="p">)</span>
+
+<span class="n">ch_names</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">eeg</span><span class="o">.</span><span class="n">presets</span><span class="o">.</span><span class="n">standard_1010_ch</span>
+<span class="n">pos</span><span class="p">,</span> <span class="n">ch</span> <span class="o">=</span> <a href="../../modules/generated/spkit.eeg.s1010_get_epos2d.html#spkit.eeg.s1010_get_epos2d" title="spkit.eeg.s1010_get_epos2d" class="sphx-glr-backref-module-spkit-eeg sphx-glr-backref-type-py-function"><span class="n">sp</span><span class="o">.</span><span class="n">eeg</span><span class="o">.</span><span class="n">s1010_get_epos2d</span></a><span class="p">(</span><span class="n">ch_names</span><span class="p">)</span>
+
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html#matplotlib.pyplot.subplot" title="matplotlib.pyplot.subplot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span></a><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">pos</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">pos</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">ch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ch_names</span><span class="p">):</span>
+    <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" title="matplotlib.pyplot.text" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">text</span></a><span class="p">(</span><span class="n">pos</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">pos</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">ch</span><span class="p">,</span><span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="matplotlib.pyplot.title" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;All 10-10 Channels: (n=</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ch_names</span><span class="p">)</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_release_highlights_0_0_9_7_004.png" srcset="../../_images/sphx_glr_plot_release_highlights_0_0_9_7_004.png" alt="Emotiv: 14 channels, All 10-10 Channels: (n=132)" class = "sphx-glr-single-img"/></section>
+<section id="topographic-map-10-05-system">
+<h2>Topographic Map 10-05 System<a class="headerlink" href="#topographic-map-10-05-system" title="Link to this heading">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">spkit</span> <span class="k">as</span> <span class="nn">sp</span>
+
+<span class="n">ch_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;AF3&#39;</span><span class="p">,</span><span class="s1">&#39;F7&#39;</span><span class="p">,</span><span class="s1">&#39;F3&#39;</span><span class="p">,</span><span class="s1">&#39;FC5&#39;</span><span class="p">,</span><span class="s1">&#39;T7&#39;</span><span class="p">,</span><span class="s1">&#39;P7&#39;</span><span class="p">,</span><span class="s1">&#39;O1&#39;</span><span class="p">,</span><span class="s1">&#39;O2&#39;</span><span class="p">,</span><span class="s1">&#39;P8&#39;</span><span class="p">,</span><span class="s1">&#39;T8&#39;</span><span class="p">,</span><span class="s1">&#39;FC6&#39;</span><span class="p">,</span><span class="s1">&#39;F4&#39;</span><span class="p">,</span><span class="s1">&#39;F8&#39;</span><span class="p">,</span><span class="s1">&#39;AF4&#39;</span><span class="p">]</span>
+<span class="n">pos</span><span class="p">,</span> <span class="n">ch</span> <span class="o">=</span> <a href="../../modules/generated/spkit.eeg.s1005_get_epos2d.html#spkit.eeg.s1005_get_epos2d" title="spkit.eeg.s1005_get_epos2d" class="sphx-glr-backref-module-spkit-eeg sphx-glr-backref-type-py-function"><span class="n">sp</span><span class="o">.</span><span class="n">eeg</span><span class="o">.</span><span class="n">s1005_get_epos2d</span></a><span class="p">(</span><span class="n">ch_names</span><span class="p">)</span>
+
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html#matplotlib.pyplot.subplot" title="matplotlib.pyplot.subplot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span></a><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">pos</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">pos</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">ch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ch_names</span><span class="p">):</span>
+    <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" title="matplotlib.pyplot.text" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">text</span></a><span class="p">(</span><span class="n">pos</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">pos</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">ch</span><span class="p">,</span><span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="matplotlib.pyplot.title" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="s1">&#39;Emotiv: 14 channels&#39;</span><span class="p">)</span>
+
+<span class="n">ch_names</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">eeg</span><span class="o">.</span><span class="n">presets</span><span class="o">.</span><span class="n">standard_1005_ch</span>
+<span class="n">pos</span><span class="p">,</span> <span class="n">ch</span> <span class="o">=</span> <a href="../../modules/generated/spkit.eeg.s1005_get_epos2d.html#spkit.eeg.s1005_get_epos2d" title="spkit.eeg.s1005_get_epos2d" class="sphx-glr-backref-module-spkit-eeg sphx-glr-backref-type-py-function"><span class="n">sp</span><span class="o">.</span><span class="n">eeg</span><span class="o">.</span><span class="n">s1005_get_epos2d</span></a><span class="p">(</span><span class="n">ch_names</span><span class="p">)</span>
+
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html#matplotlib.pyplot.subplot" title="matplotlib.pyplot.subplot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span></a><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">pos</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">pos</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">ch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ch_names</span><span class="p">):</span>
+    <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" title="matplotlib.pyplot.text" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">text</span></a><span class="p">(</span><span class="n">pos</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">pos</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">ch</span><span class="p">,</span><span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="matplotlib.pyplot.title" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;All 10-05 Channels: (n</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ch_names</span><span class="p">)</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_release_highlights_0_0_9_7_005.png" srcset="../../_images/sphx_glr_plot_release_highlights_0_0_9_7_005.png" alt="Emotiv: 14 channels, All 10-05 Channels: (n346)" class = "sphx-glr-single-img"/></section>
+<section id="mea-multi-electrode-array-processing">
+<h2>MEA: Multi-Electrode Array Processing<a class="headerlink" href="#mea-multi-electrode-array-processing" title="Link to this heading">¶</a></h2>
+<p>A full Documentation of MEA Processing Library is added.</p>
+<p><a class="reference internal" href="../../modules/bsp_mea.html#mea"><span class="std std-ref">Multi-Electrode Array Processing</span></a></p>
+<a class="reference external image-reference" href="../../modules/bsp_mea.html#mea"><img alt="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/docs_fig/mea_proce_2.png" class="align-center" src="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/docs_fig/mea_proce_2.png" style="width: 800px;" /></a>
+<a class="reference external image-reference" href="../../modules/bsp_mea.html#mea"><img alt="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/docs_fig/mea_proce_3.png" class="align-center" src="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/docs_fig/mea_proce_3.png" style="width: 800px;" /></a>
+<p>Check Examples of MEA</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.946 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-release-highlights-plot-release-highlights-0-0-9-7-py">
+<div class="binder-badge docutils container">
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/spkit/spkit/0.9.X?urlpath=lab/tree/notebooks/auto_examples/release_highlights/plot_release_highlights_0_0_9_7.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo4.svg" width="150px" /></a>
+</div>
+<div class="lite-badge docutils container">
+<a class="reference external image-reference" href="../../lite/lab/?path=auto_examples/release_highlights/plot_release_highlights_0_0_9_7.ipynb"><img alt="Launch JupyterLite" src="../../_images/jupyterlite_badge_logo4.svg" width="150px" /></a>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/92a05a8861703e4f9dcdf9d1caef30af/plot_release_highlights_0_0_9_7.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_release_highlights_0_0_9_7.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/36aeab8d2b1f1021d40e85c8cf727093/plot_release_highlights_0_0_9_7.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_release_highlights_0_0_9_7.py</span></code></a></p>
+</div>
+</div>
+<p class="rubric">Related examples</p>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="In this example code, we demonstrate analysis of MEA Recording, with minimal settings, using si..."><img alt="" src="../../_images/sphx_glr_plot_mea_minimal_setting_example_thumb.png" />
+<p><a class="reference internal" href="../multielectrode-array/plot_mea_minimal_setting_example.html#sphx-glr-auto-examples-multielectrode-array-plot-mea-minimal-setting-example-py"><span class="std std-ref">MEA: Minimal Setting: Example</span></a></p>
+  <div class="sphx-glr-thumbnail-title">MEA: Minimal Setting: Example</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="EEG Topographic Map"><img alt="" src="../../_images/sphx_glr_plot_sp_eeg_topomaps_thumb.png" />
+<p><a class="reference internal" href="../electroencephalogram/plot_sp_eeg_topomaps.html#sphx-glr-auto-examples-electroencephalogram-plot-sp-eeg-topomaps-py"><span class="std std-ref">EEG Topographic Map</span></a></p>
+  <div class="sphx-glr-thumbnail-title">EEG Topographic Map</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="     ICA Filtering algorithm uses following three criteria for removing artifacts for EEG."><img alt="" src="../../_images/sphx_glr_plot_sp_eeg_artifact_removal_ICA_thumb.png" />
+<p><a class="reference internal" href="../electroencephalogram/plot_sp_eeg_artifact_removal_ICA.html#sphx-glr-auto-examples-electroencephalogram-plot-sp-eeg-artifact-removal-ica-py"><span class="std std-ref">EEG Artifact removal using ICA</span></a></p>
+  <div class="sphx-glr-thumbnail-title">EEG Artifact removal using ICA</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="In this example code, we demonstrate analysis of MEA Recording, with each step. There are 13 st..."><img alt="" src="../../_images/sphx_glr_plot_mea_stepwise_example_thumb.png" />
+<p><a class="reference internal" href="../multielectrode-array/plot_mea_stepwise_example.html#sphx-glr-auto-examples-multielectrode-array-plot-mea-stepwise-example-py"><span class="std std-ref">MEA: Step-wise Analysis: Example</span></a></p>
+  <div class="sphx-glr-thumbnail-title">MEA: Step-wise Analysis: Example</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip=" An example of Entropy computation (Mutual Information, Joint Information, Cross-entropy and KL..."><img alt="" src="../../_images/sphx_glr_plot_it_entropy_eeg_multi_channel_thumb.png" />
+<p><a class="reference internal" href="../information_theory/plot_it_entropy_eeg_multi_channel.html#sphx-glr-auto-examples-information-theory-plot-it-entropy-eeg-multi-channel-py"><span class="std std-ref">Entropy  -  EEG Signal - Multi-Channel</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Entropy  -  EEG Signal - Multi-Channel</div>
+</div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+</section>
+
+
+      </div>
+      <div class="container">
+        <footer class="spk-content-footer">
+          &copy; 2019 - 2024, spkit developers (BSD License).
+          <!-- -->
+          <!-- <a href="../../_sources/auto_examples/release_highlights/plot_release_highlights_0_0_9_7.rst.txt" rel="nofollow">Show this page source</a> -->
+          <!-- -->
+        </footer>
+      </div>
+
+      <div class="container-fluid py-3">
+        <hr>
+        <div class="container spk-landing-container">
+              <a class="spk-footer-funding-link" href="about.html#funding">
+              <div class="text-center">
+                      <p class="mt-2">
+                        Spkit developed in collabration with other projects:
+                      </p>
+                      <a href="https://PhyAAt.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../../_static/phyaat_logo.png" title="PhyAAt"></a>
+                      <a href="https://PyLFSR.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../../_static/pylfsr_logo.png" title="PyLFSR" ></a>
+                      <a href="https://MLEndDatasets.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../../_static/mlend_logo.png" title="MLEnd-Datasets" ></a>
+              </div>
+              </a>
+              <div style="width:3px;">
+                <a href="https://clustrmaps.com/site/1b9h1"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=eQr8xSBiKVuSq6m0psK-Ey9TZ7rLzjRX-MpatyfFGQI&cl=ffffff" /></a>  
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../../_static/js/vendor/bootstrap.min.js"></script>
+  
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-59299155-3', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<!-- 
+<script defer data-domain="scikit-learn.org" src="https://views.scientific-python.org/js/script.js">
+</script>
+ -->
+
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+
+<script>
+$(document).ready(function() {
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		        '.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	});
+});
+
+</script>
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    
+</body>
+
+</html>

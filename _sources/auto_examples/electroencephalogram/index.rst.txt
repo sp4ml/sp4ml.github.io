@@ -1,0 +1,153 @@
+
+
+.. _sphx_glr_auto_examples_electroencephalogram:
+
+.. _eeg_examples:
+
+Electroencephalography (EEG)
+----------------------------
+
+Examples for EEG Signal Processing.
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip=" ATAR: Automatic and Tunable Artifact Removal Algorithm -  Tuning">
+
+.. only:: html
+
+  .. image:: /auto_examples/electroencephalogram/images/thumb/sphx_glr_plot_sp_ATAR_algorithm_tuning_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_electroencephalogram_plot_sp_ATAR_algorithm_tuning.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">ATAR: Automatic and Tunable Artifact Removal Algorithm</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="ATAR: Automatic and Tunable Artifact Removal Algorithm">
+
+.. only:: html
+
+  .. image:: /auto_examples/electroencephalogram/images/thumb/sphx_glr_plot_sp_eeg_artifact_removal_ATAR_algorithm_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_electroencephalogram_plot_sp_eeg_artifact_removal_ATAR_algorithm.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EEG Artifact removal using ATAR</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="     ICA Filtering algorithm uses following three criteria for removing artifacts for EEG.">
+
+.. only:: html
+
+  .. image:: /auto_examples/electroencephalogram/images/thumb/sphx_glr_plot_sp_eeg_artifact_removal_ICA_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_electroencephalogram_plot_sp_eeg_artifact_removal_ICA.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EEG Artifact removal using ICA</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example we compare ICA with ATAR">
+
+.. only:: html
+
+  .. image:: /auto_examples/electroencephalogram/images/thumb/sphx_glr_plot_sp_eeg_artifact_removal_ICA_ATAR_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_electroencephalogram_plot_sp_eeg_artifact_removal_ICA_ATAR.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EEG Artifact: ATAR and ICA</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example, we are using PhyAAt Dataset to show the how to compute rhythmic features and c...">
+
+.. only:: html
+
+  .. image:: /auto_examples/electroencephalogram/images/thumb/sphx_glr_plot_sp_eeg_rhythmic_features_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_electroencephalogram_plot_sp_eeg_rhythmic_features.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EEG Computing Rhythmic Features - PhyAAt - Semanticity</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="EEG Topographic Map">
+
+.. only:: html
+
+  .. image:: /auto_examples/electroencephalogram/images/thumb/sphx_glr_plot_sp_eeg_topomaps_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_electroencephalogram_plot_sp_eeg_topomaps.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EEG Topographic Map</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Using InfoMax, Extended InfoMax, FastICA, &amp; Picard">
+
+.. only:: html
+
+  .. image:: /auto_examples/electroencephalogram/images/thumb/sphx_glr_plot_sp_ICA_eeg_example_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_electroencephalogram_plot_sp_ICA_eeg_example.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Independed Principle Component analysis</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/electroencephalogram/plot_sp_ATAR_algorithm_tuning
+   /auto_examples/electroencephalogram/plot_sp_eeg_artifact_removal_ATAR_algorithm
+   /auto_examples/electroencephalogram/plot_sp_eeg_artifact_removal_ICA
+   /auto_examples/electroencephalogram/plot_sp_eeg_artifact_removal_ICA_ATAR
+   /auto_examples/electroencephalogram/plot_sp_eeg_rhythmic_features
+   /auto_examples/electroencephalogram/plot_sp_eeg_topomaps
+   /auto_examples/electroencephalogram/plot_sp_ICA_eeg_example
+

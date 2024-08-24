@@ -1,0 +1,127 @@
+.. _tutorials:
+
+=======================
+Tutorials
+=======================
+
+
+.. .. raw:: html
+..     <div align="center" style="">
+..     <table>
+..         <tr>
+..             <td><h2>Signal Processing</h2></td>
+..             <td><h2>Machine Learning</h2></td>
+..         </tr>
+..         <tr>
+..             <td>
+..             <div align="center" style="">
+..                 <a href="https://PMLBook.github.io" target="_blank"><img src="https://raw.githubusercontent.com/PMLBook/.github/main/book_cover_3d.png" width="200"/></a>
+..             </div>
+            
+..             </td>
+..             <td>
+            
+..             <div align="center" style="">
+..                 <a href="https://PMLBook.github.io" target="_blank"><img src="https://raw.githubusercontent.com/PMLBook/.github/main/book_cover_3d.png" width="200"/></a>
+..             </div>
+            
+..             </td>
+..         </tr>
+..     </table>
+..     </div>
+
+
+Signal Processing
+-----------------
+
+.. seealso:: Under-development
+
+    Tutorial on Signal processing is in pipeline.
+
+
+Tutorials on Signal Processing is under-development, which will be available 
+`Here <signal_processing/index.html>`_
+
+* :ref:`Signal Processing <tutorials_signal_processing>`
+
+
+
+
+Machine Learning
+-----------------
+
+For Machine Learning, we have been writing a book - `Principles of Machine Learning <https://PMLBook.github.io>`_
+
+
+.. raw:: html
+
+    <div align="left" style="">
+        <a href="https://PMLBook.github.io" target="_blank"><img src="https://raw.githubusercontent.com/PMLBook/.github/main/book_cover_3d.png" width="200"/>
+        </a>
+    </div>
+
+
+
+.. .. image:: https://raw.githubusercontent.com/PMLBook/.github/main/book_cover_3d.png
+..     :width: 250px
+..     :target: https://PMLBook.github.io
+.. .. raw:: html
+
+..     <a href="https://PMLBook.github.io"><img src="https://raw.githubusercontent.com/PMLBook/.github/main/book_cover_3d.png" height="200"/></a>
+
+
+
+
+Data Science Programming
+------------------------
+
+One of the course we have developed as **Introduction to Data Science Programming**, which mainly focused on the Python as a programming language for Data Sceince.
+
+`Course Material is available here <https://nikeshbajaj.github.io/teaching/QMUL/QHP4701/>`_
+
+
+
+
+
+.. figure:: https://nikeshbajaj.github.io/teaching/QMUL/QHP4701/imgs/cover.png
+   :target: https://nikeshbajaj.github.io/teaching/QMUL/QHP4701/
+   :align: left
+   :width: 300
+
+
+
+Interactive Wigdets
+-------------------
+
+.. .. raw:: html
+    
+..     <ul>
+..     <li>Statistics: <a href="https://nikeshbajaj.github.io/teaching/demos/Stats/sampling" target="_blank"><b>For Hypothesis Testing and T-test</b></a></li>
+..     <li>Machine Learning: <a href="https://nikeshbajaj.github.io/teaching/demos/ML/roc_v3.html" target="_blank"><b>For Understanding ROC</b></a></li>
+..     </ul>
+
+
+
+* **Statistics:** `For Hypothesis Testing and T-test <https://nikeshbajaj.github.io/teaching/demos/Stats/sampling>`_
+
+.. figure:: https://nikeshbajaj.github.io/teaching/demos/stats_sampling_demo.gif
+   :target: https://nikeshbajaj.github.io/teaching/demos/Stats/sampling
+   :align: left
+   :width: 300
+
+
+* **Machine Learning:** `For Understanding ROC <https://nikeshbajaj.github.io/teaching/demos/ML/roc_v3.html>`_
+
+
+.. figure:: https://nikeshbajaj.github.io/teaching/demos/ml_roc_demo.gif
+   :target: https://nikeshbajaj.github.io/teaching/demos/ML/roc_v3.html
+   :align: left
+   :width: 300
+
+
+Information Theory
+------------------
+
+We are planning to create Tutorials on Information Theory
+
+

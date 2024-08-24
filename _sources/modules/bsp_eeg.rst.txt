@@ -1,0 +1,171 @@
+.. _eeg:
+
+======================
+Electroencephalography
+======================
+
+Preprocessing
+==============
+
+
+Filtering
+---------
+
+
+Power computation
+-----------------
+
+
+Rhythmic Features
+-----------------
+
+
+
+
+.. figure:: ../auto_examples/electroencephalogram/images/sphx_glr_plot_sp_eeg_rhythmic_features_001.png
+   :target: ../auto_examples/electroencephalogram/plot_sp_eeg_rhythmic_features.html
+   :align: center
+   :scale: 70%
+
+
+.. topic:: Examples:
+
+   * :ref:`sphx_glr_auto_examples_electroencephalogram_plot_sp_eeg_rhythmic_features.py`
+
+
+
+
+
+
+Topographic Map
+---------------
+
+
+
+.. figure:: ../auto_examples/electroencephalogram/images/sphx_glr_plot_sp_eeg_topomaps_001.png
+   :target: ../auto_examples/electroencephalogram/plot_sp_eeg_topomaps.html
+   :align: center
+   :scale: 70%
+
+
+.. topic:: Examples:
+
+   * :ref:`sphx_glr_auto_examples_electroencephalogram_plot_sp_eeg_topomaps.py`
+
+
+
+
+
+Removing Artifacts
+==================
+
+ATAR Algorithm
+--------------
+
+Apply ATAR on short windows of signal (single channel):
+
+Signal is decomposed in smaller overlapping windows and reconstructed after correcting using overlap-add method.
+
+For more details, check [1]_
+
+**Operating Modes**
+
+**1. Soft Thresholding**
+
+.. math ::
+
+    \lambda_s (w)  &=  w  & \quad \text{if } |w|<\theta_{\gamma}
+
+        &=  \theta_{\alpha} \frac{1 - e^{\alpha w}}{1 + e^{\alpha w}}   & \quad \text{otherwise}
+
+
+**2. Elimination**
+
+.. math ::
+
+    \lambda_e (w)  &=  w  & \quad \text{if } |w| \le \theta_{\alpha}
+
+        &=  0   & \quad \text{otherwise}
+
+
+**3. Linear Attenuation**
+
+.. math ::
+
+    \lambda_a (w)  &=  w  & \quad \text{if } |w| \le \theta_{\alpha}
+
+            &=  sgn(w) \theta_{\alpha} \Big( 1 -  \frac{|w| - \theta_{\alpha}}{\theta_{\beta}-\theta_{\alpha}} \Big) & \quad \text{if } \theta_{\alpha} < |w| \le \theta_{\beta}
+            
+            &=  0   & \quad \text{otherwise}
+
+
+**Computing Threshold**
+
+* :math:`f_{\beta}(r)  = k_2 \cdot exp \Big(-\beta \frac{w_{max}}{k_2} \times \frac{r}{2} \Big)`
+
+* :math:`\theta_{\alpha}  =  f_{\beta}(r)  \quad \text{if } f_{\beta}(r) \ge k_1` otherwise :math:`\theta_{\alpha}  =  k_1`
+
+* :math:`\theta_{\gamma}  = g_f \times \theta_{\alpha}` ,  where a default value for 'g_f = 0.8' **For Soft-threshold**
+
+* :math:`\theta_{\beta}  = b_f \times \theta_{\alpha}` , where a default value for 'b_f = 2' **For Linear Attenuation**
+
+
+.. figure:: https://raw.githubusercontent.com/Nikeshbajaj/spkit/master/figures/atar_beta_tune.gif
+   :target: ../auto_examples/electroencephalogram/plot_sp_ATAR_algorithm_tuning.html
+   :align: center
+   :scale: 60%
+
+
+.. topic:: Examples:
+
+   * :ref:`sphx_glr_auto_examples_electroencephalogram_plot_sp_ATAR_algorithm_tuning.py`
+
+
+
+
+
+ICA Algorithm
+--------------
+
+ICA Filtering algorithm uses following three criteria for removing artifacts for EEG.
+
+1. Kurtosis based artifacts - mostly for motion artifacts:
+    -  parameter `kur_thr` is used as threshold on kurtosis of ICs. Any IC above `kur_thr`
+        is removed. As higher kurtosis of component, more peaky it is.
+
+2. Correlation Based Index (CBI) for eye movement artifacts:
+    -  CBI method [1]_ computed the comparaision of power in prefrontal electrodes with frontal eletrodes, in IC.
+        A component, that stisfy the criteria, is considered as component capturing eye-blink activity and removed.
+    -  For applying CBI method, index of prefrontal (AF - First Layer of electrodes towards frontal lobe)
+        and frontal lobe (F - second layer of electrodes) channels needs to be provided.
+
+    -  For case of 14-channels Emotiv Epoc
+            - ch_names = ['AF3','F7','F3','FC5','T7','P7','O1','O2','P8','T8','FC6','F4','F8','AF4']
+            - Pre-frontal Channels =['AF3','AF4'], 
+            - Fronatal Channels = ['F7','F3','F4','F8']
+            - then suplied index of channels are as follow;
+                -  `AF_ch_index` =[0,13] 
+                -  `F_ch_index` =[1,2,11,12] 
+
+    - .. [1] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3812628/
+
+3. Correlation of any IC with many EEG channels:
+    -  If any IC is correlated `corr_thr` % (80%) of elecctrodes, is considered to be artifactual
+    -  Similar like CBI, except, not comparing fronatal and prefrontal but to all
+
+
+
+
+
+
+.. figure:: ../auto_examples/electroencephalogram/images/sphx_glr_plot_sp_eeg_artifact_removal_ICA_004.png
+   :target: ../auto_examples/electroencephalogram/plot_sp_eeg_artifact_removal_ICA.html
+   :align: center
+   :scale: 70%
+
+
+.. topic:: Examples:
+
+   * :ref:`sphx_glr_auto_examples_electroencephalogram_plot_sp_eeg_artifact_removal_ICA.py`
+
+

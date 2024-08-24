@@ -1,0 +1,537 @@
+
+
+<!DOCTYPE html>
+<!-- data-theme below is forced to be "light" but should be changed if we use pydata-theme-sphinx in the future -->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" data-content_root="../" data-theme="light"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" data-content_root="../" data-theme="light">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Version 0.0.9.7" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://spkit.github.io/whats_new/index.html" />
+<meta property="og:site_name" content="spkit" />
+<meta property="og:description" content="August 2024 spkit.graph_filter_dist, spkit.graph_filter_adj, spkit.conv1d_nan, spkit.conv2d_nan, spkit.wavelet_decomposed_signals, spkit.wpa_plot, spkit.wpa_coeff, spkit.elbow_knee_point, spkit.sim..." />
+<meta property="og:image" content="https://github.com/spkit/spkit.github.io/blob/master/assets/logo/logo.png" />
+<meta property="og:image:alt" content="spkit" />
+<meta name="description" content="August 2024 spkit.graph_filter_dist, spkit.graph_filter_adj, spkit.conv1d_nan, spkit.conv2d_nan, spkit.wavelet_decomposed_signals, spkit.wpa_plot, spkit.wpa_coeff, spkit.elbow_knee_point, spkit.sim..." />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Version 0.0.9.7 &mdash; spkit 0.0.9.7 documentation</title>
+  
+  <link rel="canonical" href="http://spkit.github.io/stable/whats_new/index.html" />
+
+  
+  <link rel="shortcut icon" href="../_static/favicon.ico" />
+  
+
+  <link rel="stylesheet" href="../_static/css/vendor/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
+  <link rel="stylesheet" href="../https://fonts.googleapis.com/css?family=Vibur" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyterlite_sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sg_gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sg_gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sg_gallery-rendered-html.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <script id="documentation_options" data-url_root="../"
+    src="../_static/documentation_options.js"></script>
+  <script src="../_static/js/vendor/jquery-3.6.3.slim.min.js"></script>
+  <script src="../_static/js/details-permalink.js"></script>
+
+  <link rel="stylesheet" href="../_static/css/vendor/nature_spkit.css" type="text/css" /> 
+
+
+</head>
+
+<body>
+  
+
+
+
+
+
+<!-- ('About us', pathto('about'), ''), -->
+
+
+<div id="logo-banner">
+  <div class="logo">
+    <!-- <a href="../%23.html"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a> -->
+  <!-- <a href="#"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a> -->
+  <a href="../index.html"><img src="../_static/spkit_logo.png" alt="spkit logo"  border="0" /></a>
+  </div>
+  <div class="tags">
+  <ul>
+    <li>&#9672; Easy to use toolkit for signal processing and analysis</li>
+    <li>&#9672; More of biomedical signal analysis with visualization</li>
+    <li>&#9672; Includes basic machine learning models with visualization</li>
+    <!-- <li>&#9672; Open source</li> -->
+  </ul>
+  </div>
+  <div class="banner">
+  <h2>Signal Processing Toolkit</h2>
+  <h4><i>Simple and easy to use for signal analysis and predictive analysis</i></h4>
+  </div>
+</div>
+<nav id="navbar" class="spk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid spk-docs-container px-0">
+      <a class="navbar-brand py-0" href="../index.html">
+        <img
+          class="spk-brand-img"
+          src="../_static/spkit_small_icon_v.png"
+          alt="logo"/>
+      </a>
+    <button
+      id="spk-navbar-toggler"
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="spk-navbar-collapse collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../index.html">Home</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../install.html">Install</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../user_guide.html">User Guide</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../modules/classes.html">API</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../auto_examples/index.html">Examples</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../tutorials/index.html">Tutorials</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" target="_blank" rel="noopener noreferrer" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=">Discussion Forum</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../about.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="../getting_started.html" >Getting Started</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="v0.0.9.7.html" >What's new</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://github.com/nikeshbajaj/spkit" >GitHub</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://spkit.github.io/dev/index.html" target="_blank" rel="noopener noreferrer">Development</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" >Get Involved</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://spkit.github.io/dev/versions.html" >Other Versions and Download</a>
+        </li>
+        <li class="nav-item dropdown nav-more-item-dropdown">
+          <a class="spk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="spk-nav-dropdown-item dropdown-item" href="../getting_started.html" >Getting Started</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="v0.0.9.7.html" >What's new</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://github.com/nikeshbajaj/spkit" >GitHub</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://spkit.github.io/dev/index.html" target="_blank" rel="noopener noreferrer">Development</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" >Get Involved</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://spkit.github.io/dev/versions.html" >Other Versions and Download</a>
+          </div>
+        </li>
+      </ul>
+      <div id="searchbox" role="search">
+          <div class="searchformwrapper">
+          <form class="search" action="../search.html" method="get">
+            <input class="spk-search-text-input" type="text" name="q" aria-labelledby="searchlabel" />
+            <input class="spk-search-text-btn" type="submit" value="Go" />
+          </form>
+          </div>
+      </div>
+      <a class ="nav-more-item-dropdown">
+      <font size="4em" style="margin: 5px 5px 0px 5px;color:rgb(0, 0, 0)">V</font>
+      </a>
+      <div class="nav-item dropdown nav-more-item-dropdown-vs">
+        <a class="sp-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <font color="black">0.0.9.7 (latest)</font>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sp-nav-dropdown-item dropdown-item" href="../index.html" >0.0.9.7 (latest)</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../V/0.0.9.6/index.html" >0.0.9.6</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../V/0.0.9.5/index.html" >0.0.9.5</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../V/0.0.9.4/index.html" >0.0.9.4</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../V/0.0.9.3/index.html" >0.0.9.3</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../V/0.0.9.2/index.html" >0.0.9.2</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../V/0.0.9.1/index.html" >0.0.9.1</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="https://github.com/Nikeshbajaj/spkit/releases" >More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+  <div class="d-flex" id="spk-doc-wrapper" class="border-right">
+    <input type="checkbox" name="spk-toggle-checkbox" id="spk-toggle-checkbox">
+    <label id="spk-sidemenu-toggle" class="spk-btn-toggle-toc btn spk-btn-primary" for="spk-toggle-checkbox">Toggle
+      Menu</label>
+      <div id="spk-sidebar-top-logoimg">
+        <a href="../index.html">
+          <img class="spk-brand-img-side" src="../_static/spkit_logo.png" alt="spkit logo"  border="0" />
+        </a>
+      </div>
+    <div id="spk-sidebar-wrapper" class="border-right">
+      <div class="spk-sidebar-top-content">
+        <hr style="margin: 0 0 10px 0" />
+        <div class="alert alert-danger p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            <strong>SpKit 0.0.9.7</strong><br />
+            <!-- <a class="reference external" href="https://pypi.org/project/spkit" target="_blank"><img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/Nikeshbajaj/spkit?label=latest%20version&style=plastic"></a> -->
+            <a class="reference external" href="https://pepy.tech/project/spkit" target="_blank"><img
+                src="https://static.pepy.tech/personalized-badge/spkit?period=total&amp;units=international_system&amp;left_color=black&amp;right_color=orange&amp;left_text=downloads"
+                alt="PyPI - Downloads" /></a>
+            <a class="reference external" href="https://pypi.python.org/pypi/spkit" target="_blank"><img
+                alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/spkit?style=plastic"></a>
+            <!-- <a href="http://spkit.github.io/dev/versions.html">Other versions</a> -->
+          </p>
+        </div>
+        <div class="alert alert-warning p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            Please <a class="font-weight-bold" href="../about.html#citing-spkit">
+              <string>cite us</string>
+            </a> if you use the software.
+          </p>
+        </div>
+        <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+          <a href="#" role="button" class="btn spk-btn-rellink py-1 disabled"">Prev</a>
+          <a href="#" role="button" class="btn spk-btn-rellink disabled py-1">Up</a>
+          <a href="#" role="button" class="btn spk-btn-rellink py-1 disabled"">Next</a>
+        </div>
+        <hr>
+      </div>
+      <div class=" spk-sidebar-toc-wrapper">
+          <!-- <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+            <a href="#" role="button" class="btn spk-btn-rellink py-1 disabled"">Prev</a>
+            <a href="#" role="button" class="btn spk-btn-rellink disabled py-1">Up</a>
+            <a href="#" role="button" class="btn spk-btn-rellink py-1 disabled"">Next</a>
+          </div>
+          <hr> -->
+          <div class="spk-sidebar-toc">
+            <ul>
+<li><a class="reference internal" href="#">Version 0.0.9.7</a></li>
+<li><a class="reference internal" href="#version-0-0-9-6">Version 0.0.9.6</a></li>
+<li><a class="reference internal" href="#version-0-0-9-5">Version 0.0.9.5</a></li>
+<li><a class="reference internal" href="#version-0-0-9-4">Version 0.0.9.4</a></li>
+<li><a class="reference internal" href="#version-0-0-9-3">Version 0.0.9.3</a></li>
+<li><a class="reference internal" href="#version-0-0-9-2">Version 0.0.9.2</a></li>
+<li><a class="reference internal" href="#version-0-0-9-1">Version 0.0.9.1</a></li>
+<li><a class="reference internal" href="#version-0-0-8">Version 0.0.8</a></li>
+<li><a class="reference internal" href="#version-0-0-7">Version 0.0.7</a></li>
+<li><a class="reference internal" href="#version-0-0-6">Version 0.0.6</a></li>
+<li><a class="reference internal" href="#version-0-0-5">Version 0.0.5</a></li>
+<li><a class="reference internal" href="#version-0-0-4">Version 0.0.4</a></li>
+<li><a class="reference internal" href="#version-0-0-2">Version 0.0.2</a></li>
+<li><a class="reference internal" href="#version-0-0-1">Version 0.0.1</a><ul>
+<li><a class="reference internal" href="#experimental-under-development">Experimental / Under Development</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+    <div id="spk-page-content-wrapper">
+      <div class="spk-page-content container-fluid body px-md-3" role="main">
+        
+  <section id="version-0-0-9-7">
+<span id="changes-0-0-9-7"></span><h1>Version 0.0.9.7<a class="headerlink" href="#version-0-0-9-7" title="Link to this heading">¶</a></h1>
+<p><strong>August 2024</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="../modules/generated/spkit.graph_filter_dist.html#spkit.graph_filter_dist" title="spkit.graph_filter_dist"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.graph_filter_dist</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.graph_filter_adj.html#spkit.graph_filter_adj" title="spkit.graph_filter_adj"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.graph_filter_adj</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.conv1d_nan.html#spkit.conv1d_nan" title="spkit.conv1d_nan"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.conv1d_nan</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.conv2d_nan.html#spkit.conv2d_nan" title="spkit.conv2d_nan"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.conv2d_nan</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.wavelet_decomposed_signals.html#spkit.wavelet_decomposed_signals" title="spkit.wavelet_decomposed_signals"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.wavelet_decomposed_signals</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.WPA_plot.html#spkit.wpa_plot" title="spkit.wpa_plot"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.wpa_plot</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.wpa_coeff.html#spkit.wpa_coeff" title="spkit.wpa_coeff"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.wpa_coeff</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.elbow_knee_point.html#spkit.elbow_knee_point" title="spkit.elbow_knee_point"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.elbow_knee_point</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.simplify_signal.html#spkit.simplify_signal" title="spkit.simplify_signal"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.simplify_signal</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.eeg.rhythmic_powers_win.html#spkit.eeg.rhythmic_powers_win" title="spkit.eeg.rhythmic_powers_win"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.eeg.rhythmic_powers_win</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.total_variation.html#spkit.total_variation" title="spkit.total_variation"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.total_variation</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/classes.html#module-spkit.data" title="spkit.data"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.data</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<ul>
+<li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  .</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="../modules/generated/spkit.eeg.TopoMap.html#spkit.eeg.topomap" title="spkit.eeg.topomap"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.eeg.topomap</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.entropy_differential.html#spkit.entropy_differential" title="spkit.entropy_differential"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.entropy_differential</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.transfer_entropy.html#spkit.transfer_entropy" title="spkit.transfer_entropy"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.transfer_entropy</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.partial_transfer_entropy.html#spkit.partial_transfer_entropy" title="spkit.partial_transfer_entropy"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.partial_transfer_entropy</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.entropy_granger_causality.html#spkit.entropy_granger_causality" title="spkit.entropy_granger_causality"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.entropy_granger_causality</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.regularised_period_estimation.html#spkit.regularised_period_estimation" title="spkit.regularised_period_estimation"><code class="xref py py-func docutils literal notranslate"><span class="pre">regularised_period_estimation</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.signal_diff.html#spkit.signal_diff" title="spkit.signal_diff"><code class="xref py py-func docutils literal notranslate"><span class="pre">signal_diff</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.quantize_signal.html#spkit.quantize_signal" title="spkit.quantize_signal"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.quantize_signal</span></code></a></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="version-0-0-9-6">
+<span id="changes-0-0-9-6"></span><h1>Version 0.0.9.6<a class="headerlink" href="#version-0-0-9-6" title="Link to this heading">¶</a></h1>
+<p><strong>November 2023</strong></p>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.core.processing</span></code></p>
+<ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  .</p></li>
+<li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  .</p>
+<ul>
+<li><p><a class="reference internal" href="../modules/generated/spkit.filter_X.html#spkit.filter_X" title="spkit.filter_X"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.filter_X</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.filterDC_sGolay.html#spkit.filterDC_sGolay" title="spkit.filterDC_sGolay"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.filterDC_sGolay</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.filter_smooth_sGolay.html#spkit.filter_smooth_sGolay" title="spkit.filter_smooth_sGolay"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.filter_smooth_sGolay</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.filter_smooth_gauss.html#spkit.filter_smooth_gauss" title="spkit.filter_smooth_gauss"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.filter_smooth_gauss</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.filter_smooth_mollifier.html#spkit.filter_smooth_mollifier" title="spkit.filter_smooth_mollifier"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.filter_smooth_mollifier</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.filter_with_kernel.html#spkit.filter_with_kernel" title="spkit.filter_with_kernel"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.filter_with_kernel</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.filter_smooth_sGolay.html#spkit.filter_smooth_sGolay" title="spkit.filter_smooth_sGolay"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.filter_smooth_sGolay</span></code></a></p></li>
+</ul>
+</li>
+</ul>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.core.infotheory</span></code></p>
+<ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span> 
+<code class="xref py py-class docutils literal notranslate"><span class="pre">decomposition.PCA</span></code>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span> </p>
+<ul>
+<li><p><a class="reference internal" href="../modules/generated/spkit.entropy.html#spkit.entropy" title="spkit.entropy"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.entropy</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.entropy_joint.html#spkit.entropy_joint" title="spkit.entropy_joint"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.entropy_joint</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.entropy_cond.html#spkit.entropy_cond" title="spkit.entropy_cond"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.entropy_cond</span></code></a></p></li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.mutual_Info</span></code></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.entropy_kld.html#spkit.entropy_kld" title="spkit.entropy_kld"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.entropy_kld</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.entropy_cross.html#spkit.entropy_cross" title="spkit.entropy_cross"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.entropy_cross</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.entropy_spectral.html#spkit.entropy_spectral" title="spkit.entropy_spectral"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.entropy_spectral</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.entropy_sample.html#spkit.entropy_sample" title="spkit.entropy_sample"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.entropy_sample</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.entropy_approx.html#spkit.entropy_approx" title="spkit.entropy_approx"><code class="xref py py-func docutils literal notranslate"><span class="pre">spkit.entropy_approx</span></code></a></p></li>
+</ul>
+</li>
+</ul>
+<p><a class="reference internal" href="../modules/classes.html#module-1" title="spkit.eeg"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.eeg</span></code></a></p>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.mea</span></code></p>
+<p><a class="reference internal" href="../modules/classes.html#module-spkit.ml" title="spkit.ml"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.ml</span></code></a></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="../modules/generated/spkit.ml.DecisionTree.html#spkit.ml.DecisionTree" title="spkit.ml.DecisionTree"><code class="xref py py-class docutils literal notranslate"><span class="pre">spkit.ml.DecisionTree</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.ml.ClassificationTree.html#spkit.ml.ClassificationTree" title="spkit.ml.ClassificationTree"><code class="xref py py-class docutils literal notranslate"><span class="pre">spkit.ml.ClassificationTree</span></code></a></p></li>
+<li><p><a class="reference internal" href="../modules/generated/spkit.ml.RegressionTree.html#spkit.ml.RegressionTree" title="spkit.ml.RegressionTree"><code class="xref py py-class docutils literal notranslate"><span class="pre">spkit.ml.RegressionTree</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.stats</span></code></p>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.geomatry</span></code></p>
+</section>
+<section id="version-0-0-9-5">
+<span id="changes-0-0-9-5"></span><h1>Version 0.0.9.5<a class="headerlink" href="#version-0-0-9-5" title="Link to this heading">¶</a></h1>
+<p><strong>March 2022</strong></p>
+</section>
+<section id="version-0-0-9-4">
+<span id="changes-0-0-9-4"></span><h1>Version 0.0.9.4<a class="headerlink" href="#version-0-0-9-4" title="Link to this heading">¶</a></h1>
+<p><strong>Jan 2022</strong></p>
+<p>Following main functions are added in 0.0.9.4 version</p>
+<ul class="simple">
+<li><p><strong>Ramanujan Filter Banks</strong> to estimate periods</p></li>
+<li><p><strong>Fractional Fourier Transform</strong></p></li>
+<li><p><strong>Sinusoidal Model for decomposing and synthesizing a signal with sinusoidal tracks over time</strong></p></li>
+<li><p><strong>Dispersion Entropy</strong></p></li>
+</ul>
+<p>Also fixed a bugs</p>
+<ul class="simple">
+<li><p>default use of joblib is turned off</p></li>
+<li><p>return shape of filtered signal as as input</p></li>
+<li><p>doc string</p></li>
+</ul>
+</section>
+<section id="version-0-0-9-3">
+<span id="changes-0-0-9-3"></span><h1>Version 0.0.9.3<a class="headerlink" href="#version-0-0-9-3" title="Link to this heading">¶</a></h1>
+<p><strong>Oct 2021</strong>
+Oct 10, 2021</p>
+<p>Following functionaliets are added in 0.0.9.3 version
+* <strong>ATAR Algorithm for EEG Artifact removal</strong> [Automatic and Tunable Artifact Removal Algorithm for EEG from artical](<a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S1746809419302058">https://www.sciencedirect.com/science/article/pii/S1746809419302058</a>)
+* <strong>ICA based artifact removal algorith</strong>
+* <strong>Basic filtering, wavelet filtering, EEG signal processing techniques</strong>
+* <strong>spectral, sample, aproximate and svd entropy functions</strong></p>
+</section>
+<section id="version-0-0-9-2">
+<span id="changes-0-0-9-2"></span><h1>Version 0.0.9.2<a class="headerlink" href="#version-0-0-9-2" title="Link to this heading">¶</a></h1>
+<p><strong>Apr 2021</strong></p>
+<p>Apr 22, 2021</p>
+<p>Following functionaliets are added in 0.0.9.2 version</p>
+<ul class="simple">
+<li><p><strong>Scalogram CWT</strong> function with various complex countinues wavelets</p></li>
+</ul>
+</section>
+<section id="version-0-0-9-1">
+<span id="changes-0-0-9-1"></span><h1>Version 0.0.9.1<a class="headerlink" href="#version-0-0-9-1" title="Link to this heading">¶</a></h1>
+<p><strong>Mar 20, 2020</strong></p>
+<ul class="simple">
+<li><p>Fixed the bug of “Import error” in python 2.7, due to print function Issue #1</p></li>
+<li><p>Updated Logistic Regression with conventional methods, additional penalties and multi-class</p></li>
+</ul>
+</section>
+<section id="version-0-0-8">
+<span id="changes-0-0-8"></span><h1>Version 0.0.8<a class="headerlink" href="#version-0-0-8" title="Link to this heading">¶</a></h1>
+<p><strong>Mar 15, 2020</strong></p>
+<ul class="simple">
+<li><p>Updates, fix a bug to install with .tar.gz</p></li>
+</ul>
+</section>
+<section id="version-0-0-7">
+<span id="changes-0-0-7"></span><h1>Version 0.0.7<a class="headerlink" href="#version-0-0-7" title="Link to this heading">¶</a></h1>
+<p><strong>Jan 26, 2020</strong></p>
+<ul class="simple">
+<li><p>Update with probability computation and compute with different depth</p></li>
+</ul>
+</section>
+<section id="version-0-0-6">
+<span id="changes-0-0-6"></span><h1>Version 0.0.6<a class="headerlink" href="#version-0-0-6" title="Link to this heading">¶</a></h1>
+<p><strong>Jan 16, 2020</strong></p>
+</section>
+<section id="version-0-0-5">
+<span id="changes-0-0-5"></span><h1>Version 0.0.5<a class="headerlink" href="#version-0-0-5" title="Link to this heading">¶</a></h1>
+<p>skipped</p>
+</section>
+<section id="version-0-0-4">
+<span id="changes-0-0-4"></span><h1>Version 0.0.4<a class="headerlink" href="#version-0-0-4" title="Link to this heading">¶</a></h1>
+<p><strong>Dec 03, 2019</strong></p>
+<ul class="simple">
+<li><p>Fixing bugs</p></li>
+</ul>
+</section>
+<section id="version-0-0-2">
+<span id="changes-0-0-2"></span><h1>Version 0.0.2<a class="headerlink" href="#version-0-0-2" title="Link to this heading">¶</a></h1>
+<p><strong>Sep 19, 2019</strong></p>
+<p>Following functionaliets are added
+* ML Models - Decision Trees, Naive Bayes, and Logistic Regression</p>
+</section>
+<section id="version-0-0-1">
+<span id="changes-0-0-1"></span><h1>Version 0.0.1<a class="headerlink" href="#version-0-0-1" title="Link to this heading">¶</a></h1>
+<p><strong>Apr 19, 2019</strong></p>
+<p>First release:
+Following functionaliets are added
+* entropy, mutual information, joint and conditional</p>
+<section id="experimental-under-development">
+<h2>Experimental / Under Development<a class="headerlink" href="#experimental-under-development" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-success">Major Feature</span></span>  <code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.geomatry</span></code></p></li>
+</ul>
+</section>
+</section>
+
+
+      </div>
+      <div class="container">
+        <footer class="spk-content-footer">
+          &copy; 2019 - 2024, spkit developers (BSD License).
+          <!-- -->
+          <!-- <a href="../_sources/whats_new/index.rst.txt" rel="nofollow">Show this page source</a> -->
+          <!-- -->
+        </footer>
+      </div>
+
+      <div class="container-fluid py-3">
+        <hr>
+        <div class="container spk-landing-container">
+              <a class="spk-footer-funding-link" href="about.html#funding">
+              <div class="text-center">
+                      <p class="mt-2">
+                        Spkit developed in collabration with other projects:
+                      </p>
+                      <a href="https://PhyAAt.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../_static/phyaat_logo.png" title="PhyAAt"></a>
+                      <a href="https://PyLFSR.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../_static/pylfsr_logo.png" title="PyLFSR" ></a>
+                      <a href="https://MLEndDatasets.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../_static/mlend_logo.png" title="MLEnd-Datasets" ></a>
+              </div>
+              </a>
+              <div style="width:3px;">
+                <a href="https://clustrmaps.com/site/1b9h1"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=eQr8xSBiKVuSq6m0psK-Ey9TZ7rLzjRX-MpatyfFGQI&cl=ffffff" /></a>  
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../_static/js/vendor/bootstrap.min.js"></script>
+  
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-59299155-3', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<!-- 
+<script defer data-domain="scikit-learn.org" src="https://views.scientific-python.org/js/script.js">
+</script>
+ -->
+
+<script src="../_static/clipboard.min.js"></script>
+<script src="../_static/copybutton.js"></script>
+
+<script>
+$(document).ready(function() {
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		        '.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	});
+});
+
+</script>
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    
+</body>
+
+</html>

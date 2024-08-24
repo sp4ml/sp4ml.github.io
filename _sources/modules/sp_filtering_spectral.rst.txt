@@ -1,0 +1,51 @@
+
+:parenttoc: True
+
+.. include:: includes/big_toc_css.rst
+
+.. _filtering_spectral:
+
+
+
+==================
+Spectral Filtering
+==================
+
+Spectral filtering is an approach to select some frequency band and remove other frequency bands.
+
+Lowpass filtering
+=================
+
+
+Highpass filtering
+==================
+
+
+Bandpass filtering
+=================
+
+
+Bandreject/bandstop filtering
+=============================
+
+
+Custom filtering
+=================
+
+::
+
+  import numpy as np
+  import matplotlib.pyplot as plt
+
+  import spkit as sp
+
+  #highpass
+  Xf = sp.filter_X(X,band =[0.5],btype='highpass',order=5,fs=128.0,ftype='filtfilt')
+
+  #bandpass
+  Xf = sp.filter_X(X,band =[1, 4],btype='bandpass',order=5,fs=128.0,ftype='filtfilt')
+
+  #lowpass
+  Xf = sp.filter_X(X,band =[40],btype='lowpass',order=5,fs=128.0,ftype='filtfilt')
+
+

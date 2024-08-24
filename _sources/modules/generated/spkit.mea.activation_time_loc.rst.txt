@@ -1,0 +1,17 @@
+﻿..
+    The empty line below should not be removed. It is added such that the `rst_prolog`
+    is added before the :mod: directive. Otherwise, the rendering will show as a
+    paragraph instead of a header.
+
+:mod:`spkit.mea`.activation_time_loc
+=================================================
+
+.. currentmodule:: spkit.mea
+
+.. autofunction:: activation_time_loc
+
+.. include:: spkit.mea.activation_time_loc.examples
+
+.. raw:: html
+
+    <div class="clearer"></div>

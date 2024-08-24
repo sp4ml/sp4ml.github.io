@@ -1,0 +1,16 @@
+.. Places parent toc into the sidebar
+
+:parenttoc: True
+
+.. include:: includes/big_toc_css.rst
+
+.. _data_samples:
+
+Data Samples
+------------
+
+.. toctree::
+    :maxdepth: 2
+
+    data_samples
+    data_simulation

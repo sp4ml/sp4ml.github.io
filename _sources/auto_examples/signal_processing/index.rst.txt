@@ -1,0 +1,153 @@
+
+
+.. _sphx_glr_auto_examples_signal_processing:
+
+.. _signal_processing_examples:
+
+Signal Processing
+-----------------------
+
+General examples about Signal Processing algorithms.
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Analysis and Synthesis Models">
+
+.. only:: html
+
+  .. image:: /auto_examples/signal_processing/images/thumb/sphx_glr_plot_sp_analysis_sythesis_models_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_analysis_sythesis_models.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Analysis and Synthesis Models</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Analysis and Synthesis Models">
+
+.. only:: html
+
+  .. image:: /auto_examples/signal_processing/images/thumb/sphx_glr_plot_sp_fractional_fourier_transform_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_fractional_fourier_transform.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Fractional Fourier Transform: FRFT</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Ramanujan Dictionary  - with sparse penalty">
+
+.. only:: html
+
+  .. image:: /auto_examples/signal_processing/images/thumb/sphx_glr_plot_sp_RFB_for_period_estimation_with_sparse_penalty_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_RFB_for_period_estimation_with_sparse_penalty.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Ramanujan Dictionary  - with sparse penalty</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip=" # Ramanujan Filter Banks">
+
+.. only:: html
+
+  .. image:: /auto_examples/signal_processing/images/thumb/sphx_glr_plot_sp_RFB_for_period_estimation_demo_examples_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_RFB_for_period_estimation_demo_examples.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Ramanujan Filter Banks -  Demos</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Ramanujan Filter Banks Example">
+
+.. only:: html
+
+  .. image:: /auto_examples/signal_processing/images/thumb/sphx_glr_plot_sp_RFB_for_period_estimation_from_signal_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_RFB_for_period_estimation_from_signal.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Ramanujan Filter Banks Example</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="# &lt;h1&gt;Table of Contents&lt;span class=&quot;tocSkip&quot;&gt;&lt;/span&gt;&lt;/h1&gt; # &lt;div class=&quot;toc&quot;&gt;&lt;ul class=&quot;toc-ite...">
+
+.. only:: html
+
+  .. image:: /auto_examples/signal_processing/images/thumb/sphx_glr_plot_sp_sinusodal_model_analysis_synthesis_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_sinusodal_model_analysis_synthesis.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Sinasodal Model:  Analysis and Synthesis</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Analysis and Synthesis Models">
+
+.. only:: html
+
+  .. image:: /auto_examples/signal_processing/images/thumb/sphx_glr_plot_sp_sinusodal_model_example_sound_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_sinusodal_model_example_sound.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Sinusodal Model : Synthesis : Audio</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/signal_processing/plot_sp_analysis_sythesis_models
+   /auto_examples/signal_processing/plot_sp_fractional_fourier_transform
+   /auto_examples/signal_processing/plot_sp_RFB_for_period_estimation_with_sparse_penalty
+   /auto_examples/signal_processing/plot_sp_RFB_for_period_estimation_demo_examples
+   /auto_examples/signal_processing/plot_sp_RFB_for_period_estimation_from_signal
+   /auto_examples/signal_processing/plot_sp_sinusodal_model_analysis_synthesis
+   /auto_examples/signal_processing/plot_sp_sinusodal_model_example_sound
+

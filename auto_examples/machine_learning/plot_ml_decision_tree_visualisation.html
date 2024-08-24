@@ -1,0 +1,1637 @@
+
+
+<!DOCTYPE html>
+<!-- data-theme below is forced to be "light" but should be changed if we use pydata-theme-sphinx in the future -->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" data-content_root="../../" data-theme="light"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" data-content_root="../../" data-theme="light">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Decision Trees with visualisations while buiding tree" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://spkit.github.io/auto_examples/machine_learning/plot_ml_decision_tree_visualisation.html" />
+<meta property="og:site_name" content="spkit" />
+<meta property="og:description" content="Decision Trees with visualisation while building trees. This example covers the use of,- Classification and, Regression Tree.,. From*spkit* library with different verbosity mode while training and ..." />
+<meta property="og:image" content="https://github.com/spkit/spkit.github.io/blob/master/assets/logo/logo.png" />
+<meta property="og:image:alt" content="spkit" />
+<meta name="description" content="Decision Trees with visualisation while building trees. This example covers the use of,- Classification and, Regression Tree.,. From*spkit* library with different verbosity mode while training and ..." />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Decision Trees with visualisations while buiding tree &mdash; spkit 0.0.9.7 documentation</title>
+  
+  <link rel="canonical" href="http://spkit.github.io/stable/auto_examples/machine_learning/plot_ml_decision_tree_visualisation.html" />
+
+  
+  <link rel="shortcut icon" href="../../_static/favicon.ico" />
+  
+
+  <link rel="stylesheet" href="../../_static/css/vendor/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
+  <link rel="stylesheet" href="../../https://fonts.googleapis.com/css?family=Vibur" type="text/css" />
+  <link rel="stylesheet" href="../../_static/jupyterlite_sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <script id="documentation_options" data-url_root="../../"
+    src="../../_static/documentation_options.js"></script>
+  <script src="../../_static/js/vendor/jquery-3.6.3.slim.min.js"></script>
+  <script src="../../_static/js/details-permalink.js"></script>
+
+  <link rel="stylesheet" href="../../_static/css/vendor/nature_spkit.css" type="text/css" /> 
+
+
+</head>
+
+<body>
+  
+
+
+
+
+
+<!-- ('About us', pathto('about'), ''), -->
+
+
+<div id="logo-banner">
+  <div class="logo">
+    <!-- <a href="../../%23.html"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a> -->
+  <!-- <a href="#"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a> -->
+  <a href="../../index.html"><img src="../../_static/spkit_logo.png" alt="spkit logo"  border="0" /></a>
+  </div>
+  <div class="tags">
+  <ul>
+    <li>&#9672; Easy to use toolkit for signal processing and analysis</li>
+    <li>&#9672; More of biomedical signal analysis with visualization</li>
+    <li>&#9672; Includes basic machine learning models with visualization</li>
+    <!-- <li>&#9672; Open source</li> -->
+  </ul>
+  </div>
+  <div class="banner">
+  <h2>Signal Processing Toolkit</h2>
+  <h4><i>Simple and easy to use for signal analysis and predictive analysis</i></h4>
+  </div>
+</div>
+<nav id="navbar" class="spk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid spk-docs-container px-0">
+      <a class="navbar-brand py-0" href="../../index.html">
+        <img
+          class="spk-brand-img"
+          src="../../_static/spkit_small_icon_v.png"
+          alt="logo"/>
+      </a>
+    <button
+      id="spk-navbar-toggler"
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="spk-navbar-collapse collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../index.html">Home</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../install.html">Install</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../user_guide.html">User Guide</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../modules/classes.html">API</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../index.html">Examples</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../tutorials/index.html">Tutorials</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" target="_blank" rel="noopener noreferrer" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=">Discussion Forum</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../about.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="../../getting_started.html" >Getting Started</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="../../whats_new/v0.0.9.7.html" >What's new</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://github.com/nikeshbajaj/spkit" >GitHub</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://spkit.github.io/dev/index.html" target="_blank" rel="noopener noreferrer">Development</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" >Get Involved</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://spkit.github.io/dev/versions.html" >Other Versions and Download</a>
+        </li>
+        <li class="nav-item dropdown nav-more-item-dropdown">
+          <a class="spk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="spk-nav-dropdown-item dropdown-item" href="../../getting_started.html" >Getting Started</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="../../whats_new/v0.0.9.7.html" >What's new</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://github.com/nikeshbajaj/spkit" >GitHub</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://spkit.github.io/dev/index.html" target="_blank" rel="noopener noreferrer">Development</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" >Get Involved</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://spkit.github.io/dev/versions.html" >Other Versions and Download</a>
+          </div>
+        </li>
+      </ul>
+      <div id="searchbox" role="search">
+          <div class="searchformwrapper">
+          <form class="search" action="../../search.html" method="get">
+            <input class="spk-search-text-input" type="text" name="q" aria-labelledby="searchlabel" />
+            <input class="spk-search-text-btn" type="submit" value="Go" />
+          </form>
+          </div>
+      </div>
+      <a class ="nav-more-item-dropdown">
+      <font size="4em" style="margin: 5px 5px 0px 5px;color:rgb(0, 0, 0)">V</font>
+      </a>
+      <div class="nav-item dropdown nav-more-item-dropdown-vs">
+        <a class="sp-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <font color="black">0.0.9.7 (latest)</font>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../index.html" >0.0.9.7 (latest)</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.6/index.html" >0.0.9.6</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.5/index.html" >0.0.9.5</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.4/index.html" >0.0.9.4</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.3/index.html" >0.0.9.3</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.2/index.html" >0.0.9.2</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.1/index.html" >0.0.9.1</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="https://github.com/Nikeshbajaj/spkit/releases" >More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+  <div class="d-flex" id="spk-doc-wrapper" class="border-right">
+    <input type="checkbox" name="spk-toggle-checkbox" id="spk-toggle-checkbox">
+    <label id="spk-sidemenu-toggle" class="spk-btn-toggle-toc btn spk-btn-primary" for="spk-toggle-checkbox">Toggle
+      Menu</label>
+      <div id="spk-sidebar-top-logoimg">
+        <a href="../../index.html">
+          <img class="spk-brand-img-side" src="../../_static/spkit_logo.png" alt="spkit logo"  border="0" />
+        </a>
+      </div>
+    <div id="spk-sidebar-wrapper" class="border-right">
+      <div class="spk-sidebar-top-content">
+        <hr style="margin: 0 0 10px 0" />
+        <div class="alert alert-danger p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            <strong>SpKit 0.0.9.7</strong><br />
+            <!-- <a class="reference external" href="https://pypi.org/project/spkit" target="_blank"><img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/Nikeshbajaj/spkit?label=latest%20version&style=plastic"></a> -->
+            <a class="reference external" href="https://pepy.tech/project/spkit" target="_blank"><img
+                src="https://static.pepy.tech/personalized-badge/spkit?period=total&amp;units=international_system&amp;left_color=black&amp;right_color=orange&amp;left_text=downloads"
+                alt="PyPI - Downloads" /></a>
+            <a class="reference external" href="https://pypi.python.org/pypi/spkit" target="_blank"><img
+                alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/spkit?style=plastic"></a>
+            <!-- <a href="http://spkit.github.io/dev/versions.html">Other versions</a> -->
+          </p>
+        </div>
+        <div class="alert alert-warning p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            Please <a class="font-weight-bold" href="../../about.html#citing-spkit">
+              <string>cite us</string>
+            </a> if you use the software.
+          </p>
+        </div>
+        <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+          <a href="plot_ml_decision_tree_shrinking_capability_reg.html" role="button" class="btn spk-btn-rellink py-1"
+            spk-rellink-tooltip="Decision Trees with shrinking capability - Regression example">Prev</a><a href=" index.html" role="button" class="btn spk-btn-rellink py-1"
+            spk-rellink-tooltip="Machine Learning">Up</a>
+          <a href="plot_ml_decision_tree_catogorical_features.html" role="button" class="btn spk-btn-rellink py-1"
+            spk-rellink-tooltip="Decision Trees without converting Catogorical Features">Next</a>
+        </div>
+        <hr>
+      </div>
+      <div class=" spk-sidebar-toc-wrapper">
+          <!-- <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+            <a href="plot_ml_decision_tree_shrinking_capability_reg.html" role="button" class="btn spk-btn-rellink py-1"
+              spk-rellink-tooltip="Decision Trees with shrinking capability - Regression example">Prev</a><a href=" index.html" role="button" class="btn spk-btn-rellink py-1"
+              spk-rellink-tooltip="Machine Learning">Up</a>
+            <a href="plot_ml_decision_tree_catogorical_features.html" role="button" class="btn spk-btn-rellink py-1"
+              spk-rellink-tooltip="Decision Trees without converting Catogorical Features">Next</a>
+          </div>
+          <hr> -->
+          <div class="spk-sidebar-toc">
+            <ul>
+<li><a class="reference internal" href="#">Decision Trees with visualisations while buiding tree</a></li>
+</ul>
+
+          </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+    <div id="spk-page-content-wrapper">
+      <div class="spk-page-content container-fluid body px-md-3" role="main">
+        
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-auto-examples-machine-learning-plot-ml-decision-tree-visualisation-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code or to run this example in your browser via JupyterLite or Binder</p>
+</div>
+<section class="sphx-glr-example-title" id="decision-trees-with-visualisations-while-buiding-tree">
+<span id="sphx-glr-auto-examples-machine-learning-plot-ml-decision-tree-visualisation-py"></span><h1>Decision Trees with visualisations while buiding tree<a class="headerlink" href="#decision-trees-with-visualisations-while-buiding-tree" title="Link to this heading">¶</a></h1>
+<p>Decision Trees with visualisation while building trees.</p>
+<dl class="simple">
+<dt>This example covers the use of</dt><dd><ol class="arabic simple">
+<li><p>Classification and</p></li>
+<li><p>Regression Tree</p></li>
+</ol>
+</dd>
+</dl>
+<p>From <strong>*spkit*</strong> library with different verbosity mode while training and plotting resulting decision tree after training. We use two different datasets Iris and Breast Cancer for classification and Boston Housing price for Regression.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">spkit</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;spkit version :&#39;</span><span class="p">,</span> <span class="n">spkit</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+
+<span class="c1"># just to makesure same results</span>
+<a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.seed.html#numpy.random.seed" title="numpy.random.seed" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span></a><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+
+<span class="c1"># import Classification and Regression Tree from spkit</span>
+<span class="kn">from</span> <span class="nn">spkit.ml</span> <span class="kn">import</span> <a href="../../modules/generated/spkit.ml.ClassificationTree.html#spkit.ml.ClassificationTree" title="spkit.ml.ClassificationTree" class="sphx-glr-backref-module-spkit-ml sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ClassificationTree</span></a><span class="p">,</span> <span class="n">RegressionTree</span>
+
+<span class="c1"># import dataset and train-test split from sklearn or use your own dataset</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>spkit version : 0.0.9.7
+</pre></div>
+</div>
+<p>Classification Tree</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Iris Dataset</span>
+
+<span class="c1"># Loading and spliting for training and testing</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">data</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">target</span>
+
+<span class="n">feature_names</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">feature_names</span> <span class="c1">#Optional</span>
+
+<span class="n">Xt</span><span class="p">,</span><span class="n">Xs</span><span class="p">,</span> <span class="n">yt</span><span class="p">,</span> <span class="n">ys</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Shapes&#39;</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">Xt</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">yt</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">Xs</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">ys</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># Fitting a model (displaying the tree building) with different modes</span>
+
+<span class="c1"># 1) verbose=0 (silence mode)</span>
+
+<span class="n">model</span> <span class="o">=</span> <a href="../../modules/generated/spkit.ml.ClassificationTree.html#spkit.ml.ClassificationTree" title="spkit.ml.ClassificationTree" class="sphx-glr-backref-module-spkit-ml sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ClassificationTree</span></a><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span><span class="n">yt</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">feature_names</span><span class="o">=</span><span class="n">feature_names</span><span class="p">)</span>
+
+
+<span class="c1"># 2) verbose=1 (progress bar)</span>
+
+
+<span class="n">model</span> <span class="o">=</span> <a href="../../modules/generated/spkit.ml.ClassificationTree.html#spkit.ml.ClassificationTree" title="spkit.ml.ClassificationTree" class="sphx-glr-backref-module-spkit-ml sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ClassificationTree</span></a><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span><span class="n">yt</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">feature_names</span><span class="o">=</span><span class="n">feature_names</span><span class="p">)</span>
+
+<span class="c1"># 3) verbose=2 (printing tree info)</span>
+
+
+<span class="n">model</span> <span class="o">=</span> <a href="../../modules/generated/spkit.ml.ClassificationTree.html#spkit.ml.ClassificationTree" title="spkit.ml.ClassificationTree" class="sphx-glr-backref-module-spkit-ml sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ClassificationTree</span></a><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span><span class="n">yt</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">feature_names</span><span class="o">=</span><span class="n">feature_names</span><span class="p">)</span>
+
+
+<span class="c1"># 4) verbose=3 (printing branches only)</span>
+
+<span class="n">model</span> <span class="o">=</span> <a href="../../modules/generated/spkit.ml.ClassificationTree.html#spkit.ml.ClassificationTree" title="spkit.ml.ClassificationTree" class="sphx-glr-backref-module-spkit-ml sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ClassificationTree</span></a><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span><span class="n">yt</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">feature_names</span><span class="o">=</span><span class="n">feature_names</span><span class="p">)</span>
+
+
+<span class="c1"># 5) verbose=4 (Plotting tree.. while building)</span>
+
+
+<span class="n">model</span> <span class="o">=</span> <a href="../../modules/generated/spkit.ml.ClassificationTree.html#spkit.ml.ClassificationTree" title="spkit.ml.ClassificationTree" class="sphx-glr-backref-module-spkit-ml sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ClassificationTree</span></a><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span><span class="n">yt</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">feature_names</span><span class="o">=</span><span class="n">feature_names</span><span class="p">)</span>
+
+
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">plotTree</span><span class="p">(</span><span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">plotTree</span><span class="p">(</span><span class="n">DiffBranchColor</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+
+<span class="c1"># Predicting</span>
+
+<span class="n">ytp</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xt</span><span class="p">)</span>
+<span class="n">ysp</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xs</span><span class="p">)</span>
+
+
+<span class="n">ytpr</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">Xt</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">yspr</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">Xs</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Depth of trained Tree &#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">getTreeDepth</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;- Training : &#39;</span><span class="p">,</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">ytp</span><span class="o">==</span><span class="n">yt</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;- Testing  : &#39;</span><span class="p">,</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">ysp</span><span class="o">==</span><span class="n">ys</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Logloss&#39;</span><span class="p">)</span>
+<span class="n">Trloss</span> <span class="o">=</span> <span class="o">-</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">yt</span><span class="o">*</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.log.html#numpy.log" title="numpy.log" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-data"><span class="n">np</span><span class="o">.</span><span class="n">log</span></a><span class="p">(</span><span class="n">ytpr</span><span class="o">+</span><span class="mf">1e-10</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">yt</span><span class="p">)</span><span class="o">*</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.log.html#numpy.log" title="numpy.log" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-data"><span class="n">np</span><span class="o">.</span><span class="n">log</span></a><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">ytpr</span><span class="o">+</span><span class="mf">1e-10</span><span class="p">))</span>
+<span class="n">Tsloss</span> <span class="o">=</span> <span class="o">-</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">ys</span><span class="o">*</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.log.html#numpy.log" title="numpy.log" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-data"><span class="n">np</span><span class="o">.</span><span class="n">log</span></a><span class="p">(</span><span class="n">yspr</span><span class="o">+</span><span class="mf">1e-10</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">ys</span><span class="p">)</span><span class="o">*</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.log.html#numpy.log" title="numpy.log" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-data"><span class="n">np</span><span class="o">.</span><span class="n">log</span></a><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">yspr</span><span class="o">+</span><span class="mf">1e-10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;- Training : &#39;</span><span class="p">,</span><span class="n">Trloss</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;- Testing  : &#39;</span><span class="p">,</span><span class="n">Tsloss</span><span class="p">)</span>
+
+
+<span class="c1"># Iris data with smaller tree</span>
+
+
+<span class="n">model</span> <span class="o">=</span> <a href="../../modules/generated/spkit.ml.ClassificationTree.html#spkit.ml.ClassificationTree" title="spkit.ml.ClassificationTree" class="sphx-glr-backref-module-spkit-ml sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ClassificationTree</span></a><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span><span class="n">yt</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">feature_names</span><span class="o">=</span><span class="n">feature_names</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">plotTree</span><span class="p">(</span><span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">DiffBranchColor</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ytp</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xt</span><span class="p">)</span>
+<span class="n">ysp</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xs</span><span class="p">)</span>
+
+<span class="n">ytpr</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">Xt</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">yspr</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">Xs</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Depth of trained Tree &#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">getTreeDepth</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;- Training : &#39;</span><span class="p">,</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">ytp</span><span class="o">==</span><span class="n">yt</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;- Testing  : &#39;</span><span class="p">,</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">ysp</span><span class="o">==</span><span class="n">ys</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Logloss&#39;</span><span class="p">)</span>
+<span class="n">Trloss</span> <span class="o">=</span> <span class="o">-</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">yt</span><span class="o">*</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.log.html#numpy.log" title="numpy.log" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-data"><span class="n">np</span><span class="o">.</span><span class="n">log</span></a><span class="p">(</span><span class="n">ytpr</span><span class="o">+</span><span class="mf">1e-10</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">yt</span><span class="p">)</span><span class="o">*</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.log.html#numpy.log" title="numpy.log" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-data"><span class="n">np</span><span class="o">.</span><span class="n">log</span></a><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">ytpr</span><span class="o">+</span><span class="mf">1e-10</span><span class="p">))</span>
+<span class="n">Tsloss</span> <span class="o">=</span> <span class="o">-</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">ys</span><span class="o">*</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.log.html#numpy.log" title="numpy.log" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-data"><span class="n">np</span><span class="o">.</span><span class="n">log</span></a><span class="p">(</span><span class="n">yspr</span><span class="o">+</span><span class="mf">1e-10</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">ys</span><span class="p">)</span><span class="o">*</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.log.html#numpy.log" title="numpy.log" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-data"><span class="n">np</span><span class="o">.</span><span class="n">log</span></a><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">yspr</span><span class="o">+</span><span class="mf">1e-10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;- Training : &#39;</span><span class="p">,</span><span class="n">Trloss</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;- Testing  : &#39;</span><span class="p">,</span><span class="n">Tsloss</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="sphx-glr-horizontal">
+<li><img src="../../_images/sphx_glr_plot_ml_decision_tree_visualisation_001.png" srcset="../../_images/sphx_glr_plot_ml_decision_tree_visualisation_001.png" alt="plot ml decision tree visualisation" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_ml_decision_tree_visualisation_002.png" srcset="../../_images/sphx_glr_plot_ml_decision_tree_visualisation_002.png" alt="Decision Tree" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_ml_decision_tree_visualisation_003.png" srcset="../../_images/sphx_glr_plot_ml_decision_tree_visualisation_003.png" alt="Decision Tree" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_ml_decision_tree_visualisation_004.png" srcset="../../_images/sphx_glr_plot_ml_decision_tree_visualisation_004.png" alt="Decision Tree" class = "sphx-glr-multi-img"/></li>
+</ul>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Shapes (150, 4) (150,) (105, 4) (105,) (45, 4) (45,)
+Number of features:: 4
+Number of samples :: 105
+---------------------------------------
+|Building the tree.....................
+|subtrees::|25%|-----&gt;...............|\
+|subtrees::|50%|----------&gt;..........|-
+|subtrees::|75%|---------------&gt;.....|/
+|subtrees::|100%|--------------------&gt;||
+|subtrees::|25%|-----&gt;...............|\
+|subtrees::|50%|----------&gt;..........|-
+|subtrees::|75%|---------------&gt;.....|/
+|subtrees::|100%|--------------------&gt;||
+|subtrees::|25%|-----&gt;...............|\
+|subtrees::|50%|----------&gt;..........|-
+|subtrees::|75%|---------------&gt;.....|/
+|subtrees::|100%|--------------------&gt;||
+|subtrees::|25%|-----&gt;...............|\
+|subtrees::|50%|----------&gt;..........|-
+|subtrees::|75%|---------------&gt;.....|/
+|subtrees::|100%|--------------------&gt;||
+|subtrees::|25%|-----&gt;...............|\
+|subtrees::|50%|----------&gt;..........|-
+|subtrees::|75%|---------------&gt;.....|/
+|subtrees::|100%|--------------------&gt;||
+|subtrees::|25%|-----&gt;...............|\
+|subtrees::|50%|----------&gt;..........|-
+|subtrees::|75%|---------------&gt;.....|/
+|subtrees::|100%|--------------------&gt;||
+|subtrees::|25%|-----&gt;...............|\
+|subtrees::|50%|----------&gt;..........|-
+|subtrees::|75%|---------------&gt;.....|/
+|subtrees::|100%|--------------------&gt;||
+|subtrees::|25%|-----&gt;...............|\
+|subtrees::|50%|----------&gt;..........|-
+|subtrees::|75%|---------------&gt;.....|/
+|subtrees::|100%|--------------------&gt;||
+|subtrees::|25%|-----&gt;...............|\
+|subtrees::|50%|----------&gt;..........|-
+|subtrees::|75%|---------------&gt;.....|/
+|subtrees::|100%|--------------------&gt;||
+|
+|.........................tree is buit!
+---------------------------------------
+Number of features:: 4
+Number of samples :: 105
+---------------------------------------
+|Building the tree.....................
+|-Feature::1_sepal length (cm) Gain::0.01 thr::_Depth = 1
+|-Feature::1_sepal length (cm) Gain::0.06 thr::_Depth = 1
+|-Feature::1_sepal length (cm) Gain::0.09 thr::_Depth = 1
+|-Feature::1_sepal length (cm) Gain::0.13 thr::_Depth = 1
+|-Feature::1_sepal length (cm) Gain::0.21 thr::_Depth = 1
+|-Feature::1_sepal length (cm) Gain::0.34 thr::_Depth = 1
+|-Feature::1_sepal length (cm) Gain::0.4 thr::_Depth = 1
+|-Feature::1_sepal length (cm) Gain::0.43 thr::_Depth = 1
+|-Feature::1_sepal length (cm) Gain::0.57 thr::_Depth = 1
+|-Feature::3_petal length (cm) Gain::0.64 thr::_Depth = 1
+|-Feature::3_petal length (cm) Gain::0.8 thr::_Depth = 1
+|-Feature::3_petal length (cm) Gain::0.93 thr::_Depth = 1
+|
+|-&gt;False branch (&lt;&lt;&lt;)..
+|-&gt;{Leaf Node:: value: 0 }_Depth =2
+
+|
+|-&gt;True branch (&gt;&gt;&gt;)..
+|--Feature::1_sepal length (cm) Gain::0.0 thr::_Depth = 2
+|--Feature::1_sepal length (cm) Gain::0.0 thr::_Depth = 2
+|--Feature::1_sepal length (cm) Gain::0.01 thr::_Depth = 2
+|--Feature::1_sepal length (cm) Gain::0.02 thr::_Depth = 2
+|--Feature::1_sepal length (cm) Gain::0.08 thr::_Depth = 2
+|--Feature::1_sepal length (cm) Gain::0.09 thr::_Depth = 2
+|--Feature::1_sepal length (cm) Gain::0.17 thr::_Depth = 2
+|--Feature::1_sepal length (cm) Gain::0.2 thr::_Depth = 2
+|--Feature::3_petal length (cm) Gain::0.21 thr::_Depth = 2
+|--Feature::3_petal length (cm) Gain::0.26 thr::_Depth = 2
+|--Feature::3_petal length (cm) Gain::0.35 thr::_Depth = 2
+|--Feature::3_petal length (cm) Gain::0.4 thr::_Depth = 2
+|--Feature::3_petal length (cm) Gain::0.45 thr::_Depth = 2
+|--Feature::3_petal length (cm) Gain::0.46 thr::_Depth = 2
+|--Feature::3_petal length (cm) Gain::0.56 thr::_Depth = 2
+|--Feature::3_petal length (cm) Gain::0.69 thr::_Depth = 2
+|--Feature::4_petal width (cm) Gain::0.81 thr::_Depth = 2
+|
+|--&gt;False branch (&lt;&lt;&lt;)..
+|--Feature::1_sepal length (cm) Gain::0.0 thr::_Depth = 3
+|--Feature::1_sepal length (cm) Gain::0.0 thr::_Depth = 3
+|--Feature::1_sepal length (cm) Gain::0.0 thr::_Depth = 3
+|--Feature::1_sepal length (cm) Gain::0.0 thr::_Depth = 3
+|--Feature::1_sepal length (cm) Gain::0.01 thr::_Depth = 3
+|--Feature::1_sepal length (cm) Gain::0.02 thr::_Depth = 3
+|--Feature::1_sepal length (cm) Gain::0.03 thr::_Depth = 3
+|--Feature::1_sepal length (cm) Gain::0.03 thr::_Depth = 3
+|--Feature::1_sepal length (cm) Gain::0.04 thr::_Depth = 3
+|--Feature::1_sepal length (cm) Gain::0.04 thr::_Depth = 3
+|--Feature::2_sepal width (cm) Gain::0.04 thr::_Depth = 3
+|--Feature::3_petal length (cm) Gain::0.05 thr::_Depth = 3
+|--Feature::3_petal length (cm) Gain::0.06 thr::_Depth = 3
+|--Feature::3_petal length (cm) Gain::0.07 thr::_Depth = 3
+|--Feature::3_petal length (cm) Gain::0.11 thr::_Depth = 3
+|--Feature::3_petal length (cm) Gain::0.13 thr::_Depth = 3
+|--Feature::3_petal length (cm) Gain::0.18 thr::_Depth = 3
+|
+|--&gt;False branch (&lt;&lt;&lt;)..
+|--&gt;{Leaf Node:: value: 1 }_Depth =4
+
+|
+|--&gt;True branch (&gt;&gt;&gt;)..
+|---&gt;{Leaf Node:: value: 2 }_Depth =4
+
+|
+|--&gt;True branch (&gt;&gt;&gt;)..
+|---Feature::1_sepal length (cm) Gain::0.0 thr::_Depth = 3
+|---Feature::1_sepal length (cm) Gain::0.0 thr::_Depth = 3
+|---Feature::1_sepal length (cm) Gain::0.01 thr::_Depth = 3
+|---Feature::1_sepal length (cm) Gain::0.09 thr::_Depth = 3
+|---Feature::3_petal length (cm) Gain::0.1 thr::_Depth = 3
+|
+|---&gt;False branch (&lt;&lt;&lt;)..
+|---Feature::1_sepal length (cm) Gain::0.12 thr::_Depth = 4
+|---Feature::1_sepal length (cm) Gain::0.31 thr::_Depth = 4
+|---Feature::2_sepal width (cm) Gain::0.81 thr::_Depth = 4
+|
+|---&gt;False branch (&lt;&lt;&lt;)..
+|---&gt;{Leaf Node:: value: 2 }_Depth =5
+
+|
+|---&gt;True branch (&gt;&gt;&gt;)..
+|----&gt;{Leaf Node:: value: 1 }_Depth =5
+
+|
+|---&gt;True branch (&gt;&gt;&gt;)..
+|----&gt;{Leaf Node:: value: 2 }_Depth =4
+
+|
+|.........................tree is buit!
+---------------------------------------
+Number of features:: 4
+Number of samples :: 105
+---------------------------------------
+|Building the tree.....................
+None 1 |
+True 2 | T
+True 3 | TT
+True 4 | TTT
+False 4 | TTTF
+True 5 | TTTFT
+False 5 | TTTFF
+False 3 | TTF
+True 4 | TTFT
+False 4 | TTFF
+False 2 | TF
+|
+|.........................tree is buit!
+---------------------------------------
+Number of features:: 4
+Number of samples :: 105
+---------------------------------------
+|Building the tree.....................
+|
+|.........................tree is buit!
+---------------------------------------
+Depth of trained Tree  4
+Accuracy
+- Training :  1.0
+- Testing  :  0.9111111111111111
+Logloss
+- Training :  14.473392013068288
+- Testing  :  15.350567286593632
+Number of features:: 4
+Number of samples :: 105
+---------------------------------------
+|Building the tree.....................
+|subtrees::|25%|-----&gt;...............|\
+|subtrees::|50%|----------&gt;..........|-
+|subtrees::|75%|---------------&gt;.....|/
+|subtrees::|100%|--------------------&gt;||
+|subtrees::|25%|-----&gt;...............|\
+|subtrees::|50%|----------&gt;..........|-
+|subtrees::|75%|---------------&gt;.....|/
+|subtrees::|100%|--------------------&gt;||
+|subtrees::|25%|-----&gt;...............|\
+|subtrees::|50%|----------&gt;..........|-
+|subtrees::|75%|---------------&gt;.....|/
+|subtrees::|100%|--------------------&gt;||
+|subtrees::|25%|-----&gt;...............|\
+|subtrees::|50%|----------&gt;..........|-
+|subtrees::|75%|---------------&gt;.....|/
+|subtrees::|100%|--------------------&gt;||
+|subtrees::|25%|-----&gt;...............|\
+|subtrees::|50%|----------&gt;..........|-
+|subtrees::|75%|---------------&gt;.....|/
+|subtrees::|100%|--------------------&gt;||
+|
+|.........................tree is buit!
+---------------------------------------
+Depth of trained Tree  3
+Accuracy
+- Training :  0.9904761904761905
+- Testing  :  0.8666666666666667
+Logloss
+- Training :  2.5937142862825335
+- Testing  :  1.6081773385894438
+</pre></div>
+</div>
+<p>Breast Cancer data</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_breast_cancer</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">data</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">target</span>
+
+<span class="n">feature_names</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">feature_names</span> <span class="c1">#Optional</span>
+
+<span class="n">Xt</span><span class="p">,</span><span class="n">Xs</span><span class="p">,</span> <span class="n">yt</span><span class="p">,</span> <span class="n">ys</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">Xt</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">yt</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">Xs</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">ys</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+
+<span class="c1"># Fitting model with displaying the details of tree in process (verbose=4)</span>
+
+<span class="c1"># **While building tree, To first choose True branch and then False set randomBranch=False**</span>
+
+
+<span class="n">model</span> <span class="o">=</span> <a href="../../modules/generated/spkit.ml.ClassificationTree.html#spkit.ml.ClassificationTree" title="spkit.ml.ClassificationTree" class="sphx-glr-backref-module-spkit-ml sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ClassificationTree</span></a><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span><span class="n">yt</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">feature_names</span><span class="o">=</span><span class="n">feature_names</span><span class="p">,</span><span class="n">randomBranch</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+
+
+<span class="c1"># **To randomly selevting True or False branch set randomBranch=True**</span>
+
+<span class="n">model</span> <span class="o">=</span> <a href="../../modules/generated/spkit.ml.ClassificationTree.html#spkit.ml.ClassificationTree" title="spkit.ml.ClassificationTree" class="sphx-glr-backref-module-spkit-ml sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ClassificationTree</span></a><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span><span class="n">yt</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">feature_names</span><span class="o">=</span><span class="n">feature_names</span><span class="p">,</span><span class="n">randomBranch</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+
+
+<span class="c1">#  Resulting tree</span>
+
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">plotTree</span><span class="p">(</span><span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">DiffBranchColor</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+
+
+<span class="c1">#  Fitting model with displaying the progress only (verbose=1)</span>
+
+
+<span class="c1"># %matplotlib inline</span>
+<span class="n">model</span> <span class="o">=</span> <a href="../../modules/generated/spkit.ml.ClassificationTree.html#spkit.ml.ClassificationTree" title="spkit.ml.ClassificationTree" class="sphx-glr-backref-module-spkit-ml sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ClassificationTree</span></a><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span><span class="n">yt</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">feature_names</span><span class="o">=</span><span class="n">feature_names</span><span class="p">)</span>
+
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">plotTree</span><span class="p">()</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+
+<span class="c1"># Predicting</span>
+
+<span class="n">ytp</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xt</span><span class="p">)</span>
+<span class="n">ysp</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xs</span><span class="p">)</span>
+
+<span class="n">ytpr</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">Xt</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">yspr</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">Xs</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Depth of trained Tree &#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">getTreeDepth</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;- Training : &#39;</span><span class="p">,</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">ytp</span><span class="o">==</span><span class="n">yt</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;- Testing  : &#39;</span><span class="p">,</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">ysp</span><span class="o">==</span><span class="n">ys</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Logloss&#39;</span><span class="p">)</span>
+<span class="n">Trloss</span> <span class="o">=</span> <span class="o">-</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">yt</span><span class="o">*</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.log.html#numpy.log" title="numpy.log" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-data"><span class="n">np</span><span class="o">.</span><span class="n">log</span></a><span class="p">(</span><span class="n">ytpr</span><span class="o">+</span><span class="mf">1e-10</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">yt</span><span class="p">)</span><span class="o">*</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.log.html#numpy.log" title="numpy.log" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-data"><span class="n">np</span><span class="o">.</span><span class="n">log</span></a><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">ytpr</span><span class="o">+</span><span class="mf">1e-10</span><span class="p">))</span>
+<span class="n">Tsloss</span> <span class="o">=</span> <span class="o">-</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">ys</span><span class="o">*</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.log.html#numpy.log" title="numpy.log" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-data"><span class="n">np</span><span class="o">.</span><span class="n">log</span></a><span class="p">(</span><span class="n">yspr</span><span class="o">+</span><span class="mf">1e-10</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">ys</span><span class="p">)</span><span class="o">*</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.log.html#numpy.log" title="numpy.log" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-data"><span class="n">np</span><span class="o">.</span><span class="n">log</span></a><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">yspr</span><span class="o">+</span><span class="mf">1e-10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;- Training : &#39;</span><span class="p">,</span><span class="n">Trloss</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;- Testing  : &#39;</span><span class="p">,</span><span class="n">Tsloss</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="sphx-glr-horizontal">
+<li><img src="../../_images/sphx_glr_plot_ml_decision_tree_visualisation_005.png" srcset="../../_images/sphx_glr_plot_ml_decision_tree_visualisation_005.png" alt="plot ml decision tree visualisation" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_ml_decision_tree_visualisation_006.png" srcset="../../_images/sphx_glr_plot_ml_decision_tree_visualisation_006.png" alt="plot ml decision tree visualisation" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_ml_decision_tree_visualisation_007.png" srcset="../../_images/sphx_glr_plot_ml_decision_tree_visualisation_007.png" alt="Decision Tree" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_ml_decision_tree_visualisation_008.png" srcset="../../_images/sphx_glr_plot_ml_decision_tree_visualisation_008.png" alt="Decision Tree" class = "sphx-glr-multi-img"/></li>
+</ul>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(569, 30) (569,) (398, 30) (398,) (171, 30) (171,)
+Number of features:: 30
+Number of samples :: 398
+---------------------------------------
+|Building the tree.....................
+|
+|.........................tree is buit!
+---------------------------------------
+Number of features:: 30
+Number of samples :: 398
+---------------------------------------
+|Building the tree.....................
+|
+|.........................tree is buit!
+---------------------------------------
+Number of features:: 30
+Number of samples :: 398
+---------------------------------------
+|Building the tree.....................
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|subtrees::|3%|&gt;....................|\
+|subtrees::|6%|-&gt;...................|-
+|subtrees::|10%|--&gt;..................|/
+|subtrees::|13%|--&gt;..................||
+|subtrees::|16%|---&gt;.................|\
+|subtrees::|20%|----&gt;................|-
+|subtrees::|23%|----&gt;................|/
+|subtrees::|26%|-----&gt;...............||
+|subtrees::|30%|------&gt;..............|\
+|subtrees::|33%|------&gt;..............|-
+|subtrees::|36%|-------&gt;.............|/
+|subtrees::|40%|--------&gt;............||
+|subtrees::|43%|--------&gt;............|\
+|subtrees::|46%|---------&gt;...........|-
+|subtrees::|50%|----------&gt;..........|/
+|subtrees::|53%|----------&gt;..........||
+|subtrees::|56%|-----------&gt;.........|\
+|subtrees::|60%|------------&gt;........|-
+|subtrees::|63%|------------&gt;........|/
+|subtrees::|66%|-------------&gt;.......||
+|subtrees::|70%|--------------&gt;......|\
+|subtrees::|73%|--------------&gt;......|-
+|subtrees::|76%|---------------&gt;.....|/
+|subtrees::|80%|----------------&gt;....||
+|subtrees::|83%|----------------&gt;....|\
+|subtrees::|86%|-----------------&gt;...|-
+|subtrees::|90%|------------------&gt;..|/
+|subtrees::|93%|------------------&gt;..||
+|subtrees::|96%|-------------------&gt;.|\
+|subtrees::|100%|--------------------&gt;|-
+|
+|.........................tree is buit!
+---------------------------------------
+Depth of trained Tree  6
+Accuracy
+- Training :  1.0
+- Testing  :  0.9298245614035088
+Logloss
+- Training :  -1.000000082690371e-10
+- Testing  :  1.6158491879730155
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 6.063 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-machine-learning-plot-ml-decision-tree-visualisation-py">
+<div class="binder-badge docutils container">
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/spkit/spkit/0.9.X?urlpath=lab/tree/notebooks/auto_examples/machine_learning/plot_ml_decision_tree_visualisation.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo2.svg" width="150px" /></a>
+</div>
+<div class="lite-badge docutils container">
+<a class="reference external image-reference" href="../../lite/lab/?path=auto_examples/machine_learning/plot_ml_decision_tree_visualisation.ipynb"><img alt="Launch JupyterLite" src="../../_images/jupyterlite_badge_logo2.svg" width="150px" /></a>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/b731c988675790cb9c54adaf1d218134/plot_ml_decision_tree_visualisation.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_ml_decision_tree_visualisation.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/d8b541ac9de4b197baca0d438dddf957/plot_ml_decision_tree_visualisation.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_ml_decision_tree_visualisation.py</span></code></a></p>
+</div>
+</div>
+<p class="rubric">Related examples</p>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip=" Decision Trees with shrinking capability from SpKit (Classification example)"><img alt="" src="../../_images/sphx_glr_plot_ml_decision_tree_shrinking_capability_cls_thumb.png" />
+<p><a class="reference internal" href="plot_ml_decision_tree_shrinking_capability_cls.html#sphx-glr-auto-examples-machine-learning-plot-ml-decision-tree-shrinking-capability-cls-py"><span class="std std-ref">Decision Trees with shrinking capability - Classification example</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Decision Trees with shrinking capability - Classification example</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Decision Trees with shrinking capability from SpKit (Regression example)"><img alt="" src="../../_images/sphx_glr_plot_ml_decision_tree_shrinking_capability_reg_thumb.png" />
+<p><a class="reference internal" href="plot_ml_decision_tree_shrinking_capability_reg.html#sphx-glr-auto-examples-machine-learning-plot-ml-decision-tree-shrinking-capability-reg-py"><span class="std std-ref">Decision Trees with shrinking capability - Regression example</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Decision Trees with shrinking capability - Regression example</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Naive Bayes classifier"><img alt="" src="../../_images/sphx_glr_plot_ml_naive_bayes_examples_thumb.png" />
+<p><a class="reference internal" href="plot_ml_naive_bayes_examples.html#sphx-glr-auto-examples-machine-learning-plot-ml-naive-bayes-examples-py"><span class="std std-ref">Naive Bayes classifier -  Visualisation</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Naive Bayes classifier -  Visualisation</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip=" Decision Trees without converting Catogorical Features using SpKit"><img alt="" src="../../_images/sphx_glr_plot_ml_decision_tree_catogorical_features_thumb.png" />
+<p><a class="reference internal" href="plot_ml_decision_tree_catogorical_features.html#sphx-glr-auto-examples-machine-learning-plot-ml-decision-tree-catogorical-features-py"><span class="std std-ref">Decision Trees without converting Catogorical Features</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Decision Trees without converting Catogorical Features</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip=" An example of a Logistic Regression with visualasation"><img alt="" src="../../_images/sphx_glr_plot_ml_logistic_regression_examples_thumb.png" />
+<p><a class="reference internal" href="plot_ml_logistic_regression_examples.html#sphx-glr-auto-examples-machine-learning-plot-ml-logistic-regression-examples-py"><span class="std std-ref">Logistic Regression -  Visualisation</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Logistic Regression -  Visualisation</div>
+</div></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+
+
+      </div>
+      <div class="container">
+        <footer class="spk-content-footer">
+          &copy; 2019 - 2024, spkit developers (BSD License).
+          <!-- -->
+          <!-- <a href="../../_sources/auto_examples/machine_learning/plot_ml_decision_tree_visualisation.rst.txt" rel="nofollow">Show this page source</a> -->
+          <!-- -->
+        </footer>
+      </div>
+
+      <div class="container-fluid py-3">
+        <hr>
+        <div class="container spk-landing-container">
+              <a class="spk-footer-funding-link" href="about.html#funding">
+              <div class="text-center">
+                      <p class="mt-2">
+                        Spkit developed in collabration with other projects:
+                      </p>
+                      <a href="https://PhyAAt.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../../_static/phyaat_logo.png" title="PhyAAt"></a>
+                      <a href="https://PyLFSR.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../../_static/pylfsr_logo.png" title="PyLFSR" ></a>
+                      <a href="https://MLEndDatasets.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../../_static/mlend_logo.png" title="MLEnd-Datasets" ></a>
+              </div>
+              </a>
+              <div style="width:3px;">
+                <a href="https://clustrmaps.com/site/1b9h1"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=eQr8xSBiKVuSq6m0psK-Ey9TZ7rLzjRX-MpatyfFGQI&cl=ffffff" /></a>  
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../../_static/js/vendor/bootstrap.min.js"></script>
+  
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-59299155-3', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<!-- 
+<script defer data-domain="scikit-learn.org" src="https://views.scientific-python.org/js/script.js">
+</script>
+ -->
+
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+
+<script>
+$(document).ready(function() {
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		        '.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	});
+});
+
+</script>
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    
+</body>
+
+</html>

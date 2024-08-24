@@ -1,0 +1,48 @@
+.. _entropy:
+
+=============================
+Short-Time Fourier Transform
+=============================
+
+
+Analysis
+--------
+
+::
+
+    X,fs, ch_names = sp.data.eeg_sample_14ch()
+    x = X[:,1]
+    t = np.arange(len(x))/fs
+    mXt,pXt = sp.stft_analysis(x, winlen=128, overlap=32,window='blackmanharris',nfft=None)
+    print(mXt.shape, pXt.shape)
+
+
+
+
+Synthesis
+---------
+
+
+::
+    
+    y = sp.stft_synthesis(mXt, pXt, winlen=128, overlap=32)
+    print(y.shape)
+
+
+
+.. figure:: ../auto_examples/signal_processing/images/sphx_glr_plot_sp_analysis_sythesis_models_004.png
+   :target: ../auto_examples/signal_processing/plot_sp_analysis_sythesis_models.html
+   :align: center
+   :scale: 50%
+
+
+.. figure:: ../auto_examples/signal_processing/images/sphx_glr_plot_sp_sinusodal_model_example_sound_001.png
+   :target: ../auto_examples/signal_processing/plot_sp_sinusodal_model_example_sound.html
+   :align: center
+   :scale: 80%
+
+.. topic:: Examples:
+
+   * :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_analysis_sythesis_models.py`
+   * :ref:`sphx_glr_auto_examples_signal_processing_plot_sp_sinusodal_model_example_sound.py`
+

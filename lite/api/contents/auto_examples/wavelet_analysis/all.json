@@ -1,0 +1,71 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2024-08-24T18:51:53.384175Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2024-08-24T18:51:51.632048Z",
+      "mimetype": null,
+      "name": "plot_sp_scalogram_cwt_example.ipynb",
+      "path": "auto_examples/wavelet_analysis/plot_sp_scalogram_cwt_example.ipynb",
+      "size": 5458,
+      "type": "notebook",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2024-08-24T18:51:53.384573Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2024-08-24T18:51:51.632241Z",
+      "mimetype": null,
+      "name": "plot_sp_wavelet_filtering.ipynb",
+      "path": "auto_examples/wavelet_analysis/plot_sp_wavelet_filtering.ipynb",
+      "size": 4514,
+      "type": "notebook",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2024-08-24T18:51:53.385168Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2024-08-24T18:51:51.632540Z",
+      "mimetype": null,
+      "name": "plot_sp_wavelet_filtering_example.ipynb",
+      "path": "auto_examples/wavelet_analysis/plot_sp_wavelet_filtering_example.ipynb",
+      "size": 7736,
+      "type": "notebook",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2024-08-24T18:51:53.383783Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2024-08-24T18:51:51.631681Z",
+      "mimetype": null,
+      "name": "plot_sp_cwt_comparison.ipynb",
+      "path": "auto_examples/wavelet_analysis/plot_sp_cwt_comparison.ipynb",
+      "size": 2948,
+      "type": "notebook",
+      "writable": true
+    }
+  ],
+  "created": "2024-08-24T18:51:53.384957Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2024-08-24T18:51:53.384957Z",
+  "mimetype": null,
+  "name": "wavelet_analysis",
+  "path": "auto_examples/wavelet_analysis",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}
