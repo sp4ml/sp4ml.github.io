@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2024-08-24T18:51:53.373949Z",
+      "created": "2024-08-24T19:14:30.722902Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2024-08-24T18:51:51.625609Z",
+      "last_modified": "2024-08-24T19:14:29.278629Z",
       "mimetype": null,
       "name": "plot_mea_minimal_setting_example.ipynb",
       "path": "auto_examples/multielectrode-array/plot_mea_minimal_setting_example.ipynb",
@@ -16,11 +16,11 @@
     },
     {
       "content": null,
-      "created": "2024-08-24T18:51:53.374726Z",
+      "created": "2024-08-24T19:14:30.723328Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2024-08-24T18:51:51.626128Z",
+      "last_modified": "2024-08-24T19:14:29.279120Z",
       "mimetype": null,
       "name": "plot_mea_stepwise_example.ipynb",
       "path": "auto_examples/multielectrode-array/plot_mea_stepwise_example.ipynb",
@@ -29,11 +29,11 @@
       "writable": true
     }
   ],
-  "created": "2024-08-24T18:51:53.374454Z",
+  "created": "2024-08-24T19:14:30.723163Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2024-08-24T18:51:53.374454Z",
+  "last_modified": "2024-08-24T19:14:30.723163Z",
   "mimetype": null,
   "name": "multielectrode-array",
   "path": "auto_examples/multielectrode-array",
