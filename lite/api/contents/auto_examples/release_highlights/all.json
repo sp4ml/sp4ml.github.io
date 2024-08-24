@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2024-08-24T19:45:54.388069Z",
+      "created": "2024-08-24T20:06:20.622195Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2024-08-24T19:45:52.870210Z",
+      "last_modified": "2024-08-24T20:06:19.226990Z",
       "mimetype": null,
       "name": "plot_release_highlights_0_0_9_7.ipynb",
       "path": "auto_examples/release_highlights/plot_release_highlights_0_0_9_7.ipynb",
@@ -15,11 +15,11 @@
       "writable": true
     }
   ],
-  "created": "2024-08-24T19:45:54.387831Z",
+  "created": "2024-08-24T20:06:20.621920Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2024-08-24T19:45:54.387831Z",
+  "last_modified": "2024-08-24T20:06:20.621920Z",
   "mimetype": null,
   "name": "release_highlights",
   "path": "auto_examples/release_highlights",

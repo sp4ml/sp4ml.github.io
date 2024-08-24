@@ -81,12 +81,15 @@ One of the course we have developed as **Introduction to Data Science Programmin
 
 
 
-
-
-.. figure:: https://nikeshbajaj.github.io/teaching/QMUL/QHP4701/imgs/cover.png
-   :target: https://nikeshbajaj.github.io/teaching/QMUL/QHP4701/
-   :align: left
-   :width: 300
+.. raw:: html
+    
+    <div class="column-box">
+    <div class="card">
+    <a class="reference external image-reference" href="https://nikeshbajaj.github.io/teaching/QMUL/QHP4701/">
+       <img alt="Data Science" src="https://nikeshbajaj.github.io/teaching/QMUL/QHP4701/imgs/cover.png" style="width: 300px;"/>
+     </a>
+    </div>
+    </div>
 
 
 
@@ -104,19 +107,34 @@ Interactive Wigdets
 
 * **Statistics:** `For Hypothesis Testing and T-test <https://nikeshbajaj.github.io/teaching/demos/Stats/sampling>`_
 
-.. figure:: https://nikeshbajaj.github.io/teaching/demos/stats_sampling_demo.gif
-   :target: https://nikeshbajaj.github.io/teaching/demos/Stats/sampling
-   :align: left
-   :width: 300
+
+
+.. raw:: html
+    
+    <div class="column-box">
+    <div class="card">
+    <a class="reference external image-reference" href="https://nikeshbajaj.github.io/teaching/demos/Stats/sampling">
+       <img alt="ml_roc_demo" src="https://nikeshbajaj.github.io/teaching/demos/stats_sampling_demo.gif" style="width: 300px;"/>
+     </a>
+    </div>
+    </div>
+
 
 
 * **Machine Learning:** `For Understanding ROC <https://nikeshbajaj.github.io/teaching/demos/ML/roc_v3.html>`_
 
 
-.. figure:: https://nikeshbajaj.github.io/teaching/demos/ml_roc_demo.gif
-   :target: https://nikeshbajaj.github.io/teaching/demos/ML/roc_v3.html
-   :align: left
-   :width: 300
+.. raw:: html
+
+    <div class="column-box">
+    <div class="card">
+    <a class="reference external image-reference" href="https://nikeshbajaj.github.io/teaching/demos/ML/roc_v3.html">
+       <img alt="https://nikeshbajaj.github.io/teaching/demos/ml_roc_demo.gif"
+        src="https://nikeshbajaj.github.io/teaching/demos/ml_roc_demo.gif" style="width: 300px;"/>
+     </a>
+    </div>
+    </div>
+
 
 
 Information Theory
