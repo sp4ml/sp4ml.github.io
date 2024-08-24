@@ -1,0 +1,514 @@
+
+
+<!DOCTYPE html>
+<!-- data-theme below is forced to be "light" but should be changed if we use pydata-theme-sphinx in the future -->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" data-content_root="../../" data-theme="light"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" data-content_root="../../" data-theme="light">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="spkit.cwt.ScalogramCWT" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://spkit.github.io/modules/generated/spkit.cwt.ScalogramCWT.html" />
+<meta property="og:site_name" content="spkit" />
+<meta property="og:description" content="Examples using spkit.cwt.ScalogramCWT: Scalogram CWT" />
+<meta property="og:image" content="https://spkit.github.io/_images/spkit-cwt-ScalogramCWT-1_00.png" />
+<meta property="og:image:alt" content="spkit" />
+<meta name="description" content="Examples using spkit.cwt.ScalogramCWT: Scalogram CWT" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>spkit.cwt.ScalogramCWT &mdash; spkit 0.0.9.7 documentation</title>
+  
+  <link rel="canonical" href="http://spkit.github.io/stable/modules/generated/spkit.cwt.ScalogramCWT.html" />
+
+  
+  <link rel="shortcut icon" href="../../_static/favicon.ico" />
+  
+
+  <link rel="stylesheet" href="../../_static/css/vendor/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
+  <link rel="stylesheet" href="../../https://fonts.googleapis.com/css?family=Vibur" type="text/css" />
+  <link rel="stylesheet" href="../../_static/jupyterlite_sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <script id="documentation_options" data-url_root="../../"
+    src="../../_static/documentation_options.js"></script>
+  <script src="../../_static/js/vendor/jquery-3.6.3.slim.min.js"></script>
+  <script src="../../_static/js/details-permalink.js"></script>
+
+  <link rel="stylesheet" href="../../_static/css/vendor/nature_spkit.css" type="text/css" /> 
+
+
+</head>
+
+<body>
+  
+
+
+
+
+
+<!-- ('About us', pathto('about'), ''), -->
+
+
+<div id="logo-banner">
+  <div class="logo">
+    <!-- <a href="../../%23.html"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a> -->
+  <!-- <a href="#"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a> -->
+  <a href="../../index.html"><img src="../../_static/spkit_logo.png" alt="spkit logo"  border="0" /></a>
+  </div>
+  <div class="tags">
+  <ul>
+    <li>&#9672; Easy to use toolkit for signal processing and analysis</li>
+    <li>&#9672; More of biomedical signal analysis with visualization</li>
+    <li>&#9672; Includes basic machine learning models with visualization</li>
+    <!-- <li>&#9672; Open source</li> -->
+  </ul>
+  </div>
+  <div class="banner">
+  <h2>Signal Processing Toolkit</h2>
+  <h4><i>Simple and easy to use for signal analysis and predictive analysis</i></h4>
+  </div>
+</div>
+<nav id="navbar" class="spk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid spk-docs-container px-0">
+      <a class="navbar-brand py-0" href="../../index.html">
+        <img
+          class="spk-brand-img"
+          src="../../_static/spkit_small_icon_v.png"
+          alt="logo"/>
+      </a>
+    <button
+      id="spk-navbar-toggler"
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="spk-navbar-collapse collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../index.html">Home</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../install.html">Install</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../user_guide.html">User Guide</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../classes.html">API</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../auto_examples/index.html">Examples</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../tutorials/index.html">Tutorials</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" target="_blank" rel="noopener noreferrer" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=">Discussion Forum</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../about.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="../../getting_started.html" >Getting Started</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="../../whats_new/v0.0.9.7.html" >What's new</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://github.com/nikeshbajaj/spkit" >GitHub</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://spkit.github.io/dev/index.html" target="_blank" rel="noopener noreferrer">Development</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" >Get Involved</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://spkit.github.io/dev/versions.html" >Other Versions and Download</a>
+        </li>
+        <li class="nav-item dropdown nav-more-item-dropdown">
+          <a class="spk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="spk-nav-dropdown-item dropdown-item" href="../../getting_started.html" >Getting Started</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="../../whats_new/v0.0.9.7.html" >What's new</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://github.com/nikeshbajaj/spkit" >GitHub</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://spkit.github.io/dev/index.html" target="_blank" rel="noopener noreferrer">Development</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" >Get Involved</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://spkit.github.io/dev/versions.html" >Other Versions and Download</a>
+          </div>
+        </li>
+      </ul>
+      <div id="searchbox" role="search">
+          <div class="searchformwrapper">
+          <form class="search" action="../../search.html" method="get">
+            <input class="spk-search-text-input" type="text" name="q" aria-labelledby="searchlabel" />
+            <input class="spk-search-text-btn" type="submit" value="Go" />
+          </form>
+          </div>
+      </div>
+      <a class ="nav-more-item-dropdown">
+      <font size="4em" style="margin: 5px 5px 0px 5px;color:rgb(0, 0, 0)">V</font>
+      </a>
+      <div class="nav-item dropdown nav-more-item-dropdown-vs">
+        <a class="sp-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <font color="black">0.0.9.7 (latest)</font>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../index.html" >0.0.9.7 (latest)</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.6/index.html" >0.0.9.6</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.5/index.html" >0.0.9.5</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.4/index.html" >0.0.9.4</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.3/index.html" >0.0.9.3</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.2/index.html" >0.0.9.2</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.1/index.html" >0.0.9.1</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="https://github.com/Nikeshbajaj/spkit/releases" >More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+  <div class="d-flex" id="spk-doc-wrapper" class="border-right">
+    <input type="checkbox" name="spk-toggle-checkbox" id="spk-toggle-checkbox">
+    <label id="spk-sidemenu-toggle" class="spk-btn-toggle-toc btn spk-btn-primary" for="spk-toggle-checkbox">Toggle
+      Menu</label>
+      <div id="spk-sidebar-top-logoimg">
+        <a href="../../index.html">
+          <img class="spk-brand-img-side" src="../../_static/spkit_logo.png" alt="spkit logo"  border="0" />
+        </a>
+      </div>
+    <div id="spk-sidebar-wrapper" class="border-right">
+      <div class="spk-sidebar-top-content">
+        <hr style="margin: 0 0 10px 0" />
+        <div class="alert alert-danger p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            <strong>SpKit 0.0.9.7</strong><br />
+            <!-- <a class="reference external" href="https://pypi.org/project/spkit" target="_blank"><img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/Nikeshbajaj/spkit?label=latest%20version&style=plastic"></a> -->
+            <a class="reference external" href="https://pepy.tech/project/spkit" target="_blank"><img
+                src="https://static.pepy.tech/personalized-badge/spkit?period=total&amp;units=international_system&amp;left_color=black&amp;right_color=orange&amp;left_text=downloads"
+                alt="PyPI - Downloads" /></a>
+            <a class="reference external" href="https://pypi.python.org/pypi/spkit" target="_blank"><img
+                alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/spkit?style=plastic"></a>
+            <!-- <a href="http://spkit.github.io/dev/versions.html">Other versions</a> -->
+          </p>
+        </div>
+        <div class="alert alert-warning p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            Please <a class="font-weight-bold" href="../../about.html#citing">
+              <string>cite us</string>
+            </a> if you use the software.
+          </p>
+        </div>
+        <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+          <a href="#" role="button" class="btn spk-btn-rellink py-1 disabled"">Prev</a>
+          <a href="#" role="button" class="btn spk-btn-rellink disabled py-1">Up</a>
+          <a href="#" role="button" class="btn spk-btn-rellink py-1 disabled"">Next</a>
+        </div>
+        <hr>
+      </div>
+      <div class=" spk-sidebar-toc-wrapper">
+          <!-- <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+            <a href="#" role="button" class="btn spk-btn-rellink py-1 disabled"">Prev</a>
+            <a href="#" role="button" class="btn spk-btn-rellink disabled py-1">Up</a>
+            <a href="#" role="button" class="btn spk-btn-rellink py-1 disabled"">Next</a>
+          </div>
+          <hr> -->
+          <div class="spk-sidebar-toc">
+            <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.cwt</span></code>.ScalogramCWT</a><ul>
+<li><a class="reference internal" href="#spkit.cwt.ScalogramCWT"><code class="docutils literal notranslate"><span class="pre">ScalogramCWT</span></code></a></li>
+<li><a class="reference internal" href="#examples-using-spkit-cwt-scalogramcwt">Examples using <code class="docutils literal notranslate"><span class="pre">spkit.cwt.ScalogramCWT</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+    <div id="spk-page-content-wrapper">
+      <div class="spk-page-content container-fluid body px-md-3" role="main">
+        
+  <section id="spkit-cwt-scalogramcwt">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.cwt</span></code>.ScalogramCWT<a class="headerlink" href="#spkit-cwt-scalogramcwt" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.cwt.ScalogramCWT">
+<span class="sig-prename descclassname"><span class="pre">spkit.cwt.</span></span><span class="sig-name descname"><span class="pre">ScalogramCWT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Gauss'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PlotPSD</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PlotW</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fftMeth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sinc'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">Parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spkit.cwt.ScalogramCWT" title="Link to this definition">¶</a></dt>
+<dd><p>Scalogram using Continues Wavelet Transform</p>
+<p>Compute scalogram using Continues Wavelet Transform for wavelet type (wType) and given scale range</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>x: array-like,</strong></dt><dd><ul class="simple">
+<li><p>input signal,</p></li>
+</ul>
+</dd>
+<dt><strong>t: array-like</strong></dt><dd><ul class="simple">
+<li><p>time array corresponding to x, same length as x</p></li>
+</ul>
+</dd>
+<dt><strong>fs: int,</strong></dt><dd><ul class="simple">
+<li><p>sampling rate</p></li>
+</ul>
+</dd>
+<dt><strong>PlotPSD: bool, default=False</strong></dt><dd><ul class="simple">
+<li><p>if True, plot Scalogram</p></li>
+</ul>
+</dd>
+<dt><strong>PlotW</strong><span class="classifier">bool, default=False</span></dt><dd><ul class="simple">
+<li><p>if True, plot wavelets in time and frequecy with different scalling version</p></li>
+</ul>
+</dd>
+<dt><strong>fftMeth:bool, default=True</strong></dt><dd><ul class="simple">
+<li><p>if True, FFT method is used, else convolution method is used. FFT method is faster.</p></li>
+</ul>
+</dd>
+<dt><strong>interpolation: str, or None,</strong></dt><dd><ul class="simple">
+<li><p>interpolation while ploting Scalogram. Only used for plotting</p></li>
+</ul>
+</dd>
+<dt><strong>Parameters for different wavelet functions</strong></dt><dd><ul class="simple">
+<li><p>Common Parameters for all the Wavelet functions</p></li>
+</ul>
+<dl class="simple">
+<dt>f<span class="classifier">array</span></dt><dd><ul class="simple">
+<li><p>array of frequency range to be analysed, e.g. np.linspace(-10,10,2*N-1), where N = len(x)</p></li>
+<li><p>if None, frequency range of signal is considered from -fs/2 to fs/2</p></li>
+<li><p>(fs/n1*(np.arange(n1)-n1/2))</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt><strong>A list of wavelets will be generated for each value of scale (e.g. f0, sigma, n etc)</strong></dt><dd></dd>
+<dt><strong>wType: {‘Gauss’,’Morlet’,’Gabor’,’Poisson’,’cMaxican’,’cShannon’}</strong></dt><dd><ul class="simple">
+<li><p>Type of Complext Wavelet Function</p></li>
+<li><p>lower case str is acceptable, and a few common names are mapped to them too</p></li>
+<li><p>‘Gauss’, ‘gauss’, ‘gaussian’ are same</p></li>
+<li><p>‘cMaxican’, ‘maxican’, ‘cmaxican’ are same</p></li>
+<li><p>‘cShannon’ ‘shannon’ are same</p></li>
+</ul>
+</dd>
+<dt><strong>1. Gauss: (wType ==’Gauss’)</strong></dt><dd><p>f0 = array of center frquencies for wavelets, default: np.linspace(0.1,10,100) [scale value]
+Q  = float or array of q-factor for each wavelet, e.g. 0.5 (default) or np.linspace(0.1,5,100)</p>
+<blockquote>
+<div><p>: if array, should be of same size as f0</p>
+</div></blockquote>
+<p>t0 = float=0, time shift of wavelet, or phase shift in frquency, Not suggeestive to change</p>
+</dd>
+<dt><strong>2. For Morlet: (wType ==’Morlet’)</strong></dt><dd><p>sig = array of sigma values for morlet wavelet, default: np.linspace(0.1,10,100) [scale value]
+fw = array of frequency range, e.g. np.linspace(-10,10,2*N-1), where N = len(x)
+ref: <a class="reference external" href="https://en.wikipedia.org/wiki/Morlet_wavelet">https://en.wikipedia.org/wiki/Morlet_wavelet</a></p>
+</dd>
+<dt><strong>3. For Gabor: (wType ==’Gabor’)</strong></dt><dd><p>Gauss and Gabor wavelet are essentially same
+f0 = array of center frquencies for wavelets, default: np.linspace(1,40,100) [scale value]
+a  = float, oscillation parameter, default 0.5,</p>
+<blockquote>
+<div><p>could be an array (not suggeestive), similar to Gauss, e.g np.linspace(0.1,1,100) or np.logspace(0.001,0.5,100)</p>
+</div></blockquote>
+<p>t0 = float=0, time shift of wavelet, or phase shift in frquency. Not suggeestive to change</p>
+</dd>
+<dt><strong>4. For Poisson: (wType==’Poisson’)</strong></dt><dd><p>n  = array of intergers, default np.arange(100), [scale value]
+method = 1,2,3, different implementation of Poisson funtion, default 3
+keep the method=3, other methods are under development and not exactly compatibile with framework yet,</p>
+<p>ref: <a class="reference external" href="https://en.wikipedia.org/wiki/Poisson_wavelet">https://en.wikipedia.org/wiki/Poisson_wavelet</a></p>
+</dd>
+<dt><strong>5. For Complex MaxicanHat: (wType==’cMaxican’)</strong></dt><dd><p>f0 = array of center frquencies for wavelets, default: np.linspace(1,40,100) [scale value]
+a  = float, oscillation parameter, default 1.0, could be an array (not suggeestive)</p>
+<p>ref: <a class="reference external" href="https://en.wikipedia.org/wiki/Complex_Mexican_hat_wavelet">https://en.wikipedia.org/wiki/Complex_Mexican_hat_wavelet</a></p>
+</dd>
+<dt><strong>6. For Complex Shannon: (wType==’cShannon’)</strong></dt><dd><p>f0 = array of center frquencies for wavelets, default: 0.1*np.arange(10) [scale value],
+fw = BandWidth each wavelet, default 0.5, could be an array (not suggeestive)</p>
+<p>ref: <a class="reference external" href="https://en.wikipedia.org/wiki/Shannon_wavelet">https://en.wikipedia.org/wiki/Shannon_wavelet</a></p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>XW: Complex-valued matrix of time-scale - Scalogram, with shape (len(S), len(x)). scale vs time</dt><dd></dd>
+<dt><strong>S</strong><span class="classifier">scale values</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">spkit.cwt</span> <span class="kn">import</span> <span class="n">ScalogramCWT</span>
+
+<span class="c1"># Example 1 - EEG Signal</span>
+<span class="kn">import</span> <span class="nn">spkit</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">from</span> <span class="nn">spkit.cwt</span> <span class="kn">import</span> <span class="n">compare_cwt_example</span>
+<span class="n">x</span><span class="p">,</span><span class="n">fs</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">load_data</span><span class="o">.</span><span class="n">eegSample_1ch</span><span class="p">()</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="n">fs</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">compare_cwt_example</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span>
+
+<span class="c1"># Example 2.1 - different wavelets</span>
+<span class="n">XW</span><span class="p">,</span><span class="n">S</span> <span class="o">=</span> <span class="n">ScalogramCWT</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">,</span><span class="n">wType</span><span class="o">=</span><span class="s1">&#39;Gauss&#39;</span><span class="p">,</span><span class="n">PlotPSD</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Example 2.2 - set scale values and number of points</span>
+<span class="n">nS</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">f0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="n">nS</span><span class="p">)</span> <span class="c1"># range of scale values - frquency</span>
+<span class="n">Q</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">nS</span><span class="p">)</span>  <span class="c1"># different q-factor for each scale value</span>
+<span class="c1"># Q = 0.5</span>
+<span class="n">XW</span><span class="p">,</span><span class="n">S</span> <span class="o">=</span> <span class="n">ScalogramCWT</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">,</span><span class="n">wType</span><span class="o">=</span><span class="s1">&#39;Gauss&#39;</span><span class="p">,</span><span class="n">PlotPSD</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">f0</span><span class="o">=</span><span class="n">f0</span><span class="p">,</span><span class="n">Q</span><span class="o">=</span><span class="n">Q</span><span class="p">)</span>
+
+<span class="c1"># Example 2.3  - plot scalled wavelets too</span>
+<span class="n">XW</span><span class="p">,</span><span class="n">S</span> <span class="o">=</span> <span class="n">ScalogramCWT</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">,</span><span class="n">wType</span><span class="o">=</span><span class="s1">&#39;Gauss&#39;</span><span class="p">,</span><span class="n">PlotPSD</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">PlotW</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">f0</span><span class="o">=</span><span class="n">f0</span><span class="p">,</span><span class="n">Q</span><span class="o">=</span><span class="n">Q</span><span class="p">)</span>
+
+<span class="c1"># Example 3</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">0.75</span><span class="o">*</span><span class="n">t</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="mf">2.1</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">1.25</span><span class="o">*</span><span class="n">t</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.18</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">3.85</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
+<span class="n">xn</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="o">*</span> <span class="mf">0.5</span>
+<span class="n">XW</span><span class="p">,</span><span class="n">S</span> <span class="o">=</span> <span class="n">ScalogramCWT</span><span class="p">(</span><span class="n">xn</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">wType</span><span class="o">=</span><span class="s1">&#39;Gauss&#39;</span><span class="p">,</span><span class="n">PlotPSD</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Example 4</span>
+<span class="n">f0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">Q</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># or = 0.5</span>
+<span class="n">XW</span><span class="p">,</span><span class="n">S</span> <span class="o">=</span> <span class="n">ScalogramCWT</span><span class="p">(</span><span class="n">xn</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span><span class="n">wType</span><span class="o">=</span><span class="s1">&#39;Gauss&#39;</span><span class="p">,</span><span class="n">PlotPSD</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">f0</span><span class="o">=</span><span class="n">f0</span><span class="p">,</span><span class="n">Q</span><span class="o">=</span><span class="n">Q</span><span class="p">)</span>
+</pre></div>
+</div>
+<figure class="align-default">
+<img alt="../../_images/spkit-cwt-ScalogramCWT-1_00.png" class="plot-directive" src="../../_images/spkit-cwt-ScalogramCWT-1_00.png" />
+</figure>
+<figure class="align-default">
+<img alt="../../_images/spkit-cwt-ScalogramCWT-1_01.png" class="plot-directive" src="../../_images/spkit-cwt-ScalogramCWT-1_01.png" />
+</figure>
+<figure class="align-default">
+<img alt="../../_images/spkit-cwt-ScalogramCWT-1_02.png" class="plot-directive" src="../../_images/spkit-cwt-ScalogramCWT-1_02.png" />
+</figure>
+<figure class="align-default">
+<img alt="../../_images/spkit-cwt-ScalogramCWT-1_03.png" class="plot-directive" src="../../_images/spkit-cwt-ScalogramCWT-1_03.png" />
+</figure>
+<figure class="align-default">
+<img alt="../../_images/spkit-cwt-ScalogramCWT-1_04.png" class="plot-directive" src="../../_images/spkit-cwt-ScalogramCWT-1_04.png" />
+</figure>
+<figure class="align-default">
+<img alt="../../_images/spkit-cwt-ScalogramCWT-1_05.png" class="plot-directive" src="../../_images/spkit-cwt-ScalogramCWT-1_05.png" />
+</figure>
+<figure class="align-default">
+<img alt="../../_images/spkit-cwt-ScalogramCWT-1_06.png" class="plot-directive" src="../../_images/spkit-cwt-ScalogramCWT-1_06.png" />
+</figure>
+</dd></dl>
+
+<section id="examples-using-spkit-cwt-scalogramcwt">
+<h2>Examples using <code class="docutils literal notranslate"><span class="pre">spkit.cwt.ScalogramCWT</span></code><a class="headerlink" href="#examples-using-spkit-cwt-scalogramcwt" title="Link to this heading">¶</a></h2>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Scalogram CWT"><img alt="" src="../../_images/sphx_glr_plot_sp_scalogram_cwt_example_thumb.png" />
+<p><a class="reference internal" href="../../auto_examples/wavelet_analysis/plot_sp_scalogram_cwt_example.html#sphx-glr-auto-examples-wavelet-analysis-plot-sp-scalogram-cwt-example-py"><span class="std std-ref">Scalogram CWT</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Scalogram CWT</div>
+</div></div><div class="clearer"></div></section>
+</section>
+
+
+      </div>
+      <div class="container">
+        <footer class="spk-content-footer">
+          &copy; 2019 - 2024, spkit developers (BSD License).
+          <!-- -->
+          <!-- <a href="../../_sources/modules/generated/spkit.cwt.ScalogramCWT.rst.txt" rel="nofollow">Show this page source</a> -->
+          <!-- -->
+        </footer>
+      </div>
+
+      <div class="container-fluid py-3">
+        <hr>
+        <div class="container spk-landing-container">
+              <a class="spk-footer-funding-link" href="../../about.html">
+              <div class="text-center">
+                      <p class="mt-2">
+                        Spkit developed in collabration with other projects:
+                      </p>
+                      <a href="https://PhyAAt.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../../_static/phyaat_logo.png" title="PhyAAt"></a>
+                      <a href="https://PyLFSR.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../../_static/pylfsr_logo.png" title="PyLFSR" ></a>
+                      <a href="https://MLEndDatasets.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../../_static/mlend_logo.png" title="MLEnd-Datasets" ></a>
+                      <a href='https://clustrmaps.com/site/1b9h1'  title='Visit tracker'><img src='//clustrmaps.com/map_v2.png?cl=46b0cb&w=a&t=n&d=eQr8xSBiKVuSq6m0psK-Ey9TZ7rLzjRX-MpatyfFGQI&co=ffffff&ct=000000' width="30"/></a>
+
+              </div>
+              </a>
+              <!-- <div style="width:3px;">
+                <a href="https://clustrmaps.com/site/1b9h1"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=eQr8xSBiKVuSq6m0psK-Ey9TZ7rLzjRX-MpatyfFGQI&cl=ffffff" /></a>  
+              </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../../_static/js/vendor/bootstrap.min.js"></script>
+  
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-59299155-3', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<!-- 
+<script defer data-domain="scikit-learn.org" src="https://views.scientific-python.org/js/script.js">
+</script>
+ -->
+
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+
+<script>
+$(document).ready(function() {
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		        '.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	});
+});
+
+</script>
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    
+</body>
+
+</html>

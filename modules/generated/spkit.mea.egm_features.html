@@ -1,0 +1,694 @@
+
+
+<!DOCTYPE html>
+<!-- data-theme below is forced to be "light" but should be changed if we use pydata-theme-sphinx in the future -->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" data-content_root="../../" data-theme="light"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" data-content_root="../../" data-theme="light">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="spkit.mea.egm_features" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://spkit.github.io/modules/generated/spkit.mea.egm_features.html" />
+<meta property="og:site_name" content="spkit" />
+<meta property="og:description" content="Examples using spkit.mea.egm_features: MEA: Step-wise Analysis: Example" />
+<meta property="og:image" content="https://spkit.github.io/_images/spkit-mea-egm_features-1_00.png" />
+<meta property="og:image:alt" content="spkit" />
+<meta name="description" content="Examples using spkit.mea.egm_features: MEA: Step-wise Analysis: Example" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>spkit.mea.egm_features &mdash; spkit 0.0.9.7 documentation</title>
+  
+  <link rel="canonical" href="http://spkit.github.io/stable/modules/generated/spkit.mea.egm_features.html" />
+
+  
+  <link rel="shortcut icon" href="../../_static/favicon.ico" />
+  
+
+  <link rel="stylesheet" href="../../_static/css/vendor/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
+  <link rel="stylesheet" href="../../https://fonts.googleapis.com/css?family=Vibur" type="text/css" />
+  <link rel="stylesheet" href="../../_static/jupyterlite_sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <script id="documentation_options" data-url_root="../../"
+    src="../../_static/documentation_options.js"></script>
+  <script src="../../_static/js/vendor/jquery-3.6.3.slim.min.js"></script>
+  <script src="../../_static/js/details-permalink.js"></script>
+
+  <link rel="stylesheet" href="../../_static/css/vendor/nature_spkit.css" type="text/css" /> 
+
+
+</head>
+
+<body>
+  
+
+
+
+
+
+<!-- ('About us', pathto('about'), ''), -->
+
+
+<div id="logo-banner">
+  <div class="logo">
+    <!-- <a href="../../%23.html"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a> -->
+  <!-- <a href="#"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a> -->
+  <a href="../../index.html"><img src="../../_static/spkit_logo.png" alt="spkit logo"  border="0" /></a>
+  </div>
+  <div class="tags">
+  <ul>
+    <li>&#9672; Easy to use toolkit for signal processing and analysis</li>
+    <li>&#9672; More of biomedical signal analysis with visualization</li>
+    <li>&#9672; Includes basic machine learning models with visualization</li>
+    <!-- <li>&#9672; Open source</li> -->
+  </ul>
+  </div>
+  <div class="banner">
+  <h2>Signal Processing Toolkit</h2>
+  <h4><i>Simple and easy to use for signal analysis and predictive analysis</i></h4>
+  </div>
+</div>
+<nav id="navbar" class="spk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid spk-docs-container px-0">
+      <a class="navbar-brand py-0" href="../../index.html">
+        <img
+          class="spk-brand-img"
+          src="../../_static/spkit_small_icon_v.png"
+          alt="logo"/>
+      </a>
+    <button
+      id="spk-navbar-toggler"
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="spk-navbar-collapse collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../index.html">Home</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../install.html">Install</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../user_guide.html">User Guide</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../classes.html">API</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../auto_examples/index.html">Examples</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../tutorials/index.html">Tutorials</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" target="_blank" rel="noopener noreferrer" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=">Discussion Forum</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../../about.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="../../getting_started.html" >Getting Started</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="../../whats_new/v0.0.9.7.html" >What's new</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://github.com/nikeshbajaj/spkit" >GitHub</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://spkit.github.io/dev/index.html" target="_blank" rel="noopener noreferrer">Development</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" >Get Involved</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://spkit.github.io/dev/versions.html" >Other Versions and Download</a>
+        </li>
+        <li class="nav-item dropdown nav-more-item-dropdown">
+          <a class="spk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="spk-nav-dropdown-item dropdown-item" href="../../getting_started.html" >Getting Started</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="../../whats_new/v0.0.9.7.html" >What's new</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://github.com/nikeshbajaj/spkit" >GitHub</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://spkit.github.io/dev/index.html" target="_blank" rel="noopener noreferrer">Development</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" >Get Involved</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://spkit.github.io/dev/versions.html" >Other Versions and Download</a>
+          </div>
+        </li>
+      </ul>
+      <div id="searchbox" role="search">
+          <div class="searchformwrapper">
+          <form class="search" action="../../search.html" method="get">
+            <input class="spk-search-text-input" type="text" name="q" aria-labelledby="searchlabel" />
+            <input class="spk-search-text-btn" type="submit" value="Go" />
+          </form>
+          </div>
+      </div>
+      <a class ="nav-more-item-dropdown">
+      <font size="4em" style="margin: 5px 5px 0px 5px;color:rgb(0, 0, 0)">V</font>
+      </a>
+      <div class="nav-item dropdown nav-more-item-dropdown-vs">
+        <a class="sp-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <font color="black">0.0.9.7 (latest)</font>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../index.html" >0.0.9.7 (latest)</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.6/index.html" >0.0.9.6</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.5/index.html" >0.0.9.5</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.4/index.html" >0.0.9.4</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.3/index.html" >0.0.9.3</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.2/index.html" >0.0.9.2</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../../V/0.0.9.1/index.html" >0.0.9.1</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="https://github.com/Nikeshbajaj/spkit/releases" >More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+  <div class="d-flex" id="spk-doc-wrapper" class="border-right">
+    <input type="checkbox" name="spk-toggle-checkbox" id="spk-toggle-checkbox">
+    <label id="spk-sidemenu-toggle" class="spk-btn-toggle-toc btn spk-btn-primary" for="spk-toggle-checkbox">Toggle
+      Menu</label>
+      <div id="spk-sidebar-top-logoimg">
+        <a href="../../index.html">
+          <img class="spk-brand-img-side" src="../../_static/spkit_logo.png" alt="spkit logo"  border="0" />
+        </a>
+      </div>
+    <div id="spk-sidebar-wrapper" class="border-right">
+      <div class="spk-sidebar-top-content">
+        <hr style="margin: 0 0 10px 0" />
+        <div class="alert alert-danger p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            <strong>SpKit 0.0.9.7</strong><br />
+            <!-- <a class="reference external" href="https://pypi.org/project/spkit" target="_blank"><img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/Nikeshbajaj/spkit?label=latest%20version&style=plastic"></a> -->
+            <a class="reference external" href="https://pepy.tech/project/spkit" target="_blank"><img
+                src="https://static.pepy.tech/personalized-badge/spkit?period=total&amp;units=international_system&amp;left_color=black&amp;right_color=orange&amp;left_text=downloads"
+                alt="PyPI - Downloads" /></a>
+            <a class="reference external" href="https://pypi.python.org/pypi/spkit" target="_blank"><img
+                alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/spkit?style=plastic"></a>
+            <!-- <a href="http://spkit.github.io/dev/versions.html">Other versions</a> -->
+          </p>
+        </div>
+        <div class="alert alert-warning p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            Please <a class="font-weight-bold" href="../../about.html#citing">
+              <string>cite us</string>
+            </a> if you use the software.
+          </p>
+        </div>
+        <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+          <a href="#" role="button" class="btn spk-btn-rellink py-1 disabled"">Prev</a>
+          <a href="#" role="button" class="btn spk-btn-rellink disabled py-1">Up</a>
+          <a href="#" role="button" class="btn spk-btn-rellink py-1 disabled"">Next</a>
+        </div>
+        <hr>
+      </div>
+      <div class=" spk-sidebar-toc-wrapper">
+          <!-- <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+            <a href="#" role="button" class="btn spk-btn-rellink py-1 disabled"">Prev</a>
+            <a href="#" role="button" class="btn spk-btn-rellink disabled py-1">Up</a>
+            <a href="#" role="button" class="btn spk-btn-rellink py-1 disabled"">Next</a>
+          </div>
+          <hr> -->
+          <div class="spk-sidebar-toc">
+            <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.mea</span></code>.egm_features</a><ul>
+<li><a class="reference internal" href="#spkit.mea.egm_features"><code class="docutils literal notranslate"><span class="pre">egm_features</span></code></a></li>
+<li><a class="reference internal" href="#examples-using-spkit-mea-egm-features">Examples using <code class="docutils literal notranslate"><span class="pre">spkit.mea.egm_features</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+    <div id="spk-page-content-wrapper">
+      <div class="spk-page-content container-fluid body px-md-3" role="main">
+        
+  <section id="spkit-mea-egm-features">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.mea</span></code>.egm_features<a class="headerlink" href="#spkit-mea-egm-features" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.mea.egm_features">
+<span class="sig-prename descclassname"><span class="pre">spkit.mea.</span></span><span class="sig-name descname"><span class="pre">egm_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">act_loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">25000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width_rel_height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.75</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">findex_rel_dur</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">findex_rel_height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.75</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">findex_npeak</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(8,</span> <span class="pre">3)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spkit.mea.egm_features" title="Link to this definition">¶</a></dt>
+<dd><p>Feature Extraction from a single EGM</p>
+<p>Feature Extraction from a single EGM</p>
+<p>Following features are extracted from given EGM x</p>
+<ol class="arabic simple">
+<li><p>Peak to Peak voltage</p></li>
+<li><p>Duration of EGM</p></li>
+<li><p>Fractional Index</p></li>
+<li><p>Refined Duration of EGM based on fractionating peaks</p></li>
+<li><p>Energy of EGM</p></li>
+<li><p>Voltage Dispersion</p></li>
+<li><p>Noise variance</p></li>
+</ol>
+<p><strong>1. Peak to Peak voltage</strong></p>
+<p>As activation time loc is a location of maximum negative deflection, that entails a high positive peak (p1) just before
+activation loc followed by very low negative peak (p2) after loc. So Peak to Peak voltage is computed as volatege
+difference between p1 and p2. As shows pictorially</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>              <span class="o">+</span><span class="n">ve</span> <span class="n">peak</span> <span class="o">=</span> <span class="n">v1</span>
+               <span class="o">|</span>
+               <span class="o">|</span>  <span class="o">-</span>
+               <span class="o">|</span>    <span class="o">-</span>          <span class="n">p2</span>
+            <span class="o">---|-------|-------|</span>
+               <span class="n">p1</span>     <span class="n">loc</span>      <span class="o">|</span>
+                          <span class="o">-</span>    <span class="o">|</span>
+                             <span class="o">-</span> <span class="o">|</span>
+                             <span class="o">-</span><span class="n">ve</span> <span class="n">peak</span> <span class="o">=</span> <span class="n">v2</span>
+
+<span class="n">Peak</span> <span class="n">to</span> <span class="n">Peak</span> <span class="n">voltage</span> <span class="o">=</span> <span class="o">|</span><span class="n">v1</span><span class="o">-</span><span class="n">v2</span><span class="o">|</span>
+</pre></div>
+</div>
+<p><strong>2. Duration of EGM</strong></p>
+<p>Each peak has a width, which computed by ‘width_rel_height’</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>width_rel_height<span class="classifier">default=0.75</span></dt><dd><ul>
+<li><p>Relative hight of peaks to estimate the width of peaks,</p></li>
+<li><p>Lower it is smaller the width of peak be, which leads to smaller duration of EGM</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>In this diagram, peak p1 has a width of p12-p11, where p11 is the left end of positive peak, Similarly, peak p2
+has right end point of width as p22. So duration of EGM is computed as difference start of +ve peak width to
+end of -ve peak width, which is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>duration = p22-p11
+
+            ---!---p1---|-- | ----|---p2----!-
+              p11       p12 |    p21       p22
+                            |
+                            |
+                           loc
+</pre></div>
+</div>
+<p><strong>3. Fractionation Index</strong></p>
+<p>Fractionation Index is defined as number of peaks after loc (activation time), within a search region, that exceeds the threshold of height.
+Threshold of height defined by findex_rel_height (= findex_rel_height*positive_peak_height,  findex_rel_height*negative_peak_height).</p>
+<p>Fractionating peaks can be positive or/negative. In ideal situation, every positive peak is followed by negative one, so they come in pair.
+Therefore:</p>
+<blockquote>
+<div><p>Fractionation Index = 1 + max(positive_fr_peaks, negative_fr_peaks)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>So:</dt><dd><ul class="simple">
+<li><p>Fractionation Index = 1, means, no extra peaks within duration, other than main peaks</p></li>
+<li><p>Fractionation Index = 2, means, there is one peak after loc, that exceeds the threshold.</p></li>
+</ul>
+</dd>
+</dl>
+<p>However, postive frationating peaks are more reliable and negative peaks are often due to noise.
+Therefore, setting findex_npeak=False, avoid consideration of negative peaks</p>
+<p>Search Region of fractionation index is set by ‘findex_rel_dur’</p>
+<blockquote>
+<div><ul>
+<li><dl>
+<dt>findex_rel_dur: default = 1</dt><dd><ul class="simple">
+<li><p>Relative duration of search region, to find fractionating peaks.</p></li>
+</ul>
+<p>As explained above for duration,</p>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">duration</span> <span class="o">=</span> <span class="n">p22</span><span class="o">-</span><span class="n">p11</span>
+
+            <span class="o">---|----------|</span> <span class="o">-----------|-</span>
+            <span class="n">p11</span>       <span class="n">loc</span>          <span class="n">p22</span>
+
+<span class="n">Search</span> <span class="n">region</span>  <span class="o">=</span> <span class="n">p22</span> <span class="o">+</span>  <span class="n">findex_rel_dur</span><span class="o">*</span><span class="n">duration</span>
+</pre></div>
+</div>
+<p>if findex_rel_dur = 0, means searching for fractionating peaks between activation time (loc) to end point of EGM’s duration (p22)</p>
+<p>Threshold of height defined by findex_rel_height</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>findex_rel_height: default=0.75</dt><dd><ul>
+<li><p>Relative height threshold for defining the fractionation,</p></li>
+<li><p>Any positive peak which exceeds the hight of 0.75*positive peak of EGM at loc, within  Search region is considered fractionating peak</p></li>
+<li><p>Similarly, any negative peak which goes below 0.75*negative peak of EGM at loc, within  Search region is considered fractionating peak</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>findex_npeak: default=False</dt><dd><ul>
+<li><p>if true, negative peaks are considered for fractionation,</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p><strong>4. Refined Duration</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Refined Duration of EGM based on fractionating peaks</p></li>
+<li><p>This is defined by new end point (right) of negative peak, which is the end point of last fractionating peak</p></li>
+</ul>
+</div></blockquote>
+<p><strong>5. Energy of EGM</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Mean(x**2)  (mean squared voltage)</p></li>
+</ul>
+</div></blockquote>
+<p><strong>6. Voltage Dispersion</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>SD(x**2) (SD of squared voltage)</p></li>
+</ul>
+</div></blockquote>
+<p><strong>7. Noise variance</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Median(<a href="#id1"><span class="problematic" id="id2">|x|</span></a>)/0.6745  (Estimated noise variance)</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">1d-array,</span></dt><dd><ul class="simple">
+<li><p>input signal (EGM)</p></li>
+</ul>
+</dd>
+<dt><strong>fs</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>sampling frequency,</p></li>
+</ul>
+</dd>
+<dt><strong>act_loc</strong><span class="classifier">int,</span></dt><dd><ul class="simple">
+<li><p>activation time location of EGM index</p></li>
+</ul>
+</dd>
+<dt><strong>width_rel_height: scalar, default=0.75</strong></dt><dd><ul class="simple">
+<li><p>Relative hight of peaks to estimate the width of peaks,</p></li>
+<li><p>Lower it is smaller the width of peak be, which leads to smaller duration of EGM</p></li>
+</ul>
+</dd>
+<dt><strong>findex_rel_dur: +ve scalar, default = 1</strong></dt><dd><ul class="simple">
+<li><p>Relative duration of search region, to find fractionating peaks.</p></li>
+<li><p>As explained above for duration,</p></li>
+</ul>
+</dd>
+<dt><strong>findex_rel_height: scalar, default=0.75</strong></dt><dd><ul class="simple">
+<li><p>Relative height threshold for defining the fractionation,</p></li>
+<li><p>Any positive peak which exceeds the hight of 0.75*positive peak of EGM at loc, within  Search region is considered fractionating peak</p></li>
+<li><p>Similarly, any negative peak which goes below 0.75*negative peak of EGM at loc, within  Search region is considered fractionating peak</p></li>
+</ul>
+</dd>
+<dt><strong>findex_npeak: bool, deafult=False</strong></dt><dd><ul class="simple">
+<li><p>if true, negative peaks are considered for fractionation, default=False</p></li>
+</ul>
+</dd>
+<dt><strong>plot: if True,</strong></dt><dd><p>plot EGM with all the features shown</p>
+</dd>
+<dt><strong>figsize=(8,3): size of figure</strong></dt><dd></dd>
+<dt><strong>verbose: 0 Silent</strong></dt><dd><p>1 a few details
+2 all the computations</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>features:  list of 7 featur values</dt><dd><ol class="arabic simple">
+<li><dl class="simple">
+<dt>peak2peak: float </dt><dd><ul class="simple">
+<li><p>peak to peak voltage, with same unite as input x</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>duration:float</dt><dd><ul class="simple">
+<li><p>duration of EGM in samples, output would be a float, as width of peak is computed by interpolated.</p></li>
+<li><p>Divide it by fs to compute in seconds</p></li>
+<li><p>duration in (s) = duration/fs</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>findex: int,</dt><dd><ul class="simple">
+<li><p>Fractionation Index, number of peaks after activation that crosses the ‘findex_rel_height’ of the main peak</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>new_duration: float, </dt><dd><ul class="simple">
+<li><p>New duration, refined by fractionating peaks, same in samples.</p></li>
+<li><p>Divide it by fs to compute in seconds</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>energy_mean: float,  </dt><dd><ul class="simple">
+<li><p>Energy of EGM (mean squared voltage)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>energy_sd: float,</dt><dd><ul class="simple">
+<li><p>Voltage Dispersion (SD of squared voltage)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>noise_var: float,</dt><dd><ul class="simple">
+<li><p>Estimated noise variance (= median(<a href="#id3"><span class="problematic" id="id4">|x|</span></a>)/0.6745)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</dd>
+<dt>names: list of names of each feature</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="spkit.mea.align_cycles.html#spkit.mea.align_cycles" title="spkit.mea.align_cycles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">align_cycles</span></code></a>, <a class="reference internal" href="spkit.mea.extract_egm.html#spkit.mea.extract_egm" title="spkit.mea.extract_egm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extract_egm</span></code></a></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1">#sp.mea.extract_egm</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">requests</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">spkit</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Download Sample file if not done already</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">file_name</span><span class="o">=</span> <span class="s1">&#39;MEA_Sample_North_1000mV_1Hz.h5&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_name</span><span class="p">)):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;https://spkit.github.io/data_samples/files/MEA_Sample_North_1000mV_1Hz.h5&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>      
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">##############################</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Step 1: Read File</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fs</span> <span class="o">=</span> <span class="mi">25000</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X</span><span class="p">,</span><span class="n">fs</span><span class="p">,</span><span class="n">ch_labels</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">##############################</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Step 2: Stim Localisation</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stim_fhz</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stim_loc</span><span class="p">,</span><span class="n">_</span>  <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">mea</span><span class="o">.</span><span class="n">get_stim_loc</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">,</span><span class="n">fhz</span><span class="o">=</span><span class="n">stim_fhz</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">##############################</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Step 3: Align Cycles</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">exclude_first_dur</span><span class="o">=</span><span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dur_after_spike</span><span class="o">=</span><span class="mi">500</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">exclude_last_cycle</span><span class="o">=</span><span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XB</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">mea</span><span class="o">.</span><span class="n">align_cycles</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">stim_loc</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">,</span> <span class="n">exclude_first_dur</span><span class="o">=</span><span class="n">exclude_first_dur</span><span class="p">,</span><span class="n">dur_after_spike</span><span class="o">=</span><span class="n">dur_after_spike</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                        <span class="n">exclude_last_cycle</span><span class="o">=</span><span class="n">exclude_last_cycle</span><span class="p">,</span><span class="n">pad</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of EGMs/Cycles per channel =&#39;</span><span class="p">,</span><span class="n">XB</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">##############################</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Step 4: Average Cycles or Select one</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">egm_number</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">egm_number</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">X1B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">XB</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; -- Averaged All EGM&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">else</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="c1"># egm_number should be between from 0 to &#39;Number of EGMs/Cycles per channel &#39;</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">assert</span> <span class="n">egm_number</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">XB</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">X1B</span> <span class="o">=</span> <span class="n">XB</span><span class="p">[:,:,</span><span class="n">egm_number</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; -- Selected EGM -&gt;&#39;</span><span class="p">,</span><span class="n">egm_number</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;EGM Shape : &#39;</span><span class="p">,</span><span class="n">X1B</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">##############################</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Step 5: Activation Time</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">at_range</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">at_loc</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">mea</span><span class="o">.</span><span class="n">activation_time_loc</span><span class="p">(</span><span class="n">X1B</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">,</span><span class="n">t_range</span><span class="o">=</span><span class="n">at_range</span><span class="p">,</span><span class="n">plot</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Step 6: Repolarisation Time</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Step 7: APD Computation</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">##############################</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Step 8: Extract EGM</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dur_from_loc</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">remove_drift</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XE</span><span class="p">,</span> <span class="n">ATloc</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">mea</span><span class="o">.</span><span class="n">extract_egm</span><span class="p">(</span><span class="n">X1B</span><span class="p">,</span><span class="n">act_loc</span><span class="o">=</span><span class="n">at_loc</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">,</span><span class="n">dur_from_loc</span><span class="o">=</span><span class="n">dur_from_loc</span><span class="p">,</span><span class="n">remove_drift</span><span class="o">=</span><span class="n">remove_drift</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">##############################</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Step 9: EGM Feature Extraction</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">### egm of channel 0 </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">egmf</span><span class="p">,</span> <span class="n">feat_names</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">mea</span><span class="o">.</span><span class="n">egm_features</span><span class="p">(</span><span class="n">XE</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span><span class="n">act_loc</span><span class="o">=</span><span class="n">ATloc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">,</span><span class="n">plot</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">width_rel_height</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                                    <span class="n">findex_rel_dur</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">findex_rel_height</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">findex_npeak</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;EGM From Channel #0&#39;</span><span class="p">)</span>
+<span class="go">    ------------------------------</span>
+<span class="go">    peak-to-peak (mV)  :     184.85450567176613</span>
+<span class="go">    duration  (samples):     34.872375332449366</span>
+<span class="go">    duration  (s)      :     0.0013948950132979746</span>
+<span class="go">    duration  (ms)     :     1.3948950132979747</span>
+<span class="go">    new duration (ms)  :     1.3948950132979747</span>
+<span class="go">    f-index     :    1</span>
+<span class="go">    ------------------------------</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1">### egm of channel 16</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">egmf</span><span class="p">,</span> <span class="n">feat_names</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">mea</span><span class="o">.</span><span class="n">egm_features</span><span class="p">(</span><span class="n">XE</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span><span class="n">act_loc</span><span class="o">=</span><span class="n">ATloc</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span><span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">,</span><span class="n">plot</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">width_rel_height</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                                    <span class="n">findex_rel_dur</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">findex_rel_height</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">findex_npeak</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;EGM From Channel #16&#39;</span><span class="p">)</span>
+<span class="go">    ------------------------------</span>
+<span class="go">    peak-to-peak (mV)  :     105.86761415086482</span>
+<span class="go">    duration  (samples):     28.314866535924523</span>
+<span class="go">    duration  (s)      :     0.001132594661436981</span>
+<span class="go">    duration  (ms)     :     1.132594661436981</span>
+<span class="go">    new duration (ms)  :     2.0126410178332197</span>
+<span class="go">    f-index     :    2</span>
+<span class="go">    ------------------------------</span>
+</pre></div>
+</div>
+<figure class="align-default">
+<img alt="../../_images/spkit-mea-egm_features-1_00.png" class="plot-directive" src="../../_images/spkit-mea-egm_features-1_00.png" />
+</figure>
+<figure class="align-default">
+<img alt="../../_images/spkit-mea-egm_features-1_01.png" class="plot-directive" src="../../_images/spkit-mea-egm_features-1_01.png" />
+</figure>
+</dd></dl>
+
+<section id="examples-using-spkit-mea-egm-features">
+<h2>Examples using <code class="docutils literal notranslate"><span class="pre">spkit.mea.egm_features</span></code><a class="headerlink" href="#examples-using-spkit-mea-egm-features" title="Link to this heading">¶</a></h2>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="In this example code, we demonstrate analysis of MEA Recording, with each step. There are 13 st..."><img alt="" src="../../_images/sphx_glr_plot_mea_stepwise_example_thumb.png" />
+<p><a class="reference internal" href="../../auto_examples/multielectrode-array/plot_mea_stepwise_example.html#sphx-glr-auto-examples-multielectrode-array-plot-mea-stepwise-example-py"><span class="std std-ref">MEA: Step-wise Analysis: Example</span></a></p>
+  <div class="sphx-glr-thumbnail-title">MEA: Step-wise Analysis: Example</div>
+</div></div><div class="clearer"></div></section>
+</section>
+
+
+      </div>
+      <div class="container">
+        <footer class="spk-content-footer">
+          &copy; 2019 - 2024, spkit developers (BSD License).
+          <!-- -->
+          <!-- <a href="../../_sources/modules/generated/spkit.mea.egm_features.rst.txt" rel="nofollow">Show this page source</a> -->
+          <!-- -->
+        </footer>
+      </div>
+
+      <div class="container-fluid py-3">
+        <hr>
+        <div class="container spk-landing-container">
+              <a class="spk-footer-funding-link" href="../../about.html">
+              <div class="text-center">
+                      <p class="mt-2">
+                        Spkit developed in collabration with other projects:
+                      </p>
+                      <a href="https://PhyAAt.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../../_static/phyaat_logo.png" title="PhyAAt"></a>
+                      <a href="https://PyLFSR.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../../_static/pylfsr_logo.png" title="PyLFSR" ></a>
+                      <a href="https://MLEndDatasets.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../../_static/mlend_logo.png" title="MLEnd-Datasets" ></a>
+                      <a href='https://clustrmaps.com/site/1b9h1'  title='Visit tracker'><img src='//clustrmaps.com/map_v2.png?cl=46b0cb&w=a&t=n&d=eQr8xSBiKVuSq6m0psK-Ey9TZ7rLzjRX-MpatyfFGQI&co=ffffff&ct=000000' width="30"/></a>
+
+              </div>
+              </a>
+              <!-- <div style="width:3px;">
+                <a href="https://clustrmaps.com/site/1b9h1"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=eQr8xSBiKVuSq6m0psK-Ey9TZ7rLzjRX-MpatyfFGQI&cl=ffffff" /></a>  
+              </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../../_static/js/vendor/bootstrap.min.js"></script>
+  
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-59299155-3', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<!-- 
+<script defer data-domain="scikit-learn.org" src="https://views.scientific-python.org/js/script.js">
+</script>
+ -->
+
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+
+<script>
+$(document).ready(function() {
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		        '.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	});
+});
+
+</script>
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    
+</body>
+
+</html>

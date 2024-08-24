@@ -1,0 +1,1448 @@
+
+
+<!DOCTYPE html>
+<!-- data-theme below is forced to be "light" but should be changed if we use pydata-theme-sphinx in the future -->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" data-content_root="../" data-theme="light"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" data-content_root="../" data-theme="light">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="API Reference" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://spkit.github.io/modules/classes.html" />
+<meta property="og:site_name" content="spkit" />
+<meta property="og:description" content="This is the function and class objects reference of spkit. This the most up-to-date documentation of spkit functions/classes/modules. We are set out to write comprehensive User Guide and we are con..." />
+<meta property="og:image" content="https://github.com/spkit/spkit.github.io/blob/master/assets/logo/logo.png" />
+<meta property="og:image:alt" content="spkit" />
+<meta name="description" content="This is the function and class objects reference of spkit. This the most up-to-date documentation of spkit functions/classes/modules. We are set out to write comprehensive User Guide and we are con..." />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>API Reference &mdash; spkit 0.0.9.7 documentation</title>
+  
+  <link rel="canonical" href="http://spkit.github.io/stable/modules/classes.html" />
+
+  
+  <link rel="shortcut icon" href="../_static/favicon.ico" />
+  
+
+  <link rel="stylesheet" href="../_static/css/vendor/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
+  <link rel="stylesheet" href="../https://fonts.googleapis.com/css?family=Vibur" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyterlite_sphinx.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sg_gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sg_gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sg_gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sg_gallery-rendered-html.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <script id="documentation_options" data-url_root="../"
+    src="../_static/documentation_options.js"></script>
+  <script src="../_static/js/vendor/jquery-3.6.3.slim.min.js"></script>
+  <script src="../_static/js/details-permalink.js"></script>
+
+  <link rel="stylesheet" href="../_static/css/vendor/nature_spkit.css" type="text/css" /> 
+
+
+</head>
+
+<body>
+  
+
+
+
+
+
+<!-- ('About us', pathto('about'), ''), -->
+
+
+<div id="logo-banner">
+  <div class="logo">
+    <!-- <a href="../%23.html"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a> -->
+  <!-- <a href="#"><img src="_static/spkit_logo.png" alt="spkit logo"  border="0" /></a> -->
+  <a href="../index.html"><img src="../_static/spkit_logo.png" alt="spkit logo"  border="0" /></a>
+  </div>
+  <div class="tags">
+  <ul>
+    <li>&#9672; Easy to use toolkit for signal processing and analysis</li>
+    <li>&#9672; More of biomedical signal analysis with visualization</li>
+    <li>&#9672; Includes basic machine learning models with visualization</li>
+    <!-- <li>&#9672; Open source</li> -->
+  </ul>
+  </div>
+  <div class="banner">
+  <h2>Signal Processing Toolkit</h2>
+  <h4><i>Simple and easy to use for signal analysis and predictive analysis</i></h4>
+  </div>
+</div>
+<nav id="navbar" class="spk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid spk-docs-container px-0">
+      <a class="navbar-brand py-0" href="../index.html">
+        <img
+          class="spk-brand-img"
+          src="../_static/spkit_small_icon_v.png"
+          alt="logo"/>
+      </a>
+    <button
+      id="spk-navbar-toggler"
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="spk-navbar-collapse collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../index.html">Home</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../install.html">Install</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../user_guide.html">User Guide</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="#">API</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../auto_examples/index.html">Examples</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../tutorials/index.html">Tutorials</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" target="_blank" rel="noopener noreferrer" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=">Discussion Forum</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link" href="../about.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="../getting_started.html" >Getting Started</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="../whats_new/v0.0.9.7.html" >What's new</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://github.com/nikeshbajaj/spkit" >GitHub</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://spkit.github.io/dev/index.html" target="_blank" rel="noopener noreferrer">Development</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" >Get Involved</a>
+        </li>
+        <li class="nav-item">
+          <a class="spk-nav-link nav-link nav-more-item-mobile-items" href="https://spkit.github.io/dev/versions.html" >Other Versions and Download</a>
+        </li>
+        <li class="nav-item dropdown nav-more-item-dropdown">
+          <a class="spk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="spk-nav-dropdown-item dropdown-item" href="../getting_started.html" >Getting Started</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="../whats_new/v0.0.9.7.html" >What's new</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://github.com/nikeshbajaj/spkit" >GitHub</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://spkit.github.io/dev/index.html" target="_blank" rel="noopener noreferrer">Development</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://github.com/Nikeshbajaj/spkit/discussions?discussions_q=" >Get Involved</a>
+              <a class="spk-nav-dropdown-item dropdown-item" href="https://spkit.github.io/dev/versions.html" >Other Versions and Download</a>
+          </div>
+        </li>
+      </ul>
+      <div id="searchbox" role="search">
+          <div class="searchformwrapper">
+          <form class="search" action="../search.html" method="get">
+            <input class="spk-search-text-input" type="text" name="q" aria-labelledby="searchlabel" />
+            <input class="spk-search-text-btn" type="submit" value="Go" />
+          </form>
+          </div>
+      </div>
+      <a class ="nav-more-item-dropdown">
+      <font size="4em" style="margin: 5px 5px 0px 5px;color:rgb(0, 0, 0)">V</font>
+      </a>
+      <div class="nav-item dropdown nav-more-item-dropdown-vs">
+        <a class="sp-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <font color="black">0.0.9.7 (latest)</font>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="sp-nav-dropdown-item dropdown-item" href="../index.html" >0.0.9.7 (latest)</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../V/0.0.9.6/index.html" >0.0.9.6</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../V/0.0.9.5/index.html" >0.0.9.5</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../V/0.0.9.4/index.html" >0.0.9.4</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../V/0.0.9.3/index.html" >0.0.9.3</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../V/0.0.9.2/index.html" >0.0.9.2</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="../V/0.0.9.1/index.html" >0.0.9.1</a>
+            <a class="sp-nav-dropdown-item dropdown-item" href="https://github.com/Nikeshbajaj/spkit/releases" >More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+  <div class="d-flex" id="spk-doc-wrapper" class="border-right">
+    <input type="checkbox" name="spk-toggle-checkbox" id="spk-toggle-checkbox">
+    <label id="spk-sidemenu-toggle" class="spk-btn-toggle-toc btn spk-btn-primary" for="spk-toggle-checkbox">Toggle
+      Menu</label>
+      <div id="spk-sidebar-top-logoimg">
+        <a href="../index.html">
+          <img class="spk-brand-img-side" src="../_static/spkit_logo.png" alt="spkit logo"  border="0" />
+        </a>
+      </div>
+    <div id="spk-sidebar-wrapper" class="border-right">
+      <div class="spk-sidebar-top-content">
+        <hr style="margin: 0 0 10px 0" />
+        <div class="alert alert-danger p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            <strong>SpKit 0.0.9.7</strong><br />
+            <!-- <a class="reference external" href="https://pypi.org/project/spkit" target="_blank"><img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/Nikeshbajaj/spkit?label=latest%20version&style=plastic"></a> -->
+            <a class="reference external" href="https://pepy.tech/project/spkit" target="_blank"><img
+                src="https://static.pepy.tech/personalized-badge/spkit?period=total&amp;units=international_system&amp;left_color=black&amp;right_color=orange&amp;left_text=downloads"
+                alt="PyPI - Downloads" /></a>
+            <a class="reference external" href="https://pypi.python.org/pypi/spkit" target="_blank"><img
+                alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/spkit?style=plastic"></a>
+            <!-- <a href="http://spkit.github.io/dev/versions.html">Other versions</a> -->
+          </p>
+        </div>
+        <div class="alert alert-warning p-1 mb-2" role="alert">
+          <p class="text-center mb-0">
+            Please <a class="font-weight-bold" href="../about.html#citing">
+              <string>cite us</string>
+            </a> if you use the software.
+          </p>
+        </div>
+        <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+          <a href="#" role="button" class="btn spk-btn-rellink py-1 disabled"">Prev</a>
+          <a href="#" role="button" class="btn spk-btn-rellink disabled py-1">Up</a>
+          <a href="#" role="button" class="btn spk-btn-rellink py-1 disabled"">Next</a>
+        </div>
+        <hr>
+      </div>
+      <div class=" spk-sidebar-toc-wrapper">
+          <!-- <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+            <a href="#" role="button" class="btn spk-btn-rellink py-1 disabled"">Prev</a>
+            <a href="#" role="button" class="btn spk-btn-rellink disabled py-1">Up</a>
+            <a href="#" role="button" class="btn spk-btn-rellink py-1 disabled"">Next</a>
+          </div>
+          <hr> -->
+          <div class="spk-sidebar-toc">
+            <ul>
+<li><a class="reference internal" href="#">API Reference</a><ul>
+<li><a class="reference internal" href="#entropy-funtions">Entropy Funtions</a><ul>
+<li><a class="reference internal" href="#spkit-core"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.core</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#information-theory-advanced">Information Theory - Advanced</a><ul>
+<li><a class="reference internal" href="#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.core</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#filtering-signal-processing">Filtering - Signal Processing</a><ul>
+<li><a class="reference internal" href="#spkit-core-processing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.core.processing</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#analysis-sythesis-models">Analysis &amp; Sythesis Models</a><ul>
+<li><a class="reference internal" href="#spkit-core-advnace-techniques"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.core.advnace_techniques</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#wavelet-analysis">Wavelet Analysis</a><ul>
+<li><a class="reference internal" href="#spkit-core-dwt"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.core</span></code> : DWT</a></li>
+<li><a class="reference internal" href="#spkit-cwt-cwt"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.cwt</span></code>: CWT</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ramanujan-methods">Ramanujan Methods</a><ul>
+<li><a class="reference internal" href="#id2"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.core</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#simulate-signals">Simulate Signals</a></li>
+<li><a class="reference internal" href="#eeg-signal-processing">EEG Signal Processing</a><ul>
+<li><a class="reference internal" href="#module-spkit.eeg"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.eeg</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mea-multi-electrode-array">MEA  - Multi-Electrode Array</a><ul>
+<li><a class="reference internal" href="#spkit-mea"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.mea</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#signal-analysis-and-processing">Signal Analysis and Processing</a><ul>
+<li><a class="reference internal" href="#new-methods">New Methods</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#signal-transformations-mapping">Signal Transformations/Mapping</a><ul>
+<li><a class="reference internal" href="#id3"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.core</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#event-analysis">Event Analysis</a></li>
+<li><a class="reference internal" href="#phase-angles-dominent-frequencies">Phase, Angles, Dominent Frequencies</a></li>
+<li><a class="reference internal" href="#machine-learning">Machine Learning</a><ul>
+<li><a class="reference internal" href="#module-spkit.ml"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.ml</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sample-data-simulate">Sample Data &amp; Simulate</a><ul>
+<li><a class="reference internal" href="#module-spkit.data"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.data</span></code></a></li>
+<li><a class="reference internal" href="#sample-of-real-data-signal">Sample of real data/signal</a></li>
+<li><a class="reference internal" href="#simulation-of-data">Simulation of Data</a></li>
+<li><a class="reference internal" href="#for-machine-learning">For Machine Learning</a></li>
+<li><a class="reference internal" href="#for-signal-processing">For Signal Processing</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#matrix-decomposition">Matrix Decomposition</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#statististics">Statististics</a><ul>
+<li><a class="reference internal" href="#spkit-stats"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.stats</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#read-write-files-i-o">Read/Write Files I/O</a><ul>
+<li><a class="reference internal" href="#module-spkit.io"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.io</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#utilities">Utilities</a><ul>
+<li><a class="reference internal" href="#spkit-utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.utils</span></code></a><ul>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geometrical-functions-under-development">Geometrical functions [UNDER DEVELOPMENT]</a><ul>
+<li><a class="reference internal" href="#spkit-geometry"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.geometry</span></code></a><ul>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#to-be-deprecated">TO BE DEPRECATED</a><ul>
+<li><a class="reference internal" href="#id4">Wavelet Analysis</a></li>
+<li><a class="reference internal" href="#id5">Ramanujan Methods</a></li>
+<li><a class="reference internal" href="#id6">EEG Signal Processing</a></li>
+<li><a class="reference internal" href="#statistics">Statistics</a></li>
+<li><a class="reference internal" href="#io-utilities">IO Utilities</a></li>
+<li><a class="reference internal" href="#data">Data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+    <div id="spk-page-content-wrapper">
+      <div class="spk-page-content container-fluid body px-md-3" role="main">
+        
+  <section id="api-reference">
+<span id="api-ref"></span><h1>API Reference<a class="headerlink" href="#api-reference" title="Link to this heading">¶</a></h1>
+<p>This is the function and class objects reference of spkit. This the most up-to-date documentation
+of spkit functions/classes/modules. We are set out to write comprehensive <a class="reference internal" href="../user_guide.html#user-guide"><span class="std std-ref">User Guide</span></a>
+and we are continuously updating it, however, it might be missing the full details of functions.
+Please refer to each function here at <a class="reference internal" href="#api-ref"><span class="std std-ref">API Reference</span></a>, where the docstring of each function and class
+have been written with most of the information with examples.</p>
+<section id="entropy-funtions">
+<h2>Entropy Funtions<a class="headerlink" href="#entropy-funtions" title="Link to this heading">¶</a></h2>
+<section id="spkit-core">
+<h3><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.core</span></code><a class="headerlink" href="#spkit-core" title="Link to this heading">¶</a></h3>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.core</span></code> : core module</p>
+<span class="target" id="module-spkit"></span><table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.entropy.html#spkit.entropy" title="spkit.entropy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">entropy</span></code></a>(x[, alpha, base, normalize, ...])</p></td>
+<td><p>Entropy <span class="math notranslate nohighlight">\(H(X)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.mutual_info.html#spkit.mutual_info" title="spkit.mutual_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mutual_info</span></code></a>(x, y[, base, is_discrete, bins, ...])</p></td>
+<td><p>Mututal Information <span class="math notranslate nohighlight">\(I(X;Y)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.entropy_joint.html#spkit.entropy_joint" title="spkit.entropy_joint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">entropy_joint</span></code></a>(x, y[, base, is_discrete, ...])</p></td>
+<td><p>Joint Entropy <span class="math notranslate nohighlight">\(H(X,Y)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.entropy_cond.html#spkit.entropy_cond" title="spkit.entropy_cond"><code class="xref py py-obj docutils literal notranslate"><span class="pre">entropy_cond</span></code></a>(x, y[, base, is_discrete, ...])</p></td>
+<td><p>Conditional Entropy <span class="math notranslate nohighlight">\(H(X|Y)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.entropy_cross.html#spkit.entropy_cross" title="spkit.entropy_cross"><code class="xref py py-obj docutils literal notranslate"><span class="pre">entropy_cross</span></code></a>(x, y[, base, is_discrete, ...])</p></td>
+<td><p>Cross Entropy <span class="math notranslate nohighlight">\(H_{xy}(X,Y)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.entropy_kld.html#spkit.entropy_kld" title="spkit.entropy_kld"><code class="xref py py-obj docutils literal notranslate"><span class="pre">entropy_kld</span></code></a>(x, y[, base, is_discrete, bins, ...])</p></td>
+<td><p>Cross Entropy Kullback–Leibler divergence <span class="math notranslate nohighlight">\(H_{kl}(X,Y)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.entropy_sample.html#spkit.entropy_sample" title="spkit.entropy_sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">entropy_sample</span></code></a>(x, m, r)</p></td>
+<td><p>Sample Entropy <span class="math notranslate nohighlight">\(SampEn(X)\)</span> or <span class="math notranslate nohighlight">\(H_{se}(X)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.entropy_approx.html#spkit.entropy_approx" title="spkit.entropy_approx"><code class="xref py py-obj docutils literal notranslate"><span class="pre">entropy_approx</span></code></a>(x, m, r)</p></td>
+<td><p>Approximate Entropy <span class="math notranslate nohighlight">\(ApproxEn(X)\)</span> or <span class="math notranslate nohighlight">\(H_{ae}(X)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.entropy_spectral.html#spkit.entropy_spectral" title="spkit.entropy_spectral"><code class="xref py py-obj docutils literal notranslate"><span class="pre">entropy_spectral</span></code></a>(x, fs[, method, alpha, ...])</p></td>
+<td><p>Spectral Entropy <span class="math notranslate nohighlight">\(H_f(X)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.entropy_svd.html#spkit.entropy_svd" title="spkit.entropy_svd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">entropy_svd</span></code></a>(x[, order, delay, base, normalize])</p></td>
+<td><p>Singular Value Decomposition Entropy <span class="math notranslate nohighlight">\(H_{\Sigma}(X)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.entropy_permutation.html#spkit.entropy_permutation" title="spkit.entropy_permutation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">entropy_permutation</span></code></a>(x[, order, delay, base, ...])</p></td>
+<td><p>Permutation Entropy <span class="math notranslate nohighlight">\(H_{\pi}(X)\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="information-theory-advanced">
+<h2>Information Theory - Advanced<a class="headerlink" href="#information-theory-advanced" title="Link to this heading">¶</a></h2>
+<section id="id1">
+<h3><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.core</span></code><a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<span class="target" id="module-0"></span><table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.dispersion_entropy.html#spkit.dispersion_entropy" title="spkit.dispersion_entropy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dispersion_entropy</span></code></a>(x[, classes, scale, ...])</p></td>
+<td><p>Dispersion Entropy of signal <span class="math notranslate nohighlight">\(H_{de}(X)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.dispersion_entropy_multiscale_refined.html#spkit.dispersion_entropy_multiscale_refined" title="spkit.dispersion_entropy_multiscale_refined"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dispersion_entropy_multiscale_refined</span></code></a>(x[, ...])</p></td>
+<td><p>Multiscale refined Dispersion Entropy of signal <span class="math notranslate nohighlight">\(H_{de}(X)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.entropy_differential.html#spkit.entropy_differential" title="spkit.entropy_differential"><code class="xref py py-obj docutils literal notranslate"><span class="pre">entropy_differential</span></code></a>(x[, is_multidim, ...])</p></td>
+<td><p>Differential Entropy <span class="math notranslate nohighlight">\(H_{\partial}(X)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.entropy_diff_cond_self.html#spkit.entropy_diff_cond_self" title="spkit.entropy_diff_cond_self"><code class="xref py py-obj docutils literal notranslate"><span class="pre">entropy_diff_cond_self</span></code></a>(X[, present_first])</p></td>
+<td><p>Self-Conditional Entropy <span class="math notranslate nohighlight">\(H_{\partial}(X_{i+1}|X_i)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.entropy_diff_cond.html#spkit.entropy_diff_cond" title="spkit.entropy_diff_cond"><code class="xref py py-obj docutils literal notranslate"><span class="pre">entropy_diff_cond</span></code></a>(X, Y[, present_first])</p></td>
+<td><p>Conditional Entropy <span class="math notranslate nohighlight">\(H_{\partial}(X_{i+1}|X_i,Y_i)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.entropy_diff_joint.html#spkit.entropy_diff_joint" title="spkit.entropy_diff_joint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">entropy_diff_joint</span></code></a>(X, Y)</p></td>
+<td><p>Differential Joint Entropy <span class="math notranslate nohighlight">\(H_{\partial}(X,Y)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.entropy_diff_joint_cond.html#spkit.entropy_diff_joint_cond" title="spkit.entropy_diff_joint_cond"><code class="xref py py-obj docutils literal notranslate"><span class="pre">entropy_diff_joint_cond</span></code></a>(X, Y[, present_first])</p></td>
+<td><p>Joint-Conditional Entropy <span class="math notranslate nohighlight">\(H_{\partial}(X_{i+1},Y_{i+1}|X_i,Y_i)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.mutual_info_diff_self.html#spkit.mutual_info_diff_self" title="spkit.mutual_info_diff_self"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mutual_info_diff_self</span></code></a>(X[, present_first])</p></td>
+<td><p>Self Mutual Information <span class="math notranslate nohighlight">\(I_{\partial}(X_{i+1}; X_i)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.mutual_info_diff.html#spkit.mutual_info_diff" title="spkit.mutual_info_diff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mutual_info_diff</span></code></a>(X, Y[, present_first])</p></td>
+<td><p>Mutual Information  <span class="math notranslate nohighlight">\(I_{\partial}(X_{i+1}; X_i, Y_i)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.transfer_entropy.html#spkit.transfer_entropy" title="spkit.transfer_entropy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transfer_entropy</span></code></a>(X, Y[, present_first])</p></td>
+<td><p>Transfer Entropy <span class="math notranslate nohighlight">\(TE_{X-&gt;Y}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.transfer_entropy_cond.html#spkit.transfer_entropy_cond" title="spkit.transfer_entropy_cond"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transfer_entropy_cond</span></code></a>(X, Y, Z[, present_first])</p></td>
+<td><p>Conditional Transfer Entopry Or Partial Transfer Entropy <span class="math notranslate nohighlight">\(TE_{X-&gt;Y | Z}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.partial_transfer_entropy.html#spkit.partial_transfer_entropy" title="spkit.partial_transfer_entropy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">partial_transfer_entropy</span></code></a>(X, Y, Z[, ...])</p></td>
+<td><p>Partial Transfer Entropy Or Conditional Transfer Entopry <span class="math notranslate nohighlight">\(TE_{X-&gt;Y | Z}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.entropy_granger_causality.html#spkit.entropy_granger_causality" title="spkit.entropy_granger_causality"><code class="xref py py-obj docutils literal notranslate"><span class="pre">entropy_granger_causality</span></code></a>(X, Y[, ...])</p></td>
+<td><p>Granger Causality based on Differential Entropy <span class="math notranslate nohighlight">\(GC_{X-&gt;Y}, GC_{Y-&gt;X}, GC_{X.Y}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="filtering-signal-processing">
+<h2>Filtering - Signal Processing<a class="headerlink" href="#filtering-signal-processing" title="Link to this heading">¶</a></h2>
+<section id="spkit-core-processing">
+<h3><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.core.processing</span></code><a class="headerlink" href="#spkit-core-processing" title="Link to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.filter_X.html#spkit.filter_X" title="spkit.filter_X"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_X</span></code></a>(X[, fs, band, btype, order, ftype, ...])</p></td>
+<td><p>Spectral filtering using Buttorworth</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.filterDC.html#spkit.filterDC" title="spkit.filterDC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filterDC</span></code></a>(X[, alpha, return_background, ...])</p></td>
+<td><p>Filter out DC component using IIR filter</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.filterDC_sGolay.html#spkit.filterDC_sGolay" title="spkit.filterDC_sGolay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filterDC_sGolay</span></code></a>(X[, window_length, ...])</p></td>
+<td><p>Filter out DC component using Savitzky-Golay filter</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.filter_smooth_gauss.html#spkit.filter_smooth_gauss" title="spkit.filter_smooth_gauss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_smooth_gauss</span></code></a>(X[, window_length, ...])</p></td>
+<td><p>Smoothing filter using Gaussian Kernel and 1d-ConvFB</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.filter_smooth_mollifier.html#spkit.filter_smooth_mollifier" title="spkit.filter_smooth_mollifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_smooth_mollifier</span></code></a>(X[, window_length, ...])</p></td>
+<td><p>Smoothing filter using Mollifier kernel and 1d-ConvFB</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.filter_smooth_sGolay.html#spkit.filter_smooth_sGolay" title="spkit.filter_smooth_sGolay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_smooth_sGolay</span></code></a>(X[, window_length, ...])</p></td>
+<td><p>Smoothing filter using Savitzky-Golay filter</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.filter_with_kernel.html#spkit.filter_with_kernel" title="spkit.filter_with_kernel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_with_kernel</span></code></a>(X, kernel[, iterations, mode])</p></td>
+<td><p>Smoothing/Sharpening using given kernel and 1d-ConvFB</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.filter_powerline.html#spkit.filter_powerline" title="spkit.filter_powerline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_powerline</span></code></a>(X[, fs, powerline])</p></td>
+<td><p>Remove Powerline interefences</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.filtering_pipeline.html#spkit.filtering_pipeline" title="spkit.filtering_pipeline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filtering_pipeline</span></code></a>(X, fs[, trim, iir_alpha, ...])</p></td>
+<td><p>Filtering Pipeline</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.graph_filter_dist.html#spkit.graph_filter_dist" title="spkit.graph_filter_dist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">graph_filter_dist</span></code></a>(X, V[, d, ftype, ...])</p></td>
+<td><p>Graph Filtering with (Proximity)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.graph_filter_adj.html#spkit.graph_filter_adj" title="spkit.graph_filter_adj"><code class="xref py py-obj docutils literal notranslate"><span class="pre">graph_filter_adj</span></code></a>(X, AdjM[, V, ftype, ...])</p></td>
+<td><p>Graph Filtering with Adjacency Matrix</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.spatial_filter_adj.html#spkit.spatial_filter_adj" title="spkit.spatial_filter_adj"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spatial_filter_adj</span></code></a>(X, AdjM[, V, ftype, ...])</p></td>
+<td><p>Spatial Filter with Adjacency Matrix: AdjM</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.spatial_filter_dist.html#spkit.spatial_filter_dist" title="spkit.spatial_filter_dist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spatial_filter_dist</span></code></a>(X, V[, r, ftype, ...])</p></td>
+<td><p>Spatial Filter with Distance (Proximity)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.conv1d_fft.html#spkit.conv1d_fft" title="spkit.conv1d_fft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conv1d_fft</span></code></a>(x, y)</p></td>
+<td><p>1D Convolution using FFT</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.conv1d_fb.html#spkit.conv1d_fb" title="spkit.conv1d_fb"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conv1d_fb</span></code></a>(x, kernel[, iterations, mode, ...])</p></td>
+<td><p>1D Forward-Backward-Convolution (ConvFB)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.conv1d_nan.html#spkit.conv1d_nan" title="spkit.conv1d_nan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conv1d_nan</span></code></a>(x, kernel[, denormalise_ker, ...])</p></td>
+<td><p>1D Convolution with NaN values</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.conv2d_nan.html#spkit.conv2d_nan" title="spkit.conv2d_nan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conv2d_nan</span></code></a>(x, kernel[, boundary, fillvalue, ...])</p></td>
+<td><p>2D Convolution with NaN values</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="analysis-sythesis-models">
+<h2>Analysis &amp; Sythesis Models<a class="headerlink" href="#analysis-sythesis-models" title="Link to this heading">¶</a></h2>
+<section id="spkit-core-advnace-techniques">
+<h3><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.core.advnace_techniques</span></code><a class="headerlink" href="#spkit-core-advnace-techniques" title="Link to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.dft_analysis.html#spkit.dft_analysis" title="spkit.dft_analysis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dft_analysis</span></code></a>(x[, window, N, scaling_dB, ...])</p></td>
+<td><p>Discrete Fourier Transform: Analysis (DFT)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.dft_synthesis.html#spkit.dft_synthesis" title="spkit.dft_synthesis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dft_synthesis</span></code></a>(mX, pX[, M, scaling_dB, window])</p></td>
+<td><p>Discrete Fourier Transform: Synthesis (iDFT)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.stft_analysis.html#spkit.stft_analysis" title="spkit.stft_analysis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stft_analysis</span></code></a>(x, winlen[, window, nfft, ...])</p></td>
+<td><p>Short-Time Fourier Transform Analysis Model</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.stft_synthesis.html#spkit.stft_synthesis" title="spkit.stft_synthesis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stft_synthesis</span></code></a>(mXt, pXt, winlen, overlap)</p></td>
+<td><p>Short-Time Fourier Transform Synthesis Model</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.sineModel_analysis.html#spkit.sineModel_analysis" title="spkit.sineModel_analysis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sineModel_analysis</span></code></a>(x, fs, winlen[, overlap, ...])</p></td>
+<td><p>Analysis of a signal x using the sinusoidal model</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.sineModel_synthesis.html#spkit.sineModel_synthesis" title="spkit.sineModel_synthesis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sineModel_synthesis</span></code></a>(fXt, mXt, pXt, fs, overlap)</p></td>
+<td><p>Synthesis of signal x using the Sinusoidal Model</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.frft.html#spkit.frft" title="spkit.frft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">frft</span></code></a>(x[, alpha, method, verbose])</p></td>
+<td><p>Fractional Fourier Transform</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.ifrft.html#spkit.ifrft" title="spkit.ifrft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ifrft</span></code></a>(x[, alpha, method, verbose])</p></td>
+<td><p>Inverse Fractional Fourier Transform</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.ffrft.html#spkit.ffrft" title="spkit.ffrft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ffrft</span></code></a>(x, alpha)</p></td>
+<td><p>Fast Fractional Fourier Transform</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.iffrft.html#spkit.iffrft" title="spkit.iffrft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iffrft</span></code></a>(x, alpha)</p></td>
+<td><p>Inverse Fast Fractional Fourier Transform</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="wavelet-analysis">
+<h2>Wavelet Analysis<a class="headerlink" href="#wavelet-analysis" title="Link to this heading">¶</a></h2>
+<section id="spkit-core-dwt">
+<h3><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.core</span></code> : DWT<a class="headerlink" href="#spkit-core-dwt" title="Link to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.wavelet_filtering.html#spkit.wavelet_filtering" title="spkit.wavelet_filtering"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wavelet_filtering</span></code></a>(x[, wv, threshold, ...])</p></td>
+<td><p>Wavelet Filtering</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.wavelet_filtering_win.html#spkit.wavelet_filtering_win" title="spkit.wavelet_filtering_win"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wavelet_filtering_win</span></code></a>(x[, winsize, wv, ...])</p></td>
+<td><p>Wavelet Filtering window-wise</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.periodogram.html#spkit.periodogram" title="spkit.periodogram"><code class="xref py py-obj docutils literal notranslate"><span class="pre">periodogram</span></code></a>(x[, fs, show_plot, method, win, ...])</p></td>
+<td><p>Computing Periodogram</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.wpa_coeff.html#spkit.wpa_coeff" title="spkit.wpa_coeff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wpa_coeff</span></code></a>(x[, wv, mode, maxlevel, ...])</p></td>
+<td><p>Wavelet Packet Decomposition</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.wpa_coeff_win.html#spkit.wpa_coeff_win" title="spkit.wpa_coeff_win"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wpa_coeff_win</span></code></a>(x[, winsize, overlap, wv, ...])</p></td>
+<td><p>Wavelet Packet Decomposition - window-wise</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.WPA_plot.html#spkit.wpa_plot" title="spkit.wpa_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wpa_plot</span></code></a>(x[, winsize, overlap, ...])</p></td>
+<td><p>WPA Window-wise Plot</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.wavelet_decomposed_signals.html#spkit.wavelet_decomposed_signals" title="spkit.wavelet_decomposed_signals"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wavelet_decomposed_signals</span></code></a>(x[, wv, L, WPD, ...])</p></td>
+<td><p>Decomposing signal into signals of wavelet components</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="spkit-cwt-cwt">
+<h3><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.cwt</span></code>: CWT<a class="headerlink" href="#spkit-cwt-cwt" title="Link to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.cwt.ScalogramCWT.html#spkit.cwt.ScalogramCWT" title="spkit.cwt.ScalogramCWT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ScalogramCWT</span></code></a>(x, t[, wType, fs, PlotPSD, ...])</p></td>
+<td><p>Scalogram using Continues Wavelet Transform</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.cwt.WavePSD.html#spkit.cwt.WavePSD" title="spkit.cwt.WavePSD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WavePSD</span></code></a>(x, t[, wType, PlotW, PlotPSD, dFFT, ...])</p></td>
+<td><p>Wavelet Power Spectral Density</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.cwt.GaussWave.html#spkit.cwt.GaussWave" title="spkit.cwt.GaussWave"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GaussWave</span></code></a>(t, f, f0, Q[, t0])</p></td>
+<td><p>Gaussian Wavelet</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.cwt.MorlateWave.html#spkit.cwt.MorlateWave" title="spkit.cwt.MorlateWave"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MorlateWave</span></code></a>(t[, f, sig])</p></td>
+<td><p>Morlate Wavelet</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.cwt.GaborWave.html#spkit.cwt.GaborWave" title="spkit.cwt.GaborWave"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GaborWave</span></code></a>(t[, f, f0, a, t0])</p></td>
+<td><p>Gabor Wavelet</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.cwt.PoissonWave.html#spkit.cwt.PoissonWave" title="spkit.cwt.PoissonWave"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PoissonWave</span></code></a>(t[, f, n, method])</p></td>
+<td><p>Poisson Wavelet</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.cwt.cMaxicanHatWave.html#spkit.cwt.cMaxicanHatWave" title="spkit.cwt.cMaxicanHatWave"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cMaxicanHatWave</span></code></a>(t, f[, f0, a])</p></td>
+<td><p>Complex Maxican Hat Wavelet</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.cwt.ShannonWave.html#spkit.cwt.ShannonWave" title="spkit.cwt.ShannonWave"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ShannonWave</span></code></a>(t, f[, f0, fw])</p></td>
+<td><p>Complex Shannon Wavelet</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.cwt.compare_cwt_example.html#spkit.cwt.compare_cwt_example" title="spkit.cwt.compare_cwt_example"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compare_cwt_example</span></code></a>(x, t[, fs, sLog])</p></td>
+<td><p>Compare different CWT Functions</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ramanujan-methods">
+<h2>Ramanujan Methods<a class="headerlink" href="#ramanujan-methods" title="Link to this heading">¶</a></h2>
+<section id="id2">
+<h3><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.core</span></code><a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.ramanujan_filter.html#spkit.ramanujan_filter" title="spkit.ramanujan_filter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramanujan_filter</span></code></a>(x[, Pmax, Rcq, Rav, Th, ...])</p></td>
+<td><p>Ramanujan Filter Banks for Estimation and Tracking of Periodicity</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.ramanujan_filter_prange.html#spkit.ramanujan_filter_prange" title="spkit.ramanujan_filter_prange"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramanujan_filter_prange</span></code></a>(x[, Pmin, Pmax, ...])</p></td>
+<td><p>Ramanujan Filter Banks for Estimation and Tracking of Periodicity with given range.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.regularised_period_estimation.html#spkit.regularised_period_estimation" title="spkit.regularised_period_estimation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">regularised_period_estimation</span></code></a>(x, Pmax[, ...])</p></td>
+<td><p>Computing strength of periods</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.Create_Dictionary.html#spkit.create_dictionary" title="spkit.create_dictionary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_dictionary</span></code></a>(Nmax, rowSize[, method])</p></td>
+<td><p>Creating Dictionary for RFB</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.RFB_example_1.html#spkit.RFB_example_1" title="spkit.RFB_example_1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RFB_example_1</span></code></a>([period, SNR, seed])</p></td>
+<td><p>Example 1 for Ramanujan Filter Bank</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.RFB_example_2.html#spkit.RFB_example_2" title="spkit.RFB_example_2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RFB_example_2</span></code></a>([periods, signal_length, SNR, ...])</p></td>
+<td><p>Example 2 for Ramanujan Filter Bank</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="simulate-signals">
+<h2>Simulate Signals<a class="headerlink" href="#simulate-signals" title="Link to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.create_signal_1d.html#spkit.create_signal_1d" title="spkit.create_signal_1d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_signal_1d</span></code></a>([n, seed, circular, ...])</p></td>
+<td><p>Generate 1D arbitary signal</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.create_signal_2d.html#spkit.create_signal_2d" title="spkit.create_signal_2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_signal_2d</span></code></a>([n, seed, sg_winlen, ...])</p></td>
+<td><p>Generate 2D arbitary signal/image patch</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="eeg-signal-processing">
+<h2>EEG Signal Processing<a class="headerlink" href="#eeg-signal-processing" title="Link to this heading">¶</a></h2>
+<section id="module-spkit.eeg">
+<span id="spkit-eeg"></span><h3><a class="reference internal" href="#module-1" title="spkit.eeg"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.eeg</span></code></a><a class="headerlink" href="#module-spkit.eeg" title="Link to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.eeg.ATAR.html#spkit.eeg.ATAR" title="spkit.eeg.ATAR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ATAR</span></code></a>(X[, wv, winsize, thr_method, OptMode, ...])</p></td>
+<td><p>ATAR - Automatic and Tunable Artifact Removal Algorithm</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.eeg.ATAR_1Ch.html#spkit.eeg.ATAR_1Ch" title="spkit.eeg.ATAR_1Ch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ATAR_1Ch</span></code></a>(x[, wv, winsize, thr_method, ...])</p></td>
+<td><p>ATAR : Automatic and Tunable Artifact Removal Algorithm (single channel)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.eeg.ATAR_mCh.html#spkit.eeg.ATAR_mCh" title="spkit.eeg.ATAR_mCh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ATAR_mCh</span></code></a>(X[, wv, winsize, thr_method, ...])</p></td>
+<td><p>ATAR: - Automatic and Tunable Artifact Removal Algorithm</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.eeg.ICA_filtering.html#spkit.eeg.ICA_filtering" title="spkit.eeg.ICA_filtering"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ICA_filtering</span></code></a>(X[, winsize, ICA_method, ...])</p></td>
+<td><p>Aftifact Removal using ICA</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.eeg.rhythmic_powers.html#spkit.eeg.rhythmic_powers" title="spkit.eeg.rhythmic_powers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rhythmic_powers</span></code></a>(X[, fs, fBands, Sum, Mean, ...])</p></td>
+<td><p>Compute powers of different Rhythms of EEG Signal</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.eeg.rhythmic_powers_win.html#spkit.eeg.rhythmic_powers_win" title="spkit.eeg.rhythmic_powers_win"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rhythmic_powers_win</span></code></a>(X[, winsize, overlap, ...])</p></td>
+<td><p>Rhythmic powers-window-wise</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.eeg.s1020_get_epos2d.html#spkit.eeg.s1020_get_epos2d" title="spkit.eeg.s1020_get_epos2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">s1020_get_epos2d</span></code></a>(ch_names[, style, ...])</p></td>
+<td><p>Get 2D projection points for given channel using 10-20 System</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.eeg.s1010_get_epos2d.html#spkit.eeg.s1010_get_epos2d" title="spkit.eeg.s1010_get_epos2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">s1010_get_epos2d</span></code></a>(ch_names[, case_sensitive, ...])</p></td>
+<td><p>Get 2D projection points for given channel using 10-10 System</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.eeg.s1005_get_epos2d.html#spkit.eeg.s1005_get_epos2d" title="spkit.eeg.s1005_get_epos2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">s1005_get_epos2d</span></code></a>(ch_names[, case_sensitive, ...])</p></td>
+<td><p>Get 2D projection points for given channel using 10-05 System</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.eeg.TopoMap.html#spkit.eeg.topomap" title="spkit.eeg.topomap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">topomap</span></code></a>(data[, pos, ch_names, res, Zi, ...])</p></td>
+<td><p>Display Topographical Map of EEG, with given values</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.eeg.Gen_SSFI.html#spkit.eeg.gen_ssfi" title="spkit.eeg.gen_ssfi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gen_ssfi</span></code></a>(PX, pos[, res, NormalizeEachBand, ...])</p></td>
+<td><p>Generating Spatio-Spectral Feature Image (SSFI)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.eeg.TopoMap_Zi.html#spkit.eeg.TopoMap_Zi" title="spkit.eeg.TopoMap_Zi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TopoMap_Zi</span></code></a>(pos, data[, Zi, res, showplot, ...])</p></td>
+<td><p>Display Topographical Map of EEG, with given values</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="mea-multi-electrode-array">
+<h2>MEA  - Multi-Electrode Array<a class="headerlink" href="#mea-multi-electrode-array" title="Link to this heading">¶</a></h2>
+<section id="spkit-mea">
+<h3><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.mea</span></code><a class="headerlink" href="#spkit-mea" title="Link to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.mea.analyse_mea_file.html#spkit.mea.analyse_mea_file" title="spkit.mea.analyse_mea_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">analyse_mea_file</span></code></a>(file_name, stim_fhz[, fs, ...])</p></td>
+<td><p>A Complete Analysis of a MEA recording</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.mea.get_stim_loc.html#spkit.mea.get_stim_loc" title="spkit.mea.get_stim_loc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_stim_loc</span></code></a>(X[, fs, ch, fhz, N, method, ...])</p></td>
+<td><p>Get Stimulus Locations in given multi-channel</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.mea.find_bad_channels_idx.html#spkit.mea.find_bad_channels_idx" title="spkit.mea.find_bad_channels_idx"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_bad_channels_idx</span></code></a>(X[, fs, thr, ...])</p></td>
+<td><p>Identify the Bad Channels of MEA based on stimuli</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.mea.align_cycles.html#spkit.mea.align_cycles" title="spkit.mea.align_cycles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">align_cycles</span></code></a>(X, stim_loc[, fs, ...])</p></td>
+<td><p>Align Cycles</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.mea.activation_time_loc.html#spkit.mea.activation_time_loc" title="spkit.mea.activation_time_loc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">activation_time_loc</span></code></a>(X[, fs, t_range, ...])</p></td>
+<td><p>Compute Activation Time of multi-channel signals</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.mea.activation_repol_time_loc.html#spkit.mea.activation_repol_time_loc" title="spkit.mea.activation_repol_time_loc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">activation_repol_time_loc</span></code></a>(X[, fs, at_range, ...])</p></td>
+<td><p>Computing Activation and Repolarisation Time together</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.mea.extract_egm.html#spkit.mea.extract_egm" title="spkit.mea.extract_egm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extract_egm</span></code></a>(X, act_loc[, fs, dur_from_loc, ...])</p></td>
+<td><p>Extract EGMs (Electrograms) from each channel</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.mea.egm_features.html#spkit.mea.egm_features" title="spkit.mea.egm_features"><code class="xref py py-obj docutils literal notranslate"><span class="pre">egm_features</span></code></a>(x, act_loc[, fs, ...])</p></td>
+<td><p>Feature Extraction from a single EGM</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.mea.mea_feature_map.html#spkit.mea.mea_feature_map" title="spkit.mea.mea_feature_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mea_feature_map</span></code></a>(features, ch_labels[, ...])</p></td>
+<td><p>Displaying Feature values of MEA channels in a MEA Grid</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.mea.compute_cv.html#spkit.mea.compute_cv" title="spkit.mea.compute_cv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_cv</span></code></a>(Ax, Ax_bad[, eD, esp, cv_pad, ...])</p></td>
+<td><p>Compute Conduction Velocity</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.mea.arrange_mea_grid.html#spkit.mea.arrange_mea_grid" title="spkit.mea.arrange_mea_grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arrange_mea_grid</span></code></a>(features, ch_labels[, ...])</p></td>
+<td><p>Arranging features into MEA-Grid Matrix: Feature Matrix</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.mea.unarrange_mea_grid.html#spkit.mea.unarrange_mea_grid" title="spkit.mea.unarrange_mea_grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unarrange_mea_grid</span></code></a>(M, ch_labels)</p></td>
+<td><p>Reverse the operation of 'arrange_mea_grid'</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.mea.plot_mea_grid.html#spkit.mea.plot_mea_grid" title="spkit.mea.plot_mea_grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_mea_grid</span></code></a>(X, ch_labels[, fs, ...])</p></td>
+<td><p>Plot MEA Grid 8x8:  Visualisation of EGM/Signal in MEA Grid Form</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.mea.mat_1_show.html#spkit.mea.mat_1_show" title="spkit.mea.mat_1_show"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mat_1_show</span></code></a>(A[, fmt, vmin, vmax, cmap, ...])</p></td>
+<td><p>Display a single Feature Matrix of MEA</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.mea.mat_list_show.html#spkit.mea.mat_list_show" title="spkit.mea.mat_list_show"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mat_list_show</span></code></a>(A[, fmt, vmin, vmax, cmap, ...])</p></td>
+<td><p>Display multiple Feature Matrix of MEA</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="signal-analysis-and-processing">
+<h2>Signal Analysis and Processing<a class="headerlink" href="#signal-analysis-and-processing" title="Link to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.sinc_interp.html#spkit.sinc_interp" title="spkit.sinc_interp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sinc_interp</span></code></a>(x)</p></td>
+<td><p>Sinc interpolation</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.gaussian_kernel.html#spkit.gaussian_kernel" title="spkit.gaussian_kernel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gaussian_kernel</span></code></a>(window_length[, ...])</p></td>
+<td><p>Gaussian Kernel</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.friedrichs_mollifier_kernel.html#spkit.friedrichs_mollifier_kernel" title="spkit.friedrichs_mollifier_kernel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">friedrichs_mollifier_kernel</span></code></a>(window_size[, ...])</p></td>
+<td><p>Mollifier: Kurt Otto Friedrichs</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.denorm_kernel.html#spkit.denorm_kernel" title="spkit.denorm_kernel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">denorm_kernel</span></code></a>(kernel[, mode, keep_scale, esp])</p></td>
+<td><p>De-normalise 1d/2d Kernel</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.periodogram.html#spkit.periodogram" title="spkit.periodogram"><code class="xref py py-obj docutils literal notranslate"><span class="pre">periodogram</span></code></a>(x[, fs, show_plot, method, win, ...])</p></td>
+<td><p>Computing Periodogram</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.bin_width.html#spkit.bin_width" title="spkit.bin_width"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bin_width</span></code></a>(x[, method])</p></td>
+<td><p>Compute bin width for histogram, using different methods</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.hist_plot.html#spkit.hist_plot" title="spkit.hist_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hist_plot</span></code></a>(x[, norm, bins, show])</p></td>
+<td><p>Plot histogram with optimal number of bins (FD).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.mean_minSE.html#spkit.mean_minSE" title="spkit.mean_minSE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean_minSE</span></code></a>(x, y[, W, show, compare_mse, ...])</p></td>
+<td><p>Mean of Minimum Squared Error (MMSE) under temporal shift</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.minMSE.html#spkit.minMSE" title="spkit.minMSE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">minMSE</span></code></a>(x, y[, W, show])</p></td>
+<td><p>Minimum Mean Squared Error under temporal shift</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.is_power2.html#spkit.is_power2" title="spkit.is_power2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_power2</span></code></a>(n)</p></td>
+<td><p>Check if num is power of two</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.plotJointEntropyXY.html#spkit.plotJointEntropyXY" title="spkit.plotJointEntropyXY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plotJointEntropyXY</span></code></a>(x, y[, Venn, DistPlot, ...])</p></td>
+<td><p>Analyse Entropy-Venn Diagrams of X and Y</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.show_farmulas.html#spkit.show_farmulas" title="spkit.show_farmulas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show_farmulas</span></code></a>()</p></td>
+<td><p>Usuful Formulas</p></td>
+</tr>
+</tbody>
+</table>
+<section id="new-methods">
+<h3>New Methods<a class="headerlink" href="#new-methods" title="Link to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.signal_diff.html#spkit.signal_diff" title="spkit.signal_diff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">signal_diff</span></code></a>(x[, method, sg_window, ...])</p></td>
+<td><p>Derivative of a signal</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.simplify_signal.html#spkit.simplify_signal" title="spkit.simplify_signal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">simplify_signal</span></code></a>(x, fs, winlen, overlap[, N, ...])</p></td>
+<td><p>Simplify a signal with Sinasodal Model</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.elbow_knee_point.html#spkit.elbow_knee_point" title="spkit.elbow_knee_point"><code class="xref py py-obj docutils literal notranslate"><span class="pre">elbow_knee_point</span></code></a>(x[, dx, plot, show, ...])</p></td>
+<td><p>Finding Elbow-knee point of a curve</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.total_variation.html#spkit.total_variation" title="spkit.total_variation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">total_variation</span></code></a>(x[, normalise, method])</p></td>
+<td><p>Total Variation of a signal</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.total_variation_win.html#spkit.total_variation_win" title="spkit.total_variation_win"><code class="xref py py-obj docutils literal notranslate"><span class="pre">total_variation_win</span></code></a>(x[, winlen, overlap, method])</p></td>
+<td><p>Total Variation of a signal window-wise</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.fill_nans_1d.html#spkit.fill_nans_1d" title="spkit.fill_nans_1d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fill_nans_1d</span></code></a>(x[, pkind])</p></td>
+<td><p>Fill nan values with interpolation/exterpolation for 1D</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.fill_nans_2d.html#spkit.fill_nans_2d" title="spkit.fill_nans_2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fill_nans_2d</span></code></a>(X[, pkind, filter_size, ...])</p></td>
+<td><p>Fill nan values with interpolation/exterpolation for 2D</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.add_noise.html#spkit.add_noise" title="spkit.add_noise"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_noise</span></code></a>(x[, snr_db, return_noise])</p></td>
+<td><p>Add Gaussian Noise to Signal</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="signal-transformations-mapping">
+<h2>Signal Transformations/Mapping<a class="headerlink" href="#signal-transformations-mapping" title="Link to this heading">¶</a></h2>
+<section id="id3">
+<h3><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.core</span></code><a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.Mu_law.html#spkit.Mu_law" title="spkit.Mu_law"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mu_law</span></code></a>(x[, Mu, companding])</p></td>
+<td><p>μ-Law for companding and expanding (Non-linear mapping)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.A_law.html#spkit.A_law" title="spkit.A_law"><code class="xref py py-obj docutils literal notranslate"><span class="pre">A_law</span></code></a>(x[, A, companding])</p></td>
+<td><p>A-Law for companding and expanding (Non-linear mapping)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.cdf_mapping.html#spkit.cdf_mapping" title="spkit.cdf_mapping"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cdf_mapping</span></code></a>(x)</p></td>
+<td><p>CDF: Cumulative Distribution Function Mapping (Non-linear mapping)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.quantize_signal.html#spkit.quantize_signal" title="spkit.quantize_signal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantize_signal</span></code></a>(x[, n_levels, A, Mu, ...])</p></td>
+<td><p>Quantize signal into discreet levels</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.quantize_FD.html#spkit.quantize_FD" title="spkit.quantize_FD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantize_FD</span></code></a>(x[, scale, min_bins, ...])</p></td>
+<td><p>Discretize (quantize) input signal x using optimal bin-width (FD)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.low_resolution.html#spkit.low_resolution" title="spkit.low_resolution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">low_resolution</span></code></a>(x, scale)</p></td>
+<td><p>Reducing the time-resolution of signal <span class="math notranslate nohighlight">\(x\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.signal_delayed_space.html#spkit.signal_delayed_space" title="spkit.signal_delayed_space"><code class="xref py py-obj docutils literal notranslate"><span class="pre">signal_delayed_space</span></code></a>(x[, emb_dim, delay])</p></td>
+<td><p>Create N-dimensional signal space</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.create_multidim_space_signal.html#spkit.create_multidim_space_signal" title="spkit.create_multidim_space_signal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_multidim_space_signal</span></code></a>(x[, emb_dim, delay])</p></td>
+<td><p>Create N-dimensional signal space</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.TD_Embed.html#spkit.TD_Embed" title="spkit.TD_Embed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TD_Embed</span></code></a>(x[, order, delay])</p></td>
+<td><p>Time delay Embedding Matrix</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</section>
+</section>
+<section id="event-analysis">
+<h2>Event Analysis<a class="headerlink" href="#event-analysis" title="Link to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.get_activation_time.html#spkit.get_activation_time" title="spkit.get_activation_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_activation_time</span></code></a>(x[, fs, method, ...])</p></td>
+<td><p>Get Activation Time based on Gradient</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.get_repolarisation_time.html#spkit.get_repolarisation_time" title="spkit.get_repolarisation_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_repolarisation_time</span></code></a>(x, fs, at_loc[, ...])</p></td>
+<td><p>Get Repolarisation Time based on Gradient</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.peak_detection.html#spkit.peak_detection" title="spkit.peak_detection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">peak_detection</span></code></a>(mX, thr)</p></td>
+<td><p>Detect spectral peaks</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.peak_interp.html#spkit.peak_interp" title="spkit.peak_interp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">peak_interp</span></code></a>(mX, pX, ploc)</p></td>
+<td><p>Interpolate peak using parabolic interpolation</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.f0_detection.html#spkit.f0_detection" title="spkit.f0_detection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">f0_detection</span></code></a>(x, fs, winlen[, nfft, overlap, ...])</p></td>
+<td><p>Fundamental frequency detection using TWM</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.sinc_dirichlet.html#spkit.sinc_dirichlet" title="spkit.sinc_dirichlet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sinc_dirichlet</span></code></a>(x, N)</p></td>
+<td><p>Generate the main lobe of a sinc function</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.blackman_lobe.html#spkit.blackman_lobe" title="spkit.blackman_lobe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">blackman_lobe</span></code></a>(x[, N])</p></td>
+<td><p>Main lobe of a Blackman-Harris window</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.sine_tracking.html#spkit.sine_tracking" title="spkit.sine_tracking"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sine_tracking</span></code></a>(pfreq, pmag, pphase, tfreq[, ...])</p></td>
+<td><p>Tracking sinusoids from one frame to the next</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.sinetracks_cleaning.html#spkit.sinetracks_cleaning" title="spkit.sinetracks_cleaning"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sinetracks_cleaning</span></code></a>(tfreq[, minTrackLength])</p></td>
+<td><p>Delete short fragments of a collection of sinusoidal tracks</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.sine_spectrum.html#spkit.sine_spectrum" title="spkit.sine_spectrum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sine_spectrum</span></code></a>(ipfreq, ipmag, ipphase, N, fs)</p></td>
+<td><p>Generate a spectrum from a series of sine values</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.TWM_f0.html#spkit.TWM_f0" title="spkit.TWM_f0"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TWM_f0</span></code></a>(pfreq, pmag[, f0min, f0max, f0_pre, ...])</p></td>
+<td><p>Two-Way Mismatch algorithm</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.TWM_algo.html#spkit.TWM_algo" title="spkit.TWM_algo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TWM_algo</span></code></a>(pfreq, pmag, f0c[, verbose])</p></td>
+<td><p>Two-way mismatch algorithm for f0 detection</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="phase-angles-dominent-frequencies">
+<h2>Phase, Angles, Dominent Frequencies<a class="headerlink" href="#phase-angles-dominent-frequencies" title="Link to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.phase_map.html#spkit.phase_map" title="spkit.phase_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">phase_map</span></code></a>(X[, add_sig])</p></td>
+<td><p>Phase Mapping of multi channel signals X</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.clean_phase.html#spkit.clean_phase" title="spkit.clean_phase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clean_phase</span></code></a>(xp[, w, thr, low, high])</p></td>
+<td><p>Cleaning Phase</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.phase_map_reconstruction.html#spkit.phase_map_reconstruction" title="spkit.phase_map_reconstruction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">phase_map_reconstruction</span></code></a>(X[, add_sig, ...])</p></td>
+<td><p>Phase Mapping and Amplitude Equalization</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.dominent_freq.html#spkit.dominent_freq" title="spkit.dominent_freq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dominent_freq</span></code></a>(X, fs[, method, window, ...])</p></td>
+<td><p>Dominent Frequency Analysis</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.dominent_freq_win.html#spkit.dominent_freq_win" title="spkit.dominent_freq_win"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dominent_freq_win</span></code></a>(X, fs[, win_len, overlap, ...])</p></td>
+<td><p>Dominent Frequency Analysis Window-wise</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.agg_angles.html#spkit.agg_angles" title="spkit.agg_angles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">agg_angles</span></code></a>(thetas[, agg])</p></td>
+<td><p>Aggregating Angles (Directional Arrows) (thetas)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.show_compass.html#spkit.show_compass" title="spkit.show_compass"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show_compass</span></code></a>(Ax_theta[, Ax_bad, arr_agg, ...])</p></td>
+<td><p>Display Compass with Arrows and aggregated Arrow</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.direction_flow_map.html#spkit.direction_flow_map" title="spkit.direction_flow_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">direction_flow_map</span></code></a>(X_theta[, X, upsample, ...])</p></td>
+<td><p>Displaying Directional flow map of a 2D grid</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="machine-learning">
+<h2>Machine Learning<a class="headerlink" href="#machine-learning" title="Link to this heading">¶</a></h2>
+<section id="module-spkit.ml">
+<span id="spkit-ml"></span><h3><a class="reference internal" href="#module-spkit.ml" title="spkit.ml"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.ml</span></code></a><a class="headerlink" href="#module-spkit.ml" title="Link to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.ml.LogisticRegression.html#spkit.ml.LogisticRegression" title="spkit.ml.LogisticRegression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LogisticRegression</span></code></a>([alpha, lambd, polyfit, ...])</p></td>
+<td><p>Logistic Regression</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.ml.NaiveBayes.html#spkit.ml.NaiveBayes" title="spkit.ml.NaiveBayes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NaiveBayes</span></code></a>()</p></td>
+<td><p>Gaussian Naive Bayes classifier.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.ml.DecisionTree.html#spkit.ml.DecisionTree" title="spkit.ml.DecisionTree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DecisionTree</span></code></a>([min_samples_split, ...])</p></td>
+<td><p>Super class of RegressionTree and ClassificationTree.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.ml.ClassificationTree.html#spkit.ml.ClassificationTree" title="spkit.ml.ClassificationTree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ClassificationTree</span></code></a>([min_samples_split, ...])</p></td>
+<td><p>Classification Tree</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.ml.RegressionTree.html#spkit.ml.RegressionTree" title="spkit.ml.RegressionTree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegressionTree</span></code></a>([min_samples_split, ...])</p></td>
+<td><p>Regression Tree</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="sample-data-simulate">
+<h2>Sample Data &amp; Simulate<a class="headerlink" href="#sample-data-simulate" title="Link to this heading">¶</a></h2>
+<section id="module-spkit.data">
+<span id="spkit-data"></span><h3><a class="reference internal" href="#module-spkit.data" title="spkit.data"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.data</span></code></a><a class="headerlink" href="#module-spkit.data" title="Link to this heading">¶</a></h3>
+</section>
+<section id="sample-of-real-data-signal">
+<h3>Sample of real data/signal<a class="headerlink" href="#sample-of-real-data-signal" title="Link to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.data.eeg_sample_14ch.html#spkit.data.eeg_sample_14ch" title="spkit.data.eeg_sample_14ch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.eeg_sample_14ch</span></code></a>([fname])</p></td>
+<td><p>Load 14 channel EEG sample recording of 16 second duration.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.data.eeg_sample_1ch.html#spkit.data.eeg_sample_1ch" title="spkit.data.eeg_sample_1ch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.eeg_sample_1ch</span></code></a>([ch, xtype])</p></td>
+<td><p>Load a single channel EEG sample recording of 16 second duration.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.data.eeg_sample_artifact.html#spkit.data.eeg_sample_artifact" title="spkit.data.eeg_sample_artifact"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.eeg_sample_artifact</span></code></a>([fname])</p></td>
+<td><p>Load 14 channel EEG sample recording of 16 second duration with artifacts and processed.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.data.ecg_sample_12leads.html#spkit.data.ecg_sample_12leads" title="spkit.data.ecg_sample_12leads"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.ecg_sample_12leads</span></code></a>([sample])</p></td>
+<td><p>Load 12 lead ECG sample.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.data.ecg_sample.html#spkit.data.ecg_sample" title="spkit.data.ecg_sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.ecg_sample</span></code></a>([sample])</p></td>
+<td><p>Load sample(s) of ECG sampled at high rate</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.data.optical_sample.html#spkit.data.optical_sample" title="spkit.data.optical_sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.optical_sample</span></code></a>([sample, species])</p></td>
+<td><p>Load sample(s) of optical mapping signals</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.data.ppg_sample.html#spkit.data.ppg_sample" title="spkit.data.ppg_sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.ppg_sample</span></code></a>([sample])</p></td>
+<td><p>Load sample(s) of PPG signals</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.data.gsr_sample.html#spkit.data.gsr_sample" title="spkit.data.gsr_sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.gsr_sample</span></code></a>([sample])</p></td>
+<td><p>Load sample(s) of Galvanic Skin Response (GSR) or</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.data.eda_sample.html#spkit.data.eda_sample" title="spkit.data.eda_sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.eda_sample</span></code></a>([sample])</p></td>
+<td><p>Load sample(s) of Electrodermal activity (EDA)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.data.egm_sample.html#spkit.data.egm_sample" title="spkit.data.egm_sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.egm_sample</span></code></a>([sample])</p></td>
+<td><p>Load sample(s) of Electrograms and ECG</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.data.primitive_polynomials.html#spkit.data.primitive_polynomials" title="spkit.data.primitive_polynomials"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.primitive_polynomials</span></code></a>([fname])</p></td>
+<td><p>List of Primitive Polynomials as dictionary</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="simulation-of-data">
+<h3>Simulation of Data<a class="headerlink" href="#simulation-of-data" title="Link to this heading">¶</a></h3>
+</section>
+<section id="for-machine-learning">
+<h3>For Machine Learning<a class="headerlink" href="#for-machine-learning" title="Link to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.data.linear.html#spkit.data.linear" title="spkit.data.linear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.linear</span></code></a>([N, m, b, s, return_para])</p></td>
+<td><p>Generate a 2-class dataset separated by a linear boundary</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.data.gaussian.html#spkit.data.gaussian" title="spkit.data.gaussian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.gaussian</span></code></a>([N, ndist, means, sigmas, ...])</p></td>
+<td><p>Generate a 2-class dataset from a mixture of gaussians</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.data.moons.html#spkit.data.moons" title="spkit.data.moons"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.moons</span></code></a>([N, s, d, angle, return_para])</p></td>
+<td><p>Generate a 2-class dataset from two &quot;moon&quot; distributions</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.data.sinusoidal.html#spkit.data.sinusoidal" title="spkit.data.sinusoidal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.sinusoidal</span></code></a>([N, s, return_para])</p></td>
+<td><p>Generate a 2-class  dataset separated by a sinusoidal line</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.data.spiral.html#spkit.data.spiral" title="spkit.data.spiral"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.spiral</span></code></a>([N, s, wrappings, m, return_para])</p></td>
+<td><p>Generate a 2-class dataset of spirals</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.data.create_dataset.html#spkit.data.create_dataset" title="spkit.data.create_dataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.create_dataset</span></code></a>([N, Dtype, noise, ...])</p></td>
+<td><p>Sample a 2D dataset from different distributions</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.data.mclass_gauss.html#spkit.data.mclass_gauss" title="spkit.data.mclass_gauss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.mclass_gauss</span></code></a>([N, nClasses, var, ...])</p></td>
+<td><p>Generate Multi-class gaussian samples</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="for-signal-processing">
+<h3>For Signal Processing<a class="headerlink" href="#for-signal-processing" title="Link to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.create_signal_1d.html#spkit.create_signal_1d" title="spkit.create_signal_1d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_signal_1d</span></code></a>([n, seed, circular, ...])</p></td>
+<td><p>Generate 1D arbitary signal</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.create_signal_2d.html#spkit.create_signal_2d" title="spkit.create_signal_2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_signal_2d</span></code></a>([n, seed, sg_winlen, ...])</p></td>
+<td><p>Generate 2D arbitary signal/image patch</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="matrix-decomposition">
+<span id="decomposition-ref"></span><h2>Matrix Decomposition<a class="headerlink" href="#matrix-decomposition" title="Link to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.ICA.html#spkit.ICA" title="spkit.ICA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ICA</span></code></a>([n_components, max_pca_components, ...])</p></td>
+<td><p>Independent Component Analysis</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.PCA.html#spkit.PCA" title="spkit.PCA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PCA</span></code></a>([n_components, apply_whitening, tol])</p></td>
+<td><p>Principle Component Analysis</p></td>
+</tr>
+</tbody>
+</table>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.SVD.html#spkit.SVD" title="spkit.SVD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SVD</span></code></a>(X[, full])</p></td>
+<td><p>Singular Value Decomposition,</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="statististics">
+<h2>Statististics<a class="headerlink" href="#statististics" title="Link to this heading">¶</a></h2>
+<section id="spkit-stats">
+<h3><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.stats</span></code><a class="headerlink" href="#spkit-stats" title="Link to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.stats.quick_stats.html#spkit.stats.quick_stats" title="spkit.stats.quick_stats"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quick_stats</span></code></a>(x[, show, return_table, name])</p></td>
+<td><p>Quick Statistics, excluding np.nan values</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.stats.outliers.html#spkit.stats.outliers" title="spkit.stats.outliers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">outliers</span></code></a>(x[, method, k, include_lower, ...])</p></td>
+<td><p>Statistical Outliers</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.stats.get_stats.html#spkit.stats.get_stats" title="spkit.stats.get_stats"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_stats</span></code></a>(x[, detail_level, name, esp, add_esp])</p></td>
+<td><p>Statistics of a given sequence x, excluding NaN values</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.stats.test_2groups.html#spkit.stats.test_2groups" title="spkit.stats.test_2groups"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_2groups</span></code></a>(x1, x2[, paired, alpha, ...])</p></td>
+<td><p>Test two groups</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.stats.test_groups.html#spkit.stats.test_groups" title="spkit.stats.test_groups"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_groups</span></code></a>(x[, axis, alpha, title, ...])</p></td>
+<td><p>Test multiple groups: One-way Anova</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.stats.plot_groups_boxes.html#spkit.stats.plot_groups_boxes" title="spkit.stats.plot_groups_boxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_groups_boxes</span></code></a>(x[, lines, xlabels, ylab, ...])</p></td>
+<td><p>Boxplot for Groups data</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="read-write-files-i-o">
+<h2>Read/Write Files I/O<a class="headerlink" href="#read-write-files-i-o" title="Link to this heading">¶</a></h2>
+<section id="module-spkit.io">
+<span id="spkit-io"></span><h3><a class="reference internal" href="#module-spkit.io" title="spkit.io"><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.io</span></code></a><a class="headerlink" href="#module-spkit.io" title="Link to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.io.read_hdf.html#spkit.io.read_hdf" title="spkit.io.read_hdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_hdf</span></code></a>(file_name[, fs, max_volt, ...])</p></td>
+<td><p>Reading HDF File</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.io.read_surf.html#spkit.io.read_surf" title="spkit.io.read_surf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_surf</span></code></a>(file_name)</p></td>
+<td><p>Read Surf File .surf file geenrated by tools including vertices and faces</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.io.read_bdf.html#spkit.io.read_bdf" title="spkit.io.read_bdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_bdf</span></code></a>(file_name[, verbose, readSignal, ...])</p></td>
+<td><p>Read EDF/BDF File</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.io.read_vtk.html#spkit.io.read_vtk" title="spkit.io.read_vtk"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_vtk</span></code></a>(file_name[, V_name, F_name, ...])</p></td>
+<td><p>Read VTK File</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.io.write_vtk.html#spkit.io.write_vtk" title="spkit.io.write_vtk"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_vtk</span></code></a>(filename, vertices, faces)</p></td>
+<td><p>Writes .vtk file format for the Paraview (Kitware (c)) visualisation software.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="utilities">
+<span id="utils-ref"></span><h2>Utilities<a class="headerlink" href="#utilities" title="Link to this heading">¶</a></h2>
+<section id="spkit-utils">
+<h3><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.utils</span></code><a class="headerlink" href="#spkit-utils" title="Link to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.utils.ProgBar_JL.html#spkit.utils.ProgBar_JL" title="spkit.utils.ProgBar_JL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ProgBar_JL</span></code></a>(i, N[, title, style, L, ...])</p></td>
+<td><p>Progress Bar : Utilities - Compatible with JupyterLab/Jupyter-Notebook</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.utils.ProgBar.html#spkit.utils.ProgBar" title="spkit.utils.ProgBar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ProgBar</span></code></a>(i, N[, title, style, L, ...])</p></td>
+<td><p>Progress Bar : Utilities</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.utils.pretty_print.html#spkit.utils.pretty_print" title="spkit.utils.pretty_print"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pretty_print</span></code></a>(List[, n, sep, show_index, ...])</p></td>
+<td><p>Print list : in pretty way</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.utils.view_hierarchical_order.html#spkit.utils.view_hierarchical_order" title="spkit.utils.view_hierarchical_order"><code class="xref py py-obj docutils literal notranslate"><span class="pre">view_hierarchical_order</span></code></a>(file_obj[, sep, ...])</p></td>
+<td><p>View nested dictionary type objects as hierarchical tree-order</p></td>
+</tr>
+</tbody>
+</table>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.utils.txcolors.html#spkit.utils.txcolors" title="spkit.utils.txcolors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">utils.txcolors</span></code></a>()</p></td>
+<td><p>Utilities for coloring text</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.utils.bcolors.html#spkit.utils.bcolors" title="spkit.utils.bcolors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">utils.bcolors</span></code></a>()</p></td>
+<td><p>Utilities for coloring text</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="geometrical-functions-under-development">
+<h2>Geometrical functions [UNDER DEVELOPMENT]<a class="headerlink" href="#geometrical-functions-under-development" title="Link to this heading">¶</a></h2>
+<section id="spkit-geometry">
+<h3><code class="xref py py-mod docutils literal notranslate"><span class="pre">spkit.geometry</span></code><a class="headerlink" href="#spkit-geometry" title="Link to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.geometry.car2spar.html#spkit.geometry.car2spar" title="spkit.geometry.car2spar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">car2spar</span></code></a>(X)</p></td>
+<td><p>Cartesian to Spherical Coordinates</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.geometry.spar2car.html#spkit.geometry.spar2car" title="spkit.geometry.spar2car"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spar2car</span></code></a>(S)</p></td>
+<td><p>Spherical to CartesianCoordinates</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.geometry.get_adjacency_matrix_depth.html#spkit.geometry.get_adjacency_matrix_depth" title="spkit.geometry.get_adjacency_matrix_depth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_adjacency_matrix_depth</span></code></a>(V, F[, depth, ...])</p></td>
+<td><p>Create Adjacency Matrix based on Trianglution Connection Depth</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.geometry.get_adjacency_matrix_dist.html#spkit.geometry.get_adjacency_matrix_dist" title="spkit.geometry.get_adjacency_matrix_dist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_adjacency_matrix_dist</span></code></a>(V[, dist, ...])</p></td>
+<td><p>Create Adjacency Matrix based on Euclidean distance</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.geometry.get_adjacency_matrix_kNN.html#spkit.geometry.get_adjacency_matrix_kNN" title="spkit.geometry.get_adjacency_matrix_kNN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_adjacency_matrix_kNN</span></code></a>(V[, K, ...])</p></td>
+<td><p>Create Adjacency Index Matrix based on Euclidean distance kNN</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.geometry.node2C_to_adjacency_matrix.html#spkit.geometry.node2C_to_adjacency_matrix" title="spkit.geometry.node2C_to_adjacency_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">node2C_to_adjacency_matrix</span></code></a>(node2C[, M])</p></td>
+<td><p>From node2C to Adjacency Matrix</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.geometry.get_neibours.html#spkit.geometry.get_neibours" title="spkit.geometry.get_neibours"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_neibours</span></code></a>(V, p[, N])</p></td>
+<td><p>Get N Neibours of point p</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.geometry.get_optimal_projection.html#spkit.geometry.get_optimal_projection" title="spkit.geometry.get_optimal_projection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_optimal_projection</span></code></a>(X, p[, d, plot])</p></td>
+<td><p>Optimal Projection</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.geometry.get_plane.html#spkit.geometry.get_plane" title="spkit.geometry.get_plane"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_plane</span></code></a>(X[, lamd, n])</p></td>
+<td><p>Get Plane passing through (3D) points X</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.geometry.get_PCA.html#spkit.geometry.get_PCA" title="spkit.geometry.get_PCA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_PCA</span></code></a>(X[, whiting])</p></td>
+<td><p>Get PCA</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.geometry.opt_project.html#spkit.geometry.opt_project" title="spkit.geometry.opt_project"><code class="xref py py-obj docutils literal notranslate"><span class="pre">opt_project</span></code></a>(X, p[, plot])</p></td>
+<td><p>Optimal Projection</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.geometry.plot_proj.html#spkit.geometry.plot_proj" title="spkit.geometry.plot_proj"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_proj</span></code></a>(Xp, Xp1, Xp1c, Xp2, p)</p></td>
+<td><p>Plot Projections</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.geometry.dir_vectors.html#spkit.geometry.dir_vectors" title="spkit.geometry.dir_vectors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dir_vectors</span></code></a>(V, AdjM[, verbose])</p></td>
+<td><p>Directional Vectors</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.geometry.area_tri.html#spkit.geometry.area_tri" title="spkit.geometry.area_tri"><code class="xref py py-obj docutils literal notranslate"><span class="pre">area_tri</span></code></a>(p1, p2, p3)</p></td>
+<td><p>Compute Area of a triangle in d-dimension</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.geometry.get_circle.html#spkit.geometry.get_circle" title="spkit.geometry.get_circle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_circle</span></code></a>([r, n])</p></td>
+<td><p>Get a circle of radius r with n points</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.geometry.get_circular_grid.html#spkit.geometry.get_circular_grid" title="spkit.geometry.get_circular_grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_circular_grid</span></code></a>([n, al, rl, rmax])</p></td>
+<td><p>Get a circular grid</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.geometry.get_square.html#spkit.geometry.get_square" title="spkit.geometry.get_square"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_square</span></code></a>([n, r])</p></td>
+<td><p>Get a uniform square grid of n by n points between -r to r</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.geometry.get_square_grid.html#spkit.geometry.get_square_grid" title="spkit.geometry.get_square_grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_square_grid</span></code></a>([n, vl, hl, r])</p></td>
+<td><p>Get a square grid of n by n points between -r to r</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.geometry.get_sphare.html#spkit.geometry.get_sphare" title="spkit.geometry.get_sphare"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_sphare</span></code></a>([n1, n2, r, r2, r3, phi_rang, ...])</p></td>
+<td><p>Get a sphare</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.geometry.get_ellipsoid.html#spkit.geometry.get_ellipsoid" title="spkit.geometry.get_ellipsoid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_ellipsoid</span></code></a>([n1, n2, rx, ry, rz, ...])</p></td>
+<td><p>Get a ellipsoid</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.geometry.lin_inter.html#spkit.geometry.lin_inter" title="spkit.geometry.lin_inter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lin_inter</span></code></a>(x1, x2, y1, y2, xt)</p></td>
+<td><p>linear Inpeterpolation</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.geometry.surface_reconstruction.html#spkit.geometry.surface_reconstruction" title="spkit.geometry.surface_reconstruction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">surface_reconstruction</span></code></a>(V[, shift_mean, ...])</p></td>
+<td><p>Surface Recosntruction</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.geometry.surface_plot_mayavi.html#spkit.geometry.surface_plot_mayavi" title="spkit.geometry.surface_plot_mayavi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">surface_plot_mayavi</span></code></a>(V, F, X[, D, ...])</p></td>
+<td><p>3D Surface Plot using Mayavi</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.geometry.getTriFaces_V2.html#spkit.geometry.getTriFaces_V2" title="spkit.geometry.getTriFaces_V2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTriFaces_V2</span></code></a>(V[, plot, npoint_rotate, ...])</p></td>
+<td><p>Get Triangulation Faces of given Vertices V</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.geometry.getTriFaces.html#spkit.geometry.getTriFaces" title="spkit.geometry.getTriFaces"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTriFaces</span></code></a>(V[, plot])</p></td>
+<td><p>Get Triangulation Faces of given Vertices V</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.geometry.rotation_matrix.html#spkit.geometry.rotation_matrix" title="spkit.geometry.rotation_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rotation_matrix</span></code></a>([theta])</p></td>
+<td><p>3 Rotational Matrices of Theta</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.geometry.divide_space.html#spkit.geometry.divide_space" title="spkit.geometry.divide_space"><code class="xref py py-obj docutils literal notranslate"><span class="pre">divide_space</span></code></a>(X, D[, V, lamda, plot, n])</p></td>
+<td><p>Divide space point of X, by plane passing from D</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.geometry.get_center.html#spkit.geometry.get_center" title="spkit.geometry.get_center"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_center</span></code></a>(X)</p></td>
+<td><p>Get center of points</p></td>
+</tr>
+</tbody>
+</table>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.geometry.TriAng.html#spkit.geometry.TriAng" title="spkit.geometry.TriAng"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TriAng</span></code></a>(F[, V])</p></td>
+<td><p>Triangulation Class (Graph)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.geometry.Inter2DPlane.html#spkit.geometry.Inter2DPlane" title="spkit.geometry.Inter2DPlane"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Inter2DPlane</span></code></a>(xy_loc[, res])</p></td>
+<td><p>Interpolation of 2D Plane</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="to-be-deprecated">
+<h2>TO BE DEPRECATED<a class="headerlink" href="#to-be-deprecated" title="Link to this heading">¶</a></h2>
+<section id="id4">
+<h3>Wavelet Analysis<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.WPA_temporal.html#spkit.WPA_temporal" title="spkit.WPA_temporal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WPA_temporal</span></code></a>(x[, winsize, overlap, wv, ...])</p></td>
+<td><p>Wavelet Packet Decomposition - window-wise</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">WPA_plot</span></code>(x[, winsize, overlap, ...])</p></td>
+<td><p>WPA Window-wise - Plot</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.Wavelet_decompositions.html#spkit.Wavelet_decompositions" title="spkit.Wavelet_decompositions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wavelet_decompositions</span></code></a>(x[, wv, L, ...])</p></td>
+<td><p>Decomposing signal into wavelet components</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id5">
+<h3>Ramanujan Methods<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.RFB.html#spkit.RFB" title="spkit.RFB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RFB</span></code></a>(x[, Pmax, Rcq, Rav, Th, Penalty, ...])</p></td>
+<td><p>Ramanujan Filter Banks for Estimation and Tracking of Periodicity</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.RFB_prange.html#spkit.RFB_prange" title="spkit.RFB_prange"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RFB_prange</span></code></a>(x[, Pmin, Pmax, skip, Rcq, Rav, ...])</p></td>
+<td><p>Ramanujan Filter Banks for Estimation and Tracking of Periodicity with given range.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Create_Dictionary</span></code>(Nmax, rowSize[, method])</p></td>
+<td><p>Creating Dictionary for RFB</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.PeriodStrength.html#spkit.PeriodStrength" title="spkit.PeriodStrength"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PeriodStrength</span></code></a>(x, Pmax[, method, lambd, L, ...])</p></td>
+<td><p>Computing strength of periods</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id6">
+<h3>EEG Signal Processing<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
+<span class="target" id="module-1"></span><table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.eeg.display_topo_RGB.html#spkit.eeg.display_topo_RGB" title="spkit.eeg.display_topo_RGB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">display_topo_RGB</span></code></a>(IR[, kersize, interpolation])</p></td>
+<td><p>RGB Image show of Topographic Maps.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.eeg.RhythmicDecomposition.html#spkit.eeg.RhythmicDecomposition" title="spkit.eeg.RhythmicDecomposition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RhythmicDecomposition</span></code></a>(E[, fs, order, ...])</p></td>
+<td><p>Compute powers of different Rhythms of EEG Signal</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">TopoMap</span></code>(pos, data[, res, showplot, axes, ...])</p></td>
+<td><p>Topographical Map for given the data point and 2D projection points,</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.eeg.showTOPO.html#spkit.eeg.showTOPO" title="spkit.eeg.showTOPO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">showTOPO</span></code></a>(Zi, pos, ch_names[, axes, vmin, ...])</p></td>
+<td><p>Topographical Map for given the data point and 2D projection points,</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Gen_SSFI</span></code>(X[, pos, res, NormalizeEachBand, ...])</p></td>
+<td><p>Generating Spatio-Spectral Feature Image (SSFI)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="statistics">
+<h3>Statistics<a class="headerlink" href="#statistics" title="Link to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.getStats.html#spkit.getStats" title="spkit.getStats"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getStats</span></code></a>(x[, detail_level, return_names])</p></td>
+<td><p>Quick Statistics of a given sequence x, excluding NaN values</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/spkit.getQuickStats.html#spkit.getQuickStats" title="spkit.getQuickStats"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getQuickStats</span></code></a>(x)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.OutLiers.html#spkit.OutLiers" title="spkit.OutLiers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OutLiers</span></code></a>(x[, method, k, include_lower, ...])</p></td>
+<td><p>Identyfying outliers</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="io-utilities">
+<h3>IO Utilities<a class="headerlink" href="#io-utilities" title="Link to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.io.read_surf_file.html#spkit.io.read_surf_file" title="spkit.io.read_surf_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_surf_file</span></code></a>(file_name)</p></td>
+<td><p>Read Surf File</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data">
+<h3>Data<a class="headerlink" href="#data" title="Link to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spkit.data.linear_data.html#spkit.data.linear_data" title="spkit.data.linear_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.linear_data</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Linear Data</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+
+      </div>
+      <div class="container">
+        <footer class="spk-content-footer">
+          &copy; 2019 - 2024, spkit developers (BSD License).
+          <!-- -->
+          <!-- <a href="../_sources/modules/classes.rst.txt" rel="nofollow">Show this page source</a> -->
+          <!-- -->
+        </footer>
+      </div>
+
+      <div class="container-fluid py-3">
+        <hr>
+        <div class="container spk-landing-container">
+              <a class="spk-footer-funding-link" href="../about.html">
+              <div class="text-center">
+                      <p class="mt-2">
+                        Spkit developed in collabration with other projects:
+                      </p>
+                      <a href="https://PhyAAt.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../_static/phyaat_logo.png" title="PhyAAt"></a>
+                      <a href="https://PyLFSR.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../_static/pylfsr_logo.png" title="PyLFSR" ></a>
+                      <a href="https://MLEndDatasets.github.io" target="_blank"><img class="spk-footer-funding-logo" src="../_static/mlend_logo.png" title="MLEnd-Datasets" ></a>
+                      <a href='https://clustrmaps.com/site/1b9h1'  title='Visit tracker'><img src='//clustrmaps.com/map_v2.png?cl=46b0cb&w=a&t=n&d=eQr8xSBiKVuSq6m0psK-Ey9TZ7rLzjRX-MpatyfFGQI&co=ffffff&ct=000000' width="30"/></a>
+
+              </div>
+              </a>
+              <!-- <div style="width:3px;">
+                <a href="https://clustrmaps.com/site/1b9h1"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=eQr8xSBiKVuSq6m0psK-Ey9TZ7rLzjRX-MpatyfFGQI&cl=ffffff" /></a>  
+              </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../_static/js/vendor/bootstrap.min.js"></script>
+  
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-59299155-3', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<!-- 
+<script defer data-domain="scikit-learn.org" src="https://views.scientific-python.org/js/script.js">
+</script>
+ -->
+
+<script src="../_static/clipboard.min.js"></script>
+<script src="../_static/copybutton.js"></script>
+
+<script>
+$(document).ready(function() {
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		        '.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	});
+});
+
+</script>
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    
+</body>
+
+</html>
